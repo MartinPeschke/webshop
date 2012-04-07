@@ -1,0 +1,148 @@
+{% extends "user/profile.html" %}
+{% load i18n %}
+
+{% block center_block_header %}{% trans 'Establish Payment Method' %} {% trans request.user.get_profile.roleName.upper %}{% endblock %}
+
+{% block content %}
+<div class="center_box">
+	<div class="reg_notice"><p>
+		{% trans "You will only need to fill in your payment method for your first purchase or when you wish to change it." %}</p></div>
+	<div id="required"><div>{% trans "Required fields" %}</div></div>
+	<div class="reg_title"><label class="reg_title_bg">{% trans "Payment method" %}</label></div>
+	<div class="reg_bg"></div>
+	<div class="reg_form">
+	<form action="/user/order/submit/" method="post" id="myForm">
+      <div id="methodfields">{{ payment_form.payment_method|safe }}</div>
+	
+	<div id="CreditForm" class="paymentforms" {% ifequal payment_method 'Credit' %}{% else %}style="display:none"{% endifequal %}>
+		<div class="reg_title"><label class="reg_title_bg">{% trans "Payment data" %}</label></div>
+		<div class="reg_bg"></div>
+	    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+	    	<tr>
+	    		<td class="reg_text">{% trans "Card Owner" %}</td>
+	    		<td><div class="reg_class2"><div class="reg_input">{{ card_form.owner }}&nbsp;<img src="/media/images/arrow_flecha.jpg" />
+	    		{% if card_form.owner.errors %}
+		        <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="error"></label>
+		        {% endif %}
+	    		</div></div></td>
+		    </tr>
+		    <tr>
+		    	<td class="reg_text">{% trans "Credit Card Number" %}</td>
+		    	<td><div class="reg_class2"><div class="reg_input">{{ card_form.ccNumber }}
+		    	{% if card_form.ccNumber.errors %}
+		        <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="error"></label>
+		        {% endif %}
+		    	</div></div></td>
+		    </tr>
+		    <tr>
+		    	<td class="reg_text">{% trans "Valid Until" %}</td>
+		    	<td><div class="reg_class2"><div class="reg_input3">{{ card_form.valid_until }}
+		    	{% if card_form.valid_until.errors %}
+		        <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="error"></label>
+		        {% endif %}
+		    	</div></div></td>
+		    </tr>
+		    <tr>
+		    	<td class="reg_text">{% trans "Type" %}</td>
+		    	<td><div class="reg_class2"><div class="reg_input3">{{ card_form.ctype }}
+		    	{% if card_form.ctype.errors %}
+		        <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="error"></label>
+		        {% endif %}
+		    	</div></div></td>
+		    </tr>
+		    <tr>
+		    	<td class="reg_text">{% trans "Security Number" %}</td>
+		    	<td><div class="reg_class2"><div class="reg_input3">{{ card_form.security_number }}
+		    	{% if card_form.security_number.errors %}
+		        <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="error"></label>
+		        {% endif %}
+		    	</div></div></td>
+		    </tr>
+		    </table>
+	</div>
+
+	<div id="DirectForm" class="paymentforms" {% ifequal payment_method 'Direct' %}{% else %}style="display:none"{% endifequal %}>
+		<div class="reg_title"><label class="reg_title_bg">{% trans "Payment data" %}</label></div>
+		<div class="reg_bg"></div>
+	    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+	    	<tr>
+	    		<td class="reg_text">{% trans "Account Owner" %}</td>
+	    		<td><div class="reg_class2"><div class="reg_input">{{ bank_form.owner }}&nbsp;<img src="/media/images/arrow_flecha.jpg" />
+	    		{% if bank_form.owner.errors %}
+		        <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="error"></label>
+		        {% endif %}
+	    		</div></div></td>
+	    	</tr>
+		    <tr>
+		    	<td class="reg_text">{% trans "Bank Account Number" %}</td>
+		    	<td><div class="reg_class2"><div class="reg_input">{{ bank_form.accountno }}
+		    	{% if bank_form.accountno.errors %}
+		        <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="error"></label>
+		        {% endif %}
+		    	</div></div></td>
+		    </tr>
+		    <tr>
+		    	<td class="reg_text">{% trans "BLZ" %}</td>
+		    	<td>
+		    		<div class="reg_class2">
+		    			<div class="reg_input">
+		    				{{ bank_form.blz }}
+					    	{% if bank_form.blz.errors %}
+						        <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="error"></label>
+					        {% endif %}
+		    			</div>
+		    		</div>
+		    	</td>
+		    </tr>
+		    <tr>
+		    	<td class="reg_text">{% trans "Bank Name" %}</td>
+		    	<td><div class="reg_class2"><div class="reg_input">{{ bank_form.bank_name }}
+		    	{% if bank_form.bank_name.errors %}
+		        <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="error"></label>
+		        {% endif %}
+		    	</div></div></td>
+		    </tr>
+		    <tr>
+		    	<td colspan="2">
+		    		<div  style="margin: 20px;" class="reg_class2"><div class="reg_input">&nbsp;&nbsp;
+		    			{% trans 'If you did not yet give us your <u><a href="/media/downloads/lastschrifteinzugsformular.pdf" target="_new">bank debit agreement</a></u> from <u><a href="/downloads">our download page</a></u>, please send it to us now.' %}
+		    		</div></div>
+		    	</td>
+		    	
+		    </tr>
+		    
+		</table>
+	</div>
+	
+	<br/>
+	<div class="reg_title"><label class="reg_title_bg">{% trans "Your Comment" %}</label></div>
+	<div class="reg_bg"></div>
+	<div class="reg_form">
+		<textarea cols="60" rows="10" name="order_comment">{{ order_comment }}</textarea>
+	</div>
+    <div class="button active floatLeft spaced"><input type="submit" value="{% trans "Submit Order" %}"/></div>
+	</form>
+	</div>
+
+
+
+</div>
+{% endblock %}
+
+{% block onloadAll %}
+
+
+$('#methodfields input[value="{{ payment_method }}"]').get(0).checked = true;
+$('#{{ payment_method }}Form').show();
+
+$('#methodfields input[type="radio"]').click(
+	 		function()
+	 		{
+	 			$('#myForm div.paymentforms').hide();
+	 			$('#' + this.value + 'Form').show();
+	 		}
+);
+
+
+
+{% endblock %}

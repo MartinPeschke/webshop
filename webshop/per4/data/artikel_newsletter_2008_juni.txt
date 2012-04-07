@@ -1,0 +1,14 @@
+Line	logopath	ArticleFamily	ArticleReference	OptionReference	Pcs	Sale	News	InWebshop	Weight	RetailUnitPrice	ResellerUnitPrice	ResellerUnitDiscountPrice	DiscountQty	Thickness	LengthDiameter	Ballsize1	Ballsize2	SizeIn	Type	Type(de)	Type(fr)	Type(it)	Type(ch)	Type(pl)	Type(es)	Description	Description(de)	Description(fr)	Description(es)	Description(it)	Description(pl)	Description(ch)	BodyParts
+SURGICAL STEEL 316L	OFF01-01	OFF01-01	OFF01-01	-	1	YES		YES		10.00	10.00	10.00							Labrets	Lippenpiercing						Surgical Steel 316L Labrets mixed							
+TITANIUM	OFF01-02	OFF01-02	OFF01-02	-	1	YES		YES		11.00	11.00	11.00							Dermal Anchors	Microdermals						2 Micro Dermal							
+TITANIUM	OFF01-03	OFF01-03	OFF01-03	-	1	YES		YES		5.00	5.00	5.00							Captive Rings	Ringe						Pair of Carved BCR							
+UV FLUOR	OFF01-04	OFF01-04	OFF01-04	-	1	YES		YES		3.00	3.00	3.00							Expanders, Claws	Dehnstäbe, Klauen						5 Claws mixed							
+UV FLUOR	OFF01-05	OFF01-05	OFF01-05	-	1	YES		YES		3.00	3.00	3.00							Navel Bananas	Bauchnabelstecker						5 Bananas w Murano Crystal Ball							
+STERLING SILVER	OFF01-06	OFF01-06	OFF01-06	-	1	YES		YES		7.00	7.00	7.00							Nipple Rounders	Brustwarzenpiercing						Silver 925 Nipple Chain							
+SURGICAL STEEL 316L	OFF01-07	OFF01-07	OFF01-07	-	1	YES		YES		19.00	19.00	19.00							Labrets	Lippenpiercing						Surgical Steel 316L Labrets mixed							
+STERLING SILVER	OFF01-08	OFF01-08	OFF01-08	-	1	YES		YES		15.00	15.00	15.00							Navel Bananas	Bauchnabelstecker						5 Bananas mixed							
+UV FLUOR	OFF01-09	OFF01-09	OFF01-09	-	1	YES		YES		7.00	7.00	7.00							Navel Bananas	Bauchnabelstecker						10 Acrilic Special Laser Cut Bananas							
+UV FLUOR	OFF01-10	OFF01-10	OFF01-10	-	1	YES		YES		19.00	19.00	19.00							Barbells	Barbells						50 Barbells mixed							
+BLACK & GOLD	OFF01-11	OFF01-11	OFF01-11	-	1	YES		YES		15.00	15.00	15.00							Tunnels	Tunnel						4 Design Tunnels mixed							
+DISPLAYS	OFF01-12	OFF01-12	OFF01-12	-	1	YES		YES		25.00	25.00	25.00							Piercing Mix	Piercing Mix						Includes 10 Horn pieces mixed models and sizes							
+PTFE-PMFK	OFF01-13	OFF01-13	OFF01-13	-	1	YES		YES		29.90	29.90	29.90							Navel Bananas	Bauchnabelstecker						10 PTFE Bananas							

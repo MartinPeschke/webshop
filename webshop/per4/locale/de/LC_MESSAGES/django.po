@@ -1,0 +1,2829 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: turbogearshop\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-09-27 04:00-0500\n"
+"PO-Revision-Date: 2011-10-22 17:26+0100\n"
+"Last-Translator: \n"
+"Language-Team: turbogearshop <turbogearshop@googlegroups.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: settings.py:59
+msgid "German"
+msgstr "Deutsch"
+
+#: settings.py:60
+msgid "English"
+msgstr "Englisch"
+
+#: settings.py:61
+msgid "Spanish"
+msgstr "Spanisch"
+
+#: settings.py:62
+msgid "French"
+msgstr "Französisch"
+
+#: settings.py:63
+msgid "Italian"
+msgstr "Italienisch"
+
+#: settings.py:64
+msgid "Polish"
+msgstr "Polnisch"
+
+#: settings.py:125
+msgid "MR."
+msgstr "Herr"
+
+#: settings.py:126
+msgid "MRS."
+msgstr "Frau"
+
+#: settings.py:127
+msgid "MS."
+msgstr "Frau"
+
+#: settings.py:131
+msgid "Cash in our Office"
+msgstr "Barzahlung bei Selbstabholung"
+
+#: settings.py:132
+msgid "C.O.D (+10 EUR, except Germany)"
+msgstr "Nachnahme (Deutschland +5 Euro, Ausserhalb Deutschlands +14,50 Euro)"
+
+#: settings.py:133
+msgid "Bank Transfer in advance"
+msgstr "Überweisung im Voraus"
+
+#: settings.py:134
+msgid "Credit Card"
+msgstr "Kreditkarte"
+
+#: settings.py:135
+msgid "Direct debit (only for Germany and Spain)"
+msgstr "Bankeinzug (Nur Deutschland und Spanien)"
+
+#: apps/explore/models.py:389
+msgid "pcs"
+msgstr "Stk."
+
+#: apps/explore/templatetags/explore.py:157
+msgid "Misc"
+msgstr "Andere"
+
+#: apps/user/forms.py:14
+msgid "Monday"
+msgstr "Montag"
+
+#: apps/user/forms.py:15
+msgid "Tuesday"
+msgstr "Dienstag"
+
+#: apps/user/forms.py:16
+msgid "Wednesday"
+msgstr "Mittwoch"
+
+#: apps/user/forms.py:17
+msgid "Thursday"
+msgstr "Donnerstag"
+
+#: apps/user/forms.py:18
+msgid "Friday"
+msgstr "Freitag"
+
+#: apps/user/forms.py:19
+msgid "Saturday"
+msgstr "Samstag"
+
+#: apps/user/forms.py:22
+msgid "Yes"
+msgstr "Ja"
+
+#: apps/user/forms.py:22
+msgid "No"
+msgstr "Nein"
+
+#: apps/user/forms.py:35
+msgid "Your email address has been registered."
+msgstr "Diese Email Adresse ist bereits bei uns registriert!"
+
+#: apps/user/forms.py:41
+#: apps/user/forms.py:89
+msgid "Sorry, please check your password."
+msgstr "Bitte Passwort &uuml;berpr&uuml;fen!"
+
+#: apps/user/forms.py:77
+msgid "Nur nach Zustimmung zu unseren AGB koennen Sie sich registrieren"
+msgstr "Nur nach Zustimmung zu unseren AGB koennen Sie sich registrieren"
+
+#: apps/user/forms.py:99
+msgid "Sorry, your email addresses do not match."
+msgstr "Die eingebenen Emailadressen stimmen nicht überein."
+
+#: apps/user/models.py:25
+msgid "Billing Address"
+msgstr "<b>Rechnungs</b>adresse"
+
+#: apps/user/models.py:26
+msgid "Shipping Address"
+msgstr "<b>Versand</b>adresse"
+
+#: apps/user/views/handler.py:51
+#: apps/user/views/handler.py:80
+msgid "Sorry, please activate your account."
+msgstr "Bitte aktivieren Sie Ihr Benutzerkonto."
+
+#: apps/user/views/handler.py:54
+#: apps/user/views/handler.py:82
+msgid "Sorry, please check your email and password."
+msgstr "Bitte &uuml;berpr&uuml;fen Sie Passwort und Email Addresse."
+
+#: apps/user/views/handler.py:265
+msgid "This Activation Code is invalid, maybe you already activated? Please check login or the link in your email and try again!"
+msgstr "Der Aktivierungscode ist ungültig, vielleicht ist Ihr Konto schon aktiviert? Bitte überprüfen Sie ihren Login oder versuchen sie nochmal den Link in der Email zu öffnen. Sollten Ihr Konto nicht freigeschaltet werden können, rufen Sie uns doch einfach an und wir klären das dann direkt!"
+
+#: apps/user/views/handler.py:277
+msgid "This Request Code is invalid, maybe you already activated? Please check login or the link in your email and try again!"
+msgstr "Der Aktivierungscode ist ungültig, vielleicht ist Ihr Konto schon aktiviert? Bitte überprüfen Sie ihren Login oder versuchen sie nochmal den Link in der Email zu öffnen. Sollten Ihr Konto nicht freigeschaltet werden können, rufen Sie uns doch einfach an und wir klären das dann direkt!"
+
+#: apps/user/views/handler.py:292
+msgid "You have been approved for Wholesale access, enjoy your shopping!"
+msgstr "Wir haben Ihren Studiozugang freigeschalten! Viel Spass beim Einkaufen!"
+
+#: apps/user/views/handler.py:294
+msgid "This Approval Code is invalid, maybe you already approved this user?"
+msgstr "Dieser Freischaltungscode ist ungültig, eventuell haben Sie den Kunden bereits als Studio freigeschaltet. "
+
+#: apps/user/views/handler.py:315
+msgid "Sorry, we could not approve your Wholesale Access request, please call us or contact us by email to clarify."
+msgstr "Wir konnten Ihren Studiozugang nicht freischalten. Wenn Ihre Details vollständig eingegeben sind, rufen Sie uns einfach an und wir klären das dann direkt."
+
+#: apps/user/views/handler.py:317
+msgid "This Approval Code is invalid, maybe you already denied this request?"
+msgstr "Dieser Freischaltungscode ist ungültig. Eventuell haben sie diesen Benutzer bereits abgelehnt?"
+
+#: apps/user/views/profile.py:34
+msgid "Token Expired"
+msgstr "Anfrage ungültig"
+
+#: apps/user/views/profile.py:35
+msgid "The token for this requested password change has expired, please request again!"
+msgstr "Diese Anfrage zur Passwortänderung ist abgelaufen, habe Sie ihr Passwort noch nicht geändert, gehen Sie bitte erneut zu Login -> Passwort Vergessen? und versuchen Sie es erneut."
+
+#: apps/user/views/profile.py:36
+#: apps/user/views/profile.py:41
+#: templates/404.html:15
+#: templates/404.html.py:18
+#: templates/500.html:22
+#: templates/base.html:20
+#: templates/user/orderFreeCatalogDone.html:22
+#: templates/user/register_retail_done.html:22
+#: templates/user/register_wholesale_done.html:22
+#: templates/user/order/complete.html:17
+msgid "Home"
+msgstr "Startseite"
+
+#: apps/user/views/profile.py:36
+#: apps/user/views/profile.py:41
+#: templates/user/login.html:63
+msgid "forgot your password?"
+msgstr "Password Vergessen?"
+
+#: apps/user/views/profile.py:39
+msgid "Logged In"
+msgstr "Bereits Eingeloggt"
+
+#: apps/user/views/profile.py:40
+msgid "You are already logged in, want to change your password again? Proceed below!"
+msgstr "Sie sind immernoch eingeloggt, wollen sie ihr Passwort noch einmal ändern? Bestätigen Sie unten!"
+
+#: apps/user/views/profile.py:61
+msgid "Sorry"
+msgstr "Sorry"
+
+#: apps/user/views/profile.py:62
+#: apps/user/views/profile.py:72
+msgid "Check Your Email!"
+msgstr "Überprüfen Sie Ihr Email Postfach!"
+
+#: apps/user/views/profile.py:63
+#, python-format
+msgid ""
+"A password change was already requested for this email address: <b>%s</b> within the last 24 hours, to protect our users\n"
+"                            from spam, please check your email box again or try again tomorrow!"
+msgstr "Ein Passwortänderung wurde bereits fuer diese Email Adresse <b>%s</b>  innerhalb der letzten 24 Stunden beantragt. Um unsere Kunden vor Spam zu schützen k&omul;nnen wir diese Anfrage nur einmal pro Tag entgegennehmen. Bitte ueberprüfen sie Ihr Email Konto noch einmal, oder versuchen Sie es morgen erneut!"
+
+#: apps/user/views/profile.py:69
+#, python-format
+msgid "%s Password Change Request"
+msgstr "%s Per-4 Passwort &Auml;nderung"
+
+#: apps/user/views/profile.py:71
+msgid "Next Step"
+msgstr "Weiter"
+
+#: apps/user/views/profile.py:73
+#, python-format
+msgid ""
+"If the email address: <b>%s</b> is associated with your account, you should very soon receive an email \n"
+"                from us containing a link to a page, where you can change your password!"
+msgstr ""
+"Falls die Emailadresse: <b>%s</b> ihrem Accountlogin entspricht, erhalten Sie umgehend eine Email von uns \n"
+"                die den Link zur Passwortänderungsseite enthält! Bitte öffnen Sie diesen Link in Ihrem Browser um Ihr Passwort zu ändern!"
+
+#: apps/user/views/profile.py:90
+msgid "Your password has been updated."
+msgstr "Ihr Passwort wurde geändert."
+
+#: apps/user/views/profile.py:92
+msgid "Your password could not been updated, Password and Retype dont match."
+msgstr "Das Passwort konnte nicht geändert werden, das Passwort und die Neueingabe stimmen nicht überein."
+
+#: templates/404.html:4
+#: templates/404.html.py:11
+msgid "Page not found!"
+msgstr "Seite nicht gefunden!"
+
+#: templates/404.html:14
+msgid "The Page you requested does not exist on this server."
+msgstr "Die Seite konnte nicht gefunden werden!"
+
+#: templates/404.html:15
+msgid "Check if you typed the address correctly or go back to"
+msgstr "Bitte überprüfen Sie, ob beide Adressen übereinstimmen! "
+
+#: templates/500.html:5
+#: templates/500.html.py:13
+msgid "An Internal Server Error Occurred!"
+msgstr "Ein Fehler ist aufgetreten!"
+
+#: templates/500.html:16
+msgid "The Error has been reported to the WebAdmin."
+msgstr "Der Fehler wurde dem Webmaster mitgeteilt!"
+
+#: templates/500.html:18
+msgid "We are constantly improving our webshop, fixing bugs and adding functionality, the site admin has received your error report and will work hard to fix it! Please check back with us in the very near future time."
+msgstr "Wir überarbeiten unseren Webshop ständig, beheben Fehler und fügen neue Funktionen hinzu, der Admin wurde über ihren Fehler formiert und versucht ihn umgehend zu beheben. Bitte versuchen sie es einfach später noch einmal."
+
+#: templates/base.html:21
+#: templates/pages/aboutus_de.html:9
+#: templates/pages/aboutus_en.html:9
+#: templates/pages/aboutus_es.html:9
+#: templates/pages/aboutus_fr.html:9
+#: templates/pages/aboutus_it.html:9
+msgid "About Us"
+msgstr "Wir über uns"
+
+#: templates/base.html:22
+msgid "Shipping"
+msgstr "Versand"
+
+#: templates/base.html:23
+msgid "Downloads"
+msgstr "Downloads"
+
+#: templates/base.html:24
+#: templates/pages/material_de.html:4
+#: templates/pages/material_en.html:4
+#: templates/pages/material_es.html:4
+#: templates/pages/material_fr.html:4
+#: templates/pages/material_it.html:4
+msgid "Material Guide"
+msgstr "Materialien"
+
+#: templates/base.html:25
+msgid "Gallery"
+msgstr "Gallerie"
+
+#: templates/base.html:26
+#: templates/snippets/from_price_a.html:2
+msgid "Studios"
+msgstr "Studios"
+
+#: templates/base.html:27
+msgid "AGB"
+msgstr "AGB"
+
+#: templates/base.html:28
+#: templates/pages/contact.html:8
+msgid "Contact"
+msgstr "Kontakt"
+
+#: templates/base.html:29
+msgid "FAQ"
+msgstr "Häufige Fragen"
+
+#: templates/base.html:33
+#: templates/user/approved.html:57
+#: templates/user/approved.html.py:59
+msgid "Search"
+msgstr "Suche"
+
+#: templates/base.html:55
+#: templates/user/ProfileTreeLeft.html:10
+#: templates/user/approved.html:31
+msgid "My Account"
+msgstr "Mein Konto"
+
+#: templates/base.html:56
+#: templates/user/approved.html:32
+msgid "Logout"
+msgstr "Abmelden"
+
+#: templates/base.html:60
+#: templates/user/approved.html:34
+#: templates/user/login.html:8
+#: templates/user/login.html.py:49
+#: templates/user/requestPWChange.html:49
+msgid "Login"
+msgstr "Anmelden"
+
+#: templates/base.html:106
+msgid "payment methods"
+msgstr "Zahlungsarten"
+
+#: templates/base.html:110
+msgid "our shipping partner"
+msgstr "Wir versenden mit"
+
+#: templates/base.html:123
+msgid "receive trends, offers and coupons via email"
+msgstr "Erhalte unsere Angebot und Neuigkeiten als Email"
+
+#: templates/base.html:124
+msgid "enter email address"
+msgstr "Emailadresse eingeben"
+
+#: templates/base.html:125
+msgid "Subscribe"
+msgstr "Abonnieren"
+
+#: templates/base.html:133
+#: templates/pages/impressum_en.html:8
+msgid "Impressum"
+msgstr "Impressum"
+
+#: templates/base.html:137
+msgid "Per-4 • Piercing • Tattoo • Jewellery • Fashion & Media • Studioequipment"
+msgstr "Per-4 • Piercing • Tattoo • Jewellery • Fashion & Media • Studioequipment"
+
+#: templates/base.html:138
+msgid "Über"
+msgstr "Über"
+
+#: templates/base.html:138
+msgid "Produkte im Webshop!"
+msgstr ""
+
+#: templates/error.html:12
+msgid "Error"
+msgstr "Fehler"
+
+#: templates/error.html:12
+msgid "reporting..."
+msgstr "wird gesendet..."
+
+#: templates/layout_free_center.html:14
+msgid "You have a Message"
+msgstr "Neue Nachricht"
+
+#: templates/email/activation_email.html:8
+msgid "Hey"
+msgstr "Hey"
+
+#: templates/email/activation_email.html:10
+msgid "You have successfully registered with Per-4.com."
+msgstr "Registrierung erfolgreich."
+
+#: templates/email/activation_email.html:13
+msgid "Your Login"
+msgstr "Ihr Login"
+
+#: templates/email/activation_email.html:17
+msgid "Your Password"
+msgstr "Ihr Passwort"
+
+#: templates/email/activation_email.html:21
+msgid "You have registered as a Studio User, your account will be activated as soon as you open below link, and during the next days, we will check the provided details and approve your wholesale access or get back to you with further questions."
+msgstr "Sie haben sich als Studiokunde registriert, unverzüglich werden wir Ihre Registrierungsdetails überprüfen und schalten Sie als Studiokunde frei."
+
+#: templates/email/activation_email.html:24
+msgid "To activate the registered account, please open the following URL in your browser"
+msgstr "Um Ihr Konto zu aktivieren, öffnen Sie bitte den folgenden Link in Ihrem Browser"
+
+#: templates/email/activation_email.html:28
+msgid "If you have not registered with per-4.com, please ignore this email, your personal data will be deleted automatically during the next few days."
+msgstr "Sollten Sie sich noch nicht bei PER-4 registriert haben, können Sie diese Email ruhig ignorieren. Die eingegebenen Daten zu diesem Konto werden dann im Laufe der nächsten Tage gelöscht."
+
+#: templates/email/activation_email.html:31
+msgid "Thanks"
+msgstr "Vielen Dank"
+
+#: templates/email/activation_email.html:33
+#: templates/email/changepassword.html:19
+msgid "Your Per-4 Team"
+msgstr "Ihr Per-4 Team"
+
+#: templates/email/activation_email.html:35
+#: templates/email/changepassword.html:21
+msgid "Landsberger Allee 117A - 10407 Berlin - Telefon +49 30 93 66 38 21 - Fax +49 30 93 66 38 22"
+msgstr "Landsberger Allee 117a - 10407 Berlin - Telefon +49 30 93 66 38 21 - Fax +49 30 93 66 38 22"
+
+#: templates/email/changepassword.html:8
+msgid "We have received your request to change your password."
+msgstr "Wir haben Ihre Anfrage auf Passwortänderung erhalten."
+
+#: templates/email/changepassword.html:11
+msgid "Please follow the link below, which will open a page to set a new password for your account!"
+msgstr "Bitte öffnen Sie den Link in Ihrem Browser. Dieser Link leitet Sie zur Passwortänderung weiter."
+
+#: templates/email/changepassword.html:17
+msgid "If you did not request a password change, no problem, your account remains active as always and you can savely ignore this email!"
+msgstr "Sollten Sie die Passwortänderung nicht beantragt haben, kein Problem, Ihr Konto bleibt weiterhin aktiv und Sie können diese Email getrost ignorieren!"
+
+#: templates/email/orderFreeCatalog.html:22
+msgid "User"
+msgstr "Benutzer"
+
+#: templates/email/orderFreeCatalog.html:30
+msgid "Address"
+msgstr "Adresse"
+
+#: templates/email/orderFreeCatalog.html:43
+msgid "Name"
+msgstr "Nachname"
+
+#: templates/email/orderFreeCatalog.html:44
+msgid "Street"
+msgstr "Straße"
+
+#: templates/email/orderFreeCatalog.html:45
+msgid "Zip"
+msgstr "Plz"
+
+#: templates/email/orderFreeCatalog.html:46
+msgid "City"
+msgstr "Ort"
+
+#: templates/email/orderFreeCatalog.html:47
+#: templates/user/account_details_E.html:57
+#: templates/user/account_details_E.html:119
+#: templates/user/account_details_K.html:111
+#: templates/user/account_details_K.html:173
+#: templates/user/orderFreeCatalog.html:82
+msgid "Country"
+msgstr "Land"
+
+#: templates/email/orderFreeCatalog.html:49
+#: templates/user/orderFreeCatalog.html:23
+msgid "Email"
+msgstr "Email"
+
+#: templates/email/orderFreeCatalog.html:50
+msgid "Phone"
+msgstr "Telefon"
+
+#: templates/email/orderFreeCatalog.html:51
+#: templates/user/account_details_E.html:85
+#: templates/user/account_details_E.html:147
+#: templates/user/account_details_K.html:139
+#: templates/user/account_details_K.html:201
+#: templates/user/orderFreeCatalog.html:96
+msgid "Fax"
+msgstr "Fax"
+
+#: templates/explore/article.html:22
+msgid "Others who bought this also bought:"
+msgstr "Kunden, die diesen Artikel gekauft haben, kauften auch:"
+
+#: templates/explore/article.html:50
+#: templates/user/order/shopping_cart.html:130
+msgid "Please input an integer!"
+msgstr "Bitte eine Zahl eingeben!"
+
+#: templates/explore/article_ajax.html:20
+msgid "REFERENCE"
+msgstr "Referenz"
+
+#: templates/explore/article_ajax.html:21
+msgid "SIZE"
+msgstr "GRÖSSE"
+
+#: templates/explore/article_ajax.html:22
+#: templates/user/order/shopping_cart.html:20
+msgid "COLOR"
+msgstr "Option"
+
+#: templates/explore/article_ajax.html:25
+msgid "OLD PRICE"
+msgstr "Alter Preis"
+
+#: templates/explore/article_ajax.html:27
+msgid "PRICE P/P"
+msgstr "Stückpreis"
+
+#: templates/explore/article_ajax.html:29
+#: templates/user/order/shopping_cart.html:23
+msgid "DISCOUNT PRICE"
+msgstr "Rabattpreis"
+
+#: templates/explore/article_ajax.html:31
+#: templates/user/order/shopping_cart.html:25
+msgid "QUANTITY"
+msgstr "Menge"
+
+#: templates/explore/article_ajax.html:32
+msgid "PRICE"
+msgstr "Preis"
+
+#: templates/explore/article_ajax.html:43
+msgid "Available"
+msgstr "Verfügbar"
+
+#: templates/explore/article_ajax.html:45
+msgid "Not Available"
+msgstr "Nicht Verfügbar"
+
+#: templates/explore/article_ajax.html:54
+msgid "More"
+msgstr "Mehr"
+
+#: templates/explore/article_ajax.html:62
+#: templates/explore/article_ajax.html:68
+#: templates/explore/article_ajax.html:76
+msgid "incl. VAT"
+msgstr "inkl. MwSt."
+
+#: templates/explore/article_ajax.html:62
+#: templates/explore/article_ajax.html:68
+#: templates/explore/article_ajax.html:76
+msgid "excl. VAT"
+msgstr "zzgl. MwSt."
+
+#: templates/explore/article_ajax.html:97
+msgid "Total Amount:"
+msgstr "Gesamtsumme:"
+
+#: templates/explore/article_ajax.html:102
+msgid "Add to Cart"
+msgstr "In den Warenkorb"
+
+#: templates/explore/article_ajax.html:109
+msgid "Sending/Loading Data, please wait..."
+msgstr "Artikel werden gerade zum Einkaufskorb hinzugefügt, bitte warten..."
+
+#: templates/explore/article_pane.html:6
+msgid "All Materials:"
+msgstr "Alle Materialien:"
+
+#: templates/explore/article_tip.html:5
+msgid "Neu bei uns!"
+msgstr ""
+
+#: templates/explore/cart_items.html:8
+msgid "My Cart"
+msgstr "Warenkorb"
+
+#: templates/explore/cart_items.html:29
+msgid "SUBTOTAL"
+msgstr "Zw.summe"
+
+#: templates/explore/cart_items.html:32
+msgid "Zum Bezahlen"
+msgstr "Zum Bezahlen"
+
+#: templates/explore/line_result.html:26
+msgid "No Articles Found!"
+msgstr "Keine Artikel gefunden, versuchen Sie es doch mal mit weniger Buchstaben/Zahlen!"
+
+#: templates/explore/news_item.html:3
+#: templates/pages/news.html:5
+msgid "News"
+msgstr "AKTUELLES"
+
+#: templates/pages/agb_en.html:10
+msgid "TERMS AND CONDITIONS"
+msgstr "AGB"
+
+#: templates/pages/coupons_en.html:5
+msgid "Coupons"
+msgstr "Coupons"
+
+#: templates/pages/downloads_en.html:16
+msgid "SOME FLYERS INCLUDE PRICES, PLEASE LOG IN TO VIEW ALL FLYERS!"
+msgstr "MELDEN SIE SICH AN UM ALLE FLYER MIT PREISEN ZU SEHEN!"
+
+#: templates/pages/downloads_en.html:23
+#: templates/pages/downloads_en.html:28
+#: templates/pages/downloads_en.html:35
+#: templates/pages/downloads_en.html:41
+#: templates/pages/downloads_en.html:47
+#: templates/pages/downloads_en.html:53
+#: templates/pages/downloads_en.html:59
+#: templates/pages/downloads_en.html:66
+#: templates/pages/downloads_en.html:72
+#: templates/pages/downloads_en.html:78
+#: templates/pages/downloads_en.html:84
+#: templates/pages/downloads_en.html:90
+#: templates/pages/downloads_en.html:96
+msgid "DOWNLOAD MONTHLY FLYER"
+msgstr "DOWNLOAD MONATSFLYER"
+
+#: templates/pages/downloads_en.html:23
+msgid "FEBRUARY/MARCH"
+msgstr "FEBRUAR/MÄRZ"
+
+#: templates/pages/downloads_en.html:28
+msgid "NOVEMBER/DECEMBER"
+msgstr "NOVEMBER/DEZEMBER"
+
+#: templates/pages/downloads_en.html:35
+msgid "JULY/AUGUST"
+msgstr "JULI/AUGUST"
+
+#: templates/pages/downloads_en.html:41
+msgid "MAY/JUNE"
+msgstr "MAI/JUNI"
+
+#: templates/pages/downloads_en.html:47
+msgid "APRIL/MAY"
+msgstr "APRIL/MAI"
+
+#: templates/pages/downloads_en.html:53
+msgid "FEBRUARY"
+msgstr "FEBRUAR"
+
+#: templates/pages/downloads_en.html:59
+msgid "JANUARY"
+msgstr "JANUAR"
+
+#: templates/pages/downloads_en.html:66
+msgid "DECEMBER"
+msgstr "DEZEMBER"
+
+#: templates/pages/downloads_en.html:72
+msgid "OCTOBER"
+msgstr "OKTOBER"
+
+#: templates/pages/downloads_en.html:72
+msgid "NOVEMBER"
+msgstr "NOVEMBER"
+
+#: templates/pages/downloads_en.html:78
+msgid "SEPTEMBER"
+msgstr "SEPTEMBER"
+
+#: templates/pages/downloads_en.html:84
+msgid "AUGUST"
+msgstr "AUGUST"
+
+#: templates/pages/downloads_en.html:90
+msgid "JULY"
+msgstr "JULI"
+
+#: templates/pages/downloads_en.html:96
+msgid "JUNE"
+msgstr "JUNI"
+
+#: templates/pages/downloads_en.html:103
+msgid "PIERCING KATALOG"
+msgstr "PIERCING KATALOG"
+
+#: templates/pages/downloads_en.html:122
+msgid "TATTOO KATALOG"
+msgstr "TATTOO KATALOG"
+
+#: templates/pages/downloads_en.html:133
+msgid "SPRING FLYER"
+msgstr "SPRING FLYER"
+
+#: templates/pages/downloads_en.html:139
+msgid "VORDRUCK"
+msgstr "VORDRUCK"
+
+#: templates/pages/downloads_en.html:141
+msgid "Lastschrift Formular zum Download"
+msgstr "Lastschrift Formular zum Download"
+
+#: templates/pages/downloads_en.html:142
+msgid "PDF Format"
+msgstr "PDF Format"
+
+#: templates/pages/downloads_en.html:143
+msgid "MS WORD Format"
+msgstr "MS WORD Format"
+
+#: templates/pages/gallery_en.html:15
+msgid "Zurueck zur vorherigen Seite"
+msgstr "Zur&uuml;ck zur vorherigen Seite"
+
+#: templates/pages/gallery_en.html:21
+msgid "Weiter zur naechsten Seite"
+msgstr "Weiter zur n&auml;chsten Seite"
+
+#: templates/pages/jobs_en.html:9
+msgid "JOBS"
+msgstr ""
+
+#: templates/pages/news.html:97
+msgid "Montag bis Freitag"
+msgstr "Montag bis Freitag"
+
+#: templates/pages/news.html:98
+msgid "9 Uhr bis 18 Uhr"
+msgstr "9 Uhr bis 18 Uhr"
+
+#: templates/pages/news.html:99
+msgid "Landsberger Allee 117A"
+msgstr "Landsberger Allee 117A"
+
+#: templates/pages/news.html:100
+msgid "10407 Berlin"
+msgstr "10407 Berlin"
+
+#: templates/pages/ourads_en.html:47
+msgid "OUR ADVERTISEMENTS"
+msgstr "UNSERE ANNONCEN"
+
+#: templates/pages/studios_en.html:5
+msgid "Studios & Kunden"
+msgstr "Studios & Kunden"
+
+#: templates/pages/studios_en.html:72
+#: templates/pages/studios_en.html.py:76
+#: templates/pages/studios_en.html:82
+#: templates/pages/studios_en.html.py:86
+#: templates/pages/studios_en.html:92
+#: templates/pages/studios_en.html.py:96
+msgid "This Could Be YOU!"
+msgstr "Hier k&ouml;nnte dein Studio stehen!"
+
+#: templates/search/search_result.html:9
+msgid "Results for"
+msgstr "Suchergebnisse für"
+
+#: templates/snippets/from_price_b.html:2
+msgid "from"
+msgstr "ab"
+
+#: templates/user/ProfileTreeLeft.html:7
+#: templates/user/ProfileTreeLeft.html:9
+msgid "Shopping Cart"
+msgstr "Warenkorb"
+
+#: templates/user/ProfileTreeLeft.html:11
+#: templates/user/change_password.html:4
+#: templates/user/change_password.html:9
+#: templates/user/requestPWChange.html:6
+#: templates/user/requestPWChange.html:11
+msgid "Change Password"
+msgstr "Passwort Ändern"
+
+#: templates/user/account_details_E.html:4
+#: templates/user/account_details_K.html:25
+#: templates/user/orderFreeCatalog.html:31
+msgid "First name"
+msgstr "Vorname"
+
+#: templates/user/account_details_E.html:18
+#: templates/user/account_details_K.html:38
+#: templates/user/orderFreeCatalog.html:44
+msgid "Last name"
+msgstr "Nachname"
+
+#: templates/user/account_details_E.html:26
+#: templates/user/account_details_K.html:62
+msgid "Webpage"
+msgstr "Webseite"
+
+#: templates/user/account_details_E.html:31
+#: templates/user/account_details_K.html:85
+msgid "Billing information"
+msgstr "Rechnungsadresse"
+
+#: templates/user/account_details_E.html:35
+#: templates/user/account_details_E.html:97
+#: templates/user/account_details_K.html:89
+#: templates/user/account_details_K.html:151
+#: templates/user/orderFreeCatalog.html:60
+msgid "Street address"
+msgstr "Strasse Hausnr."
+
+#: templates/user/account_details_E.html:43
+#: templates/user/account_details_E.html:105
+#: templates/user/account_details_K.html:97
+#: templates/user/account_details_K.html:159
+#: templates/user/orderFreeCatalog.html:68
+msgid "CITY / TOWN"
+msgstr "Stadt"
+
+#: templates/user/account_details_E.html:50
+#: templates/user/account_details_E.html:112
+#: templates/user/account_details_K.html:104
+#: templates/user/account_details_K.html:166
+#: templates/user/orderFreeCatalog.html:75
+msgid "ZIP Code"
+msgstr "PLZ"
+
+#: templates/user/account_details_E.html:64
+#: templates/user/account_details_E.html:126
+#: templates/user/account_details_K.html:118
+#: templates/user/account_details_K.html:180
+msgid "Preferred Language"
+msgstr "bevorzugte Sprache"
+
+#: templates/user/account_details_E.html:74
+#: templates/user/account_details_E.html:136
+#: templates/user/account_details_K.html:128
+#: templates/user/account_details_K.html:190
+#: templates/user/orderFreeCatalog.html:89
+msgid "Telephone"
+msgstr "Telefon"
+
+#: templates/user/account_details_E.html:81
+#: templates/user/account_details_E.html:143
+#: templates/user/account_details_K.html:135
+#: templates/user/account_details_K.html:197
+msgid "Mobile Phone"
+msgstr "Mobiltelefon"
+
+#: templates/user/account_details_E.html:93
+#: templates/user/account_details_K.html:147
+msgid "Shipping information"
+msgstr "Lieferadresse"
+
+#: templates/user/account_details_E.html:156
+#: templates/user/account_details_K.html:210
+msgid "I agree with the Per-4 Terms and Conditions."
+msgstr "Ich stimme Per-4's AGB zu."
+
+#: templates/user/account_details_E.html:174
+#: templates/user/account_details_K.html:228
+#: templates/user/change_password.html:34
+#: templates/user/requestPWChange.html:36
+msgid "Save Profile"
+msgstr "Speichern"
+
+#: templates/user/account_details_K.html:3
+msgid "Existing Customer Information"
+msgstr "Bestehende Kundeninformation"
+
+#: templates/user/account_details_K.html:7
+msgid "Existing Customer Number"
+msgstr "Kundennummer"
+
+#: templates/user/account_details_K.html:18
+#: templates/user/account_retail.html:16
+#: templates/user/register_retail.html:18
+msgid "Your details"
+msgstr "Ihre Details"
+
+#: templates/user/account_details_K.html:46
+#: templates/user/orderFreeCatalog.html:52
+msgid "Company name"
+msgstr "Firmenname"
+
+#: templates/user/account_details_K.html:54
+msgid "VAT-ID Number"
+msgstr "USt.-ID Nummer"
+
+#: templates/user/account_details_K.html:66
+msgid "Opening hours"
+msgstr "Öffnungszeiten"
+
+#: templates/user/account_details_K.html:70
+msgid "* e.g: 9:00 - 17:00"
+msgstr "* z.B: 9:00 - 17:00"
+
+#: templates/user/account_details_K.html:79
+msgid "Weekdays"
+msgstr "Wochentage"
+
+#: templates/user/account_retail.html:15
+#: templates/user/account_wholesale.html:15
+#: templates/user/change_password.html:8
+#: templates/user/orderFreeCatalog.html:13
+#: templates/user/register_new.html:33
+#: templates/user/register_retail.html:17
+#: templates/user/register_wholesale.html:18
+#: templates/user/requestPWChange.html:10
+#: templates/user/order/payment.html:10
+msgid "Required fields"
+msgstr "Erforderlich"
+
+#: templates/user/activate.html:4
+msgid "REGISTRATION - COMPLETED"
+msgstr "Registrierung Erfolgreich"
+
+#: templates/user/activate.html:13
+#: templates/user/register_retail_done.html:13
+#: templates/user/register_wholesale_done.html:13
+msgid "Confirmation"
+msgstr "Bestätigung"
+
+#: templates/user/activate.html:21
+msgid "Congratulations! Your account has been activated."
+msgstr "Ihr Account wurde erfolgreich aktiviert!"
+
+#: templates/user/activate.html:25
+msgid "Finish Registration"
+msgstr "Registrierung beenden"
+
+#: templates/user/approved.html:6
+msgid "Welcome to Per-4.com"
+msgstr "Willkommen bei Per-4"
+
+#: templates/user/approved.html:19
+msgid "Herzlich Willkommen bei Per-4"
+msgstr "Herzlich Willkommen bei Per-4"
+
+#: templates/user/approved.html:25
+msgid "Only For Studios"
+msgstr "NUR F&Uuml;R STUDIOS"
+
+#: templates/user/change_password.html:4
+#: templates/user/profile.html:11
+#: templates/user/requestPWChange.html:6
+msgid "MY ACCOUNT - "
+msgstr "Mein Account"
+
+#: templates/user/change_password.html:16
+msgid "New Password"
+msgstr "Neues Passwort"
+
+#: templates/user/change_password.html:24
+msgid "Retype Password"
+msgstr "Neues Passwort bestätigen"
+
+#: templates/user/login.html:19
+#: templates/user/register_new.html:46
+msgid "E-mail Address"
+msgstr "E-Mail Adresse"
+
+#: templates/user/login.html:19
+msgid "Kundennummer"
+msgstr ""
+
+#: templates/user/login.html:31
+#: templates/user/register_new.html:58
+msgid "Password"
+msgstr "Passwort"
+
+#: templates/user/login.html:31
+msgid "PLZ"
+msgstr "PLZ"
+
+#: templates/user/login.html:56
+#: templates/user/requestPWChange.html:42
+msgid "Sign up for Per-4.com"
+msgstr "Erstregistrierung bei Per-4.com "
+
+#: templates/user/orderFreeCatalog.html:9
+msgid "Order Free Catalog"
+msgstr "Kostenlosen Katalog Bestellen"
+
+#: templates/user/orderFreeCatalog.html:107
+msgid "Submit"
+msgstr "Abschicken"
+
+#: templates/user/orderFreeCatalogDone.html:4
+msgid "Order Free Catalog - COMPLETED"
+msgstr "Kostenlosen Katalog Bestellen."
+
+#: templates/user/orderFreeCatalogDone.html:13
+msgid "Thank you!"
+msgstr "Vielen Dank!"
+
+#: templates/user/orderFreeCatalogDone.html:18
+msgid "Thank you for ordering our catalog! We will contact you soon!"
+msgstr "Vielen Dank das Sie unseren Katalog bestellt haben! Wir melden uns umgehend bei Ihnen!"
+
+#: templates/user/register_new.html:28
+msgid "REGISTRATION - NEW USER"
+msgstr "REGISTRIERUNG - NEUKUNDE"
+
+#: templates/user/register_new.html:34
+msgid "Create a new account"
+msgstr "neuen Account erstellen"
+
+#: templates/user/register_new.html:34
+msgid "A valid e-mail address is required for registration"
+msgstr "Eine gültige Emailadresse wird benötigt."
+
+#: templates/user/register_new.html:68
+msgid "Retype password"
+msgstr "Neues Passwort bestätigen"
+
+#: templates/user/register_new.html:77
+#: templates/user/order/shopping_cart.html:104
+msgid "Continue secure:"
+msgstr "Sicher Weiter?"
+
+#: templates/user/register_new.html:86
+msgid "Continue As"
+msgstr "weiter als"
+
+#: templates/user/register_new.html:89
+msgid "Retail"
+msgstr "Endkunde"
+
+#: templates/user/register_new.html:91
+msgid "Or As"
+msgstr "oder als"
+
+#: templates/user/register_new.html:94
+msgid "Wholesale"
+msgstr "Studio"
+
+#: templates/user/register_new.html:96
+msgid "Customer"
+msgstr "Kunde"
+
+#: templates/user/register_retail.html:13
+#: templates/user/register_retail_done.html:8
+msgid "REGISTRATION - NEW USER - RETAIL"
+msgstr "REGISTRIERUNG - NEUKUNDE - PRIVAT"
+
+#: templates/user/register_retail_done.html:18
+#: templates/user/register_wholesale_done.html:18
+msgid "You have completed your registration successfully."
+msgstr "Sie haben ihre Registrierung erfolgreich abgeschlossen."
+
+#: templates/user/register_retail_done.html:18
+#: templates/user/register_wholesale_done.html:18
+msgid "Shortly you will get a confirmation by e-mail. To activate your account please click on the link in your email."
+msgstr "In Kürze erhalten sie von uns eine Bestätigungsemail. Um Ihr Benutzerkonto zu aktivieren, gehen Sie bitte zu dem in der Email enthaltenen Link!"
+
+#: templates/user/register_success.html:4
+msgid "Please activate your account!"
+msgstr "Bitte aktivieren Sie Ihr Konto."
+
+#: templates/user/register_success.html:5
+msgid "An activation mail has been sent to"
+msgstr "Eine Aktivierungsemail wurde versandt an:"
+
+#: templates/user/register_wholesale.html:13
+#: templates/user/register_wholesale_done.html:8
+msgid "REGISTRATION - NEW USER - WHOLESALE"
+msgstr "REGISTRIERUNG - NEUKUNDE - STUDIO"
+
+#: templates/user/requestPWChange.html:11
+msgid "Request here!"
+msgstr "Hier beantragen!"
+
+#: templates/user/requestPWChange.html:18
+msgid "Email Address"
+msgstr "Emailadresse"
+
+#: templates/user/requestPWChange.html:26
+msgid "Retype Email Address"
+msgstr "Email Adresse bestaetigen"
+
+#: templates/user/order/complete.html:4
+msgid "Completed"
+msgstr "vollständig"
+
+#: templates/user/order/complete.html:4
+msgid "Order Successfully!"
+msgstr "Bestellung erfolgreich!"
+
+#: templates/user/order/complete.html:9
+msgid "Order Completed"
+msgstr "Bestellung vollständig"
+
+#: templates/user/order/complete.html:14
+msgid "You have completed your order successfully."
+msgstr "Ihr Bestellung wurde erfolgreich aufgenommen."
+
+#: templates/user/order/complete.html:14
+msgid "Shortly you will receive a confirmation and invoice of your order by email."
+msgstr "In Kürze erhalten Sie von uns eine Bestätigung und Rechnung für ihre Bestellung per Email!"
+
+#: templates/user/order/payment.html:4
+msgid "Establish Payment Method"
+msgstr "ZAHLUNGSWEISE"
+
+#: templates/user/order/payment.html:9
+msgid "You will only need to fill in your payment method for your first purchase or when you wish to change it."
+msgstr "Die Zahlungsart muss nur bei der ersten Bestellung angegeben werden, oder wenn Sie sie &auml;ndern m&ouml;chten."
+
+#: templates/user/order/payment.html:11
+msgid "Payment method"
+msgstr "Zahlungsweise"
+
+#: templates/user/order/payment.html:18
+#: templates/user/order/payment.html:65
+msgid "Payment data"
+msgstr "Zahlungsdaten"
+
+#: templates/user/order/payment.html:22
+msgid "Card Owner"
+msgstr "Kreditkarteninhaber"
+
+#: templates/user/order/payment.html:30
+msgid "Credit Card Number"
+msgstr "Kreditkartennummer"
+
+#: templates/user/order/payment.html:38
+msgid "Valid Until"
+msgstr "Gültig bis"
+
+#: templates/user/order/payment.html:46
+msgid "Type"
+msgstr "Kartentyp"
+
+#: templates/user/order/payment.html:54
+msgid "Security Number"
+msgstr "Sicherheitsnummer"
+
+#: templates/user/order/payment.html:69
+msgid "Account Owner"
+msgstr "Kontoinhaber"
+
+#: templates/user/order/payment.html:77
+msgid "Bank Account Number"
+msgstr "Kontonummer"
+
+#: templates/user/order/payment.html:85
+msgid "BLZ"
+msgstr "BLZ"
+
+#: templates/user/order/payment.html:98
+msgid "Bank Name"
+msgstr "Name der Bank"
+
+#: templates/user/order/payment.html:108
+msgid "If you did not yet give us your <u><a href=\"/media/downloads/lastschrifteinzugsformular.pdf\" target=\"_new\">bank debit agreement</a></u> from <u><a href=\"/downloads\">our download page</a></u>, please send it to us now."
+msgstr "Wir ben&ouml;tigen Ihre unterschriebene <u><a href=\"/media/downloads/lastschrifteinzugsformular.pdf\" target=\"_new\">Bankeinzugserm&auml;chtigung</a></u> f&uuml;r einen Bankeinzug."
+
+#: templates/user/order/payment.html:118
+msgid "Your Comment"
+msgstr "Ihre Bemerkungen"
+
+#: templates/user/order/payment.html:123
+msgid "Submit Order"
+msgstr "Bestellung abschicken"
+
+#: templates/user/order/shopping_cart.html:5
+msgid "Your Shopping Cart"
+msgstr "Ihr Warenkorb"
+
+#: templates/user/order/shopping_cart.html:16
+msgid "Erase"
+msgstr "löschen"
+
+#: templates/user/order/shopping_cart.html:17
+msgid "Article"
+msgstr "Artikel"
+
+#: templates/user/order/shopping_cart.html:18
+msgid "Reference"
+msgstr "Referenz"
+
+#: templates/user/order/shopping_cart.html:19
+msgid "Size in MM"
+msgstr "Grösse"
+
+#: templates/user/order/shopping_cart.html:21
+msgid "Price P/P"
+msgstr "Stückpreis"
+
+#: templates/user/order/shopping_cart.html:26
+#: templates/user/order/shopping_cart.html:78
+msgid "Total"
+msgstr "Summe"
+
+#: templates/user/order/shopping_cart.html:51
+msgid "Subtotal"
+msgstr "Zwischensumme"
+
+#: templates/user/order/shopping_cart.html:58
+msgid "Thereof VAT"
+msgstr "Darin enthaltene MwSt:"
+
+#: templates/user/order/shopping_cart.html:60
+msgid "VAT"
+msgstr "Umsatzsteuer"
+
+#: templates/user/order/shopping_cart.html:74
+msgid "Shipping Costs Apply"
+msgstr "Versandkosten verwenden"
+
+#: templates/user/order/shopping_cart.html:92
+msgid "Updating Shopping Cart, please wait..."
+msgstr "Artikel werden gerade zum Einkaufskorb hinzugefügt, bitte warten..."
+
+#: templates/user/order/shopping_cart.html:97
+msgid "Save Cart"
+msgstr "Änderungen speichern"
+
+#: templates/user/order/shopping_cart.html:100
+msgid "Confirm Order"
+msgstr "Bestellung bestätigen"
+
+#: templates/user/order/shopping_cart.html:148
+msgid "Do you want to delete this item?"
+msgstr "Möchten Sie diesen Eintrag wirklich löschen?"
+
+#~ msgid "GALLERY"
+#~ msgstr "Galerie"
+
+#~ msgid "OUR ADS"
+#~ msgstr "Unsere Annoncen"
+
+#~ msgid "COUPONS"
+#~ msgstr "Coupons"
+
+#~ msgid "SHIPPING"
+#~ msgstr "Versand"
+
+#~ msgid "STUDIOS"
+#~ msgstr "Studios"
+
+#~ msgid "Wir sind fuer Sie da!"
+#~ msgstr "Wir sind f&uuml;r Sie da!"
+
+#~ msgid "Telefon"
+#~ msgstr "Telefon"
+
+#~ msgid "+49 (0)30 9366 3821"
+#~ msgstr "+49 (0)30 9366 3821"
+
+#~ msgid "+49 (0)30 9366 3822"
+#~ msgstr "+49 (0)30 9366 3822"
+
+#~ msgid "E-Mail"
+#~ msgstr "E-Mail"
+
+#~ msgid "Show All"
+#~ msgstr "Alle Anzeigen"
+
+#~ msgid "Always Show All"
+#~ msgstr "Immer Alle Anzeigen"
+
+#~ msgid "Never Show All"
+#~ msgstr "Keine Anzeigen"
+
+#~ msgid "Shipping Costs"
+#~ msgstr "Versandkosten"
+
+#~ msgid "Personal appointments can be agreed (also Saturday and Sunday)"
+#~ msgstr "Termine können vereinbart werden (auch Samstag und Sonntag)"
+
+#~ msgid "Orders per TELEPHONE"
+#~ msgstr "Bestellen per TELEFON"
+
+#~ msgid "Orders per FAX"
+#~ msgstr "Bestellen per FAX"
+
+#~ msgid "Order per E-Mail"
+#~ msgstr "Bestellen per EMAIL"
+
+#~ msgid "Continue"
+#~ msgstr "Weiter"
+
+#~ msgid "Email&nbsp;/&nbsp;Login"
+#~ msgstr "Email&nbsp;/&nbsp;Login"
+
+#~ msgid "Proceed Insecure (Without SSL)"
+#~ msgstr "Ohne SSL fortfahren?"
+
+#~ msgid "Proceed Secure (SSL)"
+#~ msgstr "Sicher Weiter mit SSL"
+
+#~ msgid "Password Forgotten?"
+#~ msgstr "Passwort Vergessen?"
+
+#~ msgid "Register Now!"
+#~ msgstr "Jetzt Registrieren!"
+
+#~ msgid "Versand"
+#~ msgstr "Versand"
+
+#~ msgid "Help"
+#~ msgstr "Help"
+
+#~ msgid "Add page"
+#~ msgstr "Add page"
+
+#~ msgid "Note"
+#~ msgstr "Anmerkung"
+
+#~ msgid ""
+#~ "You will have to activate JavaScript in your browser's settings to be "
+#~ "able to reorder the pages."
+#~ msgstr ""
+#~ "You will have to activate JavaScript in your browser's settings to be "
+#~ "able to reorder the pages."
+
+#~ msgid "Manage Pages"
+#~ msgstr "Manage Pages"
+
+#~ msgid ""
+#~ "Here you can edit the pages of your site. Drag and drop the pages to "
+#~ "change their order or hierarchy. Note that changing the hierarchy will "
+#~ "affect the URL of the pages. Click on a page to edit it. If you uncheck "
+#~ "the \"in navigation\" field, the page will not be displayed in the "
+#~ "automatically generated navigation. Note that deleting a page will delete "
+#~ "its subpages, if you don't reorder them."
+#~ msgstr ""
+#~ "Here you can edit the pages of your site. Drag and drop the pages to "
+#~ "change their order or hierarchy. Note that changing the hierarchy will "
+#~ "affect the URL of the pages. Click on a page to edit it. If you uncheck "
+#~ "the \"in navigation\" field, the page will not be displayed in the "
+#~ "automatically generated navigation. Note that deleting a page will delete "
+#~ "its subpages, if you don't reorder them."
+
+#~ msgid "Add this page"
+#~ msgstr "Add this page"
+
+#~ msgid "Save all changes"
+#~ msgstr "Save all changes"
+
+#~ msgid "In navigation"
+#~ msgstr "In navigation"
+
+#~ msgid "Is published"
+#~ msgstr "Is published"
+
+#~ msgid "Edit page"
+#~ msgstr "Bearbeiten"
+
+#~ msgid "View"
+#~ msgstr "View"
+
+#~ msgid "Delete"
+#~ msgstr "Löschen"
+
+#~ msgid "Move"
+#~ msgstr "Move"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Properties"
+#~ msgstr "Properties"
+
+#~ msgid "Show advanced options"
+#~ msgstr "Show advanced options"
+
+#~ msgid "Hide advanced options"
+#~ msgstr "Hide advanced options"
+
+#~ msgid "Advanced"
+#~ msgstr "Advanced"
+
+#~ msgid "SEO"
+#~ msgstr "SEO"
+
+#~ msgid "Actions"
+#~ msgstr "Actions"
+
+#~ msgid "Preview this page"
+#~ msgstr "Preview this page"
+
+#~ msgid "Preview"
+#~ msgstr "Preview"
+
+#~ msgid "Add"
+#~ msgstr "Hinzufügen"
+
+#~ msgid "Page Info"
+#~ msgstr "Page Info"
+
+#~ msgid "Articles found in other languages"
+#~ msgstr "Articles found in other languages"
+
+#~ msgid "Sorry, no articles were found."
+#~ msgstr "Sorry, no articles were found."
+
+#~ msgid "New Folder"
+#~ msgstr "New Folder"
+
+#~ msgid "Select"
+#~ msgstr "Select"
+
+#~ msgid "Are you sure you want to delete this file?"
+#~ msgstr "Are you sure you want to delete this file?"
+
+#~ msgid "Delete File"
+#~ msgstr "Delete File"
+
+#~ msgid "Are you sure you want to delete this Folder?"
+#~ msgstr "Are you sure you want to delete this Folder?"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Delete Folder"
+
+#~ msgid "By Type"
+#~ msgstr "By Type"
+
+#~ msgid "No Items Found."
+#~ msgstr "No Items Found."
+
+#~ msgid "No Items."
+#~ msgstr "No Items."
+
+#~ msgid "Filename"
+#~ msgstr "Filename"
+
+#~ msgid "Size"
+#~ msgstr "Grösse"
+
+#~ msgid "Date"
+#~ msgstr "Date"
+
+#~ msgid "KEEP SHOPPING"
+#~ msgstr "WEITER IN"
+
+#~ msgid "New in"
+#~ msgstr "Neu in"
+
+#~ msgid "SALE"
+#~ msgstr "ANGEBOT"
+
+#~ msgid "Is your shipping address the same as billing address?"
+#~ msgstr "Ist Ihre Lieferadresse mit der o.g. Rechnungsadresse identisch?"
+
+#~ msgid "SIZE IN MM "
+#~ msgstr "Grösse in mm"
+
+#~ msgid "Adding to the Shopping Cart, please wait..."
+#~ msgstr "Artikel werden gerade zum Einkaufskorb hinzugefügt, bitte warten..."
+
+#~ msgid "NEWS"
+#~ msgstr "AKTUELLES"
+
+#~ msgid "No further colors available!"
+#~ msgstr "Keine weiteren Farben verfügbar!"
+
+#~ msgid ""
+#~ "Currently we can only search for Articles. More extensive search options "
+#~ "will be provided as soon as possible!"
+#~ msgstr ""
+#~ "Momentan kann nur nach Artikelreferenzen gesucht werden, mehr "
+#~ "Suchoptionen werden in Kürze bereitgestellt!"
+
+#~ msgid "Are You A Wholesale Customer?"
+#~ msgstr "Sind Sie ein Studiokunde?"
+
+#~ msgid "N/A"
+#~ msgstr "nicht verfügbar"
+
+#~ msgid "Waehlen Sie hier:"
+#~ msgstr "W&auml;hlen Sie hier:"
+
+#~ msgid "CHOOSE YOUR COLORS"
+#~ msgstr "WÄHLEN SIE IHRE FARBEN"
+
+#~ msgid "Refresh Cart"
+#~ msgstr "Aktualisieren"
+
+#~ msgid ""
+#~ "<td>%(price)s&nbsp;<b>&euro;</b>, from <span>%(quantity)s</span> pcs. "
+#~ "only <span>%(discount)s</span>&nbsp;<b>&euro;</b></td>"
+#~ msgstr ""
+#~ "<td>%(price)s&nbsp;<b>&euro;</b>, für <span>%(quantity)s</span> Stück nur "
+#~ "<span>%(discount)s</span>&nbsp;<b>&euro;</b></td>"
+
+#~ msgid "Welcome "
+#~ msgstr "Herzlich Willkommen "
+
+#~ msgid "Register"
+#~ msgstr "Registrieren"
+
+#~ msgid "You are in the"
+#~ msgstr "Sie befinden sich im"
+
+#~ msgid ", studios please login"
+#~ msgstr ", Studios bitte anmelden"
+
+#~ msgid "Page"
+#~ msgstr "Seite"
+
+#~ msgid ""
+#~ "We are constantly improving our webshop, so please check back with us at "
+#~ "a later time. For now we can only offer to go back to <a href=\"/main"
+#~ "\">home</a> and try something else.</h3>"
+#~ msgstr ""
+#~ "Der Webshop wird fortwährend verbessert. Hier haben sie gerade eben eine "
+#~ "Baustelle entdeckt. Wir haben die Fehlermeldung erahlten und werden sie "
+#~ "umgehend beheben. Bitte versuchen Sie es in den nächsten Tagen nochmals. "
+#~ "<a href=\"/main\">Zurück zu Home</a>."
+
+#~ msgid "NEW CATALOGUE"
+#~ msgstr "NEUER KATALOG"
+
+#~ msgid ""
+#~ "PER-4 lets loose their new tattoo collection.It is the new reference "
+#~ "brand for the tattoo and micropigmentation markt. A guarantee for quality "
+#~ "and service. Order yours today and you will receive your welcome gift."
+#~ msgstr ""
+#~ "PER-4 hat seinen neuen Tattookatalog auf die Kundschaft losgelassen! Neue "
+#~ "Artikel aus den Tattoo- und Micropigmentationsbereichen haben wir für "
+#~ "Euch im Angebot.Wir garantieren Qualität und Service. Wer auf dieser "
+#~ "Internetseite heute etwas bestellt, bekommt von uns ein kleines "
+#~ "Willkommensgeschenk!"
+
+#~ msgid ""
+#~ "PER-4 invites you to visit us at our booth the Arena from the 7th to the "
+#~ "9th of december. We will be there on friday from 14:00 to 24:00 h, "
+#~ "Saturday from 11:00 to 24:00 h and on Sunday from 11:00 to 19:00. We will "
+#~ "be glad to see you there!"
+#~ msgstr ""
+#~ "PER-4 freut sich, Euch auf der Berliner Tattoo-Convention vom 7. bis 9. "
+#~ "Dezember 2007 in der Berlin-Arena zu sehen.  Ihr könnt uns dort am "
+#~ "Freitag von 14.00 Uhr bis 24.00 Uhr, am Samstag von 11.00 Uhr bis 24.00 "
+#~ "Uhr und am Sonntag von 11.00 Uhr bis 19.00 Uhr besuchen."
+
+#~ msgid "CMS Home"
+#~ msgstr "CMS Startseite"
+
+#~ msgid "Pages"
+#~ msgstr "Seite"
+
+#~ msgid "Create a SubPage for Pages"
+#~ msgstr "Unterseite erstellen"
+
+#~ msgid "Save"
+#~ msgstr "Speichern"
+
+#~ msgid "Create a"
+#~ msgstr "Erstellen"
+
+#~ msgid "Create a Page"
+#~ msgstr "Seite erstellen"
+
+#~ msgid "Select language version you want to edit"
+#~ msgstr "Wählen Sie die Sprache, welche Sie bearbeiten wollen."
+
+#~ msgid "RETAIL"
+#~ msgstr "Endkunden"
+
+#~ msgid "WHOLESALE"
+#~ msgstr "Studio"
+
+#~ msgid "To Cashier"
+#~ msgstr "Zur Kasse"
+
+#~ msgid "Afghanistan"
+#~ msgstr "Afghanistan"
+
+#~ msgid "Albania"
+#~ msgstr "Albania"
+
+#~ msgid "Algeria"
+#~ msgstr "Algeria"
+
+#~ msgid "American samoa"
+#~ msgstr "American samoa"
+
+#~ msgid "Andorra"
+#~ msgstr "Andorra"
+
+#~ msgid "Angola"
+#~ msgstr "Angola"
+
+#~ msgid "Anguilla"
+#~ msgstr "Anguilla"
+
+#~ msgid "Antarctica"
+#~ msgstr "Antarctica"
+
+#~ msgid "Antigua and barbuda"
+#~ msgstr "Antigua and barbuda"
+
+#~ msgid "Argentina"
+#~ msgstr "Argentina"
+
+#~ msgid "Armenia"
+#~ msgstr "Armenia"
+
+#~ msgid "Aruba"
+#~ msgstr "Aruba"
+
+#~ msgid "Australia"
+#~ msgstr "Australia"
+
+#~ msgid "Austria"
+#~ msgstr "Austria"
+
+#~ msgid "Azerbaijan"
+#~ msgstr "Azerbaijan"
+
+#~ msgid "Bahamas"
+#~ msgstr "Bahamas"
+
+#~ msgid "Bahrain"
+#~ msgstr "Bahrain"
+
+#~ msgid "Bangladesh"
+#~ msgstr "Bangladesh"
+
+#~ msgid "Barbados"
+#~ msgstr "Barbados"
+
+#~ msgid "Belarus"
+#~ msgstr "Belarus"
+
+#~ msgid "Belgium"
+#~ msgstr "Belgium"
+
+#~ msgid "Belize"
+#~ msgstr "Belize"
+
+#~ msgid "Benin"
+#~ msgstr "Benin"
+
+#~ msgid "Bermuda"
+#~ msgstr "Bermuda"
+
+#~ msgid "Bhutan"
+#~ msgstr "Bhutan"
+
+#~ msgid "Bolivia"
+#~ msgstr "Bolivia"
+
+#~ msgid "Bosnia and herzegovina"
+#~ msgstr "Bosnia and herzegovina"
+
+#~ msgid "Botswana"
+#~ msgstr "Botswana"
+
+#~ msgid "Bouvet island"
+#~ msgstr "Bouvet island"
+
+#~ msgid "Brazil"
+#~ msgstr "Brazil"
+
+#~ msgid "British indian ocean territory"
+#~ msgstr "British indian ocean territory"
+
+#~ msgid "Brunei darussalam"
+#~ msgstr "Brunei darussalam"
+
+#~ msgid "Bulgaria"
+#~ msgstr "Bulgaria"
+
+#~ msgid "Burkina faso"
+#~ msgstr "Burkina faso"
+
+#~ msgid "Burundi"
+#~ msgstr "Burundi"
+
+#~ msgid "Cambodia"
+#~ msgstr "Cambodia"
+
+#~ msgid "Cameroon"
+#~ msgstr "Cameroon"
+
+#~ msgid "Canada"
+#~ msgstr "Canada"
+
+#~ msgid "Cape verde"
+#~ msgstr "Cape verde"
+
+#~ msgid "Cayman islands"
+#~ msgstr "Cayman islands"
+
+#~ msgid "Central african republic"
+#~ msgstr "Central african republic"
+
+#~ msgid "Chad"
+#~ msgstr "Chad"
+
+#~ msgid "Chile"
+#~ msgstr "Chile"
+
+#~ msgid "China"
+#~ msgstr "China"
+
+#~ msgid "Christmas island"
+#~ msgstr "Christmas island"
+
+#~ msgid "Cocos (keeling) islands"
+#~ msgstr "Cocos (keeling) islands"
+
+#~ msgid "Colombia"
+#~ msgstr "Colombia"
+
+#~ msgid "Comoros"
+#~ msgstr "Comoros"
+
+#~ msgid "Congo"
+#~ msgstr "Congo"
+
+#~ msgid "Congo, the democratic republic of the"
+#~ msgstr "Congo, the democratic republic of the"
+
+#~ msgid "Cook islands"
+#~ msgstr "Cook islands"
+
+#~ msgid "Costa rica"
+#~ msgstr "Costa rica"
+
+#~ msgid "Cote d'ivoire"
+#~ msgstr "Cote d'ivoire"
+
+#~ msgid "Croatia"
+#~ msgstr "Croatia"
+
+#~ msgid "Cuba"
+#~ msgstr "Cuba"
+
+#~ msgid "Cyprus"
+#~ msgstr "Cyprus"
+
+#~ msgid "Czech republic"
+#~ msgstr "Czech republic"
+
+#~ msgid "Denmark"
+#~ msgstr "Denmark"
+
+#~ msgid "Djibouti"
+#~ msgstr "Djibouti"
+
+#~ msgid "Dominica"
+#~ msgstr "Dominica"
+
+#~ msgid "Dominican republic"
+#~ msgstr "Dominican republic"
+
+#~ msgid "East timor"
+#~ msgstr "East timor"
+
+#~ msgid "Ecuador"
+#~ msgstr "Ecuador"
+
+#~ msgid "Egypt"
+#~ msgstr "Egypt"
+
+#~ msgid "El salvador"
+#~ msgstr "El salvador"
+
+#~ msgid "Equatorial guinea"
+#~ msgstr "Equatorial guinea"
+
+#~ msgid "Eritrea"
+#~ msgstr "Eritrea"
+
+#~ msgid "Estonia"
+#~ msgstr "Estonia"
+
+#~ msgid "Ethiopia"
+#~ msgstr "Ethiopia"
+
+#~ msgid "Falkland islands (malvinas)"
+#~ msgstr "Falkland islands (malvinas)"
+
+#~ msgid "Faroe islands"
+#~ msgstr "Faroe islands"
+
+#~ msgid "Fiji"
+#~ msgstr "Fiji"
+
+#~ msgid "Finland"
+#~ msgstr "Finland"
+
+#~ msgid "France"
+#~ msgstr "France"
+
+#~ msgid "French guiana"
+#~ msgstr "French guiana"
+
+#~ msgid "French polynesia"
+#~ msgstr "French polynesia"
+
+#~ msgid "French southern territories"
+#~ msgstr "French southern territories"
+
+#~ msgid "Gabon"
+#~ msgstr "Gabon"
+
+#~ msgid "Gambia"
+#~ msgstr "Gambia"
+
+#~ msgid "Georgia"
+#~ msgstr "Georgia"
+
+#~ msgid "Ghana"
+#~ msgstr "Ghana"
+
+#~ msgid "Gibraltar"
+#~ msgstr "Gibraltar"
+
+#~ msgid "Greece"
+#~ msgstr "Greece"
+
+#~ msgid "Greenland"
+#~ msgstr "Greenland"
+
+#~ msgid "Grenada"
+#~ msgstr "Grenada"
+
+#~ msgid "Guadeloupe"
+#~ msgstr "Guadeloupe"
+
+#~ msgid "Guam"
+#~ msgstr "Guam"
+
+#~ msgid "Guatemala"
+#~ msgstr "Guatemala"
+
+#~ msgid "Guinea"
+#~ msgstr "Guinea"
+
+#~ msgid "Guinea-bissau"
+#~ msgstr "Guinea-bissau"
+
+#~ msgid "Guyana"
+#~ msgstr "Guyana"
+
+#~ msgid "Haiti"
+#~ msgstr "Haiti"
+
+#~ msgid "Heard island and mcdonald islands"
+#~ msgstr "Heard island and mcdonald islands"
+
+#~ msgid "Holy see (vatican city state)"
+#~ msgstr "Holy see (vatican city state)"
+
+#~ msgid "Honduras"
+#~ msgstr "Honduras"
+
+#~ msgid "Hong kong"
+#~ msgstr "Hong kong"
+
+#~ msgid "Hungary"
+#~ msgstr "Hungary"
+
+#~ msgid "Iceland"
+#~ msgstr "Iceland"
+
+#~ msgid "India"
+#~ msgstr "India"
+
+#~ msgid "Indonesia"
+#~ msgstr "Indonesia"
+
+#~ msgid "Iran, islamic republic of"
+#~ msgstr "Iran, islamic republic of"
+
+#~ msgid "Iraq"
+#~ msgstr "Iraq"
+
+#~ msgid "Ireland"
+#~ msgstr "Ireland"
+
+#~ msgid "Israel"
+#~ msgstr "Israel"
+
+#~ msgid "Italy"
+#~ msgstr "Italy"
+
+#~ msgid "Jamaica"
+#~ msgstr "Jamaica"
+
+#~ msgid "Japan"
+#~ msgstr "Japan"
+
+#~ msgid "Jordan"
+#~ msgstr "Jordan"
+
+#~ msgid "Kazakstan"
+#~ msgstr "Kazakstan"
+
+#~ msgid "Kenya"
+#~ msgstr "Kenya"
+
+#~ msgid "Kiribati"
+#~ msgstr "Kiribati"
+
+#~ msgid "Korea, democratic people's republic of"
+#~ msgstr "Korea, democratic people's republic of"
+
+#~ msgid "Korea, republic of"
+#~ msgstr "Korea, republic of"
+
+#~ msgid "Kuwait"
+#~ msgstr "Kuwait"
+
+#~ msgid "Kyrgyzstan"
+#~ msgstr "Kyrgyzstan"
+
+#~ msgid "Lao people's democratic republic"
+#~ msgstr "Lao people's democratic republic"
+
+#~ msgid "Latvia"
+#~ msgstr "Latvia"
+
+#~ msgid "Lebanon"
+#~ msgstr "Lebanon"
+
+#~ msgid "Lesotho"
+#~ msgstr "Lesotho"
+
+#~ msgid "Liberia"
+#~ msgstr "Liberia"
+
+#~ msgid "Libyan arab jamahiriya"
+#~ msgstr "Libyan arab jamahiriya"
+
+#~ msgid "Liechtenstein"
+#~ msgstr "Liechtenstein"
+
+#~ msgid "Lithuania"
+#~ msgstr "Lithuania"
+
+#~ msgid "Luxembourg"
+#~ msgstr "Luxembourg"
+
+#~ msgid "Macau"
+#~ msgstr "Macau"
+
+#~ msgid "Macedonia, the former yugoslav republic of"
+#~ msgstr "Macedonia, the former yugoslav republic of"
+
+#~ msgid "Madagascar"
+#~ msgstr "Madagascar"
+
+#~ msgid "Malawi"
+#~ msgstr "Malawi"
+
+#~ msgid "Malaysia"
+#~ msgstr "Malaysia"
+
+#~ msgid "Maldives"
+#~ msgstr "Maldives"
+
+#~ msgid "Mali"
+#~ msgstr "Mali"
+
+#~ msgid "Malta"
+#~ msgstr "Malta"
+
+#~ msgid "Marshall islands"
+#~ msgstr "Marshall islands"
+
+#~ msgid "Martinique"
+#~ msgstr "Martinique"
+
+#~ msgid "Mauritania"
+#~ msgstr "Mauritania"
+
+#~ msgid "Mauritius"
+#~ msgstr "Mauritius"
+
+#~ msgid "Mayotte"
+#~ msgstr "Mayotte"
+
+#~ msgid "Mexico"
+#~ msgstr "Mexico"
+
+#~ msgid "Micronesia, federated states of"
+#~ msgstr "Micronesia, federated states of"
+
+#~ msgid "Moldova, republic of"
+#~ msgstr "Moldova, republic of"
+
+#~ msgid "Monaco"
+#~ msgstr "Monaco"
+
+#~ msgid "Mongolia"
+#~ msgstr "Mongolia"
+
+#~ msgid "Montserrat"
+#~ msgstr "Montserrat"
+
+#~ msgid "Morocco"
+#~ msgstr "Morocco"
+
+#~ msgid "Mozambique"
+#~ msgstr "Mozambique"
+
+#~ msgid "Myanmar"
+#~ msgstr "Myanmar"
+
+#~ msgid "Namibia"
+#~ msgstr "Namibia"
+
+#~ msgid "Nauru"
+#~ msgstr "Nauru"
+
+#~ msgid "Nepal"
+#~ msgstr "Nepal"
+
+#~ msgid "Netherlands"
+#~ msgstr "Netherlands"
+
+#~ msgid "Netherlands antilles"
+#~ msgstr "Netherlands antilles"
+
+#~ msgid "New caledonia"
+#~ msgstr "New caledonia"
+
+#~ msgid "New zealand"
+#~ msgstr "New zealand"
+
+#~ msgid "Nicaragua"
+#~ msgstr "Nicaragua"
+
+#~ msgid "Niger"
+#~ msgstr "Niger"
+
+#~ msgid "Nigeria"
+#~ msgstr "Nigeria"
+
+#~ msgid "Niue"
+#~ msgstr "Niue"
+
+#~ msgid "Norfolk island"
+#~ msgstr "Norfolk island"
+
+#~ msgid "Northern mariana islands"
+#~ msgstr "Northern mariana islands"
+
+#~ msgid "Norway"
+#~ msgstr "Norway"
+
+#~ msgid "Oman"
+#~ msgstr "Oman"
+
+#~ msgid "Pakistan"
+#~ msgstr "Pakistan"
+
+#~ msgid "Palau"
+#~ msgstr "Palau"
+
+#~ msgid "Palestinian territory, occupied"
+#~ msgstr "Palestinian territory, occupied"
+
+#~ msgid "Panama"
+#~ msgstr "Panama"
+
+#~ msgid "Papua new guinea"
+#~ msgstr "Papua new guinea"
+
+#~ msgid "Paraguay"
+#~ msgstr "Paraguay"
+
+#~ msgid "Peru"
+#~ msgstr "Peru"
+
+#~ msgid "Philippines"
+#~ msgstr "Philippines"
+
+#~ msgid "Pitcairn"
+#~ msgstr "Pitcairn"
+
+#~ msgid "Poland"
+#~ msgstr "Poland"
+
+#~ msgid "Portugal"
+#~ msgstr "Portugal"
+
+#~ msgid "Puerto rico"
+#~ msgstr "Puerto rico"
+
+#~ msgid "Qatar"
+#~ msgstr "Qatar"
+
+#~ msgid "Reunion"
+#~ msgstr "Reunion"
+
+#~ msgid "Romania"
+#~ msgstr "Romania"
+
+#~ msgid "Russian federation"
+#~ msgstr "Russian federation"
+
+#~ msgid "Rwanda"
+#~ msgstr "Rwanda"
+
+#~ msgid "Saint helena"
+#~ msgstr "Saint helena"
+
+#~ msgid "Saint kitts and nevis"
+#~ msgstr "Saint kitts and nevis"
+
+#~ msgid "Saint lucia"
+#~ msgstr "Saint lucia"
+
+#~ msgid "Saint pierre and miquelon"
+#~ msgstr "Saint pierre and miquelon"
+
+#~ msgid "Saint vincent and the grenadines"
+#~ msgstr "Saint vincent and the grenadines"
+
+#~ msgid "Samoa"
+#~ msgstr "Samoa"
+
+#~ msgid "San marino"
+#~ msgstr "San marino"
+
+#~ msgid "Sao tome and principe"
+#~ msgstr "Sao tome and principe"
+
+#~ msgid "Saudi arabia"
+#~ msgstr "Saudi arabia"
+
+#~ msgid "Senegal"
+#~ msgstr "Senegal"
+
+#~ msgid "Seychelles"
+#~ msgstr "Seychelles"
+
+#~ msgid "Sierra leone"
+#~ msgstr "Sierra leone"
+
+#~ msgid "Singapore"
+#~ msgstr "Singapore"
+
+#~ msgid "Slovakia"
+#~ msgstr "Slovakia"
+
+#~ msgid "Slovenia"
+#~ msgstr "Slovenia"
+
+#~ msgid "Solomon islands"
+#~ msgstr "Solomon islands"
+
+#~ msgid "Somalia"
+#~ msgstr "Somalia"
+
+#~ msgid "South africa"
+#~ msgstr "South africa"
+
+#~ msgid "South georgia and the south sandwich islands"
+#~ msgstr "South georgia and the south sandwich islands"
+
+#~ msgid "Spain"
+#~ msgstr "Spain"
+
+#~ msgid "Sri lanka"
+#~ msgstr "Sri lanka"
+
+#~ msgid "Sudan"
+#~ msgstr "Sudan"
+
+#~ msgid "Suriname"
+#~ msgstr "Suriname"
+
+#~ msgid "Svalbard and jan mayen"
+#~ msgstr "Svalbard and jan mayen"
+
+#~ msgid "Swaziland"
+#~ msgstr "Swaziland"
+
+#~ msgid "Sweden"
+#~ msgstr "Sweden"
+
+#~ msgid "Switzerland"
+#~ msgstr "Switzerland"
+
+#~ msgid "Syrian arab republic"
+#~ msgstr "Syrian arab republic"
+
+#~ msgid "Taiwan, province of china"
+#~ msgstr "Taiwan, province of china"
+
+#~ msgid "Tajikistan"
+#~ msgstr "Tajikistan"
+
+#~ msgid "Tanzania, united republic of"
+#~ msgstr "Tanzania, united republic of"
+
+#~ msgid "Thailand"
+#~ msgstr "Thailand"
+
+#~ msgid "Togo"
+#~ msgstr "Togo"
+
+#~ msgid "Tokelau"
+#~ msgstr "Tokelau"
+
+#~ msgid "Tonga"
+#~ msgstr "Tonga"
+
+#~ msgid "Trinidad and tobago"
+#~ msgstr "Trinidad and tobago"
+
+#~ msgid "Tunisia"
+#~ msgstr "Tunisia"
+
+#~ msgid "Turkey"
+#~ msgstr "Turkey"
+
+#~ msgid "Turkmenistan"
+#~ msgstr "Turkmenistan"
+
+#~ msgid "Turks and caicos islands"
+#~ msgstr "Turks and caicos islands"
+
+#~ msgid "Tuvalu"
+#~ msgstr "Tuvalu"
+
+#~ msgid "Uganda"
+#~ msgstr "Uganda"
+
+#~ msgid "Ukraine"
+#~ msgstr "Ukraine"
+
+#~ msgid "United arab emirates"
+#~ msgstr "United arab emirates"
+
+#~ msgid "United kingdom"
+#~ msgstr "United kingdom"
+
+#~ msgid "United states"
+#~ msgstr "United states"
+
+#~ msgid "United states minor outlying islands"
+#~ msgstr "United states minor outlying islands"
+
+#~ msgid "Uruguay"
+#~ msgstr "Uruguay"
+
+#~ msgid "Uzbekistan"
+#~ msgstr "Uzbekistan"
+
+#~ msgid "Vanuatu"
+#~ msgstr "Vanuatu"
+
+#~ msgid "Venezuela"
+#~ msgstr "Venezuela"
+
+#~ msgid "Viet nam"
+#~ msgstr "Viet nam"
+
+#~ msgid "Virgin islands, british"
+#~ msgstr "Virgin islands, british"
+
+#~ msgid "Virgin islands, u.s."
+#~ msgstr "Virgin islands, u.s."
+
+#~ msgid "Wallis and futuna"
+#~ msgstr "Wallis and futuna"
+
+#~ msgid "Western sahara"
+#~ msgstr "Western sahara"
+
+#~ msgid "Yemen"
+#~ msgstr "Yemen"
+
+#~ msgid "Yugoslavia"
+#~ msgstr "Yugoslavia"
+
+#~ msgid "Zambia"
+#~ msgstr "Zambia"
+
+#~ msgid "Zimbabwe"
+#~ msgstr "Zimbabwe"
+
+#~ msgid "htmlActemail: Hi"
+#~ msgstr "Hi"
+
+#, fuzzy
+#~ msgid "htmlActemail: you have successfully registered with Per-4.com."
+#~ msgstr "Registrierung erfolgreich!"
+
+#~ msgid "htmlActemail: Your login name is"
+#~ msgstr "Ihr Login:"
+
+#~ msgid "htmlActemail: your password is"
+#~ msgstr "Ihr Passwort:"
+
+#~ msgid "htmlActemail: please click on the following activation link"
+#~ msgstr ""
+#~ "Um die Registrierung zu beenden, oeffnen Sie bitte den folgenden Link in "
+#~ "Ihrem Browser:"
+
+#~ msgid "htmlActemail: any further remarks?"
+#~ msgstr ""
+#~ "Sollten Sie diese Email erhalten haben, obwohl Sie sich nicht bei http://"
+#~ "www.per-4.com registriert haben, ignorieren Sie bitte diese email, Ihre "
+#~ "Daten werden im Laufe der naechsten Tage automatisch geloescht.."
+
+#, fuzzy
+#~ msgid "htmlActemail: Your Per-4 Team"
+#~ msgstr "Ihr Login:"
+
+#~ msgid "This email address is not registered with Per4 webshop!"
+#~ msgstr "Diese Email Adresse ist nicht registriert!"
+
+#~ msgid "htmlActemail: we have received your email."
+#~ msgstr ""
+#~ "Sie haben sich erfolgreich beim Per-4 Webshop registriert, um Ihren "
+#~ "Account freizuschalten, öffnen Sie bitte den unten angefuegten Link in "
+#~ "Ihrem Browser!"
+
+#~ msgid "MuAcount settings"
+#~ msgstr "Account Einstellungen"
+
+#~ msgid "Want record is non-existent, try another."
+#~ msgstr "Dieser Eintrag existiert nicht, versuchen Sie einen anderen."
+
+#~ msgid "Login name or Password not matching , try another.."
+#~ msgstr "Passwort oder Login sind nicht korrekt, versuchen Sie ein anderes"
+
+#~ msgid ""
+#~ "u account not actived now , pls. check u mailbox, flow Active URL to "
+#~ "confirm u register first."
+#~ msgstr ""
+#~ "Ihr Konto ist noch nicht aktiv, bitte überprüfen Sie Ihre email und "
+#~ "bestätigen Sie die Registrierung durch Anklicken des Links"
+
+#~ msgid ""
+#~ "mail for Retrieve Password <br/> had sent into u mail box:%(email)s .<br/"
+#~ "><br/> flow link in content, can change u password."
+#~ msgstr ""
+#~ "Eine email zur Erinnerung Ihres Passworts <br/> wurde bereits an diese "
+#~ "Adresse verschickt:%(email)s .<br/><br/> Wenn Sie auf den Link klicken, "
+#~ "können Sie Ihr Passwort ändern."
+
+#~ msgid "nonexistent account! try again..."
+#~ msgstr "Dieses Konto existiert nicht, versuchen Sie es noch einmal"
+
+#~ msgid "login name had used by others,pls try another.."
+#~ msgstr "Der Login Name ist bereits vergeben, versuchen Sie einen anderen."
+
+#~ msgid "You E-mail had bind another account,pls try another.."
+#~ msgstr ""
+#~ "Diese Email gehört zu einem anderen Konto, versuchen Sie eine andere "
+#~ "Email Adresse!"
+
+#~ msgid "You login name or E-mail had bind another account,pls try another.."
+#~ msgstr ""
+#~ "Diese Email gehört zu einem anderen Konto, versuchen Sie eine andere "
+#~ "Email Adresse!"
+
+#~ msgid ""
+#~ "try usage u mailbox name <i>\"%(mailboxname)s\"</i> as login name,but had "
+#~ "bind another account,pls try another.."
+#~ msgstr ""
+#~ "Der Shop hat versucht einen Loginnamen für <i>\"%(mailboxname)s\"</i> zu "
+#~ "generieren, aber leider ist der Name schon vergeben, bitte geben Sie "
+#~ "einen neuen Loginnamen ein."
+
+#~ msgid "some error in register, try again pls."
+#~ msgstr ""
+#~ "Ein Fehler ist während der Registrierung aufgetreten, bitte versuchen Sie "
+#~ "es erneut oder informaieren Sie den Webadmin."
+
+#~ msgid "u input password is not right oldpassword!"
+#~ msgstr ""
+#~ "Das von Ihnen eingegebene Passwort stimmt nicht mit dem ursprügnlichen "
+#~ "Passwort überein!"
+
+#~ msgid "Billing"
+#~ msgstr "Rechnungsanschrift"
+
+#~ msgid "For Businesses: Company Details"
+#~ msgstr "Für Studios: Firmendaten"
+
+#~ msgid "Ref"
+#~ msgstr "Ref"
+
+#~ msgid "Color"
+#~ msgstr "Farbe"
+
+#~ msgid "Quantity"
+#~ msgstr "Menge"
+
+#~ msgid "Special<b>Offers</b>"
+#~ msgstr "<b>Sonder</b>angebote"
+
+#~ msgid "7% Discount Voucher"
+#~ msgstr "7% Rabattvoucher für Neukunden"
+
+#~ msgid "*) This discount is only valid for first time customers"
+#~ msgstr "*) Rabatt nur gültig für Neukunden."
+
+#~ msgid "<b>New</b> Articles"
+#~ msgstr "Neue <b>Artikel</b>"
+
+#~ msgid "There is no available news."
+#~ msgstr "Momentan noch keine News verfügbar!"
+
+#~ msgid "Archive"
+#~ msgstr "Archiv"
+
+#~ msgid "Business"
+#~ msgstr "Geschäftsdetails"
+
+#~ msgid "Login Name"
+#~ msgstr "Login"
+
+#~ msgid "Old Password"
+#~ msgstr "Urspr. Passwort"
+
+#~ msgid "not safe password! at least 6 letter,and not include esp. letter."
+#~ msgstr ""
+#~ "Das von Ihnen eingegebene Passwort ist nicht sicher, bitte verwenden Sie "
+#~ "mindestens 6 Buchstaben und Ziffern."
+
+#~ msgid "do not same with New Password ! try again."
+#~ msgstr ""
+#~ "Die Passwortbestätigung stimmt nicht mit dem ersten Passwort überein, "
+#~ "bitte versuchen Sie es erneut."
+
+#~ msgid "Reset"
+#~ msgstr "Inhalte Löschen"
+
+#~ msgid "C.O.D."
+#~ msgstr "per Nachnahme"
+
+#~ msgid "<b>Activate</b> Registration"
+#~ msgstr "Registrierung <b>Freischalten</b>"
+
+#~ msgid "Register done!"
+#~ msgstr "Registrierung vollständig!"
+
+#~ msgid "U activate code confirmed."
+#~ msgstr "Ihr Konto ist nun aktiv."
+
+#~ msgid "U can login now."
+#~ msgstr "Sie können sich nun einloggen."
+
+#~ msgid "ZIP"
+#~ msgstr "PLZ"
+
+#~ msgid "go edit Shipping addr."
+#~ msgstr "Bitte bearbeiten Sie Ihre Lieferadresse"
+
+#~ msgid "<b>Business</b> Information"
+#~ msgstr "<b>Geschaefts</b>details"
+
+#~ msgid "Tax Registration Number"
+#~ msgstr "USt-Id"
+
+#~ msgid "Preferred <b>Shipping</b>"
+#~ msgstr "Bevorzugte <b>Versandart</b>"
+
+#~ msgid "UPS OverNight"
+#~ msgstr "UPS OverNight Versand"
+
+#~ msgid "UPS Express"
+#~ msgstr "UPS Express Saver Versand"
+
+#~ msgid "UPS Standard"
+#~ msgstr "UPS Standard Versand"
+
+#~ msgid "<b>Bank Transfer</b> Information"
+#~ msgstr "<b>Banküberweisung</b>"
+
+#~ msgid "Owner"
+#~ msgstr "Kontoinhaber"
+
+#~ msgid "Account No."
+#~ msgstr "Kontonummer"
+
+#~ msgid "IBAN"
+#~ msgstr "IBAN"
+
+#~ msgid "SWIFT/BIC"
+#~ msgstr "SWIFT/BIC"
+
+#~ msgid "<b>Credit Card</b> Information"
+#~ msgstr "<b>Kreditkarte</b>ninformation"
+
+#~ msgid "Visa"
+#~ msgstr "Visa"
+
+#~ msgid "Mastercard"
+#~ msgstr "Mastercard"
+
+#~ msgid "Retrieve My Password"
+#~ msgstr "Ich habe mein Passwort vergessen."
+
+#~ msgid "New passwd"
+#~ msgstr "Neues Passwort"
+
+#~ msgid "Confirm Password"
+#~ msgstr "Bestätigen Sie das Passwort"
+
+#~ msgid "Enter"
+#~ msgstr "Anmelden"
+
+#~ msgid "Remember Me"
+#~ msgstr "Automatisch einloggen!"
+
+#~ msgid "if not Member yet"
+#~ msgstr "Noch nicht registriert?"
+
+#~ msgid "Retrieve Password"
+#~ msgstr ""
+#~ "Passwort vergessen? Passwort an registrierte Emailadresse versenden!"
+
+#~ msgid "Login Matter"
+#~ msgstr "Probleme mit dem Login"
+
+#~ msgid "fetch passwd"
+#~ msgstr "Passwort abrufen"
+
+#~ msgid "Submitting waiting..."
+#~ msgstr "Daten werden übermittelt, bitte warten..."
+
+#~ msgid "Registration"
+#~ msgstr "Registrierung"
+
+#~ msgid "step only this 1"
+#~ msgstr "Bitte..."
+
+#~ msgid ""
+#~ "The request for a free catalog has been submitted. We will verify the "
+#~ "information submitted and send the catalog to the below address."
+#~ msgstr ""
+#~ "Die Kataloganfrage wurde verschickt. Wir pruefen die von Ihnen "
+#~ "bereitgestellten Informationen und versenden den Katalog an die unten "
+#~ "angegebene Adresse."
+
+#~ msgid "Please Input an Address to ship the catalog to:"
+#~ msgstr "Bitte geben Sie eine Versandadresse ein:"
+
+#~ msgid ""
+#~ "Note: If you login, your billing address will be automatically inserted!"
+#~ msgstr ""
+#~ "Bemerkung: Wenn Sie sich anmelden, wird ihre Rechnungsadresse automatisch "
+#~ "eingetragen!"
+
+#~ msgid "<b>Credit Card</b>"
+#~ msgstr "<b>Kreditkarte</b>"
+
+#~ msgid "My <b>Profile</b>"
+#~ msgstr "Meine <b>Profil</b>"
+
+#~ msgid "You must to provide an valid E-mail Address"
+#~ msgstr "Bitte geben Sie eine gültige Email Adresse ein!"
+
+#~ msgid "done!"
+#~ msgstr "Fertigstellen"
+
+#~ msgid "U password and change as:"
+#~ msgstr "Ihr neues Passwort ist:"
+
+#~ msgid "U can usage it "
+#~ msgstr "Es ist nun aktiv."
+
+#~ msgid " now!"
+#~ msgstr "Jetzt!"
+
+#~ msgid "<b>Registration</b>"
+#~ msgstr "<b>Registrierung</b>"
+
+#~ msgid "invalid login name"
+#~ msgstr "Login Format nicht korrekt!"
+
+#~ msgid ""
+#~ "If not input a Login Name, your E-mail box name will be used instead!"
+#~ msgstr ""
+#~ "Bitte geben Sie einen Login-Namen ein, gültige Namen bestehen aus "
+#~ "Buchstaben, Ziffern und dem Unterstrich (a-z, A-Z, 0-9, \"_\")."
+
+#~ msgid "valid E-mail addr. is necessary!"
+#~ msgstr "Bitte geben Sie eine gültige Email Adresse ein."
+
+#~ msgid "You must provide an Email Address to create an account!"
+#~ msgstr ""
+#~ "Um sich zu Registrieren, geben Sie bitte Ihre gültige Email Adresse ein."
+
+#~ msgid ""
+#~ "If Password is empty, we will generate one <br/>and send it to you via "
+#~ "Email!"
+#~ msgstr ""
+#~ "Passwort kann automatisch generiert werden, lassen Sie das Feld einfach "
+#~ "leer!"
+
+#~ msgid "Finish for now"
+#~ msgstr "Beenden und später Fortsetzen"
+
+#~ msgid "To Step 2 of 4"
+#~ msgstr "Zu Schritt 2 von 4"
+
+#~ msgid "Reg"
+#~ msgstr "Reg"
+
+#~ msgid "<b>Registration</b> Step"
+#~ msgstr "<b>Registrierung</b>"
+
+#~ msgid "2 Billing"
+#~ msgstr "2 Rechnungsanschrift"
+
+#~ msgid "Back"
+#~ msgstr "Zurück"
+
+#~ msgid "To Step 3 of 4"
+#~ msgstr "Zu Schritt 3 von 4"
+
+#~ msgid "4 Payment"
+#~ msgstr "4 Zahlungsweise"
+
+#~ msgid "Preferred <b>Payment</b> Method"
+#~ msgstr "Bevorzugte <b>Zahlungsart</b>"
+
+#~ msgid "Done"
+#~ msgstr "Fertig!"
+
+#~ msgid "<b>Registration</b> prompt"
+#~ msgstr "<b>Registrierung</b>"
+
+#~ msgid "If you are a Studio or business client, "
+#~ msgstr "Falls Sie ein Studio oder Geschäftskunde sind,"
+
+#~ msgid "please proceed to  "
+#~ msgstr "weiter zu"
+
+#~ msgid "Step 5"
+#~ msgstr "Schritt 5"
+
+#~ msgid "and input Business Registration Details."
+#~ msgstr "und Eingabe der Geschäftsregistrierungsdaten."
+
+#~ msgid "3 Shipping"
+#~ msgstr "3 Versandadresse"
+
+#~ msgid "Same as billing?"
+#~ msgstr "Identisch mit Rechnungsanschrift?"
+
+#~ msgid "To Step 4 of 4"
+#~ msgstr "Zu Schritt 4 von 4"
+
+#~ msgid "mail for "
+#~ msgstr "die Email an"
+
+#~ msgid " had sent!"
+#~ msgstr "wurde verschickt!"
+
+#~ msgid "Are you sure to DELETE IT?"
+#~ msgstr "Wollen sie den Eintrag wirklich löschen?"
+
+#~ msgid "<b>Shipping</b> Addresses"
+#~ msgstr "<b>Versand</b>adressen"
+
+#~ msgid "e"
+#~ msgstr "editieren"
+
+#~ msgid "X"
+#~ msgstr "löchen"
+
+#~ msgid "Add Address"
+#~ msgstr "Adresse hinzufügen"
+
+#~ msgid "Tax"
+#~ msgstr "Steuer"
+
+#~ msgid "Prices contain Tax already"
+#~ msgstr "Steuer incl."
+
+#~ msgid "[WebShop] Catalog Request"
+#~ msgstr "[WebShop] Kataloganforderung"
+
+#~ msgid "Password Retrieval from Per-4"
+#~ msgstr "Passwort Erinnerungs Mail von Per-4"
+
+#~ msgid "Registration Email from Per-4"
+#~ msgstr "Per-4 Webshop Registrierungsbestaetigung"
+
+#~ msgid "User Info. loast! alert z Administrator!"
+#~ msgstr ""
+#~ "Ihre Daten sind verloren gegangen, bitte wenden Sie sich an den Webadmin!"
+
+#~ msgid "Title Welcome"
+#~ msgstr "Willkommen zum Per-4 Shop!"
+
+#~ msgid "Shop"
+#~ msgstr "Shop"
+
+#~ msgid "htmlActemail: signature"
+#~ msgstr ""
+#~ "Ihr Per-4 Team,<hr/>Charlottenstrasse 65<br/>10117 Berlin<br/><br/"
+#~ ">Telefon: +49 30 93 66 38 21<br/>Fax: +49 30 93 66 38 22<br/><br/"
+#~ ">Website: <a href=\"http://www.per-4.com\">http://www.per-4.com</a><br/"
+#~ ">email: order@per-4.com"
+
+#, fuzzy
+#~ msgid "<b>Registration</b> trans "
+#~ msgstr "Registrierung"
+
+#, fuzzy
+#~ msgid "<b>Business</b>Information"
+#~ msgstr "Informationen"
+
+#~ msgid "Business</b>Information"
+#~ msgstr "<b>Geschäts</b>informationen"
+
+#~ msgid "Act"
+#~ msgstr "Act"
+
+#~ msgid "Info."
+#~ msgstr "Info."
+
+#~ msgid "My P"
+#~ msgstr "Mein P"
+
+#~ msgid "rofile"
+#~ msgstr "rofil"
+
+#~ msgid "Addresses"
+#~ msgstr "Adressen"
+
+#~ msgid "Confirm u Register..."
+#~ msgstr "Bestätigen und Registrieren"
+
+#, fuzzy
+#~ msgid ""
+#~ "TGShop server:%(emhost)s sent this confirm mail.\n"
+#~ "  \n"
+#~ " place click this URL to activated u account::\n"
+#~ "\n"
+#~ " %(actroot)s%(actcode)s .\n"
+#~ "\n"
+#~ "so u can usage:\n"
+#~ "Account:%(uname)s n Password:%(upass)s \n"
+#~ " login.."
+#~ msgstr ""
+#~ "de.TGShop server:%(emhost)s sent this mail.\n"
+#~ "  User:%(uname)s \n"
+#~ " \n"
+#~ " Bitte klicken Sie auf den Link um Ihr KOnto zu aktivieren::\n"
+#~ "\n"
+#~ " %(actroot)s%(actcode)s \n"
+#~ "\n"
+#~ "."
+
+#~ msgid "Flush u password..."
+#~ msgstr "Passwort löschen"
+
+#~ msgid ""
+#~ "flush u passwd as::\n"
+#~ "\n"
+#~ " %(passwd)s \n"
+#~ "\n"
+#~ "pls. usage the new password login."
+#~ msgstr ""
+#~ "Passwort löschen as::\n"
+#~ "\n"
+#~ " %(passwd)s \n"
+#~ "\n"
+#~ "Bitte nutzen Sie Ihr neuen Passwort."
+
+#~ msgid "Retrieve password..."
+#~ msgstr "Passwort Erinnerung..."
+
+#~ msgid ""
+#~ "Retrieve u passwd pls flow this link ::\n"
+#~ "\n"
+#~ " %(actroot)s%(actcode)s \n"
+#~ "\n"
+#~ "in that page can define u new passwod."
+#~ msgstr ""
+#~ "Auf dieser Seite können Sie Ihr neues Passwort eingeben.de.Retrieve u "
+#~ "passwd pls flow this link ::\n"
+#~ "\n"
+#~ " %(actroot)s%(actcode)s \n"
+#~ "\n"
+#~ "in that page can define u new passwod."
+
+#~ msgid "editor MuAcount business info. "
+#~ msgstr "Bearbeiten der Geschäftsdaten"
+
+#~ msgid "MyAccount"
+#~ msgstr "Mein Konto"
+
+#~ msgid "Shopping History"
+#~ msgstr "Fühere Einkäufe"
+
+#~ msgid "Events"
+#~ msgstr "Veranstaltungen"
+
+#~ msgid "Event"
+#~ msgstr "Veranstaltung"
+
+#~ msgid "Old"
+#~ msgstr "Alt"
+
+#, fuzzy
+#~ msgid "Retype"
+#~ msgstr "Wiederholen"
+
+#~ msgid "My"
+#~ msgstr "Mein"
+
+#~ msgid "Address List"
+#~ msgstr "Adresse"
+
+#~ msgid "only step DONE!"
+#~ msgstr "Fertigstellen"
+
+#~ msgid "ccount"
+#~ msgstr "Konto"

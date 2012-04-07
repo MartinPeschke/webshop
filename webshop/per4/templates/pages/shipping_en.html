@@ -1,0 +1,107 @@
+﻿{% extends "layout.html" %}
+{% load explore %}
+{% load i18n %}
+{% block meta_keywords %}Shipping,Shipping Information,Versand,Versandt,Versandinformationen,{% endblock %}
+{% block center_block_header %}Lieferung & Versand für Gewerbetreibende 2011{% endblock %}
+
+{% block head %}
+<style type="text/css">
+	#shipping td {
+		padding: 0px 2px;
+		text-align:right;
+		white-space:nowrap;
+	} 
+ 	#shipping td.marker_text{
+ 		color: #D4232C;
+ 		font-weight:bold;
+ 	}
+	#shipping td.divider { 
+		border-bottom:#D4232C 10px solid;
+	}
+	
+	hr{
+		margin:20px 0px;
+	}
+	div.disclaimer {
+		margin-bottom: 20px;
+	}
+	div.titlespacer {font-weight:bold;}
+	div.disclaimer table {
+		margin: 0px 10px;
+	}
+	div.disclaimer div, div.disclaimer ul{
+		margin: 15px 10px;
+	}
+	#centerBox ul, #centerBox li {
+		margin: 0px 20px;
+		list-style-image:none;
+		list-style-position:outside;
+		list-style-type:disc;
+	}
+</style>
+
+{% endblock %}
+
+{% block content %}
+<div style="margin:15px 10px">Wir machen grundsätzlich keine Nachlieferungen. Bitte bestellen Sie nicht gelieferte Waren bei der nächsten Bestellung erneut.</div>
+<h1>Standard Versand mit DHL</h1>
+<div class="disclaimer">
+	<div class="titlespacer">Für Warenlieferungen (Tattoo, Piercing und Medical Equipment) innerhalb Deutschlands (bis max. 20 kg):</div>
+	
+	<table border="0" width="100%">
+	<tr><td>Versandkosten</td><td>3,95 EUR</td><td>ab 150 € gratis</td></tr>
+	<tr><td>Verpackungspauschale</td><td>1,95 EUR</td><td>unabhängig vom Bestellwert</td></tr>
+	<tr><td>Nachnahmegebühr</td><td>4,00 EUR</td><td>ab 500 EUR Nettowarenwert gratis</td></tr>
+	</table>
+	
+	
+	
+	<div class="titlespacer">Für Warenlieferungen nach Österreich, Frankreich, Spanien, Portugal, Großbritannien, Schweden, Italien, Belgien, Dänemark, Luxemburg, Niederlande, Polen, Slowenien, Rumänien, Slowakei und Tschechien im Premium Versand ca. 2 Werktage (bis max. 10 kg):</div>
+	<table border="0" width="100%">
+	<tr><td>Versandkosten</td><td>14,95 EUR</td><td>ab 300 € gratis</td></tr>
+	<tr><td>Verpackungspauschale</td><td>1,95 EUR</td><td>unabhängig vom Bestellwert</td></tr>
+	<tr><td>Nachnahmegebühr</td><td>9,90 EUR</td><td>ab 500 EUR Nettowarenwert gratis</td></tr>
+	</table>	
+	
+	<div class="titlespacer">Für Warenlieferungen nach Liechtenstein, Schweiz und Norwegen im Standard Versand – ca. 4 Werktage (bis max. 10 kg):</div>
+	<table border="0" width="100%">
+	<tr><td>Versandkosten</td><td>19,95 EUR</td><td>ab 500 € gratis</td></tr>
+	<tr><td>Verpackungspauschale</td><td>1,95 EUR</td><td>unabhängig vom Bestellwert</td></tr>
+	<tr><td>Nachnahmegebühr</td><td>9,90 EUR</td><td>ab 500 EUR Nettowarenwert gratis</td></tr>
+	</table>
+
+	<div>Portokosten mit höherem Gewicht oder in andere Länder als hier angegeben, werden gesondert berechnet.</div>
+	
+	<h1>Express Saver Versand per UPS</h1>
+	<div class="titlespacer">Für Warenlieferungen nach Belgien, Dänemark, Luxemburg, Niederlande, Polen und Tschechien im Express Saver Versand (bis max. 1 kg):</div>
+	<table border="0" width="100%">
+	<tr><td>UPS Versand</td><td>25,00 EUR</td><td>Unabhängig vom Warenbestellwert</td></tr>
+	<tr><td>Nachnahmegebühr</td><td>14,50 EUR</td><td></td></tr>
+	</table>
+
+	<div class="titlespacer">Für Warenlieferungen nach Österreich, Frankreich, Italien, Griechenland, Portugal und Spanien im Express Saver Versand (bis max. 1 kg):</div>
+	<table border="0" width="100%">
+	<tr><td>UPS Versand</td><td>37,50 EUR</td><td>Unabhängig vom Warenbestellwert</td></tr>
+	<tr><td>Nachnahmegebühr</td><td>14,50 EUR</td><td></td></tr>
+	</table>
+	
+	<div class="titlespacer">Portokosten für Pakete mit höherem Gewicht oder in andere Länder als hier angegeben, werden gesondert berechnet.</div>
+	
+	<div><b>Zahlungsweise:</b></div>
+	<ul>
+		<li>Vorauskasse (zur Überweisung senden wir nach Bestelleingang alle notwendigen Daten)</li>
+		<li>Kreditkarte</li>
+		<li>Nachnahme (zzgl. Nachnahmegebühr)</li>
+		<li>Lastschrifteinzug (nur Deutschland und Spanien nach Vereinbarung)</li>
+		<li>Barzahlung im Per-4 Büro</li>
+	</ul>
+	
+	<div>Alle angegebenen Preise verstehen sich in Euro pro Stück bzw. Set, exklusive der gesetzlichen Mehrwertsteuer.</div>
+</div>
+ 
+
+
+
+
+
+{% endblock %}

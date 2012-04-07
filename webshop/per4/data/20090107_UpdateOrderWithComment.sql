@@ -1,0 +1,1 @@
+alter table apps_order add column comment text;

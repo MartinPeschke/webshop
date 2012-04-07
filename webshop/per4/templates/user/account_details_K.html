@@ -1,0 +1,231 @@
+{% load i18n %}
+   <div class="reg_form">
+   <div class="reg_title"><label class="reg_title_bg">{% trans 'Existing Customer Information' %}</label></div>
+   <div class="reg_bg"></div>
+   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="reg_text">{% trans 'Existing Customer Number' %}</td>
+        <td><div class="reg_class3"><div class="reg_input2">{{ account_form.bo_customer_no }}
+        {% if account_form.bo_customer_no.errors %}
+        <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="Error!">{% for error in account_form.bo_customer_no.errors %}{{ error }}{% endfor %}</label>
+        {% endif %}
+        </div></div></td>
+      </tr>
+   </table>
+   </div>
+
+    <div class="reg_form">
+    <div class="reg_title"><label class="reg_title_bg">{% trans "Your details" %}</label></div>
+    <div class="reg_bg"></div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td colspan="2"></td>
+      </tr>
+      <tr>
+        <td class="reg_text">{% trans "First name" %}</td>
+        <td>
+            <div class="reg_class2">
+            <div class="reg_input">
+            {{ account_form.title }}
+            {{ account_form.first_name }}
+            {% if account_form.first_name.errors %}
+            <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="Error!">{% for error in account_form.first_name.errors %}{{ error }}{% endfor %}</label>
+            {% endif %}
+            </div>
+            </div></td>
+      </tr>
+      <tr>
+        <td class="reg_text">{% trans "Last name" %}</td>
+        <td><div class="reg_class2"><div class="reg_input">{{ account_form.last_name }}
+        {% if account_form.last_name.errors %}
+        <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="Error!">{% for error in account_form.last_name.errors %}{{ error }}{% endfor %}</label>
+        {% endif %}
+        </div></div></td>
+      </tr>
+      <tr>
+        <td class="reg_text">{% trans "Company name" %}</td>
+        <td><div class="reg_class2"><div class="reg_input">{{ account_form.company_name }}
+        {% if account_form.company_name.errors %}
+        <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="Error!">{% for error in account_form.company_name.errors %}{{ error }}{% endfor %}</label>
+        {% endif %}
+        </div></div></td>
+      </tr>
+      <tr>
+        <td class="reg_text">{% trans "VAT-ID Number" %}</td>
+        <td><div class="reg_class3"><div class="reg_input2">{{ account_form.vat_id }}
+        {% if account_form.vat_id.errors %}
+        <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="Error!">{% for error in account_form.vat_id.errors %}{{ error }}{% endfor %}</label>
+        {% endif %}
+        </div></div></td>
+      </tr>
+      <tr>
+        <td class="reg_text">{% trans "Webpage" %}</td>
+        <td><div class="reg_class3"><div class="reg_input2">{{ account_form.webpage }}{{ account_form.webpage.errors }}</div></div></td>
+      </tr>
+      <tr>
+        <td class="reg_text">{% trans "Opening hours" %}</td>
+        <td>
+        <div class="reg_class2">
+          <div class="reg_input3">
+            {{ account_form.opening_hours }} {% trans "* e.g: 9:00 - 17:00" %}
+            {% if account_form.opening_hours.errors %}
+        	<label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="Error!">{% for error in account_form.opening_hours.errors %}{{ error }}{% endfor %}</label>
+        	{% endif %}
+          </div>
+        </div>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" class="reg_text" style="vertical-align:top">{% trans "Weekdays" %}</td>
+        <td class="reg_radio">
+        {{ account_form.weekdays }}
+        </td>
+      </tr>
+     </table>
+     <div class="reg_title"><label class="reg_title_bg">{% trans "Billing information" %}</label></div>
+     <div class="reg_bg"></div>
+      <table border="0" cellpadding="0" cellspacing="0">
+       <tr>
+         <td class="reg_text">{% trans "Street address" %}</td>
+         <td><div class="reg_class2"><div class="reg_input">{{ billing_form.street }}
+         {% if billing_form.street.errors %}
+         <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="Error!">{% for error in billing_form.street.errors %}{{ error }}{% endfor %}</label>
+         {% endif %}
+         </div></div></td>
+       </tr>
+       <tr>
+         <td class="reg_text">{% trans "CITY / TOWN" %}</td>
+         <td><div class="reg_class2"><div class="reg_input">{{ billing_form.city }}
+         {% if billing_form.city.errors %}
+         <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="Error!">{% for error in billing_form.city.errors %}{{ error }}{% endfor %}</label>
+         {% endif %}</div></div></td>
+       </tr>
+       <tr>
+         <td class="reg_text">{% trans "ZIP Code" %}</td>
+         <td><div class="reg_class2"><div class="reg_input">{{ billing_form.zip }}
+         {% if billing_form.zip.errors %}
+         <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="Error!">{% for error in billing_form.zip.errors %}{{ error }}{% endfor %}</label>
+         {% endif %}</div></div></td>
+       </tr>
+       <tr>
+         <td class="reg_text">{% trans "Country" %}</td>
+         <td><div class="reg_class2"><div class="reg_input">{{ billing_form.country }}
+		 {% if billing_form.country.errors %}
+         <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="Error!">{% for error in billing_form.country.errors %}{{ error }}{% endfor %}</label>
+         {% endif %}</div></div></td>
+       </tr>
+       <tr>
+         <td class="reg_text">{% trans "Preferred Language" %}</td>
+         <td>
+         <div class="reg_class2">
+         <div class="reg_input">
+         {{ billing_form.language }}
+         </div>
+         </div>
+         </td>
+       </tr>
+       <tr>
+         <td class="reg_text">{% trans "Telephone" %}</td>
+         <td><div class="reg_class2"><div class="reg_input">{{ billing_form.tel }}
+         {% if billing_form.tel.errors %}
+         <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="Error!">{% for error in billing_form.tel.errors %}{{ error }}{% endfor %}</label>
+         {% endif %}</div></div></td>
+       </tr>
+       <tr>
+         <td class="reg_text">{% trans "Mobile Phone" %}</td>
+         <td><div class="reg_class3"><div class="reg_input2">{{ billing_form.mobile }}{{ billing_form.mobile.errors }}</div></div></td>
+       </tr>
+        <tr>
+         <td class="reg_text">{% trans "Fax" %}</td>
+         <td><div class="reg_class3"><div class="reg_input2">{{ billing_form.fax }}{{ billing_form.fax.errors }}</div></div></td>
+       </tr>
+      </table>
+      <br/>
+
+      <!-- Shipping Information -->
+      <div id="shippingForm" {% ifequal same_address 'Y' %}style="display:none"{% endifequal %}>
+      <div class="reg_title"><label class="reg_title_bg">{% trans "Shipping information" %}</label></div>
+      <div class="reg_bg"></div>
+	  <table border="0" cellpadding="0" cellspacing="0">
+	      <tr>
+	        <td class="reg_text">{% trans "Street address" %}</td>
+	        <td><div class="reg_class3"><div class="reg_input2">{{ shipping_form.street }}
+	        {% if shipping_form.street.errors %}
+	        <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="Error!">{% for error in shipping_form.street.errors %}{{ error }}{% endfor %}</label>
+	        {% endif %}
+	        </div></div></td>
+	      </tr>
+	      <tr>
+	        <td class="reg_text">{% trans "CITY / TOWN" %}</td>
+	        <td><div class="reg_class3"><div class="reg_input2">{{ shipping_form.city }}
+	        {% if shipping_form.city.errors %}
+	        <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="Error!">{% for error in shipping_form.city.errors %}{{ error }}{% endfor %}</label>
+	        {% endif %}</div></div></td>
+	      </tr>
+	      <tr>
+	        <td class="reg_text">{% trans "ZIP Code" %}</td>
+	        <td><div class="reg_class3"><div class="reg_input2">{{ shipping_form.zip }}
+	        {% if shipping_form.zip.errors %}
+	        <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="Error!">{% for error in shipping_form.zip.errors %}{{ error }}{% endfor %}</label>
+	        {% endif %}</div></div></td>
+	      </tr>
+	      <tr>
+	        <td class="reg_text">{% trans "Country" %}</td>
+	        <td><div class="reg_class3"><div class="reg_input2">{{ shipping_form.country }}
+		 	{% if shipping_form.country.errors %}
+	        <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="Error!">{% for error in shipping_form.country.errors %}{{ error }}{% endfor %}</label>
+	        {% endif %}</div></div></td>
+	      </tr>
+	      <tr>
+	        <td class="reg_text">{% trans "Preferred Language" %}</td>
+	        <td>
+	        <div class="reg_class3">
+	        <div class="reg_input2">
+	        {{ shipping_form.language }}
+	        </div>
+	        </div>
+	        </td>
+	      </tr>
+	      <tr>
+	        <td class="reg_text">{% trans "Telephone" %}</td>
+	        <td><div class="reg_class3"><div class="reg_input2">{{ shipping_form.tel }}
+	        {% if shipping_form.tel.errors %}
+	        <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="Error!">{% for error in shipping_form.tel.errors %}{{ error }}{% endfor %}</label>
+	        {% endif %}</div></div></td>
+	      </tr>
+	      <tr>
+	        <td class="reg_text">{% trans "Mobile Phone" %}</td>
+	        <td><div class="reg_class3"><div class="reg_input2">{{ shipping_form.mobile }}{{ shipping_form.mobile.errors }}</div></div></td>
+	      </tr>
+	       <tr>
+	        <td class="reg_text">{% trans "Fax" %}</td>
+	        <td><div class="reg_class3"><div class="reg_input2">{{ shipping_form.fax }}{{ shipping_form.fax.errors }}</div></div></td>
+	      </tr>
+      </table>
+      </div>
+      {% if registration %}
+		 <table border="0" cellpadding="0" cellspacing="0">
+		     <tr>
+		       <td class="reg_text">&nbsp;</td>
+		       <td><div class="reg_class2"><div class="reg_input">&nbsp;&nbsp;{% trans 'I agree with the Per-4 Terms and Conditions.' %}</div></div></td>
+		     </tr>
+		     <tr>
+		       <td colspan="2" class="billing" align="center">{{ account_form.agree }}
+		       {% if account_form.agree.errors %}
+		       <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="error">{% for error in account_form.agree.errors %}{{ error }}{% endfor %}</label>
+		       {% endif %}
+		       </td>
+		     </tr>
+		     <tr>
+		     <td>&nbsp;</td>
+		     </tr>
+	     </table>
+	    {% endif %}
+     
+     <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="reg_text"></td>
+        <td><div class="button active floatLeft spaced"><input type="submit" value="{% trans "Save Profile" %}"/></div></td>
+      </tr>
+      </table>
+    </div>

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block center_block_header %}<b>404</b> {% trans "Page not found!" %}{% endblock %}
+
+{% block content %}
+<div class="center_box">
+   <br/>
+   <br/>
+
+<div class="reg_title"><label class="reg_title_bg"><b>404</b></label> {% trans "Page not found!" %}</div>
+<div class="reg_bg"></div>
+
+<h3>{% trans "The Page you requested does not exist on this server." %}</h3>
+{% trans "Check if you typed the address correctly or go back to" %} <a href="/main/">{% trans "Home" %}</a></h3>
+
+    <div class="button_parent float">
+	    <div class="button active"><a href="/main/">{% trans "Home" %}</a></div>
+    </div>
+</div>
+
+{% endblock %}

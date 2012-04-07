@@ -1,0 +1,49 @@
+{% extends "user/profile.html" %}
+{% load i18n %}
+
+{% block center_block_header %}{% trans 'Completed'%} {% trans request.user.get_profile.roleName.upper %} {%trans 'Order Successfully!'%}{% endblock %}
+
+{% block content %}
+<div class="center_box">
+    <div class="block"></div>
+	<div class="reg_title"><label class="reg_title_bg">{% trans 'Order Completed' %}</label></div>
+	<div class="reg_bg"></div>
+	<div id="reg_form">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td class="reg_home"><p>{% trans "You have completed your order successfully." %}</p><p>{% trans "Shortly you will receive a confirmation and invoice of your order by email." %}</p></td>
+		</tr>
+		</table>
+        <div class="button active floatLeft spaced"><a href="/main/">{% trans "Home" %}</a></div>
+	</div>
+</div>
+{% endblock %}
+
+
+{% block very_last_items %}
+
+<script type="text/javascript">
+try {
+  pageTracker._addTrans(
+    "{{ order.id }}",                                     // Order ID
+    "",                            // Affiliation
+    "{{ order_total }}",                                    // Total
+    "",                                     // Tax
+    "",                                        // Shipping
+    "",                                 // City
+    "",                               // State
+    ""                                       // Country
+  );
+
+  pageTracker._addItem(
+    "",                                     // Order ID
+    "",                                     // SKU
+    "",                                  // Product Name 
+    "",                             // Category
+    "",                                    // Price
+    ""                                         // Quantity
+  );
+
+  pageTracker._trackTrans();
+} catch(err) {}</script>
+{% endblock %}

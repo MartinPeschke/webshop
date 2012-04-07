@@ -1,0 +1,18 @@
+{% load i18n %}
+{% extends "base.html" %}
+{% block pagetitle %}{{ event_obj.title }} {% trans "News" %} | {% endblock %}
+
+{% block content %}
+<div class="center_box">
+<div class="heading"><b>{{ news_obj.title }}</b></div>
+
+    <p>{{ news_obj.update_time|date }}</p>
+    <div>
+        {{ news_obj.summary }}
+    </div>
+    <div>
+        {{ news_obj.content }}
+    </div>
+
+</div>
+{% endblock %}

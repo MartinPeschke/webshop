@@ -1,0 +1,98 @@
+<html>
+<head>
+<style type="text/css">
+body{
+	max-width: 1024px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+}
+
+</style>
+</head>
+<body>
+<p>Hi, dies ist Ihr Webshop,</p>
+
+<p>wir haben soeben eine Registrierung fuer einen neuen Benutzer erhalten.</p>
+
+<p>Geh zu dem Link hier:</p>
+
+<p><a href="{{ approvalLink }}" style="color:Green">{{ approvalLink }}</a></p>
+
+<p>um den Kunden als Studiokunden freizuschalten.</p>
+
+<p>oder zu</p>
+
+<p><a href="{{ denialLink }}" style="color:Red">{{ denialLink }}</a></p>
+
+<p>um den Kunden als Studiokunden abzulehnen.</p>
+
+
+<p>
+Firmen Daten:
+<table>
+	<tr>
+		<td>Email</td>
+		<td>{{ user.email }}</td>			
+	</tr>
+	<tr>
+		<td>Name</td>
+		<td>{{ profile.title }} {{ profile.first_name }} {{ profile.last_name }}</td>			
+	</tr>
+	<tr>
+		<td>Firma</td>
+		<td>{{ profile.company_name }}</td>			
+	</tr>
+	<tr>
+		<td>USt. ID</td>
+		<td>{{ profile.vat_id }}</td>			
+	</tr>
+	<tr>
+		<td>USt. befreit?</td>
+		<td>{{ profile.taxFreed }}</td>			
+	</tr>
+	<tr>
+		<td>Oeffnungszeiten</td>
+		<td>{{ profile.weekdays }}, {{ profile.opening_hours }}</td>			
+	</tr>
+	<tr>
+		<td>Homepage</td>
+		<td>{{ profile.webpage }}</td>
+	</tr>
+</table>
+</p>
+
+<p>
+Addressen des Kunden:
+{% for add in user.address_set.all %}
+<table>
+	<tr>
+		<td>Telefon</td>
+		<td>{{ add.tel }}</td>			
+	</tr>
+	<tr>
+		<td>Fax</td>
+		<td>{{ add.fax }}</td>			
+	</tr>
+	<tr>
+		<td>Mobil</td>
+		<td>{{ add.mobile }}</td>			
+	</tr>
+	<tr>
+		<td>Strasse</td>
+		<td>{{ add.street }}</td>			
+	</tr>
+	<tr>
+		<td>Ort</td>
+		<td>{{ add.zip }} {{ add.city }}</td>			
+	</tr>
+	<tr>
+		<td>Land</td>
+		<td>{{ add.country }}</td>
+	</tr>
+</table>
+{% endfor %}
+</p>
+
+</body>
+</html>

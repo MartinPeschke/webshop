@@ -1,0 +1,147 @@
+{% extends "layout_free_center.html" %}
+{% load explore %}
+{% load i18n %}
+{% block meta_keywords %}Downloads,Flyer,Info Material,Broschueren,Kataloge,Catalogs{% endblock %}
+    {% block head %}
+    <link rel="stylesheet" type="text/css" href="/media/css/static.css" />
+	{% endblock %}
+
+{% block centerbox %}
+
+	<div style="width: 463px; position: relative; float: left;">
+
+	{% ifequal simple_role 'E' %}
+        <div class="horizontal" style="width: 463px">
+			<div class="segment">
+				<div class="title" style="width: 463px"><div>{% trans "SOME FLYERS INCLUDE PRICES, PLEASE LOG IN TO VIEW ALL FLYERS!" %}</div></div></div>
+		</div>
+	{% endifequal %}
+
+	{% ifequal simple_role 'K' %}
+        <div class="horizontal" style="width: 463px">
+			<div class="segment">
+				<div class="title" style="width: 463px"><div>{% trans "DOWNLOAD MONTHLY FLYER" %} {% trans "FEBRUARY/MARCH" %} 2010</div></div>
+				<a href="/media/downloads/Monatsangebote-banner-jan10.pdf"><img alt="FEBRUARY/MARCH 2010" src="/media/downloads/Monatsangebote-banner-jan10.jpg"></a></div>
+		</div>
+        <div class="horizontal" style="width: 463px">
+			<div class="segment">
+				<div class="title" style="width: 463px"><div>{% trans "DOWNLOAD MONTHLY FLYER" %} {% trans "NOVEMBER/DECEMBER" %} 09</div></div>
+				<a href="/media/downloads/Monatsangebote-banner-dezember09.pdf"><img alt="NOVEMBER/DECEMBER 09" src="/media/downloads/Monatsangebote-banner-dec09.jpg"></a></div>
+		</div>
+	{% endifequal %}
+
+        <div class="horizontal" style="width: 463px">
+			<div class="segment">
+				<div class="title" style="width: 463px"><div>{% trans "DOWNLOAD MONTHLY FLYER" %} {% trans "JULY/AUGUST" %} 09</div></div>
+				<a href="/media/downloads/Monatsangebote-juli09-web_{{ simple_role }}.pdf"><img alt="JULY/AUGUST 09" src="/media/downloads/Monatsangebote-banner-juli09.jpg"></a></div>
+		</div>
+
+        <div class="horizontal" style="width: 463px">
+			<div class="segment">
+				<div class="title" style="width: 463px"><div>{% trans "DOWNLOAD MONTHLY FLYER" %} {% trans "MAY/JUNE" %} 09</div></div>
+				<a href="/media/downloads/Monatsangebote-maijuni-web_{{ simple_role }}.pdf"><img alt="MAY/JUNE 09" src="/media/downloads/Monatsangebote-banner-mai09.jpg"></a></div>
+		</div>
+        
+		<div class="horizontal" style="width: 463px">
+			<div class="segment">
+				<div class="title" style="width: 463px"><div>{% trans "DOWNLOAD MONTHLY FLYER" %} {% trans "APRIL/MAY" %} 09</div></div>
+				<a href="/media/downloads/Monatsangebote-april-web_{{ simple_role }}.pdf"><img alt="APRIL/MAY" src="/media/downloads/Monatsangebote-banner-april.jpg"></a></div>
+		</div>
+
+		<div class="horizontal" style="width: 463px">
+			<div class="segment">
+				<div class="title" style="width: 463px"><div>{% trans "DOWNLOAD MONTHLY FLYER" %} {% trans "FEBRUARY" %} 09</div></div>
+				<a href="/media/downloads/Monatsangebote-februar-web_{{ simple_role }}.pdf"><img alt="FEBRUAR!" src="/media/downloads/Monatsangebote-banner-februar.jpg"></a></div>
+		</div>
+
+		<div class="horizontal" style="width: 463px">
+			<div class="segment">
+				<div class="title" style="width: 463px"><div>{% trans "DOWNLOAD MONTHLY FLYER" %} {% trans "JANUARY" %} 09</div></div>
+				<a href="/media/downloads/Monatsangebote-januar-web_{{ simple_role }}.pdf"><img alt="JANUAR!" src="/media/downloads/Monatsangebote-banner-januar.jpg"></a></div>
+		</div>
+
+
+		<div class="horizontal" style="width: 463px">
+			<div class="segment">
+				<div class="title" style="width: 463px"><div>{% trans "DOWNLOAD MONTHLY FLYER" %} {% trans "DECEMBER" %}</div></div>
+				<a href="/media/downloads/Monatsangebote-dezember-web_E.pdf"><img alt="Dezember!" src="/media/downloads/Monatsangebote-banner-dezember.jpg"></a></div>
+		</div>
+		
+		<div class="horizontal" style="width: 463px">
+			<div class="segment">
+				<div class="title" style="width: 463px"><div>{% trans "DOWNLOAD MONTHLY FLYER" %} {% trans "OCTOBER" %} / {% trans "NOVEMBER" %}</div></div>
+				<a href="/media/downloads/Monatsangebote-oktober-web_E.pdf"><img alt="October - November!" src="/media/downloads/Monatsangebote-banner-october.jpg"></a></div>
+		</div>
+				
+		<div class="horizontal" style="width: 463px">
+			<div class="segment">	
+				<div class="title" style="width: 463px"><div>{% trans "DOWNLOAD MONTHLY FLYER" %} {% trans "SEPTEMBER" %}</div></div>
+				<a href="/media/downloads/Monatsangebote-september-web_E.pdf"><img alt="September!" src="/media/downloads/Monatsangebote-banner-september.jpg"></a></div>
+		</div>
+			
+		<div class="horizontal" style="width: 463px">
+			<div class="segment">			
+				<div class="title" style="width: 463px"><div>{% trans "DOWNLOAD MONTHLY FLYER" %} {% trans "AUGUST" %}</div></div>
+				<a href="/media/downloads/Monatsangebote-august-web_E.pdf"><img alt="August!" src="/media/downloads/Monatsangebote-banner-august.jpg"></a></div>
+		</div>
+		
+		<div class="horizontal" style="width: 463px">
+			<div class="segment">	
+				<div class="title" style="width: 463px"><div>{% trans "DOWNLOAD MONTHLY FLYER" %} {% trans "JULY" %}</div></div>
+				<a href="/media/downloads/Monatsangebote-juli-web_E.pdf"><img alt="July!" src="/media/downloads/Monatsangebote-banner-juli.jpg"></a></div>
+		</div>
+		
+		<div class="horizontal" style="width: 463px">
+			<div class="segment">	
+				<div class="title" style="width: 463px"><div>{% trans "DOWNLOAD MONTHLY FLYER" %} {% trans "JUNE" %}</div></div>
+				<a href="/media/downloads/Monatsangebote-juni-web_E.pdf"><img alt="June!" src="/media/downloads/Monatsangebote-banner-juni.jpg"></a></div>
+		</div>
+	</div>
+
+    <div class="horizontal" style="width: 160px;">
+        <div class="segment">
+            <div class="title"><div style="width: 142px;">{% trans "PIERCING KATALOG" %}'10</div></div>
+            <img alt="Catalog 2009/10!" src="/media/downloads/catalog2010/catalog_download.jpg">
+            <ul class="linklist">
+                <li><a href="/media/downloads/catalog2010/TITAN.pdf">PURE TITANIUM</a></li>
+                <li><a href="/media/downloads/catalog2010/ANORGANICS.pdf">ANORGANICS</a></li>
+
+                <li><a href="/media/downloads/catalog2010/STEEL.pdf">SURGICAL STEEL 316L</a></li>
+                <li><a href="/media/downloads/catalog2010/STEEL_JEWELLERY.pdf">STEEL JEWELLERY</a></li>
+                <li><a href="/media/downloads/catalog2010/BLACK_MORE.pdf">BLACK &amp; MORE</a></li>
+                <li><a href="/media/downloads/catalog2010/ORGANICS.pdf">ORGANICS</a></li>
+                <li><a href="/media/downloads/catalog2010/ORGANICS_JEWEL.pdf">ORGANICS JEWELLERY</a></li>
+                <li><a href="/media/downloads/catalog2010/SILVER.pdf">STERLING SILVER</a></li>
+                <li><a href="/media/downloads/catalog2010/CRYSTAL_EVOLUTION.pdf">CRYSTAL EVOLUTION</a></li>
+                <li><a href="/media/downloads/catalog2010/UV_FLOUR.pdf">UV FLOUR</a></li>
+                <li><a href="/media/downloads/catalog2010/PICTURE_LINE.pdf">PICTURE LINE</a></li>
+                <li><a href="/media/downloads/catalog2010/DISPLAYS.pdf">DISPLAYS</a></li>
+                <li><a href="/media/downloads/catalog2010/MEDICAL1.pdf">MEDICAL EQUIPMENT 1</a></li>
+                <li><a href="/media/downloads/catalog2010/MEDICAL2.pdf">MEDICAL EQUIPMENT 2</a></li>
+            </ul>
+            <div class="title"><div style="width: 142px;">{% trans "TATTOO KATALOG" %}'10</div></div>
+            <ul class="linklist">
+                <li><a href="/media/downloads/catalog2010/TATTOO.pdf">TATTOO</a></li>
+                <li><a href="/media/downloads/catalog2010/TIPS_GRIPS_NEEDLES.pdf">TIPS, GRIPS, NEEDLES</a></li>
+                <li><a href="/media/downloads/catalog2010/INKS.pdf">INKS</a></li>
+                <li><a href="/media/downloads/catalog2010/MICROPIGMENTATION.pdf">MICROPIGMENTATION</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="horizontal" style="width: 160px;margin-left: 10px">
+        <div class="segment">
+            <div class="title"><div style="width: 142px;">{% trans "SPRING FLYER" %}</div></div>
+            <a href="/media/downloads/springflyer.pdf"><img alt="October November!" src="/media/downloads/springflyer_09.jpg"></a></div>
+    </div>	
+
+    <div class="horizontal" style="width: 160px;margin-left: 10px">
+        <div class="segment">
+            <div class="title"><div style="width: 142px;">{% trans "VORDRUCK" %}</div></div>
+            <ul class="linklist">
+                <li>{% trans "Lastschrift Formular zum Download" %}</li>
+                <li><a href="/media/downloads/lastschrifteinzugsformular.pdf">{% trans "PDF Format" %}</a></li>
+                <li><a href="/media/downloads/lastschrifteinzugsformular.doc">{% trans "MS WORD Format" %}</a></li>
+            </ul>
+            <a href="/media/downloads/lastschrifteinzugsformular.pdf" style="padding: 3px;"><img alt="October November!" src="/media/downloads/LastSchriftIcon.jpg"></a></div>
+    </div>	
+{% endblock %}

@@ -1,0 +1,1 @@
+c:\OrderData\backend\bin\mysqldump.exe -uroot -p199xuxr0c tgshop apps_shop apps_line apps_articletype apps_articlefamily apps_article apps_articleoption apps_pricing apps_languagepack apps_promotion apps_alsobought > %1

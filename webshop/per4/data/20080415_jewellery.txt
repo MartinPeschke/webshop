@@ -1,0 +1,13 @@
+Line	logopath	ArticleFamily	ArticleReference	OptionReference	Pcs	Sale	News	InWebshop	Weight	RetailUnitPrice	ResellerUnitPrice	ResellerUnitDiscountPrice	DiscountQty	Thickness	LengthDiameter	Ballsize1	Ballsize2	SizeIn	Type	Type(de)	Type(fr)	Type(it)	Type(ch)	Type(pl)	Type(es)	Description	Description(de)	Description(fr)	Description(es)	Description(it)	Description(pl)	Description(ch)	BodyParts
+Crystal Evolution	KCE2	KCE2	KCE2	S-LR	1		YES	YES		28.00	14.00	13.00	3						Charms	Kettenanhänger	Pendantif				Colgantes	Charms	Kettenanhänger	Pendantif	Colgantes				
+Crystal Evolution	KCE4	KCE4	KCE4	-	1		YES	YES		68.00	34.00	33.00	3						Necklaces	Ketten	Chaine				Collares	Necklaces	Ketten	Chaine	Collares				
+Crystal Evolution	KCE17	KCE17	KCE17	-	1			YES		79.20	39.60	37.00	3						Necklaces	Ketten	Chaine				Collares	Necklaces	Ketten	Chaine	Collares				
+Crystal Evolution	KCE10	KCE10	KCE10	-	1			YES		32.00	16.00	15.00	3						Charms	Kettenanhänger	Pendantif				Colgantes	Charms	Kettenanhänger	Pendantif	Colgantes				
+Crystal Evolution	KCE18	KCE18	KCE18	-	1			YES		28.00	14.00	13.00	3						Charms	Kettenanhänger	Pendantif				Colgantes	Charms	Kettenanhänger	Pendantif	Colgantes				
+Crystal Evolution	KCE7	KCE7	KCE7	S-CC	1		YES	YES		64.00	32.00	30.00	3						Necklaces	Ketten	Chaine				Collares	Necklaces	Ketten	Chaine	Collares				
+Crystal Evolution	KCE7	KCE7	KCE7	S-BK	1		YES	YES		64.00	32.00	30.00	3						Necklaces	Ketten	Chaine				Collares	Necklaces	Ketten	Chaine	Collares				
+Crystal Evolution	KCE7	KCE7	KCE7	S-LR	1		YES	YES		64.00	32.00	30.00	3						Necklaces	Ketten	Chaine				Collares	Necklaces	Ketten	Chaine	Collares				
+Crystal Evolution	KCE25	KCE25	KCE25	S-CC	1			YES		79.20	39.60	35.00	3						Necklaces	Ketten	Chaine				Collares	Necklaces	Ketten	Chaine	Collares				
+Crystal Evolution	KCE25	KCE25	KCE25	S-BK	1			YES		79.20	39.60	35.00	3						Necklaces	Ketten	Chaine				Collares	Necklaces	Ketten	Chaine	Collares				
+Crystal Evolution	OCE30	OCE30	OCE30	-	1		YES	YES		74.00	37.00	34.00	3						Earrings	Ohrringe	Boucle d'oreille				Pendientes	Earrings	Ohrringe	Boucle d'oreille	Pendientes				
+Crystal Evolution	OCE3	OCE3	OCE3	S-LR	1		YES	YES		120.00	60.00	55.00	3						Earrings	Ohrringe	Boucle d'oreille				Pendientes	Earrings	Ohrringe	Boucle d'oreille	Pendientes				

@@ -1,0 +1,130 @@
+/*navgation*/
+#nav {
+	margin: 0 auto;
+	padding: 0px;
+	width: 952px;
+	clear: both;
+}
+
+#nav table {
+	margin: 0px;
+	padding: 0px;
+	border-top: 1px #5B5858 dotted;
+	border-bottom: 1px #5B5858 dotted;
+	clear: both;
+	overflow:hidden;
+	font-family:"Arial", Helvetica, sans-serif;
+	font-size: 10pt;	
+}
+
+#nav td {
+	padding-left: 0.7em;
+	padding-right: 0.7em;
+	text-transform:uppercase;
+	text-align: center;
+	border-right: 1px solid lightgrey;
+}
+
+#nav td a {
+	text-decoration: none;
+	padding-left:22px;
+	padding-right:22px;
+}
+
+#nav td a:hover {
+	color: #d4232c;
+	background: #E7E7E8;
+}
+
+#nav td a.selected {
+	color: #d4232c;
+	background: #E7E7E8;	
+}
+
+#nav .currentPage{
+	color:#D4232C;
+}
+
+#nav .lastnav {
+	border:none;
+}
+
+#nav .disabled{
+	background:none;
+	color: #ccc;
+	cursor:default;
+}
+
+#nav a:hover.disabled{
+	background:none;
+	color: #ccc;
+	cursor:default;
+}
+
+
+/*leftnavgation*/
+
+#leftBox ul{
+	padding:0px 2px 0px 0px;
+}
+
+
+#leftBox ul li.firstlevel div {
+	padding-left:8px;
+	color:gray;
+}
+#leftBox ul li.firstlevel{
+	margin-bottom:4px;
+	clear:both;
+	line-height:20px;
+	margin-left:-5px;
+	text-transform:uppercase;
+	font-family:"Arial", Helvetica, sans-serif;
+	letter-spacing:-0.1pt;
+	word-spacing:0.2pt;	
+	font-weight:bold;
+}
+
+
+#leftBox ul li.firstlevel a.selected{
+	color: #d4232c;
+}
+#leftBox ul li.firstlevel a.selected.plusbg{
+	color: #d4232c;
+	background: #E7E7E8;
+	border: 1px #c8c8c8 dotted;
+}
+/*secondLevel*/
+#leftBox li.secondlevel {
+	font-weight:normal;
+	font-size:90%;
+	letter-spacing:0pt;	
+	padding-left:5px;
+	line-height:20px;	
+	color: lightgrey;
+}
+#leftBox ul li.secondlevel a.selected{
+	color: #d4232c;
+	background: #E7E7E8;
+	border: 1px #c8c8c8 dotted;	
+}
+#leftBox ul li a{
+	text-decoration:none;
+	display:block;
+	padding-left:8px;
+}
+#leftBox ul li a:hover{
+	color:#d4232c;
+	background:#E7E7E8;
+}
+
+#leftBox div.messages {
+	margin-top: 30px;
+	text-transform:uppercase;
+	border: 1px black dotted;
+	padding: 3px 3px 3px 3px;
+}
+#leftBox div.messages ul li{
+	text-transform:none;
+	color: darkgrey;	
+}

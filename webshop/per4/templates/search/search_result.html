@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% load explore %}
+{% load i18n %}
+
+{% block left_block %}
+	{% include "left_menu_inc.html" %}
+{% endblock %}
+
+{% block center_block_header %}{% trans "Results for" %} - {{ searchstring }}{% endblock %}
+
+{% block content %}
+ <div class="lineexplore">
+    {% include "explore/line_result.html" %}
+    <div style="clear: both; line-height: 0; height: 0;">&nbsp;</div>
+</div>
+{% endblock %}

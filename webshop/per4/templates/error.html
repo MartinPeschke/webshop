@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block left_block %}
+<!--left block area-->
+{% endblock %}
+
+{% block content %}
+
+<div class="center_box">
+
+<div class="heading"><b>{% trans 'Error' %}</b> {% trans 'reporting...' %} </div>
+
+<div id="debug" style="display:">
+    <h2>{{ msg.error }}</h2>
+</div>
+
+</div>
+
+{% endblock %}

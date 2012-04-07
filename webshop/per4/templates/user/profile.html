@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block head %}
+{% endblock %}
+
+{% block left_block %}
+	{% include "user/ProfileTreeLeft.html" %}
+{% endblock %}
+
+{% block center_block_header %}{% trans 'MY ACCOUNT - '%}{% trans request.user.get_profile.roleName.upper %}{% endblock %}

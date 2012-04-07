@@ -1,0 +1,158 @@
+{% load i18n %}
+<html>
+<head>
+<style type="text/css">
+body{
+	max-width: 1024px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+}
+
+</style>
+</head>
+<body>
+{{ profile.roleName }} Order for: {{ profile.first_name }} {{ profile.last_name }}, {{ user.email }}, {{ address.tel }}<br/>
+Payment Method: {{ profile.get_payment_method }}
+
+{% if credit_card %}
+<table border="1" cellspacing="0">
+<tr>
+	<td>Card Owner</td><td>{{ credit_card.owner }}</td>
+</tr>z
+<ztr>
+	<td>Card Number</td><td>{{ credit_card.cardno }}</td>
+</tr>
+<tr>
+	<td>Type</td><td>{{ credit_card.ctype }}</td>
+</tr>
+<tr>
+	<td>Valid Until</td><td>{{ credit_card.valid_until }}</td>
+</tr>
+<tr>
+	<td>Security Number</td><td>{{ credit_card.security_number }}</td>
+</tr>
+</table>
+{% endif %}
+{% if bank_account %}
+	<table border="1" cellspacing="0">
+	<tr>
+		<td>Account Owner</td><td>{{ bank_account.owner }}</td>
+	</tr>z
+	<ztr>
+		<td>Account Number</td><td>{{ bank_account.accountno }}</td>
+	</tr>
+	<tr>
+		<td>BLZ</td><td>{{ bank_account.blz }}</td>
+	</tr>
+	<tr>
+		<td>Bank</td><td>{{ bank_account.bank_name }}</td>
+	</tr>
+	</table>	
+{% endif %}
+
+<table border="1" cellspacing="0">
+<tr>
+	<th class="top">Shop</th>
+	<th class="top">Line</th>
+	<th class="top">Family</th>
+	<th class="top">Reference</th>
+	<th class="top">Option</th>
+	<th class="top">Qty</th>
+	<th class="top">Price pPc</th>
+	<th class="top">Total</th>
+</tr>
+{% for option in cart.items %}
+<tr align="center">
+	<td>{{ option.article.article_family.line.shop.ref }}</td>
+	<td>{{ option.article.article_family.line.ref }}</td>
+	<td>{{ option.article.article_family.ref }}</td>
+	<td>{{ option.article.ref }}</td>
+	<td>{{ option.ref }}</td>
+	<td>{{ option.quantity }}</td>
+	<td>{{ option.price }}</td>
+	<td>{{ option.total }}</td>
+</tr>
+{% endfor %}
+<tr>
+	<td colspan="6">&nbsp;</td>
+	<td class="top" align="right">Sum: </td>
+	<td class="top" align="right">{{ cart.total }}<b>&euro;</b></td>
+</tr>
+<tr>
+	<td colspan="6">&nbsp;</td>
+	<td class="top" align="right">VAT {{ cart.taxRate }}% </td>
+	<td class="top" align="right">{{ cart.tax }}<b>&euro;</b></td>
+</tr>
+<tr>
+	<td colspan="6">&nbsp;</td>
+	<td class="top" align="right">Total: </td>
+	<td class="top" align="right">{{ cart.all_total }}<b>&euro;</b></td>
+</tr>
+</table>
+
+<p>Kommentar:
+	<div>
+		{{ order.comment }}
+	</div>
+</p>
+
+<p>
+Firmen Daten: {{ profile.bo_customer_no }}
+<table>
+	<tr>
+		<td>Name:</td>
+		<td>{{ profile.title }} {{ profile.first_name }} {{ profile.last_name }}</td>			
+	</tr>
+	<tr>
+		<td>Firma:</td>
+		<td>{{ profile.company_name }}</td>			
+	</tr>
+	<tr>
+		<td>USt. ID:</td>
+		<td>{{ profile.vat_id }}</td>			
+	</tr>
+	<tr>
+		<td>USt. befreit (0=Nein, 1 = Ja)?:</td>
+		<td>{{ profile.taxFreed }}</td>			
+	</tr>
+	<tr>
+		<td>Oeffnungszeiten:</td>
+		<td>{{ profile.weekdays }}, {{ profile.opening_hours }}</td>			
+	</tr>
+	<tr>
+		<td>Homepage:</td>
+		<td>{{ profile.webpage }}</td>
+	</tr>
+</table>
+</p>
+
+<p>
+Addressen des Kunden:
+{% for add in user.address_set.all %}
+<table>
+	<tr>
+		<td>{{ add.type }} Strasse:</td>
+		<td>{{ add.street }}</td>			
+	</tr>
+	<tr>
+		<td>Ort:</td>
+		<td>{{ add.zip }} {{ add.city }}</td>			
+	</tr>
+	<tr>
+		<td>Land:</td>
+		<td>{{ add.country }}</td>
+	</tr>	
+	<tr>
+		<td>Phone:</td>
+		<td>{{ add.tel }}</td>
+		<td>Mobil:</td>
+		<td>{{ add.mobile }}</td>
+		<td>Fax:</td>
+		<td>{{ add.fax }}</td>
+	</tr>
+	
+</table>
+{% endfor %}
+</p>
+</body></html>

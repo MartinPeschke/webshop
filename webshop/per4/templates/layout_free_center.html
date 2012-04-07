@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load explore %}
+
+<!-- Body Section -->
+{% block body %}
+<div id="leftBox" class="grid_3 alpha">
+    {% block left_block %}
+        {% include "left_menu_inc.html" %}
+    {% endblock %}
+
+    {% if messages %}
+    <div class="messages">
+    {% trans "You have a Message" %}:
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    </div>
+    {% endif %}
+
+    {% block left_block_announce %}
+        {% include "left_block_announce.html" %}
+    {% endblock %}
+</div>
+
+<div id="centerBox" class="grid_10 centerBox">
+    {% block centerbox %}{% endblock %}
+</div>
+
+<div id="rightBox" class="grid_3 rightBox omega">
+    {% include 'explore/cart_items.html' %}
+</div>
+
+{% block bottom %}{% endblock %}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block center_block_header %}{% trans 'Order Free Catalog - COMPLETED' %}{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+<div class="center_box">
+    <div class="block"></div>
+	<div class="reg_title"><label class="reg_title_bg">{% trans "Thank you!" %}</label></div>
+	<div class="reg_bg"></div>
+	<div id="reg_form">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td class="reg_home"><p>{% trans "Thank you for ordering our catalog! We will contact you soon!" %}</p></td>
+		</tr>
+		<tr>
+			<td class="reg_home_img">
+            <div class="button active floatLeft spaced"><a href="/main/">{% trans "Home" %}</a></div>
+			</td>
+		</tr>
+		</table>
+	</div>
+</div>
+{% endblock %}

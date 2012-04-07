@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% load explore %}
+{% load i18n %}
+
+    {% block head %}
+    	<link rel="stylesheet" type="text/css" href="/media/css/static.css" />		 
+	{% endblock %}
+	
+{% block jscripts %}
+	openBig = function(img){
+		window.open('/media/ads/'+img.getAttribute('alt')+'.jpg', 'LargeAd');
+	}
+
+	showMedium = function(img){
+		var current = $('#current_pic').children('img').get(0);
+		current.src = '/media/ads/M_'+img.getAttribute('alt')+'.jpg';
+		current.setAttribute('alt', img.getAttribute('alt'));
+	}
+
+	var pos = 0;
+
+	scrollRight = function(){
+		if( pos+4 < $('#pic_bar').children('img').length ){
+	 		$('#scrollLeftArrow').show();
+		 	$($('#pic_bar').children('img')[pos]).hide();
+		 	$($('#pic_bar').children('img')[pos+4]).show();
+	 		pos = pos + 1;
+	 	}
+
+		if( pos+4 >= $('#pic_bar').children('img').length )
+	 		$('#scrollRightArrow').hide();
+	}
+
+	scroll_Left = function(){
+		if(pos > 0){
+	 		$('#scrollRightArrow').show();
+	 		pos = pos - 1;
+		 	$($('#pic_bar').children('img')[pos]).show();
+		 	$($('#pic_bar').children('img')[pos+4]).hide();
+	 	}
+
+		if(pos <= 0)
+			$('#scrollLeftArrow').hide();
+	 }
+{% endblock %}
+
+{% block center_block_header %}{% trans 'OUR ADVERTISEMENTS' %}{% endblock %}
+
+{% block content %}
+<div id="current_pic" align="center">
+	{% with files|first as ad %}
+		<img src="/media/ads/M_{{ ad|first }}" alt="{{ ad|last }}" onclick="openBig(this)"/>
+	{% endwith %}
+</div>
+
+
+<div id="all_pic_bar" align="center">
+	<span class="arrows">&nbsp;
+		<img src="/media/images/left_arrow.png" alt="Previous" onclick="scroll_Left()" id="scrollLeftArrow" style="display:none" class="img_arrow"/>
+	</span>
+	<span id="pic_bar">
+			{% for fname, name in files|slice:":4" %}
+				<img src="/media/ads/TN_{{ fname }}" alt="{{ name }}" onclick="showMedium(this)"/>
+			{% endfor %}
+			{% for fname, name in files|slice:"4:" %}
+				<img src="/media/ads/TN_{{ fname }}" style="display:none" alt="{{ name }}" onclick="showMedium(this)"/>
+			{% endfor %}
+	</span>
+	<span class="arrows">&nbsp;
+		<img src="/media/images/right_arrow.png" alt="Next" onclick="scrollRight()" id="scrollRightArrow" class="img_arrow"/>
+	</span>
+</div>
+
+{% endblock %}

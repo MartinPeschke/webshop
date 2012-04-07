@@ -1,0 +1,9 @@
+Hi, dies ist Ihr Webshop,
+
+wir haben soeben eine Registrierung fuer den Benutzer: {{ user.user_name }} erhalten.
+
+Geh zu dem Link hier:
+
+{{ approvalLink }}
+
+um den Kunden als Studiokunden freizuschalten.

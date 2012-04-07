@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>OrderTest</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">OrderTest</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@id='welcome_stud']/div[2]/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@onclick='login()']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Piercing</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[@alt='BTR16-12']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>quantityfield_138807</td>
+	<td>11</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@onclick='addToCart()']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Lippenstecker</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[@alt='BLM']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>quantityfield_138371</td>
+	<td>22</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@onclick='addToCart()']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Ptfe-Silicone-Stones</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Flared Eyelets</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[@alt='PKSE']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//img[@alt='Mehr']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>quantityfield_144022</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>quantityfield_144023</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>quantityfield_144024</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>quantityfield_144025</td>
+	<td>4</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>quantityfield_144026</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>quantityfield_144027</td>
+	<td>6</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>quantityfield_144028</td>
+	<td>7</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@onclick='addToCart()']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//tr[@id='144022']/td[7]/span</td>
+	<td>(1+)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//tr[@id='144028']/td[7]/span</td>
+	<td>(7+)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=PKSE110 SI</td>
+	<td>PKSE110 SI</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=BLM12-10 M-BK</td>
+	<td>BLM12-10 M-BK</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=PKSE110 SI</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@onclick='toCashier()']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id_payment_method_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>order_comment</td>
+	<td>AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST AUTO TEST </td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@onclick=&quot;$('#myForm').submit()&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='centerBox']/table/tbody/tr[2]/td/div/div[2]/label</td>
+	<td>Bestellung vollständig</td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Ihr Bestellung wurde erfolgreich aufgenommen.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//table[@id='cartBox']/tbody/tr[2]/td</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@onclick=&quot;window.location.href = '/main/'&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>StudioAreaNotice</td>
+	<td>NUR FÜR STUDIOS</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Abmelden</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

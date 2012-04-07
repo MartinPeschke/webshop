@@ -1,0 +1,236 @@
+/* ---------------------------- STATIC ----------------------- */
+p.question{margin:10px;font-weight:bold;}
+p.answer{margin: 10px 10px 10px 20px;}
+/* welcome.html */
+	#welcome_end span.label{
+		font-size:8pt;font-weight:bold;color:#000;font-family:Arial-NARROW, Helvetica, sans-serif;
+		position:absolute;
+		top:10px;	
+		width:190px;
+		text-align:right;
+		padding-right: 15px;
+		left:-200px;	
+	}
+	
+	#welcome_end img{
+	
+	}
+
+	#welcome_stud img{
+		float:left;	
+	}
+	
+	#welcome_stud div:hover, #welcome_end div:hover {
+		cursor:pointer;
+	}
+	
+	#welcome_stud span.label{
+		padding-left: 5px;
+		font-size:8pt;font-weight:bold;color:#000;font-family:Arial-NARROW, Helvetica, sans-serif;
+		position:relative;
+	}
+
+	#login_pane{
+		position:absolute;
+		right: 50px;
+		top:20px;
+	}
+	
+	#welcome_pane{
+		position:absolute;
+		right: 50px;
+		top:20px;
+	}
+
+
+
+/*for material guide*/
+#centerBox #material ul li{
+	padding-left:10px;
+}
+
+#centerBox #material .material_part{
+	margin-bottom:20px;
+}
+
+#centerBox #material .material_part ul{
+	padding-left:13px;
+}
+
+#centerBox #material .material_part ul li{
+	list-style-type:disc;
+	padding:0px;
+}
+
+/* for gallery.html */
+#centerBox #gallery table{
+	width:85%;
+	margin:0 auto;
+	margin-bottom:20px;
+	margin-top:10px;
+}
+
+#centerBox #gallery .gallery_text{
+	text-align:left;
+	padding-left:2.5em;
+}
+
+#centerBox #gallery .gallery_text table{
+	width:150px;
+	table-layout:fixed;
+}
+
+#centerBox #gallery .gallery_text_name{
+	color:#D4232C;
+	font-size:1.3em;
+	font-weight:bold;
+	text-transform:uppercase;
+	padding-bottom:5px;
+}
+
+#centerBox div.secondHeading{
+	background-color: black;
+	color:white;
+	font-size:22px;
+		
+}
+
+#centerBox #gallery .gallery_text_date{
+	font-size:1em;
+	text-transform:uppercase;
+	padding-bottom:5px;
+}
+
+.gallery_text_content{
+	white-space:normal;
+	width:150px;
+}
+
+/* for contact.html */
+#centerBox #contact_content .contact_text{
+	font-size:1.4em;
+	font-family:"Arial",arial, Verdana, helvetica, sans-serif;
+	font-weight:bold;	
+}
+
+#centerBox #contact_content .contact_text td{
+	padding-bottom:18px;
+}
+
+#centerBox #contact_content .contact_text span{
+	color:#D4232C;
+}
+
+#centerBox #contact_content .contact_text div {
+	color:#868686;
+}
+#centerBox #contact_content .contact_text div.mini{
+	color:#868686;
+	font-size:12px;
+}
+
+/* for about.html */
+#centerBox #about_content{
+	margin:0 auto;
+	margin-top:20px;
+}
+
+#centerBox #about_content h1{
+	color:#D4232C;
+	background: #C6C7C8 none repeat scroll 0 0;
+	font-size: 12px;
+}
+
+
+
+#centerBox #about_content .about_text{
+	font-size:1em;
+	line-height:1.5em;
+	white-space:normal;
+	margin: 10px;
+}
+
+/* for TeamsAndCondition.html */
+#centerBox  .team_content{
+	width:96%;
+	margin:0 auto;
+	margin-top:20px;
+}
+
+#centerBox .team_content h1{
+	font-family:"Arial",arial, Verdana, helvetica, sans-serif;
+	font-size:13px;
+	font-weight:normal;
+	color:#D4232C;
+}
+
+
+#centerBox .team_content h2{
+	font-family:"Arial",arial, Verdana, helvetica, sans-serif;
+	font-size:14px;
+	text-align: center;
+	font-weight:normal;
+	color:Black;
+}
+
+#centerBox .team_content h2.dark{
+	font-family:"Arial",arial, Verdana, helvetica, sans-serif;
+	font-size:12px;
+	font-weight:normal;
+	color:#000000;
+}
+
+
+#centerBox .team_content h3{
+	font-family:"Arial",arial, Verdana, helvetica, sans-serif;
+	font-size:1.8em;
+	font-weight:normal;
+	margin-top:10px;
+	margin-bottom:5px;
+}
+#centerBox .team_content li{
+	padding-bottom:10px;
+	width:98%;
+}
+
+#centerBox .team_content .team_title{
+	color:#D4232C;
+	font-size:1.5em;
+	font-family:"Arial",arial, Verdana, helvetica, sans-serif;
+}
+
+#centerBox .team_content .team_text{
+	margin-left:10px;
+	font-size:x-small;
+}
+
+/* for ourads_en.html */
+#current_pic:hover {
+	cursor: pointer;	
+}
+#all_pic_bar{
+	margin: 10px;
+}
+#all_pic_bar span.arrows{
+	min-width:80px;
+	width:80px;
+}
+
+#all_pic_bar img.img_arrow{
+	margin: 73px -5px;
+}
+#all_pic_bar img.img_arrow:hover, #all_pic_bar img:hover {
+	cursor: pointer;	
+}
+
+
+/* ------------------------------------------ DOWNLOADS ---------------------------------- */
+ul.linklist {
+	text-align: center; 
+	font-weight: bold;
+	margin: 10px 0px;
+}
+
+ul.linklist > li {
+	padding: 2px 0;
+}

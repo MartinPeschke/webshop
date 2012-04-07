@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block onloadAll %}
+	$('#id_same_0').click(function(){$('#shippingForm').hide();});
+	$('#id_same_1').click(function(){$('#shippingForm').show();});
+{% endblock %}
+
+{% block center_block_header %}{% trans 'REGISTRATION - NEW USER - RETAIL' %}{% endblock %}
+
+{% block content %}
+<div class="center_box"><!-- reg begin -->
+    <div id="required"><div>{% trans 'Required fields' %}</div></div>
+    <div class="reg_title"><label class="reg_title_bg">{% trans 'Your details' %}</label></div>
+    <div class="reg_bg"></div>
+    <div class="reg_form">
+    <form id="myform" action="/user/registration/save/" method="post" onsubmit="return agreeTerms();">
+		{% include "user/account_details_E.html" %}
+     </form>
+   </div>
+</div>
+{% endblock %}

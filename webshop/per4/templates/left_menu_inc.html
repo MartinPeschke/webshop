@@ -1,0 +1,9 @@
+{% load i18n explore %}
+
+<ul id="leftBarNav" class="clearfix leftBarNav">
+	{% for shop in shops %}
+		<li class="firstlevel toplevel {% if forloop.first %}first{% else %}next{%endif%} {{ request.path|selected_start:shop.ref }}">
+			<a href="/{{ shop.ref }}/">{{ shop.name|locale:LANGUAGE_CODE }}</a>
+		</li>
+	{% endfor %}
+</ul>

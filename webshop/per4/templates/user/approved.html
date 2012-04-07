@@ -1,0 +1,107 @@
+{% load i18n %}
+{% load explore %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>{% block title %}{% block pagetitle %}{% endblock %}{% trans 'Welcome to Per-4.com' %}{% endblock %}</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <link rel="shortcut icon" href="/media/images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="/media/css/base.css" />
+    {% block head %}{% endblock %}
+</head>
+
+<body onload="getOS()">
+
+
+    <!-- Header Section -->
+    <div id="header">
+		<div id="header_bar">
+				<center>{% trans 'Herzlich Willkommen bei Per-4' %}
+				{% if request.user.is_authenticated %}, {{ user.get_profile.first_name }}{% endif %}
+				</center>
+        </div>
+        
+        <div id="StudioAreaNotice" class="{{ simple_role }}">
+        	{% trans "Only For Studios" %}
+        </div>
+		
+		<div id="login_panel">
+			<div><a href="/contact/">Kontakt</a></div>
+		{% if request.user.is_authenticated %}
+			<div><a href="/user/profile/account/" title="My Account">{% trans 'My Account' %}</a></div>
+			<div><a href="/user/logout/">{% trans "Logout" %}</a></div>
+		{% else %}
+			<div><a href="/login/?forward_URL={{ request.path }}">{% trans "Login" %}</a></div>
+		{% endif %}
+		</div>
+
+		<div id="logo_placeholder"><a href="/main/"><img id="per4_logo" src="/media/images/logo.jpg"/></a></div>
+
+        <div id="nav_bar" class="{{ simple_role }}">
+            <!-- Menu bar -->
+            {% block nav_bar %}
+			<table width="100%" cellspacing="0"><tr>
+				{% for shop in shops %}
+				<td align="center">
+					<a href="/{{ shop.ref }}/" {{ request.path|selected_start:shop.ref }}>{{ shop.name|locale:LANGUAGE_CODE }}</a>
+				</td>
+				{% endfor %}
+            </tr></table>
+            {% endblock %}
+        </div>
+
+        <!-- Search Box -->
+		<div id="search_box" class="{{ simple_role }}">
+        	<form action="/search/" method="get">
+	        	<fieldset>
+				<label>{% trans "Search" %}</label>
+	            <input class="{{ simple_role }}" type="search" value="" id="search_text" name="s" accesskey="s" autosave="" results="5"  />
+	            <button class="{{ simple_role }}" type="submit" id="a">{% trans "Search" %}</button>
+	            </fieldset>
+            </form>
+        </div>
+	</div>
+
+<div class="center_box">
+	<div id="reg_form">
+		{% if message %}
+			<H1>{{ message }}</H1>
+			<hr/><br/><br/><br/>
+		{% endif %}
+
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+			<td>
+				<b>Freigeschaltet:</b>
+				<table border="1" style="position: absolute; background-color: White;">
+				<tr><th>id</th><th>Studio</th><th>Name, Vorname</th><th>Strasse</th><th>Zip, Ort</th><th>Land</th><th>EMail</th><th>UStID</th><th>Kundennummer</th></tr>
+				
+				{% for u in approved_users %}
+					{% with u.profile as p %} 
+					{% with u.address as a %} 
+					<tr style="{% ifequal user u %}background-color:Green;{% endifequal %}">
+						<td>{{ u.id }} </td>
+						<td>{{ p.company_name }}</td>
+						<td>{{ p.last_name}}, {{ p.first_name }}</td>
+						<td>{{ a.street }}</td>
+						<td>{{ a.zip }}, {{ a.city }}</td>
+						<td>{{ a.country }}</td>
+						<td>{{ u.email }}</td>
+						<td>{{ p.vat_id }}</td>
+						<td>{{ p.bo_customer_no }}</td>
+					</tr>
+					{% endwith %}
+					{% endwith %}
+				{% endfor %}
+				</table>
+			</td>
+			</tr>
+			<tr>
+				<td class="reg_home_img"><a href="/main/"><img src="/media/images/btn_home.jpg" alt="return home"/></a></td>
+			</tr>
+			</table>
+	</div>
+</div>
+
+</body>
+</html>

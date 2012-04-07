@@ -1,0 +1,16 @@
+User
+{{ user }}
+
+Stacktrace
+{{ stacktrace }}
+
+Exception
+{{ error }}
+
+Request
+{{ request }}
+
+
+-----------------------------------------------------------------------------------------
+Charlottenstrasse 65 - 10117 Berlin - Telefon +49 30 93 66 38 21 - Fax +49 30 93 66 38 22
+                            www.per-4.com - order@per-4.com

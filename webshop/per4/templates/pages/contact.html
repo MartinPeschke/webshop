@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% load explore %}
+{% load i18n %}
+{% block meta_keywords %}Contact,Kontakt,{% endblock %}
+    {% block head %}
+    <link rel="stylesheet" type="text/css" href="/media/css/static.css" />
+	{% endblock %}
+{% block center_block_header %}{% trans 'Contact' %}{% endblock %}
+
+{% block content %}
+<table width="100%" border="0" cellspacing="0" cellpadding="0" id="contact_content">
+  <tr>
+    <td colspan="2" valign="top" align="left" style="background:url(/media/images/static/contact_opening_{{ LANGUAGE_CODE }}.jpg?20111212) left top no-repeat; height:663px;">
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+  </table>
+<div class="mini" style="text-align:center">via <a href="http://maps.google.de/maps?f=q&source=s_q&hl=de&geocode=&q=per-4&sll=52.529016,13.456364&sspn=0.019503,0.05579&ie=UTF8&z=15&iwloc=A">Google Maps</a></div>
+{% endblock %}

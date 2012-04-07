@@ -1,0 +1,56 @@
+{% load i18n %}
+
+<html>
+<head>
+<style type="text/css">
+body{
+	max-width: 1024px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+}
+
+h3 {
+	background-color:Red;
+	color:Black;
+}
+
+</style>
+</head>
+<body>
+
+<h3>{% trans 'User' %}</h3>
+<pre>
+Name: {{ user }}
+Email: {{ form.email.data }}
+First Name: {{ form.first_name.data }}
+Last Name: {{ form.last_name.data }}
+</pre>
+
+<h3>{% trans 'Address' %}</h3>
+<pre>
+Company: {{ form.company_name.data }}
+Street: {{ form.street }}
+City: {{ form.city.data }}
+Zip: {{ form.zip.data }}
+Country: {{ form.country.data }}
+Tel: {{ form.tel.data }}
+Fax: {{ form.tel.data }}
+</pre>
+
+<h3>Additional Addresses for logged in users:</h3>
+<pre>{% for billing in persons %}
+{% trans 'Name' %}: {{ billing.name }}
+{% trans 'Street' %}: {{ billing.street }} {{ billing.streetno }}
+{% trans 'Zip' %}: {{ billing.zip }}
+{% trans 'City' %}: {{ billing.city }}
+{% trans 'Country' %}: {{ billing.country }}
+
+{% trans 'Email' %}:  {{ billing.email }}
+{% trans 'Phone' %}: {{ billing.phone }}
+{% trans 'Fax' %}: {{ billing.fax }}
+{% endfor %}
+</pre>
+
+</body>
+</html>

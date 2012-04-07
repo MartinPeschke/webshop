@@ -1,0 +1,27 @@
+{% load explore %}
+{% load i18n %}
+
+{% if page %}
+	{% for article_family in page %}
+		{% with article_family.promotion as p %}
+		<div class="offerpreview">
+			<a href="/{{  article_family.line.shop.ref }}/{{  article_family.line.ref }}/{{ article_family.ref }}/">
+				<img class="medium" alt="{{ article_family.ref }}" src="{{ article_family|check_image_med:article_family.shop_ref }}?20090318"/>
+			</a>
+			<div class="articleshortdesc">
+				<a class="floatRight article-desc-text {% if p.is_newprice %}green{% endif %}" href="/{{ article_family.line.shop.ref }}/{{  article_family.line.ref }}/{{ article_family.ref }}/">
+                {{ article_family.desc|locale:LANGUAGE_CODE }}</a>
+                <br/>
+                <div class="floatRight">{{ article_family|from_price:simple_role }}</div>
+			</div>
+			{% if p %}
+				<span class="promotionalIcons {{ p.type_ref|lower }}">
+					<img src="/media/images/icon_{{ p.type_ref }}.png" alt="{{ p.type_ref|upper }}"/>
+				</span>
+			{% endif %}
+		</div>
+		{% endwith %}
+	{% endfor %}
+{% else %}
+	<div style="font-weight: bold; text-align: center;">{% trans "No Articles Found!" %}</div>
+{% endif %}

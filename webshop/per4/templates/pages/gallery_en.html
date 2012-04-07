@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% load explore %}
+{% load i18n %}
+
+
+{% block center_block_header %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="center_box">
+
+	<img src="/media/gallery/galleryseite{{ page }}.jpg" alt="{{ title }}"/>
+
+	{% if prev %}
+		<div style="font-weight: bold; position: relative; float: left;margin-top:2em">
+			<a href="/gallery/{{ prev }}">{% trans "Zurueck zur vorherigen Seite" %}</a>
+		</div>
+	{% endif %}
+
+	{% if next %}
+		<div style="font-weight: bold; position: relative; float: right;margin-top:2em">
+			<a href="/gallery/{{ next }}">{% trans "Weiter zur naechsten Seite" %}</a>
+		</div>
+	{% endif %}
+</div>
+{% endblock %}

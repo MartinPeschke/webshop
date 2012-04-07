@@ -1,0 +1,24 @@
+{{ profile.roleName }} Order for: {{ profile.first_name }} {{ profile.last_name }}, {{ user.email }}, {{ address.tel }}
+Payment Method: {{ profile.payment_method }}
+
+{% if credit_card %}
+Card Owner: {{ credit_card.owner }}
+Card Number: {{ credit_card.cardno }}
+Type: {{ credit_card.cardno }}
+Valid Until: {{ credit_card.valid_until }}
+Security Number: {{ credit_card.security_number }}
+{% endif %}
+
+Die Tabelle ist mit Tabulatoren formatiert, einfach kopieren und in Excel einfuegen macht alles leichter lesbar!
+
+Shop	Line	Family	Reference	Option	Qty	Price pPc	Total
+
+{% for option in cart.items %}
+
+{{ option.article.article_family.line.shop.ref }}	{{ option.article.article_family.line.ref }}	{{ option.article.article_family.ref }}	{{ option.article.ref }}	{{ option.ref }}	{{ option.quantity }}	{{ option.price }}	{{ option.total }}
+
+{% endfor %}
+
+Sum: 			{{ cart.total }} Euro
+VAT ({{ cart.taxRate }}%):	{{ cart.tax }} Euro
+Total:			{{ cart.all_total }} Euro

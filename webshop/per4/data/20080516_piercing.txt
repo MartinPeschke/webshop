@@ -1,0 +1,14 @@
+Line	logopath	ArticleFamily	ArticleReference	OptionReference	Pcs	Sale	News	InWebshop	Weight	RetailUnitPrice	ResellerUnitPrice	ResellerUnitDiscountPrice	DiscountQty	Thickness	LengthDiameter	Ballsize1	Ballsize2	SizeIn	Type	Type(de)	Type(fr)	Type(it)	Type(ch)	Type(pl)	Type(es)	Description	Description(de)	Description(fr)	Description(es)	Description(it)	Description(pl)	Description(ch)	BodyParts
+SURGICAL STEEL	OFF01-01	OFF01-01	OFF01-01	-	1	YES		YES			10.00		3																				
+TITANIUM	OFF01-02	OFF01-02	OFF01-02	-	1	YES		YES			11.00		3																				
+TITANIUM	OFF01-03	OFF01-03	OFF01-03	-	1	YES		YES			5.00		3																				
+UV FLOUR	OFF01-04	OFF01-04	OFF01-04	-	1	YES		YES			3.00		3																				
+UV FLOUR	OFF01-05	OFF01-05	OFF01-05	-	1	YES		YES			3.00		3																				
+STERLING SILVER	OFF01-06	OFF01-06	OFF01-06	-	1	YES		YES			7.00		3																				
+SURGICAL STEEL	OFF01-07	OFF01-07	OFF01-07	-	1	YES		YES			19.00		3																				
+STERLING SILVER	OFF01-08	OFF01-08	OFF01-08	-	1	YES		YES			15.00		3																				
+UV FLOUR	OFF01-09	OFF01-09	OFF01-09	-	1	YES		YES			7.00		3																				
+UV FLOUR	OFF01-10	OFF01-10	OFF01-10	-	1	YES		YES			19.00		3																				
+BLACK & GOLD	OFF01-11	OFF01-11	OFF01-11	-	1	YES		YES			15.00		3																				
+ORGANICS	OFF01-12	OFF01-12	OFF01-12	-	1	YES		YES			25.00		3																				
+PTFE-PMFK	OFF01-13	OFF01-13	OFF01-13	-	1	YES		YES			29.90		3																				

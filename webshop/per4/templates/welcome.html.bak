@@ -1,0 +1,24 @@
+{% load explore %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>{% block title %}{% block pagetitle %}{% endblock %}Willkommen bei Per-4 - Piercing - Tattoo - Jewellery - Medical Equipment - Permanent Make Up - Online Shop{% endblock %}</title>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+	<meta name="author" content="Martin Peschke"/>
+	<meta name="description" content="{% block meta_description %}Per-4, Ihr Piercing - Tattoo - Jewellery - Medical Equipment - Permanent Make Up - Online Shop{% endblock %}"/>
+	<meta name="keywords"content= "{% block meta_keywords %}{% endblock %}Piercing,Tattoo,Grosshandel,Studiobedarf,Medical Equipment,Cutting,Branding,Scarification,Bodyart,Bodypiercing,Tatto,Piercingschmuck,Piercen,Titan,Titanium,Schmuck,Per-4,Bodypiercing,Zungenpiercing,Intimpiercing,Brustpiercing,Pflege,Piercingpflege,Nipplepiercing,Piercingshop,Brustwarzeberlin,Deutschland,Europa" />
+	<link rel="shortcut icon" href="/media/images/favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" type="text/css" href="/media/css/base.css?20110122" />
+</head>
+
+<body onload="getOS()">
+	<img src="/media/images/static/webwelcome.jpg" usemap="#welcomemap"/>
+	<map name="welcomemap">
+	<area shape="rect" coords="0,0,525,640"
+		href="/main/" alt="Grosshandel" title="Per-4 Grosshandel"/>
+	<area shape="rect" coords="525,0,1024,640"
+		href="http://www.per4store.com/" alt="www.per4store.com" title="www.per4store.com"/>
+	</map>
+	{% track_pagehits %}
+</body>
+</html>

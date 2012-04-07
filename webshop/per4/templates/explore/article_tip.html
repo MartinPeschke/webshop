@@ -1,0 +1,22 @@
+{% load explore %}
+{% load i18n %}
+
+<div class="right_announce tip_box">
+	<div class="title">{% trans "Neu bei uns!" %}</div>
+	{% for p in random_new %}
+		<div class="item {% if not forloop.first %} not_first{% endif %}">
+			<a href="/{{  p.family.line.shop.ref }}/{{  p.family.line.ref }}/{{ p.family.ref }}/">
+			<img width="50px" height="50px" style="position: relative; float: left; margin: 0px 5px;" alt="{{ p.family.ref }}" src="{{ p.family|check_image_med:p.family.line.shop.ref }}"/>
+			{{ p.family.desc|locale:LANGUAGE_CODE }}<br/><b>{{ p.family|from_price:simple_role }}</b>
+			<div style="clear: both; line-height: 0; height: 0;">&nbsp;</div>
+			</a>
+		</div>
+	{% endfor %}
+</div>
+
+<div class="right_announce_fb">
+    <iframe src="http://www.facebook.com/plugins/likebox.php?id=112942365427206&amp;width=160&amp;connections=6&amp;stream=false&amp;header=true&amp;height=415" 
+        scrolling="no" frameborder="0" 
+        style="border:none; overflow:hidden; width:160px; height:415px;" 
+        allowTransparency="true"></iframe>
+</div>

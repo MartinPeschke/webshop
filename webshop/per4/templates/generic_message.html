@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block center_block_header %}{{ title|safe }}{% endblock %}
+
+{% block content %}
+<div class="center_box"><!-- reg begin -->
+	&nbsp;
+    <div class="reg_title"><label class="reg_title_bg">{{ title|safe }}</label><span>{{ short_message|safe }}</span></div>
+    <div class="reg_bg"></div>
+    <div id="reg_form"><br/>
+	<p style="margin: 0 20px">{{ message|safe }}</p>
+	{% if link_list %}
+		<br/>
+		<hr/>
+		<br/>
+		<ul style="list-style-type:disc;">
+		{% for link, name in link_list %}
+			<li style="list-style-type:disc; margin: 10px; padding: 0px 0px 0px 10px"><a href="{{ link }}">{{ name|safe }}</a></li>
+		{% endfor %}
+		</ul>
+	{% endif %}
+	</div>
+</div>
+
+{% endblock %}

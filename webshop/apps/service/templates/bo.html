@@ -1,0 +1,36 @@
+<!--@+leo-ver=4-->
+<!--@+node:@file bo.html-->
+<!--@@language html-->
+{% extends "cleanlayout.html" %}
+{% block pagetitle %}{% if title %}{{ title }} | {% endif %}{% endblock %}
+
+{% block left_block %}
+<!--left block-->
+
+{% endblock %}
+
+{% block content %}
+<div class="center_box">
+<div class="heading"><b>BO</b> servise</div>
+for try communication with BackOffice , through SSL:
+
+{{ msg.post }}
+
+</div>
+
+<div>
+	<div id="News" class="centerbodyboxes">
+		<div class="heading"><b>Message</b></div>
+		<div class="newsitem">
+			<div class="newsheading">....</div>
+
+		</div>
+	</div>	
+</div>
+{% endblock %}
+
+
+
+
+<!--@-node:@file bo.html-->
+<!--@-leo-->

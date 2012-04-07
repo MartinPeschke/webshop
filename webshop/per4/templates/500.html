@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+
+{% block center_block_header %}<b>500</b> {% trans "An Internal Server Error Occurred!" %}{% endblock %}
+
+{% block content %}
+<div class="center_box">
+
+   <br/>
+   <br/>
+
+<div class="reg_title"><label class="reg_title_bg"><b>500</b> {% trans "An Internal Server Error Occurred!" %}</div>
+<div class="reg_bg"></div>
+
+<h3>{% trans "The Error has been reported to the WebAdmin." %}</h3>
+
+{% trans 'We are constantly improving our webshop, fixing bugs and adding functionality, the site admin has received your error report and will work hard to fix it! Please check back with us in the very near future time.' %}
+   <br/></h3>
+
+    <div class="button_parent float">
+	    <div class="button active"><a href="/main/">{% trans "Home" %}</a></div>
+    </div>
+
+</div>
+
+{% endblock %}

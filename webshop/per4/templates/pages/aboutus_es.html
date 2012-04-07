@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% load explore %}
+{% load i18n %}
+{% block meta_keywords %}AboutUs,About,Team,Management,{% endblock %}
+    {% block head %}
+    	<link rel="stylesheet" type="text/css" href="/media/css/static.css" />		 
+	{% endblock %}
+
+{% block center_block_header %}{% trans 'About Us' %}{% endblock %}
+
+{% block content %}
+
+    <img src="/media/images/static/about_title_en.jpg?20100208" alt="About Us" />
+
+    <div id="about_content">
+    <h1>Per-4 – wir stehen für Qualität, Schnelligkeit und Service – und das in 9 Sprachen*!</h1>
+    <div class="about_text" style="margin: 10px 10px;">
+	    <div style="margin: 10px 0px;">
+			Seit 9 Jahren sind wir im internationalen Piercinggroßhandel tätig und wissen, was unsere Kunden wünschen. Wir bieten sowohl Designerschmuck als auch Standardprodukte in außergewöhnlich hoher Qualität zu wettbewerbsfähigen Preisen an. Alle unsere Produkte halten geltende EU-Normen ein. Mit über 18.500 Artikeln verfügen wir über eine der umfangreichsten Piercing - und Tattoo- Kollektionen auf dem europäischen Markt. Wir bieten neben Standard-produkten eine Vielzahl von Unikaten an und können z. B. in Horn individuell nach Euren persönlichen Wünschen Schmuck herstellen.
+		</div>
+	
+		<div style="margin: 10px 0px;">
+			Diese Homepage www.per-4.com ist zweigeteilt: Die Öffentliche Seite ist für alle - ohne login - sichtbar und zeigt die Endverbraucherpreise. Die Studio-Seite ist nach dem Login sichtbar und zeigt unsere Großhandelspreise im Piercing- und Tattoo-Bereich. Schnelle Bearbeitung Eurer Bestellungen und kurze Lieferzeiten sind für uns selbstverständlich. In unserem Büro – über den Dächern Berlins - seid Ihr jederzeit herzlich willkommen.
+		</div>
+		
+		<div style="margin: 10px 0px;">
+		Viel Spaß beim Stöbern auf unserer Internetseite und in unseren Katalogen....
+		</div>
+		
+		<div style="font-size: 9px;margin: 10px 0px;">
+			* Deutsch, Englisch, Französisch, Spanisch, Italienisch, Tschechisch, Russisch und Mandarin
+		</div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% load i18n %}
+
+<html>
+<head>
+<style type="text/css">
+body{
+	max-width: 1024px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+}
+
+h3 {
+	background-color:Red;
+	color:Black;
+}
+
+</style>
+</head>
+<body>
+
+<h3>User</h3>
+<pre>{{ user }}</pre>
+
+<h3>Stacktrace</h3>
+<pre>{{ stacktrace }}</pre>
+
+<h3>Exception</h3>
+<pre>{{ error }}</pre>
+
+<h3>Request</h3>
+<pre>{{ request }}</pre>
+
+</body>
+</html>

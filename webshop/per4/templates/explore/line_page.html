@@ -1,0 +1,5 @@
+{% load explore %}
+{% load i18n %}
+    <h1>{{ line.shop.name|locale:LANGUAGE_CODE }} {{ line.name|locale:LANGUAGE_CODE }} {% if art_type %} - {{ art_type|locale:LANGUAGE_CODE }}{% endif %}</h1>
+    {% include "explore/line_result.html" %}
+    <div style="clear: both; line-height: 0; height: 0;">&nbsp;</div>

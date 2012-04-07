@@ -1,0 +1,39 @@
+{% load i18n %}
+
+<html>
+<head>
+</head>
+<body style="color:#c98360;font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: small;">
+<h2 style="color:#F9A57D;font-family: Verdana, Arial, Helvetica, sans-serif;">{% trans "Hey" %} {{ username }},</h2>
+<p>
+{% trans "You have successfully registered with Per-4.com." %}
+</p>
+<p>
+<h3 style="margin-bottom:0px; padding-bottom:0px; color:#F9A57D;font-family: Verdana, Arial, Helvetica, sans-serif;	">{% trans "Your Login" %}: </h3>
+{{ email }}
+</p>
+<p>
+<h3 style="margin-bottom:0px; padding-bottom:0px; color:#F9A57D;font-family: Verdana, Arial, Helvetica, sans-serif;	">{% trans "Your Password" %}: </h3>
+{{ password }}
+</p>
+{% if needs_approval %}
+	{% trans "You have registered as a Studio User, your account will be activated as soon as you open below link, and during the next days, we will check the provided details and approve your wholesale access or get back to you with further questions." %}
+{% endif %}
+<p>
+<label>{% trans "To activate the registered account, please open the following URL in your browser" %}:</label><br/>
+<a href="{{ actLink }}">{{ actLink }}</a>
+</p>
+<p>
+{% trans "If you have not registered with per-4.com, please ignore this email, your personal data will be deleted automatically during the next few days." %}
+</p>
+<p>
+{% trans "Thanks" %},<br/>
+</p>
+{% trans "Your Per-4 Team" %}
+<div style="text-align:center; margin-top:5px; padding-top:5px;border-top:1px dashed gray">
+{% trans "Landsberger Allee 117A - 10407 Berlin - Telefon +49 30 93 66 38 21 - Fax +49 30 93 66 38 22" %}<br/>
+<a href="http://www.per-4.com">www.per-4.com</a> - <a href="mailto:order@per-4.com">order@per-4.com</a>
+</div>
+</body>
+</html>

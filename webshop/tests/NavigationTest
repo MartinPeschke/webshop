@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://per-4.com/" />
+<title>NavigationTest</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">NavigationTest</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@id='welcome_stud']/div[2]/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@onclick='login()']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Mein Konto</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id_bo_customer_no</td>
+	<td>E5010101</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@onclick=&quot;$('#myform').submit()&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id_weekdays_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id_bo_customer_no</td>
+	<td>E5010101</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id_weekdays_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id_weekdays_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id_weekdays_3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@onclick=&quot;$('#myform').submit()&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@id='leftBarNav']/div[2]/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id_bo_customer_no</td>
+	<td>E5010101</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Warenkorb</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Save Cart</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Studiobedarf</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>NEU</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Medical Equipment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Aftercare</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>ANGEBOTE</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Fashion &amp; Media</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>NEU</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Others</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Terror Eyes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Books</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Dvds</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[@alt='FBOOK2']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>FBOOK2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>bottom_block_paginating</td>
+	<td>WEITER IN: Books - Bücher</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>per4_logo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Willkommen bei Per-4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=AGB</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Allgemeine Geschäftsbedingungen Per4 - Piercing &amp; Tattoo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=VERSAND</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Versandkosten</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Unsere Annoncen</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='centerBox']/table/tbody/tr[1]/th</td>
+	<td>UNSERE ANNONCEN</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Gallerie</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Lukas Zpira Seminar 4. - 5. Oktober 2008</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Materialien</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Materialien</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Downloads</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>DOWNLOAD MONATSFLYER JANUAR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Wir über uns</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Wir über uns</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Wir über uns</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='centerBox']/table/tbody/tr[1]/th</td>
+	<td>Wir über uns</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=AKTUELLES</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='centerBox']/div[1]/div[1]/div/div/div</td>
+	<td>Thanks for visiting us at the 18th Tattoo Convention in Berlin!</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Kontakt</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//table[@id='contact_content']/tbody/tr/td/table/tbody/tr[4]/td[3]/p</td>
+	<td>(0049) 0-30 / 93 66 38 21</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Impressum</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='centerBox']/table/tbody/tr[2]/td/div/h2</td>
+	<td>Haftungsausschluss</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

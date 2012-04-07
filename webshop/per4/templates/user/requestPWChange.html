@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% load i18n %}
+{% block head %}
+
+{% endblock %}
+{% block center_block_header %}{% trans 'MY ACCOUNT - '%}{% trans 'Change Password' %}{% endblock %}
+
+{% block content %}
+<div class="center_box"><!-- reg begin -->
+    <div id="required"><div>{% trans 'Required fields' %}</div></div>
+    <div class="reg_title"><label class="reg_title_bg">{% trans 'Change Password' %}</label><span>{% trans 'Request here!' %}</span></div>
+    <div class="reg_bg"></div>
+    <div id="reg_form">
+    <form id="myform" action="/user/profile/password/" method="post">
+    {{ message }}
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+       <tr>
+         <td class="change_text">{% trans 'Email Address' %}</td>
+         <td><div class="reg_class2"><div class="change_input">{{ form.email }}
+         {% if form.email.errors %}<br/>
+         <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="error">{% for error in form.email.errors %}{{ error }}{% endfor %}</label>
+         {% endif %}
+         </div></div></td>
+       </tr>
+       <tr>
+         <td class="change_text">{% trans 'Retype Email Address' %}</td>
+         <td><div class="reg_class2"><div class="change_input">{{ form.emailconfirm }}
+         {% if form.emailconfirm.errors %}<br/>
+         <label class="reg_ico"><img align="absmiddle" src="/media/images/cross.png" alt="error">{% for error in form.emailconfirm.errors %}{{ error }}{% endfor %}</label>
+         {% endif %}
+         </div></div></td>
+       </tr>
+       <tr>
+           <td></td>
+           <td>
+               <div class="button active floatLeft spaced"><input type="submit" value="{% trans "Save Profile" %}"/></div>
+            </td>
+       </tr>
+      <tr>
+        <td class="reg_text"></td>
+        <td>
+           <a href="/user/registration/?studio={{ studio }}" title="Sign up" style="text-decoration:underline;">{% trans "Sign up for Per-4.com" %}</a>
+        </td>
+      </tr>
+
+       <tr>
+           <td></td>
+           <td><br/>
+               <a  style="text-decoration:underline;" href="/login">{% trans "Login" %}</a>
+            </td>
+       </tr>
+
+    </table>
+    </form>
+    </div>
+</div>
+{% endblock %}

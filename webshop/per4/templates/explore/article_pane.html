@@ -1,0 +1,20 @@
+{% load explore %}
+{% load i18n %}
+
+
+{% if other_materials %}
+        <h1>{% trans "All Materials:" %} {{ art_type|locale:request.LANGUAGE_CODE }}</h1>
+        {% ifnotequal show_state 0 %}
+        <div id="type_pane_content" class="additionalpanes">
+            {% for article_family in other_materials %}
+                <a class="additionalitem" title="{{ article_family.ref }} - {{ article_family.line.name|locale:request.LANGUAGE_CODE }}" 
+                        href="/{{  article_family.line.shop.ref }}/{{  article_family.line.ref }}/{{ article_family.ref }}/">
+                    <img class="medium" alt="{{ article_family.line.name|locale:request.LANGUAGE_CODE }}" src="{{ article_family|check_image_med:article_family.line.shop.ref }}"/>
+                    {% with article_family.promotion as p %}{% if p %}
+                            <span class="promotionalIcons {{ p.type_ref|lower }}"><img src="/media/images/icon_{{ p.type_ref }}_s.png" alt="{{ p.type_ref|upper }}"/></span>
+                    {% endif %}{% endwith %}
+                </a>
+            {% endfor %}
+        </div>
+	{% endifnotequal %}
+{% endif %}

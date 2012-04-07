@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% load explore %}
+{% load i18n %}
+{% block meta_keywords %}Jobs,Jobboerse,Stellenangebote,Employment,Arbeit,{% endblock %}
+    {% block head %}
+    <link rel="stylesheet" type="text/css" href="/media/css/static.css" />
+	{% endblock %}
+
+{% block center_block_header %}{% trans 'JOBS' %}{% endblock %}
+{% block content %}
+
+<iframe src="http://per4.exilante.de" width="625px" height="800px" name="Per4Jobs, Jobs@Per-4" frameborder="0">
+  <p>Your browser cant display iframes, so please visit <a href="http://per4.exilante.de/index.php?q=node/1">Jobs @ Per-4</a> directly</p>
+</iframe>
+{% endblock %}
