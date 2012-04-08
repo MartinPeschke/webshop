@@ -67,32 +67,60 @@ def login(request):
             , 'studio' : request.REQUEST.get('studio', '') 
           }
     if request.method == 'POST':
-        form = map['email_login_form'] = LoginEmailForm(request.POST)
-        if form.is_valid():
-            user = auth.authenticate(**form.cleaned_data)
-            if user is None:
-                errors = form._errors.setdefault("email", ErrorList())
-                errors.append(ugettext_lazy('Sorry, please check your email and password.'))
-                return render_to_response('user/login.html', map, context_instance=RequestContext(request))
-            else:
-                if user.is_active:
-                    auth.login(request, user)
-                    if (request.session.get('cart', None)):
-                        request.session['cart'].initUser(user)
-                    success = True
-                else:
+        if request.POST['form-type'] == 'email':
+            # ================ EMAIL LOGIN ===================
+            form = map['email_login_form'] = LoginEmailForm(request.POST)
+            map['email_zipcode_form'] = LoginZipCodeForm()
+            if form.is_valid():
+                user = auth.authenticate(**form.cleaned_data)
+                if user is None:
                     errors = form._errors.setdefault("email", ErrorList())
-                    errors.append(ugettext_lazy('Sorry, please activate your account.'))
+                    errors.append(ugettext_lazy('Sorry, please check your email and password.'))
                     return render_to_response('user/login.html', map, context_instance=RequestContext(request))
-                return HttpResponseRedirect(forward_URL)
+                else:
+                    if user.is_active:
+                        auth.login(request, user)
+                        if (request.session.get('cart', None)):
+                            request.session['cart'].initUser(user)
+                        success = True
+                    else:
+                        errors = form._errors.setdefault("email", ErrorList())
+                        errors.append(ugettext_lazy('Sorry, please activate your account.'))
+                        return render_to_response('user/login.html', map, context_instance=RequestContext(request))
+                    return HttpResponseRedirect(forward_URL)
+            else:
+                return render_to_response('user/login.html', map, context_instance=RequestContext(request))
         else:
-            return render_to_response('user/login.html', map, context_instance=RequestContext(request))
+            # ================ ZIPCODE LOGIN ===================
+            form = map['email_zipcode_form'] = LoginZipCodeForm(request.POST)
+            map['email_login_form'] = LoginEmailForm()
+            
+            if form.is_valid():
+                user = auth.authenticate(**form.cleaned_data)
+                if user is None:
+                    errors = form._errors.setdefault("username", ErrorList())
+                    errors.append(ugettext_lazy('Sorry, please check your customer number or ZIP code.'))
+                    return render_to_response('user/login.html', map, context_instance=RequestContext(request))
+                else:
+                    if user.is_active:
+                        auth.login(request, user)
+                        if (request.session.get('cart', None)):
+                            request.session['cart'].initUser(user)
+                        success = True
+                    else:
+                        errors = form._errors.setdefault("username", ErrorList())
+                        errors.append(ugettext_lazy('Sorry, please activate your account.'))
+                        return render_to_response('user/login.html', map, context_instance=RequestContext(request))
+                    return HttpResponseRedirect(forward_URL)
+            else:
+                return render_to_response('user/login.html', map, context_instance=RequestContext(request))
+
     else:
         map['email_login_form'] = LoginEmailForm()
         map['email_zipcode_form'] = LoginZipCodeForm()
         return render_to_response('user/login.html', map, context_instance=RequestContext(request))
 #    if user is None:
-#        user = auth.authenticate(username=email, password=password)
+
 #        zip = True
 
 

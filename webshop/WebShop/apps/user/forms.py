@@ -7,7 +7,7 @@ from django.utils.safestring import mark_safe
 from django.conf import settings
 
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit, Layout, HTML, Fieldset
+from crispy_forms.layout import Submit, Layout, HTML, Fieldset, Hidden
 from crispy_forms.bootstrap import FormActions
 
 
@@ -44,15 +44,16 @@ class LoginEmailForm(forms.Form):
                 'email',
                 'password'
             ),
+            Hidden('form-type', 'email'),
             FormActions(
-                Submit('submit', ugettext_lazy('Login'), css_class='button white')
+                Submit('submit', ugettext_lazy('Login'), css_class='btn btn-primary')
             )
         )
         super(LoginEmailForm, self).__init__(*args, **kwargs)
 
 class LoginZipCodeForm(forms.Form):
-    bo_customer_no = forms.CharField(label = ugettext_lazy('Kundennummer'))
-    zipcode = forms.CharField(widget = forms.PasswordInput, label = ugettext_lazy('PLZ'))
+    username = forms.CharField(label = ugettext_lazy('Kundennummer'))
+    password = forms.CharField(widget = forms.PasswordInput, label = ugettext_lazy('PLZ'))
     def __init__(self, *args, **kwargs):
         self.helper = FormHelper()
         self.helper.form_id = 'id-zipcode-login'
@@ -62,18 +63,53 @@ class LoginZipCodeForm(forms.Form):
         self.helper.layout = Layout(
             Fieldset(
                 ugettext_lazy("Login with customer number and ZIP code"),
-                'bo_customer_no',
-                'zipcode'
+                'username',
+                'password'
             ),
             HTML("""<p>Please observe that customer number and ZIP code only work, if you have received that Login by mail.</p>
                     <p>Bitte beachten Sie, das Kundennummer und PLZ einloggen nur klappt, wenn Sie die Information auch per Post erhalten haben.</p>
                  """
             ),
+            Hidden('form-type', 'zipcode'),
             FormActions(
-                Submit('submit', ugettext_lazy('Login'), css_class='button white')
+                Submit('submit', ugettext_lazy('Login'), css_class='btn btn-primary')
             )
         )
         super(LoginZipCodeForm, self).__init__(*args, **kwargs)
+
+
+class RequestPasswordForm(forms.Form):
+    email = forms.EmailField(label = ugettext_lazy('Email Address'))
+    emailconfirm = forms.EmailField(label = ugettext_lazy('Retype Email Address'))
+    def __init__(self, *args, **kwargs):
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-forgot-password-form'
+        self.helper.form_class = 'forms-vertical'
+        self.helper.form_method = 'post'
+        self.helper.form_action = '/user/profile/password/'
+        self.helper.layout = Layout(
+            Fieldset(
+                ugettext_lazy('Change Password'),
+                'email',
+                'emailconfirm'
+            ),
+            FormActions(
+                Submit('submit', ugettext_lazy("Save Profile"), css_class='btn btn-primary')
+            )
+        )
+        super(RequestPasswordForm, self).__init__(*args, **kwargs)
+    def clean_emailconfirm(self):
+        if self.data['email'] != self.data['emailconfirm']:
+            raise ValidationError(_('Sorry, your email addresses do not match.'))
+        return self.data['email']
+
+
+
+
+
+
+
+
 
 class RegisterForm(forms.Form):
     '''
@@ -156,16 +192,6 @@ class ChangePasswordForm(forms.Form):
             raise ValidationError(_('Sorry, please check your password.'))
         return self.data['password']
     
-class RequestPasswordForm(forms.Form):
-    
-    email = forms.EmailField()
-    emailconfirm = forms.EmailField()
-        
-    def clean_emailconfirm(self):
-        if self.data['email'] != self.data['emailconfirm']:
-            raise ValidationError(_('Sorry, your email addresses do not match.'))
-        return self.data['email']    
-
 class OrderFreeCatalogForm(forms.Form):
     
     title = forms.ChoiceField(choices=settings.TITLE_CHOICES)

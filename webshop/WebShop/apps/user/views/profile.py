@@ -77,8 +77,9 @@ def forgot_password(request):
             link_title = 'Weiter'
             return render_to_response('generic_message.html', locals(), context_instance=RequestContext(request))
         return render_to_response('user/requestPWChange.html', locals(), context_instance=RequestContext(request))
-    form = RequestPasswordForm()
-    return render_to_response('user/requestPWChange.html', locals(), context_instance=RequestContext(request))
+    else:
+        form = RequestPasswordForm()
+        return render_to_response('user/requestPWChange.html', locals(), context_instance=RequestContext(request))
 
 def change_password(request):
     if(request.user.is_anonymous()):
