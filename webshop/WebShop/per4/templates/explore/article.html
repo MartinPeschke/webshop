@@ -1,0 +1,80 @@
+{% extends "layout_free_center.html" %}
+{% load i18n %}
+{% load explore %}
+{% block title %}Per-4 | {{ line.shop.name|locale:LANGUAGE_CODE }} - {{ af.desc|locale:LANGUAGE_CODE }} - {{ line.name|locale:LANGUAGE_CODE }}{% endblock %}
+{% block meta_keywords %}{{ line.name|locale:LANGUAGE_CODE }},{{ art_type|locale:LANGUAGE_CODE }},{{ af.ref }},{{ af.desc|locale:LANGUAGE_CODE }},{% endblock %}
+{% block left_block %}
+	{% include "explore/LineTreeLeft.html" %}
+{% endblock %}
+
+{% block centerbox %}
+    <div class="articleInfo">
+        <h2 class="title">{{ af.desc|locale:LANGUAGE_CODE }}</h2>
+        <div class="items_list" id="ArticleDetail">
+            <form action="javascript:addToCart()" method="POST" id="order_articles_form" class="order-articles-form">
+                {% include "explore/article_ajax.html" %}
+            </form>
+        </div>
+    </div>
+
+	{% if also_bought %} 
+        <div class="articleInfo clearfix">
+            <h3 class="title">{% trans "Others who bought this also bought:" %}</h3>
+            <div id="also_bought_pane" class="additionalpanes">
+                    {% for article_family in also_bought %}
+                        <a class="additionalitem" title="{{ article_family.ref }} - {{ article_family.line.name|locale:LANGUAGE_CODE }}" 
+                                href="/{{  article_family.line.shop.ref }}/{{  article_family.line.ref }}/{{ article_family.ref }}/">
+                            <img class="medium" alt="{{ article_family.line.name|locale:LANGUAGE_CODE }}" src="{{ article_family|check_image_med:article_family.line.shop.ref }}"/>
+                            {% with article_family.promotion as p %}{% if p %}
+                                    <span class="promotionalIcons {{ p.type_ref|lower }}"><img src="/media/images/icon_{{ p.type_ref }}_s.png" alt="{{ p.type_ref|upper }}"/></span>
+                            {% endif %}{% endwith %}
+                        </a>
+                    {% endfor %}
+            </div>
+        </div>
+	{% endif %}
+	<div id="type_pane" class="articleInfo clearfix"></div>
+{% endblock %}
+
+{% block onloadAll %}
+	$('#tbArticles input').each(calculateRow).keyup(calcPrice);
+	updateTotalPrice();
+	$('#ArticleImgBar .optionLink').click(expandOption);
+	$('#tbArticles .optionArrow').click(showAllColors);
+	togglePane({{ show_state }});
+
+	$('#cart_loading').ajaxStart(function(){$(this).show();}).ajaxStop(function(){$(this).hide();});	
+{% endblock %}
+
+{% block jscripts %}
+	var INTEGER_WARNING = '{% trans 'Please input an integer!' %}';
+
+	togglePane = function(show_state){
+		if(show_state == null)show_state = ''
+		$.ajax({
+			data : {show_state:show_state},
+			url : '/pane/{{ art_type.id }}/',
+			type: 'POST', dataType: 'json',
+			success :
+				function(data, textStatus) {
+					$('#type_pane').html(data['body']);
+			}});
+	}
+
+	loadArticle = function(af_id){
+		$.ajax({
+			data : {af_id : af_id},
+			url : '/af/',
+			type: 'POST', dataType: 'json',
+			success :
+				function(data, textStatus) {
+					$('#order_articles_form').html(data['body']);
+					$('#page_titel').html('&nbsp;' + data['title']);
+
+					$('#tbArticles input').each(calculateRow).keyup(calcPrice);
+					updateTotalPrice();
+					$('#ArticleImgBar .optionLink').click(expandOption);
+					$('#tbArticles .optionArrow').click(showAllColors);
+			}});
+	}
+{% endblock %}

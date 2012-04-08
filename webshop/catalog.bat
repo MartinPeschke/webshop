@@ -1,1 +1,0 @@
-django-admin runserver 0.0.0.0:8083 --settings=settings_catalog

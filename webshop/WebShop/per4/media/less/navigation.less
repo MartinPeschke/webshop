@@ -1,0 +1,54 @@
+﻿.leftBarNav{
+  list-style-type:none;
+  border:1px solid @border-color;
+  border-radius:5px;
+  margin: 0;
+  .toplevel {
+    &:first-child{
+      border-top-left-radius:5px;
+      border-top-right-radius:5px;
+    }
+    &:last-child{
+      border-bottom-left-radius:5px;
+      border-bottom-right-radius:5px;
+    }
+    &:hover {
+      background-color:rgba(0,30,0,.2);
+    }
+  }
+  .link {
+    display:block;
+    .wordbreak();
+  }
+  .toplevel .link {
+    padding: 15px;
+  }
+
+  .firstlevel {
+    margin:5px 5px 0;
+    &.selected, &:hover{
+      background:#eee;
+    }
+  }
+
+}
+
+.selectedshop_content {
+  list-style-type:none;
+  .secondlevel{
+    margin-left: 5px;
+    margin-right: 5px;
+    border-left: 3px solid #CCC;
+    padding-left: 10px;
+    &.selected, &:hover{
+      background:#eee;
+    }
+  }
+}
+
+
+.leftBox {
+  img.anounce {
+    width:100%;
+  }
+}

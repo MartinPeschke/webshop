@@ -1,0 +1,5 @@
+
+/env
+/webshop/WebShop/per4/media/files
+*.pyc
+/webshop/WebWorkbench.mswwsettings

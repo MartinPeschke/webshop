@@ -1,0 +1,25 @@
+﻿input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+a.link {
+  text-decoration:none;
+  color:@link-color;
+  &:visited, &:active{color:@link-color;text-decoration:none;}
+  &:hover {color:lighten(@link-color,15%);text-decoration:none;}
+}
+
+h3.title {
+  font-weight: 400;
+}
+
+.title {
+    background-color: @title-color;
+    color: white;
+    padding: 1px 10px;
+    margin: 0 0 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}

@@ -1,0 +1,106 @@
+{% load explore %}
+{% load i18n %}
+    <div id="ArticleImgBar" class="articlePictures clearfix">
+            {% with af.promotion as p %}
+                {% if p %}
+                    <span class="promotionalIcon" class="{{ p.type_ref|lower }}">
+                        <img src="/media/images/icon_{{ p.type_ref }}.png" alt="{{ p.type_ref|upper }}"/>
+                    </span>
+                {% endif %}
+            {% endwith %}
+            <div class="articleHiResImg">
+                <img alt="{{ af.ref }}" src="{{ af|check_image_high:shop_ref }}"/>
+            </div>
+            {{ options|create_ao_images:shop_ref }}
+        </div>
+
+    <button type="submit" class="pull-right btn btn-primary" onclick="addToCart()">{% trans "Add to Cart" %}</button>
+
+    <table id="tbArticles" class="article-data-table table-bordered table-striped table-condensed" width="100%">
+    <thead>
+      <tr>
+        <th width="25px"></th>
+        <th width= "5%">{% trans 'REFERENCE' %}</th>
+        <th>{% trans 'SIZE' %}</th>
+        <th width= "5%">{% trans 'COLOR' %}</th>
+        {% if has_old_price %}
+          <th width= "20%">{% trans 'OLD PRICE' %}</th>
+        {% endif %}
+        <th width= "20%">{% trans 'PRICE P/P' %}</th>
+        {% if has_discount_price %}
+          <th width= "20%">{% trans 'DISCOUNT PRICE' %}</th>
+        {% endif %}
+        <th>{% trans 'QUANTITY' %}</th>
+        <th width="10%">{% trans 'PRICE' %}</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for article in article_set %}
+      {% with pricings|getelem:article.id|first as pricing %}
+      {% with pricings|getelem:article.id|last as dp %}
+        {% for ao in options|getelem:article.id %}
+          {% with cart|get_cart_qty:ao.id as cart_qty %}
+          <tr class="{% if not forloop.first %}not{% endif %}first {% if cart_qty %}in_cart{% endif %}" article="{{ article.ref }}" id="{{ ao.id }}" optionRow="true">
+            <td class="available"  width="25px">
+            {% if ao.available %}
+              <img src="/media/images/btn_avail_green.png" alt="{% trans 'Available' %}"/>
+            {% else %}
+              <img src="/media/images/btn_avail_red.png" alt="{% trans 'Not Available' %}"/>
+            {% endif %}
+            </td>
+            <td class="data">{{ article.ref }}</td>
+            <td class="data bold">{{ article.compiledSize }}</td>
+            <td class="data">{{ ao|create_ao_imgtag:shop_ref }}</td>
+            
+              {% if has_old_price %}
+                  <td class="data oldprice">
+                      <span>{{ pricing.old_price|floatformat:"2" }}</span>
+                      <span>{% if pricing.tax_included %}{% trans 'incl. VAT' %}{% else %}{% trans 'excl. VAT' %}{% endif %}</span>
+                  </td>
+              {% endif %}
+
+            <td class="data pricing">
+              {% if pricing %}
+                <span>{{ pricing.price|floatformat:"2" }}</span>&nbsp;&euro;
+                <span>{% if pricing.tax_included %}{% trans 'incl. VAT' %}{% else %}{% trans 'excl. VAT' %}{% endif %}</span>
+              {% endif %}
+            </td>
+
+              {% if has_discount_price %}
+                  <td class="data discount">
+                  {% ifnotequal pricing dp %}
+                      <div class="discount_box rounded_elems"><span>{{ dp.discountQty }}</span>+</div> <span>{{ dp.price|floatformat:"2" }}</span>&euro;
+                      <div>{% if pricing.tax_included %}{% trans 'incl. VAT' %}{% else %}{% trans 'excl. VAT' %}{% endif %}</div>
+                  {% else %}
+                      <div style="display:none;">from <span>0</span> only <span>0</span></div>
+                  {% endifnotequal %}
+                  </td>
+              {% endif %}
+
+            <td class="data quantity">&nbsp;
+              {% if pricing %}
+                <span class="{% if not cart_qty %}hidden{% endif %}">(<span class="cart_qty">{{ cart_qty }}</span>+)</span>
+                <input type="number" id="quantityfield_{{ ao.id }}" name="{{ ao.id }}" class="span1" value="" maxlength="4"/>
+            {% endif %}
+            </td>
+            <td class="data total"><span>0</span>&nbsp;&euro;</td>
+          </tr>
+          {% endwith %}
+        {% endfor %}
+      {% endwith %}
+      {% endwith %}
+    {% endfor %}
+    <tr>
+      <td class="article-pricing-total-amount-label" colspan="{{tablespan}}"><b>{% trans "Total Amount:" %}</b></td>
+      <td class="article-pricing-total-amount data"><b id="totalPrice">N/A</b>&nbsp;<b>&euro;</b></td>
+    </tr>
+    </tbody>
+    </table>
+    <button type="submit" class="pull-right btn btn-primary" onclick="addToCart()">{% trans "Add to Cart" %}</button>
+    <div style="clear:both"></div>
+    <div id="cart_loading">
+      <img src="/media/images/Throbber.gif"/>
+      <span>{% trans "Sending/Loading Data, please wait..." %}</span>
+    </div>
+
+
