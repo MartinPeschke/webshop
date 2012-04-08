@@ -4,7 +4,7 @@
 
 <!-- Body Section -->
 {% block body %}
-<div id="leftBox" class="grid_3 alpha">
+<div id="leftBox" class="span2 leftBox">
     {% block left_block %}
         {% include "left_menu_inc.html" %}
     {% endblock %}
@@ -25,11 +25,11 @@
     {% endblock %}
 </div>
 
-<div id="centerBox" class="grid_10 centerBox">
+<div id="centerBox" class="span8 centerBox">
     {% block centerbox %}{% endblock %}
 </div>
 
-<div id="rightBox" class="grid_3 rightBox omega">
+<div id="rightBox" class="span2 rightBox omega">
     {% include 'explore/cart_items.html' %}
 </div>
 

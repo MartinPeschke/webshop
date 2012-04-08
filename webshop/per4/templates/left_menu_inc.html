@@ -2,8 +2,8 @@
 
 <ul id="leftBarNav" class="clearfix leftBarNav">
 	{% for shop in shops %}
-		<li class="firstlevel toplevel {% if forloop.first %}first{% else %}next{%endif%} {{ request.path|selected_start:shop.ref }}">
-			<a href="/{{ shop.ref }}/">{{ shop.name|locale:LANGUAGE_CODE }}</a>
+		<li class="toplevel {% if forloop.first %}first{% else %}next{%endif%} {{ request.path|selected_start:shop.ref }}">
+			<h2><a class="link" href="/{{ shop.ref }}/">&raquo;&nbsp;{{ shop.name|locale:LANGUAGE_CODE }}</a></h2>
 		</li>
 	{% endfor %}
 </ul>

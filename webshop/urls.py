@@ -39,9 +39,8 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
 
     # Real Index Page
-    (r'^$', 'WebShop.apps.explore.views.handler.welcome'),
+    (r'^$', 'WebShop.apps.explore.views.pages.main'),
     (r'^login/$', 'WebShop.apps.user.views.handler.login'),
-    (r'^main/$', 'WebShop.apps.explore.views.pages.main'),
 
     # Browsing
     (r'^(?P<shop_ref>%s)/$' % SHOPS_URLS, 'WebShop.apps.explore.views.handler.shop'),

@@ -25,14 +25,6 @@ from decimal import *
 from time import time
 import urllib
 
-def welcome(request):
-	login = False
-	forward_URL = '/main/'
-	try:
-		return render_to_response('welcome.html', locals(), context_instance=RequestContext(request))
-	except TemplateDoesNotExist, e:
-		return HttpResponseRedirect('/main/')
-
 def shop(request, shop_ref=settings.DEFAULT_SHOP):
     '''
     Shop Page, e.g http://www.per-4.com/piercing/

@@ -1,37 +1,25 @@
 {% load explore %}
 {% load i18n %}
 
-<table id="cartBox" width="100%" border="0" cellspacing="0" cellpadding="0">
-<tr>
-    <td id="shopping_cart_title" {% if request.user.is_authenticated %} class="active" onclick="window.location.href='/user/shopping_cart/'"{% endif %}>
+    <div class="shopping_cart_title">
+      <a class="link" class="active" href="/user/shopping_cart/">{% trans "My Cart" %}</a>
+    </div>
+    <table border="0" cellpadding="0" cellspacing="0">
+    {% for aoExt in cart.items %}
+	    <tr>
+	        <td style="text-align:right;"><a href="/user/shopping_cart/">{{ aoExt.quantity }}</a></td>
+	        <td style="padding-left:4px; padding-right:4px;">x</td>
+	        <td style="text-align:left;"><a href="/user/shopping_cart/">{{ aoExt.article.ref }} {{ aoExt.ref }}</a></td>
+	        <td ><a href="/user/shopping_cart/" title="{{ aoExt.ref }}"><img alt="{{ aoExt.article.article_family.ref }}"
+	            src="{{ aoExt.article.article_family|check_image_low:aoExt.article.article_family.line.shop.ref }}"/></a>
+	        </td>
+	      </tr>
+    {% endfor %}
+    </table>
 
-    <div><a href="/user/shopping_cart/" style="color: white;">{% trans "My Cart" %}</a></div>
+    <div class="cart_bottom">{% trans "SUBTOTAL" %}&nbsp;{% if cart %}{{ cart.total }}{% else %}0.00{% endif %}&nbsp;&euro;</div>
 
-    </td>
-</tr>
-<tr>
-    <td class="cart_bg">
-        <table border="0" cellpadding="0" cellspacing="0">
-        {% for aoExt in cart.items %}
-	        <tr>
-	            <td style="text-align:right;"><a href="/user/shopping_cart/">{{ aoExt.quantity }}</a></td>
-	            <td style="padding-left:4px; padding-right:4px;">x</td>
-	            <td style="text-align:left;"><a href="/user/shopping_cart/">{{ aoExt.article.ref }} {{ aoExt.ref }}</a></td>
-	            <td ><a href="/user/shopping_cart/" title="{{ aoExt.ref }}"><img alt="{{ aoExt.article.article_family.ref }}"
-	                src="{{ aoExt.article.article_family|check_image_low:aoExt.article.article_family.line.shop.ref }}"/></a>
-	            </td>
-	         </tr>
-        {% endfor %}
-        </table>
-    </td>
-</tr>
-<tr>
-    <td class="cart_bottom">{% trans "SUBTOTAL" %}&nbsp;{% if cart %}{{ cart.total }}{% else %}0.00{% endif %}&nbsp;&euro;</td>
-</tr>
-<tr>
-    <td class="link" align="right"><a href="/user/shopping_cart/">{% trans "Zum Bezahlen" %} >></a></td>
-</tr>
+    <div align="right"><a class="link" href="/user/shopping_cart/">{% trans "Zum Bezahlen" %} >></a></div>
 
-</table>
 
 {% include "explore/article_tip.html" %}

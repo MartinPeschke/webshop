@@ -6,16 +6,16 @@
 {% block title %}Per-4 | {{ line.shop.name|locale:LANGUAGE_CODE }} {{ line.name|locale:LANGUAGE_CODE }} {% if art_type %} - {{ art_type|locale:LANGUAGE_CODE }}{% endif %}{% endblock %}
 
 {% block left_block %}
-	{% include "explore/LineTreeLeft.html" %}
+  {% include "explore/LineTreeLeft.html" %}
 {% endblock %}
 
 {% block centerbox %}
     <div class="lineexplore">
-		{{ line_html }}
+    {{ line_html }}
     </div>
 {% endblock %}
 
 {% block jscripts %}
-	var shop_ref = '{{ shop_ref }}';
-	var line_ref = '{{ line_ref }}';
+  var shop_ref = '{{ shop_ref }}';
+  var line_ref = '{{ line_ref }}';
 {% endblock %}

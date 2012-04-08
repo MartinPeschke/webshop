@@ -8,116 +8,127 @@
 <html class="no-js" lang="{{ LANGUAGE_CODE }}" xmlns:fb="http://www.facebook.com/2008/fbml">
 <!--<![endif]-->
 <head>
-	<title>{% block title %}{% block pagetitle %}{% endblock %}Willkommen auf Per-4 - Piercing - Tattoo - Jewellery – Medical Equipment – Permanent Make Up - Online Shop{% endblock %}</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% block pagetitle %}{% endblock %}Willkommen auf Per-4 - Piercing - Tattoo - Jewellery – Medical Equipment – Permanent Make Up - Online Shop{% endblock %}</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<meta name="description" content="{% block meta_description %}Per-4, Ihr Piercing - Tattoo - Jewellery – Medical Equipment – Permanent Make Up - Online Shop{% endblock %}"/>
-	<meta name="keywords"content= "{% block meta_keywords %}{% endblock %}Piercing,Tattoo,Grosshandel,Studiobedarf,Medical Equipment,Cutting,Branding,Scarification,Bodyart,Bodypiercing,Tatto,Piercingschmuck,Piercen,Titan,Titanium,Schmuck,Per-4,Bodypiercing,Zungenpiercing,Intimpiercing,Brustpiercing,Pflege,Piercingpflege,Nipplepiercing,Piercingshop,Brustwarzeberlin,Deutschland,Europa" />
-	<link rel="shortcut icon" href="/media/images/favicon.ico" type="image/x-icon"/>
-	<link rel="stylesheet" type="text/css" href="/media/css/base.css?20120119" />
-    <script src="/media/javascript/libs/modernizr-1.7.min.js"></script>
-	{% block head %}{% endblock %}
+  <meta name="description" content="{% block meta_description %}Per-4, Ihr Piercing - Tattoo - Jewellery – Medical Equipment – Permanent Make Up - Online Shop{% endblock %}"/>
+  <meta name="keywords"content= "{% block meta_keywords %}{% endblock %}Piercing,Tattoo,Grosshandel,Studiobedarf,Medical Equipment,Cutting,Branding,Scarification,Bodyart,Bodypiercing,Tatto,Piercingschmuck,Piercen,Titan,Titanium,Schmuck,Per-4,Bodypiercing,Zungenpiercing,Intimpiercing,Brustpiercing,Pflege,Piercingpflege,Nipplepiercing,Piercingshop,Brustwarzeberlin,Deutschland,Europa" />
+  <link rel="shortcut icon" href="{{ MEDIA_URL }}images/favicon.ico" type="image/x-icon"/>
+  
+
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/bootstrap.min.css" />
+  {% if debug %}
+    
+    <link rel="stylesheet/less" href="{{ MEDIA_URL }}less/site.less">
+    <script src="{{ MEDIA_URL }}scripts/libs/less-1.3.0.min.js" type="text/javascript"></script>
+  {% else %}
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/site.min.css?{{ STATIC_TOKEN }}" />
+  {% endif %}
+  <link rel="stylesheet" href="{{ MEDIA_URL }}css/bootstrap-responsive.min.css">
+
+  <script src="{{ MEDIA_URL }}scripts/libs/modernizr.min.js"></script>
+  {% block head %}{% endblock %}
 </head>
 
 <body>
-    <header class="header">
-        <div id="nav_bar" class="nav_bar {{ simple_role }}">
-            {% block nav_bar %}
-            <table width="100%" class="container_16" cellspacing="0"><tr>
-                <td align="center"><div class="firstlevel next {{ request.path|selected:'/main/' }}"><a href="/">{% trans 'Home' %}</a></div></td>
-                <td align="center"><div class="firstlevel next {{ request.path|selected:"/aboutus/" }}"><a href="/aboutus/">{% trans 'About Us' %}</a></div></td>
-                <td align="center"><div class="firstlevel next {{ request.path|selected:"/shipping/" }}"><a href="/shipping/">{% trans 'Shipping' %}</a></div></td>
-                <td align="center"><div class="firstlevel next {{ request.path|selected:"/downloads/" }}"><a href="/downloads/">{% trans 'Downloads' %}</a></div></td>
-                <td align="center"><div class="firstlevel next {{ request.path|selected:"/materials/" }}"><a href="/materials/">{% trans 'Material Guide' %}</a></div></td>
-                <td align="center"><div class="firstlevel next {{ request.path|selected:"/gallery/" }}"><a href="/gallery/">{% trans 'Gallery' %}</a></div></td>
-                <td align="center"><div class="firstlevel next {{ request.path|selected:"/studios/" }}"><a href="/studios/">{% trans 'Studios' %}</a></div></td>
-                <td align="center"><div class="firstlevel next {{ request.path|selected:"/agb/" }}"><a href="/agb/">{% trans 'AGB' %}</a></div></td>
-                <td align="center"><div class="firstlevel next {{ request.path|selected:"/contact/" }}"><a href="/contact/">{% trans 'Contact' %}</a></div></td>
-                <td align="center"><div class="firstlevel next {{ request.path|selected:"/faq/" }}"><a href="/faq/">{% trans 'FAQ' %}</a></div></td>
-                <td align="center">                
-                    <form action="/search/" method="get">
-                        <input class="{{ simple_role }}" type="search" value="" id="search_text" name="s" accesskey="s" autosave="" results="5"  />
-                        <input class="{{ simple_role }}" type="submit" id="a" value="{% trans "Search" %}"/>
-                    </form>
-                </td></tr></table>
-            {% endblock %}
+  <header class="navbar navbar-fixed-top">
+    <div id="nav_bar" class="navbar-inner {{ simple_role }}">
+      <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="/">{% trans 'Home' %}</a>
+        <div class="nav-collapse">
+        {% block nav_bar %}
+          <ul class="nav">
+            <li class="{{ request.path|pathIsActive:'/aboutus/' }}">
+              <a href="/aboutus/">{% trans 'About Us' %}</a>
+            </li>
+            <li class="{{ request.path|pathIsActive:'/shipping/' }}">
+              <a href="/shipping/">{% trans 'Shipping' %}</a>
+            </li>
+            <li class="{{ request.path|pathIsActive:'/downloads/' }}">
+              <a href="/downloads/">{% trans 'Downloads' %}</a>
+            </li>
+            <li class="{{ request.path|pathIsActive:'/materials/' }}">
+              <a href="/materials/">{% trans 'Material Guide' %}</a>
+            </li>
+            <li class="{{ request.path|pathIsActive:'/gallery/' }}">
+              <a href="/gallery/">{% trans 'Gallery' %}</a>
+            </li>
+            <li class="{{ request.path|pathIsActive:'/studios/' }}">
+              <a href="/studios/">{% trans 'Studios' %}</a>
+            </li>
+            <li class="{{ request.path|pathIsActive:'/agb/' }}">
+              <a href="/agb/">{% trans 'AGB' %}</a>
+            </li>
+            <li class="{{ request.path|pathIsActive:'/contact/' }}">
+              <a href="/contact/">{% trans 'Contact' %}</a>
+            </li>
+            <li class="{{ request.path|pathIsActive:'/faq/' }}">
+              <a href="/faq/">{% trans 'Contact' %}</a>
+            </li>
+          </ul>
         </div>
+        <form action="/search/" method="get" class="navbar-search pull-right">
+            <input class="{{ simple_role }}" type="search" value="" id="search_text" name="s" accesskey="s" autosave="" results="5"  />
+            <input class="{{ simple_role }}" type="submit" id="a" value="{% trans "Search" %}"/>
+        </form>
+        {% endblock %}
+      </div>
+    </div>
+  </header>
+  <div class="container-fluid">
+    <div class="row-fluid subheader">
+      <div class="span2">
+        <a href="/main"><img src="{{ MEDIA_URL }}images/logo-l.png" class="logo"/></a>
+      </div>
+      <div class="span8">
+        <div class="language_bar" id="language_bar">
+              <span class="flag" lang="de"><img src="{{ MEDIA_URL }}images/flag_de.png" /></span>
+              <span class="flag" lang="en"><img src="{{ MEDIA_URL }}images/flag_gb.png" /></span>
+              <span class="flag" lang="fr"><img src="{{ MEDIA_URL }}images/flag_fr.png" /></span>
+              <span class="flag" lang="es"><img src="{{ MEDIA_URL }}images/flag_es.png" /></span>
+              <span class="flag" lang="it"><img src="{{ MEDIA_URL }}images/flag_it.png" /></span>
+        </div>
+        <div class="headerannounce">
+            <h2>Order Online 24 hours a day, 7 days a week</h2>
+        </div>
+      </div>
+      <div class="span2">
+          <div class="login_panel">
+          {% if request.user.is_authenticated %}
+              <div class="">
+                  <div><a href="/user/profile/account/" title="My Account">{% trans 'My Account' %}</a></div>
+                  <div><a href="/user/logout/">{% trans "Logout" %}</a></div>
+              </div>
+          {% else %}
+              <div class=""><img class="floatRight" src="{{ MEDIA_URL }}images/static/wholesale_{{ LANGUAGE_CODE }}.png"/></div>
+              <div class="loginlink "><a class="link" href="/login/?forward_URL={{ request.path }}&studio={{ studio }}">{% trans "Login" %}</a></div>
+          {% endif %}
+          </div>
+      </div>
+    </div>
     
-        <div class="container_16 clearfix subheader">
-            <div class="grid_3 alpha">
-                <a href="/main"><img src="/media/images/logo.png"/></a>
-            </div>
-            
-            <div class="grid_5 language_bar" id="language_bar">
-                <span class="flag" lang="de"><img src="/media/images/flag_de.png" /></span>
-                <span class="flag" lang="en"><img src="/media/images/flag_gb.png" /></span>
-                <span class="flag" lang="fr"><img src="/media/images/flag_fr.png" /></span>
-                <span class="flag" lang="es"><img src="/media/images/flag_es.png" /></span>
-                <span class="flag" lang="it"><img src="/media/images/flag_it.png" /></span>
-            </div>
-            <div class="grid_8 login_panel omega">
-            {% if request.user.is_authenticated %}
-                <div class="grid_5 alpha">&nbsp;</div>
-                <div class="grid_3 omega">
-                    <div><a href="/user/profile/account/" title="My Account">{% trans 'My Account' %}</a></div>
-                    <div><a href="/user/logout/">{% trans "Logout" %}</a></div>
-                </div>
-            {% else %}
-                <div class="grid_5 alpha"><img class="floatRight" src="/media/images/static/wholesale_{{ LANGUAGE_CODE }}.png"/></div>
-                <div class="loginlink grid_3 omega"><a class="link" href="/login/?forward_URL={{ request.path }}&studio={{ studio }}">{% trans "Login" %}</a></div>
-            {% endif %}
-            </div>
-            <div class="grid_10 headerannounce">
-                <h1>Order Online 24 hours a day, 7 days a week</h1>
-            </div>
+    <div class="row-fluid body">
+       {% block body %}{% endblock %}
+    </div>
+    
+    <footer>
+      <div class="row-fluid">
+        <div class="span4">
+            <h2 class="spaced">{% trans "payment methods" %}</h2>
+            <img src="{{ MEDIA_URL }}images/static/payments.png" class="floatLeft"/>
         </div>
-    </header>
-    <section class="container_16 clearfix">
-        {% block body %}{% endblock %}
-    </section>
-
-    <footer class="container_16">
-        {% comment %}
-        <div class="grid_3 infolinks">
-            <h1>Piercing Culture</h1>
-            <a href="#">Augenbrauen Piercing</a>
-            <a href="#">Augenbrauen Piercing</a>
-            <a href="#">Augenbrauen Piercing</a>
-            <a href="#">Augenbrauen Piercing</a>
+        <div class="span4">
+            <h2 class="spaced">{% trans "our shipping partner" %}</h2>
+            <img src="{{ MEDIA_URL }}images/static/dhl.png" class="floatLeft"/>
         </div>
-        <div class="grid_3 infolinks">
-            <h1>Piercing Culture</h1>
-            <a href="#">Augenbrauen Piercing</a>
-            <a href="#">Augenbrauen Piercing</a>
-            <a href="#">Augenbrauen Piercing</a>
-            <a href="#">Augenbrauen Piercing</a>
-        </div>
-        <div class="grid_3 infolinks">
-            <h1>Piercing Culture</h1>
-            <a href="#">Augenbrauen Piercing</a>
-            <a href="#">Augenbrauen Piercing</a>
-            <a href="#">Augenbrauen Piercing</a>
-            <a href="#">Augenbrauen Piercing</a>
-        </div>
-        <div class="grid_3 infolinks">
-            <h1>Piercing Culture</h1>
-            <a href="#">Augenbrauen Piercing</a>
-            <a href="#">Augenbrauen Piercing</a>
-            <a href="#">Augenbrauen Piercing</a>
-            <a href="#">Augenbrauen Piercing</a>
-        </div>
-        {% endcomment %}
-        <div class="grid_5">
-            <h1 class="spaced">{% trans "payment methods" %}</h1>
-            <img src="/media/images/static/payments.png" class="floatLeft"/>
-        </div>
-        <div class="grid_5">
-            <h1 class="spaced">{% trans "our shipping partner" %}</h1>
-            <img src="/media/images/static/dhl.png" class="floatLeft"/>
-        </div>
-        <div class="grid_6">
+        <div class="span4">
             <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css"/>
             <style type="text/css">
                 #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
@@ -132,57 +143,81 @@
                 <div class="clear"><input type="submit" value="{% trans "Subscribe" %}" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
             </form>
             </div>
+          </div>
         </div>
-
-        <hr class="grid_16" style="clear:both"/>
-        
-        <div class="copyright grid_16">
-            <a href="/impressum/" class="floatRight">{% trans "Impressum" %}</a>
-            <span>Copyright &copy;2011 Per-4. All rights reserved</span>
-        </div>
-        <div class="note grid_16">
-            <p>{% trans "Per-4 • Piercing • Tattoo • Jewellery • Fashion & Media • Studioequipment" %}</p>
-            <p>{% trans "Über" %} {{ total_article_count }} {% trans "Produkte im Webshop!" %}</p>
+        <hr class="row-fluid"/>
+        <div class="row-fluid">
+          <div class="copyright span12">
+              <a href="/impressum/" class="floatRight">{% trans "Impressum" %}</a>
+              <span>Copyright &copy;2011 Per-4. All rights reserved</span>
+              <div>{% trans "Per-4 • Piercing • Tattoo • Jewellery • Fashion & Media • Studioequipment" %}</div>
+              <div>{% trans "Über" %} {{ total_article_count }} {% trans "Produkte im Webshop!" %}</div>
+          </div>
         </div>
     </footer>
+  </div>
     
     
-    
-	<form id="setlang" action="/i18n/setlang/" method="post">
-		<input id="languageCode" type="hidden" name="language" value="en"/>
-		<input id="next" type="hidden" name="next" value="{{ request.path }}"/>
-	</form>
+  <form id="setlang" action="/i18n/setlang/" method="post">
+    <input id="languageCode" type="hidden" name="language" value="en"/>
+    <input id="next" type="hidden" name="next" value="{{ request.path }}"/>
+  </form>
 {% block jst %}{% endblock %}
 
-	{% block jscriptlinks %}{% endblock %}
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-	<script type="text/javascript" src="/media/javascript/tools.js?20110927_2"></script>
+  {% block jscriptlinks %}{% endblock %}
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="{{ MEDIA_URL}}scripts/libs/bootstrap.min.js"></script>
+  <script type="text/javascript" src="{{ MEDIA_URL}}scripts/tools.js?{{ STATIC_TOKEN }}"></script>
 
-    <script type="text/javascript">
-	    showLogin = function(evt){
-			{% if not request.user.is_authenticated %}
-		    	setLanguage(evt, '/login/');
-		    {% else %}
-		    	setLanguage(evt, '/main/');
-		    {% endif %}
-	    }
-	
+  <script>
+    showLogin = function(evt){
+    {% if not request.user.is_authenticated %}
+        setLanguage(evt, '/login/');
+      {% else %}
+        setLanguage(evt, '/main/');
+      {% endif %}
+    }
+  
    
-	    $(document).ready(function () {
-	    	$('#language_bar span[lang]').click(setLanguage);
-		    {% if not request.user.is_authenticated %}
-				verifyEnterToSubmit('#password');
-				$('#email').focus();
-				{% endif %}
-		    {% if not request.user.is_authenticated %}
-				{% block onloadStudio %}{% endblock %}
-			{% endif %}
-			{% block onloadAll %}{% endblock %}
-			
-		});
-		{% block jscripts %}{% endblock %}
-    </script>
-	{% track_pagehits %}
-	{% block very_last_items %}{% endblock %}
+    $(function () {
+      $('#language_bar span[lang]').click(setLanguage);
+      {% if not request.user.is_authenticated %}
+      verifyEnterToSubmit('#password');
+      $('#email').focus();
+      {% endif %}
+      {% if not request.user.is_authenticated %}
+      {% block onloadStudio %}{% endblock %}
+    {% endif %}
+    {% block onloadAll %}{% endblock %}
+      
+  });
+  {% block jscripts %}{% endblock %}
+  </script>
+
+  <div id="fb-root"></div>
+  <script>
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId={{ FB_APP_ID }}";
+      fjs.parentNode.insertBefore(js, fjs);
+    } (document, 'script', 'facebook-jssdk'));
+
+    $(function () {
+      var container = $('#fbLikeContainer');
+      $(window).bind("load resize", function () {
+        var container_width = container.width();
+        container.html('<div class="fb-like-box" ' +
+        'data-href="http://www.facebook.com/Per4Store"' +
+        ' data-width="' + container_width + '" data-height="730" data-show-faces="true" ' +
+        'data-stream="false" data-header="true"></div>');
+        FB.XFBML.parse(container[0]);
+      });
+    });
+  </script>
+
+  {% track_pagehits %}
+  {% block very_last_items %}{% endblock %}
 </body>
 </html>

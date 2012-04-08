@@ -1,0 +1,8 @@
+﻿@link-color:#797;
+
+a.link {
+  text-decoration:none;
+  color:@link-color;
+  &:visited, &:active{color:@link-color;text-decoration:none;}
+  &:hover {color:lighten(@link-color,15%);text-decoration:none;}
+}

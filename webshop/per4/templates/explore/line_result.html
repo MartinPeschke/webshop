@@ -11,8 +11,7 @@
 			<div class="articleshortdesc">
 				<a class="floatRight article-desc-text {% if p.is_newprice %}green{% endif %}" href="/{{ article_family.line.shop.ref }}/{{  article_family.line.ref }}/{{ article_family.ref }}/">
                 {{ article_family.desc|locale:LANGUAGE_CODE }}</a>
-                <br/>
-                <div class="floatRight">{{ article_family|from_price:simple_role }}</div>
+                <div class="price-info">{{ article_family|from_price:simple_role }}</div>
 			</div>
 			{% if p %}
 				<span class="promotionalIcons {{ p.type_ref|lower }}">

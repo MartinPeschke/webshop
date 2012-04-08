@@ -19,6 +19,14 @@ FROM_PRICE_HTML_A = render_to_string('snippets/from_price_a.html',{})
 def simple_locale(locale_string):
     return 'de' in locale_string and 'de' or 'en'
 
+
+@register.filter
+def pathIsActive(uri, path):
+    if(path[0] != '/' and path[-1] != '/'): path = "/%s/" % path
+    if uri == path:
+        return 'active'
+    else: return ''
+
 @register.filter
 def selected(uri, path):
     if(path[0] != '/' and path[-1] != '/'): path = "/%s/" % path
