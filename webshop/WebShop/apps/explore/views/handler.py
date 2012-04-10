@@ -111,21 +111,21 @@ def line(request, shop_ref, line_ref = None):
 
 
 def _get_articles(af, role):
-	article_set = af.article_set.order_by('thickness', 'diameter_length', 'ref').all()
+    article_set = af.article_set.order_by('thickness', 'diameter_length', 'ref').all()
 
-	pricing_set = Pricing.objects.filter(article__article_family = af).filter(forRole = role).order_by('discountQty').all()
-	pricings = {}
-	has_discount = False
-	has_old_price = False
-	for p in pricing_set:
-		pricings[p.article_id] = pricings.get(p.article_id, []) + [p]
-		has_discount = has_discount or len(pricings[p.article_id]) > 1
-		has_old_price = has_old_price or bool(p.old_price)
-	option_set = ArticleOption.objects.filter(article__article_family = af).all()
-	options = {}
-	for ao in option_set:
-		 options[ao.article_id] = options.get(ao.article_id, []) + [ao]
-	return article_set, options, pricings, has_old_price, has_discount
+    pricing_set = Pricing.objects.filter(article__article_family = af).filter(forRole = role).order_by('discountQty').all()
+    pricings = {}
+    has_discount = False
+    has_old_price = False
+    for p in pricing_set:
+        pricings[p.article_id] = pricings.get(p.article_id, []) + [p]
+        has_discount = has_discount or len(pricings[p.article_id]) > 1
+        has_old_price = has_old_price or bool(p.old_price)
+    option_set = ArticleOption.objects.filter(article__article_family = af).all()
+    options = {}
+    for ao in option_set:
+         options[ao.article_id] = options.get(ao.article_id, []) + [ao]
+    return article_set, options, pricings, has_old_price, has_discount
 
 def article(request, shop_ref, line_ref, af_ref = None):
     rctxt = RequestContext(request)
@@ -192,16 +192,16 @@ def pane(request, type_id):
       art_type = ArticleType.objects.get(pk=type_id)
     except ArticleType.DoesNotExist:
       return {'body': ""}
-    type_html = cache.get('type_page_%s_%s' % (art_type.en, show_state), False)
-    if type_html == False:
-        print 'cache miss for ', 'type_page_%s_%s' % (art_type.en, show_state)
-        always_show_all = show_all = request.session.get('always_show_all', False)
-        ats = ArticleType.objects.filter(en = art_type.en).filter(line__shop = art_type.line.shop).all()
-        other_materials = ArticleFamily.objects.filter(art_type_id__in=map(lambda x : x.id, ats)).select_related('line__shop').order_by('line__ref', 'ref').all()
-        type_html = mark_safe(render_to_string('explore/article_pane.html', locals(),  context_instance=rctxt))
-        cache.set('type_page_%s_%s' % (art_type.en, show_state), type_html, settings.CACHE_TIMEOUT)
-    else:
-        print 'cache hit for ', 'type_page_%s_%s' % (art_type.en, show_state)
-    type_html = cache.get('type_page_%s_%s' % (art_type.en, show_state))
+    #type_html = cache.get('type_page_%s_%s' % (art_type.en, show_state), False)
+    #if type_html == False:
+    #    print 'cache miss for ', 'type_page_%s_%s' % (art_type.en, show_state)
+    always_show_all = show_all = request.session.get('always_show_all', False)
+    ats = ArticleType.objects.filter(en = art_type.en).filter(line__shop = art_type.line.shop).all()
+    other_materials = ArticleFamily.objects.filter(art_type_id__in=map(lambda x : x.id, ats)).select_related('line__shop').order_by('line__ref', 'ref').all()
+    type_html = mark_safe(render_to_string('explore/article_pane.html', locals(),  context_instance=rctxt))
+    cache.set('type_page_%s_%s' % (art_type.en, show_state), type_html, settings.CACHE_TIMEOUT)
+    #else:
+    #    print 'cache hit for ', 'type_page_%s_%s' % (art_type.en, show_state)
+    #type_html = cache.get('type_page_%s_%s' % (art_type.en, show_state))
     
     return {'body': type_html}

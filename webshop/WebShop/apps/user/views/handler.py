@@ -58,70 +58,7 @@ def rlogin(request):
         map['error'] = str(_('Sorry, please check your email and password.'))
     return map
 
-#===============================================================================
-# TODO : How to Merge Carts? How to retrieve previous session? when anon user has a new session :/
-#===============================================================================
-def login(request):
-    forward_URL = request.REQUEST.get('forward_URL', '/')
-    map = {'forward_URL':forward_URL
-            , 'studio' : request.REQUEST.get('studio', '') 
-          }
-    if request.method == 'POST':
-        if request.POST['form-type'] == 'email':
-            # ================ EMAIL LOGIN ===================
-            form = map['email_login_form'] = LoginEmailForm(request.POST)
-            map['email_zipcode_form'] = LoginZipCodeForm()
-            if form.is_valid():
-                user = auth.authenticate(**form.cleaned_data)
-                if user is None:
-                    errors = form._errors.setdefault("email", ErrorList())
-                    errors.append(ugettext_lazy('Sorry, please check your email and password.'))
-                    return render_to_response('user/login.html', map, context_instance=RequestContext(request))
-                else:
-                    if user.is_active:
-                        auth.login(request, user)
-                        if (request.session.get('cart', None)):
-                            request.session['cart'].initUser(user)
-                        success = True
-                    else:
-                        errors = form._errors.setdefault("email", ErrorList())
-                        errors.append(ugettext_lazy('Sorry, please activate your account.'))
-                        return render_to_response('user/login.html', map, context_instance=RequestContext(request))
-                    return HttpResponseRedirect(forward_URL)
-            else:
-                return render_to_response('user/login.html', map, context_instance=RequestContext(request))
-        else:
-            # ================ ZIPCODE LOGIN ===================
-            form = map['email_zipcode_form'] = LoginZipCodeForm(request.POST)
-            map['email_login_form'] = LoginEmailForm()
-            
-            if form.is_valid():
-                user = auth.authenticate(**form.cleaned_data)
-                if user is None:
-                    errors = form._errors.setdefault("username", ErrorList())
-                    errors.append(ugettext_lazy('Sorry, please check your customer number or ZIP code.'))
-                    return render_to_response('user/login.html', map, context_instance=RequestContext(request))
-                else:
-                    if user.is_active:
-                        auth.login(request, user)
-                        if (request.session.get('cart', None)):
-                            request.session['cart'].initUser(user)
-                        success = True
-                    else:
-                        errors = form._errors.setdefault("username", ErrorList())
-                        errors.append(ugettext_lazy('Sorry, please activate your account.'))
-                        return render_to_response('user/login.html', map, context_instance=RequestContext(request))
-                    return HttpResponseRedirect(forward_URL)
-            else:
-                return render_to_response('user/login.html', map, context_instance=RequestContext(request))
 
-    else:
-        map['email_login_form'] = LoginEmailForm()
-        map['email_zipcode_form'] = LoginZipCodeForm()
-        return render_to_response('user/login.html', map, context_instance=RequestContext(request))
-#    if user is None:
-
-#        zip = True
 
 
 def logout(request):

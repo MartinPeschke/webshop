@@ -6,9 +6,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 a.link {
   text-decoration:none;
-  color:@link-color;
-  &:visited, &:active{color:@link-color;text-decoration:none;}
-  &:hover {color:lighten(@link-color,15%);text-decoration:none;}
+  color:@linkColor;
+  &:visited, &:active{color:@linkColor;text-decoration:none;}
+  &:hover {color:lighten(@linkColor,15%);text-decoration:none;}
 }
 
 h3.title {
@@ -16,7 +16,10 @@ h3.title {
 }
 
 .title {
-    background-color: @title-color;
+    #gradient > .vertical(@navbarBackgroundHighlight, @navbarBackground);
+    @shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1);
+    .box-shadow(@shadow);
+
     color: white;
     padding: 1px 10px;
     margin: 0 0 15px;

@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block center_block_header %}{% trans 'Login' %}{% endblock %}
+
+{% block content %}
+<div class="center_box">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="/login">{% trans "Login with email" %}</a></li>
+    <li><a href="/user/login/zipcode">{% trans "Login with zip code" %}</a></li>
+    <li><a href="/user/password/">{% trans "forgot your password?" %}</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="email-password">
+      {% crispy login_form %}
+    </div>
+  </div>
+
+    <div class="control-group">
+        <a href="/user/registration/?studio={{ studio }}" title="Sign up" style="text-decoration:underline;">{% trans "Sign up for Per-4.com" %}</a>
+    </div>
+</div>
+{% endblock %}

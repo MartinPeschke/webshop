@@ -4,20 +4,28 @@ urlpatterns = patterns('',
 
     # Login
     (r'rlogin', 'WebShop.apps.user.views.handler.rlogin'),
-    (r'login/$', 'WebShop.apps.user.views.handler.login'),
-    (r'logout/$', 'WebShop.apps.user.views.handler.logout'),
-    (r'checkmail', 'WebShop.apps.user.views.handler.check_mail'),
+    (r'^login/$', 'WebShop.apps.user.views.auth.login'),
+    (r'^login/zipcode/$', 'WebShop.apps.user.views.auth.login_zipcode'),
+    (r'password/$', 'WebShop.apps.user.views.auth.forgot_password'),
+
+    (r'signup/$', 'WebShop.apps.user.views.auth.signup'),
+    (r'signup/details$', 'WebShop.apps.user.views.auth.signupdetails'),
+
+    (r'^logout/$', 'WebShop.apps.user.views.handler.logout'),
+    (r'^checkmail/$', 'WebShop.apps.user.views.auth.check_mail'),
+    
+
     
     # User settings
     (r'^profile/$', 'WebShop.apps.user.views.profile.index'),
-    (r'^profile/password/$', 'WebShop.apps.user.views.profile.forgot_password'),
+    
     (r'^profile/setpassword/$', 'WebShop.apps.user.views.profile.set_password'),
     (r'^profile/changepassword/$', 'WebShop.apps.user.views.profile.change_password'),
     (r'^profile/account/$', 'WebShop.apps.user.views.profile.account'),
     (r'^profile/account/save/$', 'WebShop.apps.user.views.profile.save_account'),
 
     # Register flow
-    (r'registration/$', 'WebShop.apps.user.views.handler.registration'),
+    
     (r'registration/save/$', 'WebShop.apps.user.views.handler.save_registration'),
 
     (r'activate/(?P<code>\w+)', 'WebShop.apps.user.views.handler.activate'),

@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _, ugettext_lazy
 from django.utils.safestring import mark_safe
 from django.conf import settings
+from django.core.urlresolvers import reverse
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Layout, HTML, Fieldset, Hidden
@@ -35,16 +36,15 @@ class LoginEmailForm(forms.Form):
     def __init__(self, *args, **kwargs):
         self.helper = FormHelper()
         self.helper.form_id = 'id-email-login'
-        self.helper.form_class = 'forms-vertical'
+        self.helper.form_class = 'form-horizontal'
         self.helper.form_method = 'post'
-        self.helper.form_action = '/user/login/'
+        self.helper.form_action = reverse('WebShop.apps.user.views.auth.login')
         self.helper.layout = Layout(
             Fieldset(
                 ugettext_lazy("Login with email and password"),
                 'email',
                 'password'
             ),
-            Hidden('form-type', 'email'),
             FormActions(
                 Submit('submit', ugettext_lazy('Login'), css_class='btn btn-primary')
             )
@@ -57,20 +57,18 @@ class LoginZipCodeForm(forms.Form):
     def __init__(self, *args, **kwargs):
         self.helper = FormHelper()
         self.helper.form_id = 'id-zipcode-login'
-        self.helper.form_class = 'forms-vertical'
+        self.helper.form_class = 'form-horizontal'
         self.helper.form_method = 'post'
-        self.helper.form_action = '/user/login/'
+        self.helper.form_action = reverse('WebShop.apps.user.views.auth.login_zipcode')
         self.helper.layout = Layout(
             Fieldset(
                 ugettext_lazy("Login with customer number and ZIP code"),
                 'username',
                 'password'
             ),
-            HTML("""<p>Please observe that customer number and ZIP code only work, if you have received that Login by mail.</p>
-                    <p>Bitte beachten Sie, das Kundennummer und PLZ einloggen nur klappt, wenn Sie die Information auch per Post erhalten haben.</p>
-                 """
+            HTML("<p>{}</p>".format(_("Please observe that customer number and ZIP code only work, if you have received that Login by mail."))
+#                    <p>Bitte beachten Sie, das Kundennummer und PLZ einloggen nur klappt, wenn Sie die Information auch per Post erhalten haben.</p>
             ),
-            Hidden('form-type', 'zipcode'),
             FormActions(
                 Submit('submit', ugettext_lazy('Login'), css_class='btn btn-primary')
             )
@@ -84,9 +82,9 @@ class RequestPasswordForm(forms.Form):
     def __init__(self, *args, **kwargs):
         self.helper = FormHelper()
         self.helper.form_id = 'id-forgot-password-form'
-        self.helper.form_class = 'forms-vertical'
+        self.helper.form_class = 'form-horizontal'
         self.helper.form_method = 'post'
-        self.helper.form_action = '/user/profile/password/'
+        self.helper.form_action = reverse('WebShop.apps.user.views.auth.forgot_password')
         self.helper.layout = Layout(
             Fieldset(
                 ugettext_lazy('Change Password'),
@@ -94,7 +92,7 @@ class RequestPasswordForm(forms.Form):
                 'emailconfirm'
             ),
             FormActions(
-                Submit('submit', ugettext_lazy("Save Profile"), css_class='btn btn-primary')
+                Submit('submit', ugettext_lazy("Send Email"), css_class='btn btn-primary')
             )
         )
         super(RequestPasswordForm, self).__init__(*args, **kwargs)
@@ -103,22 +101,12 @@ class RequestPasswordForm(forms.Form):
             raise ValidationError(_('Sorry, your email addresses do not match.'))
         return self.data['email']
 
-
-
-
-
-
-
-
-
 class RegisterForm(forms.Form):
-    '''
-    Form for register
-    '''
+    role = forms.ChoiceField(choices = [('K', _('Studio')), ('E', _('Endkunde'))], widget=forms.Select
+                             , label = ugettext_lazy('Ich bin'))
     email = forms.CharField()
-    password = forms.CharField()
-    password2 = forms.CharField()
-#    use_ssl = forms.BooleanField()
+    password = forms.CharField(widget = forms.PasswordInput)
+    password2 = forms.CharField(widget = forms.PasswordInput)
 
     def clean_email(self):
         if(User.objects.filter(email=self.data['email']).count()):
@@ -130,6 +118,35 @@ class RegisterForm(forms.Form):
         if self.data['password'] != self.data['password2']:
             raise ValidationError(mark_safe(_('Sorry, please check your password.')))
         return self.data['password2']
+
+    def __init__(self, *args, **kwargs):
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-signup-form'
+        self.helper.form_class = 'form-horizontal form-validated'
+        self.helper.form_method = 'post'
+        self.helper.form_action = reverse('WebShop.apps.user.views.auth.signup')
+        self.helper.layout = Layout(
+            Fieldset(
+                ugettext_lazy('Signup'),
+                'role',
+                'email',
+                'password',
+                'password2'
+            ),
+            FormActions(
+                Submit('submit', ugettext_lazy("Signup"), css_class='btn btn-primary')
+            )
+        )
+        super(RegisterForm, self).__init__(*args, **kwargs)
+
+
+
+
+
+
+
+
+
 
 
 class AddressForm(forms.Form):

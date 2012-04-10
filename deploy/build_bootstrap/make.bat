@@ -1,0 +1,2 @@
+call node_modules/.bin/lessc ../../webshop/WebShop/per4/media/less/site.less > ../../webshop/WebShop/per4/media/css/site.css
+call node_modules/.bin/lessc -x ../../webshop/WebShop/per4/media/less/site.less > ../../webshop/WebShop/per4/media/css/site.min.css

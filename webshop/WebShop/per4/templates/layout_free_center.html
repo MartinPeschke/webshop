@@ -9,17 +9,6 @@
         {% include "left_menu_inc.html" %}
     {% endblock %}
 
-    {% if messages %}
-    <div class="messages">
-    {% trans "You have a Message" %}:
-    <ul>
-        {% for message in messages %}
-        <li>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    </div>
-    {% endif %}
-
     {% block left_block_announce %}
         {% include "left_block_announce.html" %}
     {% endblock %}

@@ -3,7 +3,7 @@
 
 
 {% if other_materials %}
-        <h1>{% trans "All Materials:" %} {{ art_type|locale:request.LANGUAGE_CODE }}</h1>
+        <h2 class="title">{% trans "All Materials:" %} {{ art_type|locale:request.LANGUAGE_CODE }}</h2>
         {% ifnotequal show_state 0 %}
         <div id="type_pane_content" class="additionalpanes">
             {% for article_family in other_materials %}
