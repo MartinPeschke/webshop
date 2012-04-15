@@ -1,4 +1,5 @@
-﻿from django import forms
+﻿from operator import itemgetter, attrgetter
+from django import forms
 from django.forms import widgets, ValidationError
 from django.forms.util import ErrorList
 from django.contrib.auth.models import User
@@ -6,11 +7,14 @@ from django.utils.translation import ugettext as _, ugettext_lazy
 from django.utils.safestring import mark_safe
 from django.conf import settings
 from django.core.urlresolvers import reverse
+from WebShop.apps.contrib.countries.models import Country
+
+
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Layout, HTML, Fieldset, Hidden
 from crispy_forms.bootstrap import FormActions
-
+COUNTRIES = map(attrgetter('iso', 'printable_name'), Country.objects.all())
 
 
 LANGUAGES = []
@@ -24,7 +28,10 @@ WEEKDAYS = (
     ('Thu', mark_safe(ugettext_lazy('Thursday'))),
     ('Fri', mark_safe(ugettext_lazy('Friday'))),
     ('Sat', mark_safe(ugettext_lazy('Saturday'))),
+    ('Sun', mark_safe(ugettext_lazy('Sunday'))),
 )
+
+
 
 YESNO = (('Y', ugettext_lazy('Yes')), (('N'), ugettext_lazy('No')))
 
@@ -164,9 +171,80 @@ class RegisterForm(forms.Form):
         )
         super(RegisterForm, self).__init__(*args, **kwargs)
 
+class AccountForm(forms.Form):
+    # Profile
+    title = forms.ChoiceField(choices=settings.TITLE_CHOICES, label = ugettext_lazy('Anrede'))
+    first_name = forms.CharField(max_length = 32, label = ugettext_lazy('Vorname'))
+    last_name = forms.CharField(max_length = 32, label = ugettext_lazy('Nachname'))
+    webpage = forms.CharField(required=False, label = ugettext_lazy('Webseite'))
+
+    company_name = forms.CharField(label = ugettext_lazy('Studioname'))
+    vat_id = forms.CharField(required=False, label = ugettext_lazy('Umsatzsteuer ID'))
+    bo_customer_no = forms.CharField(required=False, label = ugettext_lazy('Kundennummer'))
+    opening_hours = forms.CharField(label = ugettext_lazy(u'Öffnungszeiten'))
+
+    weekdays = forms.MultipleChoiceField(widget = forms.CheckboxSelectMultiple
+                                         ,choices=WEEKDAYS
+                                         ,initial=map(itemgetter(0), WEEKDAYS[:5])
+                                         , label = ugettext_lazy(u'Wochentage'))
+    agree = forms.ChoiceField(widget=widgets.RadioSelect
+                              , choices=YESNO
+                              , initial=YESNO[1][0]
+                              , label = ugettext_lazy(u'Ich stimme den AGB zu'))
 
 
 
+    street = forms.CharField(label = ugettext_lazy('Strasse'))
+    zip = forms.CharField(max_length=16, label = ugettext_lazy('Postleitzahl'))
+    city = forms.CharField(label = ugettext_lazy('Stadt'))
+    country = forms.ChoiceField(choices= COUNTRIES, label = ugettext_lazy('Land'), initial="DE")
+    language = forms.ChoiceField(choices=LANGUAGES, label = ugettext_lazy('Sprachen'))
+    tel = forms.CharField(max_length=32, label = ugettext_lazy('Telefon'))
+    fax = forms.CharField(required=False, max_length=32, label = ugettext_lazy('Fax'))
+
+
+
+    def clean_agree(self):
+        if(self.data['agree']!=u'Y'):
+            raise ValidationError(mark_safe(_(u'Nur nach Zustimmung zu unseren AGB können Sie sich registrieren')))
+        else:
+            return self.data['agree']
+    def __init__(self, *args, **kwargs):
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-signup-details-form'
+        self.helper.form_class = 'form-horizontal form-validated'
+        self.helper.form_method = 'post'
+        self.helper.form_action = reverse('WebShop.apps.user.views.auth.signupdetails')
+        self.helper.layout = Layout(
+            Fieldset(
+                ugettext_lazy('Registrierung'),
+                'company_name',
+                'title',
+                'first_name',
+                'last_name',
+                'webpage',
+
+                'bo_customer_no',
+                'opening_hours',
+                'weekdays',
+                'vat_id',
+                'agree'
+            ),
+            Fieldset(
+                ugettext_lazy('Rechnungsadresse'),
+                'street',
+                'zip',
+                'city',
+                'country',
+                'language',
+                'tel',
+                'fax'
+            ),
+            FormActions(
+                Submit('submit', ugettext_lazy("Registrierung abschliessen"), css_class='btn btn-primary')
+            )
+        )
+        super(AccountForm, self).__init__(*args, **kwargs)
 
 
 class AddressForm(forms.Form):
@@ -189,35 +267,12 @@ class ShippingForm(AddressForm):
     street = forms.CharField(required=False)
     city = forms.CharField(required=False)
     zip = forms.CharField(required=False, max_length=16)
-    country = forms.CharField(required=False, max_length=32)
+    country = forms.CharField(required=False)
     language = forms.ChoiceField(required=False, choices=LANGUAGES)
     tel = forms.CharField(required=False, max_length=32)
     mobile = forms.CharField(required=False, max_length=32)
     fax = forms.CharField(required=False, max_length=32)
 
-class AccountForm(forms.Form):
-    # Profile
-    
-    title = forms.ChoiceField(choices=settings.TITLE_CHOICES)
-    first_name = forms.CharField(max_length = 32)
-    last_name = forms.CharField(max_length = 32)
-    webpage = forms.CharField(required=False)
-
-    company_name = forms.CharField()
-    vat_id = forms.CharField(required=False)
-    bo_customer_no = forms.CharField(required=False)
-    opening_hours = forms.CharField()
-
-    weekdays = forms.CharField(widget=widgets.CheckboxSelectMultiple(choices=WEEKDAYS))
-    same_address = forms.CharField(widget=widgets.RadioSelect(choices=YESNO), required=False)
-    agree = forms.CharField(widget=widgets.RadioSelect(choices=YESNO))
-
-    def clean_agree(self):
-        if(self.data['agree']!=u'Y'):
-            raise ValidationError(mark_safe(_('Nur nach Zustimmung zu unseren AGB koennen Sie sich registrieren')))
-        else:
-            return self.data['agree']
-    
 class OrderFreeCatalogForm(forms.Form):
     
     title = forms.ChoiceField(choices=settings.TITLE_CHOICES)

@@ -188,6 +188,7 @@ INSTALLED_APPS = (
     'WebShop.apps.search',
     'WebShop.apps.service',
     'crispy_forms',
+    'WebShop.apps.contrib.countries'
 )
 CRISPY_TEMPLATE_PACK = 'bootstrap'
 # CRISPY_FAIL_SILENTLY = not DEBUG
