@@ -6,23 +6,15 @@
 
 {% endblock %}
 
-{% block center_block_header %}{% trans 'Login' %}{% endblock %}
+{% block center_block_header %}{% trans 'Anmelden' %}{% endblock %}
 
 {% block content %}
 <div class="center_box">
-  <ul class="nav nav-tabs">
-    <li><a href="/user/login">{% trans "Login with email" %}</a></li>
-    <li class="active"><a href="/user/login/zipcode">{% trans "Login with zip code" %}</a></li>
-    <li><a href="/user/password/">{% trans "forgot your password?" %}</a></li>
-  </ul>
+  {% include "user/auth/navtabs.html" %}
   <div class="tab-content">
     <div class="tab-pane active">
       {% crispy login_form %}
     </div>
   </div>
-
-    <div class="control-group">
-        <a href="/user/registration/?studio={{ studio }}" title="Sign up" style="text-decoration:underline;">{% trans "Sign up for Per-4.com" %}</a>
-    </div>
 </div>
 {% endblock %}

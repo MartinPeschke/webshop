@@ -20,7 +20,6 @@ class ModelBackend:
             try:
                 p = PasswordToken.objects.get(value=token, role = role)
                 user = p.user
-                p.delete() # each token is one time use only
                 return user
             except PasswordToken.DoesNotExist:
                 return None

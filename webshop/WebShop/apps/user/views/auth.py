@@ -14,9 +14,10 @@ from django.contrib.auth.models import User
 
 from WebShop.utils import mail
 from WebShop.apps.contrib.decorator import json
-from WebShop.apps.user.views import _attach_token
-from WebShop.apps.user.forms import LoginEmailForm, LoginZipCodeForm, RequestPasswordForm, RegisterForm
+from WebShop.apps.user.forms import LoginEmailForm, LoginZipCodeForm, RequestPasswordForm, RegisterForm, ChangePasswordForm
 from WebShop.apps.user.models import PasswordToken, RESETPASSWORDTOKEN
+from WebShop.apps.user.services.token_manager import attach_token, sendResetEmail, remove_token
+
 
 
 def login(request):
@@ -70,38 +71,69 @@ def login_zipcode(request):
         map['login_form'] = LoginZipCodeForm()
     return render_to_response('user/auth/login_zipcode.html', map, context_instance=RequestContext(request))
 
-
-
-
 def forgot_password(request):
+    form = RequestPasswordForm()
     if request.method == 'POST':
-        form = RequestPasswordForm(request.POST)
-        if form.is_valid():
-            # send email
+        _form = RequestPasswordForm(request.POST)
+        if not _form.is_valid():
+            form = _form
+        else:
             try:
-                user = User.objects.get(email = form.cleaned_data['email'])
-            except User.DoesNotExist:
-                pass
+                user = User.objects.get(email = _form.data['email'])
+            except User.DoesNotExist: 
+                form = _form
+                errors = form._errors.setdefault("email", ErrorList())
+                errors.append(ugettext_lazy('Unbekannte Emailadresse.'))
             else:
                 try:
                     pt = PasswordToken.objects.get(user=user, role = RESETPASSWORDTOKEN)
                 except PasswordToken.DoesNotExist:
-                    pass
+                    sendResetEmail(request, user, _form)
                 else:
                     oneDay = datetime.timedelta(1)
                     if(datetime.datetime.now() - pt.create_time < oneDay):
-                        messages.add_message(request, messages.ERROR, _('''Eine Passwort&auml;nderungsemail wurde bereits an die Email-Adresse: <b>%s</b> innerhalb der letzten 24 Stunden versendet.<br/><br/>
+                        messages.add_message(request, messages.ERROR, 
+                            _('''Eine Passwort&auml;nderungsemail wurde bereits an die Email-Adresse: <b>%s</b> innerhalb der letzten 24 Stunden versendet.<br/><br/>
                             Um unsere Nutzer vor Spam
                             zu sch&uuml;tzen, k&ouml;nnen wir erst Morgen wieder eine neue Email senden, bitte kontakieren Sie uns doch direkt oder versuchen es Morgen noch einmal
-                            !''') % form.cleaned_data['email'])
+                            !''') % _form.cleaned_data['email'])
                     else:
-                        pt = _attach_token(user, role = RESETPASSWORDTOKEN)
-                        c = Context({'user': user, 'token': pt, 'host': request.META['HTTP_HOST']})
-                        mail.create_mail(_('%s Password Change Request' % settings.EMAIL_SUBJECT_PREFIX), settings.SERVER_EMAIL, form.cleaned_data['email'], 'changepassword', c)
-                        messages.add_message(request, messages.SUCCESS, _('''Sie erhalten in K&uuml;rze von uns eine E-Mail, in der Sie den Link zum Neusetzen Ihres Passwortes finden!'''))
+                        sendResetEmail(request, user, _form)
     else:
-        form = RequestPasswordForm()
+        pass
     return render_to_response('user/auth/forgot_password.html', locals(), context_instance=RequestContext(request))
+
+
+def set_password(request):
+    if request.user.is_authenticated():
+        return HttpResponseRedirect("/")
+    if 'token' in request.GET:
+        token = request.GET['token']
+        
+        user = auth.authenticate(token = token, role = RESETPASSWORDTOKEN)
+        if user:
+            form = ChangePasswordForm()
+
+            if request.method == 'POST':
+                _form = ChangePasswordForm(request.POST)
+
+                print "-->", _form.is_valid()
+                if not _form.is_valid():
+                    form = _form
+                else:
+                    auth.login(request, user)
+                    # Save password
+                    request.user.set_password(_form.cleaned_data['password'])
+                    request.user.save()
+                    remove_token(user = user, role = RESETPASSWORDTOKEN)
+                    messages.add_message(request, messages.SUCCESS, _('Passwort erfolgreich ge&auml;ndert!'))
+            else:
+                pass
+        else:
+            messages.add_message(request, messages.ERROR, _('The token for this requested password change has expired, please request again!'))
+        return render_to_response('user/auth/change_password.html', locals(), context_instance=RequestContext(request))
+    else:
+        return HttpResponseRedirect("/")
 
 
 @json

@@ -7,34 +7,41 @@
 
 {% endblock %}
 
-{% block center_block_header %}{% trans 'Signup' %}{% endblock %}
+{% block center_block_header %}{% trans 'Registrierung' %}{% endblock %}
 
 {% block content %}
 <div class="center_box">
+  {% include "user/auth/navtabs.html" %}
+  <div class="tab-content">
+    <div class="tab-pane active">
       {% crispy register_form %}
+    </div>
+  </div>
 </div>
 {% endblock %}
 
 {% block jscriptlinks %}
   <script type="text/javascript" src="{{ MEDIA_URL}}scripts/libs/jquery.validate.min.js?{{ STATIC_TOKEN }}"></script>
   <script>
-      $("body").find("form.form-validated").each(function(index, form){
+    $(function () {
+      $("body").find("form.form-validated").each(function (index, form) {
         $(form).validate({
           errorClass: "help-inline"
-          ,errorElement: "span"
-          ,highlight: function (element, errorClass, validClass) {
+          , errorElement: "span"
+          , highlight: function (element, errorClass, validClass) {
             $(element).closest(".control-group").addClass("error").removeClass(validClass);
           }
           , unhighlight: function (element, errorClass, validClass) {
             $(element).closest(".control-group").removeClass("error").addClass(validClass);
           }
 
-          , rules : {
+          , rules: {
             email: { remote: "{% url 'WebShop.apps.user.views.auth.check_mail' %}", required: true, email: true }
-            , password: {required: true}
-            , password2: {required: true}
+            , password: { required: true }
+            , password2: { required: true }
           }
         });
       });
+   });
   </script>
 {% endblock %}

@@ -4,7 +4,7 @@ from WebShop.apps.user.forms import LoginEmailForm, LoginZipCodeForm,\
     RegisterForm, AccountForm, AddressForm, OrderFreeCatalogForm, ValidationError
 from WebShop.apps.user.models import Profile, Address, PasswordToken, APPROVALWHOLESALETOKEN, REGISTERNEWTOKEN
 
-from WebShop.apps.user.views import _attach_token
+from WebShop.apps.user.services.token_manager import attach_token
 
 
 from WebShop.utils.etl import NO_RIGHTS, HAS_RIGHTS, userRoles, NORM_ROLE, LEAST_ROLE
@@ -189,9 +189,9 @@ def save_registration(request):
                     setattr(shipping, k[9:], v)
                 shipping.save()
 
-                register_token = _attach_token(user, role = REGISTERNEWTOKEN)
+                register_token = attach_token(user, role = REGISTERNEWTOKEN)
                 # create & save approval token
-                pt = _attach_token(user, role = APPROVALWHOLESALETOKEN)
+                pt = attach_token(user, role = APPROVALWHOLESALETOKEN)
                 # Send Mail
                 _send_register_mail(request.session['email'], request.session['password'], request.META['HTTP_HOST'], register_token.value, role in HAS_RIGHTS)
                 if(role in HAS_RIGHTS):

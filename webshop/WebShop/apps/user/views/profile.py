@@ -4,7 +4,6 @@ from WebShop.apps.user.forms import AccountForm, \
 from WebShop.utils.etl import LEAST_ROLE, NORM_ROLE, HAS_RIGHTS
 from WebShop.utils import mail
 from django.conf import settings
-from WebShop.apps.user.views import _attach_token
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.shortcuts import render_to_response, get_object_or_404
@@ -20,45 +19,7 @@ def index(request):
     else:
         return account(request)
 
-def set_password(request):
-    if request.method == 'POST' or request.user.is_authenticated():
-        return HttpResponseRedirect("/")
-    token = request.GET.get('token', None)
-    if token:
-        user = auth.authenticate(token = token, role = RESETPASSWORDTOKEN)
-        if user:
-            auth.login(request, user)
-            form = ChangePasswordForm()
-            return render_to_response('user/change_password.html', locals(), context_instance=RequestContext(request))
-        else:
-            title = _('Token Expired')
-            message = _('The token for this requested password change has expired, please request again!')
-            link_list = [('/main', _('Home')), ('/user/profile/password', _('forgot your password?'))]
-            return render_to_response('generic_message.html', locals(), context_instance=RequestContext(request))
-    else:
-        title = _('Logged In')
-        message = _('You are already logged in, want to change your password again? Proceed below!')
-        link_list = [('/main', _('Home')), ('/user/profile/password', _('forgot your password?'))]
-        return render_to_response('generic_message.html', locals(), context_instance=RequestContext(request))
 
-
-def change_password(request):
-    if(request.user.is_anonymous()):
-        return HttpResponseRedirect("/")
-
-    if request.method == 'POST':
-        form = ChangePasswordForm(request.POST.copy())
-        if form.is_valid():
-            # Save password
-            request.user.set_password(form.cleaned_data['password'])
-            request.user.save()
-            message = _(u'Your password has been updated.')
-        else:
-            message = _(u'Your password could not been updated, Password and Retype dont match.')
-
-        return render_to_response('user/change_password.html', locals(), context_instance=RequestContext(request))
-    form = ChangePasswordForm()
-    return render_to_response('user/change_password.html', locals(), context_instance=RequestContext(request))
 
 def _copy_shipping_form(dict):
     tmp = {}

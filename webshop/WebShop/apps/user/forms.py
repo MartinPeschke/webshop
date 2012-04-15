@@ -1,4 +1,4 @@
-from django import forms
+﻿from django import forms
 from django.forms import widgets, ValidationError
 from django.forms.util import ErrorList
 from django.contrib.auth.models import User
@@ -31,8 +31,8 @@ YESNO = (('Y', ugettext_lazy('Yes')), (('N'), ugettext_lazy('No')))
 
 
 class LoginEmailForm(forms.Form):
-    email = forms.EmailField(label = ugettext_lazy('E-mail Address'))
-    password = forms.CharField(widget = forms.PasswordInput, label = ugettext_lazy('Password'))
+    email = forms.EmailField(label = ugettext_lazy('Email'))
+    password = forms.CharField(widget = forms.PasswordInput, label = ugettext_lazy('Passwort'))
     def __init__(self, *args, **kwargs):
         self.helper = FormHelper()
         self.helper.form_id = 'id-email-login'
@@ -41,12 +41,12 @@ class LoginEmailForm(forms.Form):
         self.helper.form_action = reverse('WebShop.apps.user.views.auth.login')
         self.helper.layout = Layout(
             Fieldset(
-                ugettext_lazy("Login with email and password"),
+                ugettext_lazy("Mit Email und Passwort anmelden"),
                 'email',
                 'password'
             ),
             FormActions(
-                Submit('submit', ugettext_lazy('Login'), css_class='btn btn-primary')
+                Submit('submit', ugettext_lazy('Anmelden'), css_class='btn btn-primary')
             )
         )
         super(LoginEmailForm, self).__init__(*args, **kwargs)
@@ -62,23 +62,20 @@ class LoginZipCodeForm(forms.Form):
         self.helper.form_action = reverse('WebShop.apps.user.views.auth.login_zipcode')
         self.helper.layout = Layout(
             Fieldset(
-                ugettext_lazy("Login with customer number and ZIP code"),
+                ugettext_lazy("Mit Kundennummer und Postleitzahl anmelden"),
                 'username',
                 'password'
             ),
-            HTML("<p>{}</p>".format(_("Please observe that customer number and ZIP code only work, if you have received that Login by mail."))
-#                    <p>Bitte beachten Sie, das Kundennummer und PLZ einloggen nur klappt, wenn Sie die Information auch per Post erhalten haben.</p>
-            ),
+            HTML("<p>{}</p>".format(_("Anmeldung mit Kundennummer klappt nur, wenn Sie entsprechende Daten per Post von uns erhalten haben."))),
             FormActions(
-                Submit('submit', ugettext_lazy('Login'), css_class='btn btn-primary')
+                Submit('submit', ugettext_lazy('Anmelden'), css_class='btn btn-primary')
             )
         )
         super(LoginZipCodeForm, self).__init__(*args, **kwargs)
 
 
 class RequestPasswordForm(forms.Form):
-    email = forms.EmailField(label = ugettext_lazy('Email Address'))
-    emailconfirm = forms.EmailField(label = ugettext_lazy('Retype Email Address'))
+    email = forms.EmailField(label = ugettext_lazy('Email'))
     def __init__(self, *args, **kwargs):
         self.helper = FormHelper()
         self.helper.form_id = 'id-forgot-password-form'
@@ -87,36 +84,64 @@ class RequestPasswordForm(forms.Form):
         self.helper.form_action = reverse('WebShop.apps.user.views.auth.forgot_password')
         self.helper.layout = Layout(
             Fieldset(
-                ugettext_lazy('Change Password'),
+                ugettext_lazy('Passwort &auml;ndern'),
                 'email',
-                'emailconfirm'
             ),
             FormActions(
-                Submit('submit', ugettext_lazy("Send Email"), css_class='btn btn-primary')
+                Submit('submit', ugettext_lazy("Email senden"), css_class='btn btn-primary')
             )
         )
         super(RequestPasswordForm, self).__init__(*args, **kwargs)
-    def clean_emailconfirm(self):
-        if self.data['email'] != self.data['emailconfirm']:
-            raise ValidationError(_('Sorry, your email addresses do not match.'))
-        return self.data['email']
+
+    
+
+class ChangePasswordForm(forms.Form):
+    password = forms.CharField(widget=widgets.PasswordInput, label = ugettext_lazy('Neues Passwort'))
+    password2 = forms.CharField(widget=widgets.PasswordInput, label = ugettext_lazy('Passwort wiederholen'))
+        
+    def clean_password(self):
+        if self.data['password'] != self.data['password2']:
+            raise ValidationError(_(u'Passwörter stimmen nicht überein.'))
+        return self.data['password']
+
+    def __init__(self, *args, **kwargs):
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-reset-pwd-form'
+        self.helper.form_class = 'form-horizontal form-validated'
+        self.helper.form_method = 'post'
+        self.helper.layout = Layout(
+            Fieldset(
+                ugettext_lazy('Passwort &auml;ndern'),
+                'password',
+                'password2'
+            ),
+            FormActions(
+                Submit('submit', ugettext_lazy("Abschicken"), css_class='btn btn-primary')
+            )
+        )
+        super(ChangePasswordForm, self).__init__(*args, **kwargs)
+
+
+
+
+
 
 class RegisterForm(forms.Form):
     role = forms.ChoiceField(choices = [('K', _('Studio')), ('E', _('Endkunde'))], widget=forms.Select
                              , label = ugettext_lazy('Ich bin'))
     email = forms.CharField()
-    password = forms.CharField(widget = forms.PasswordInput)
-    password2 = forms.CharField(widget = forms.PasswordInput)
+    password = forms.CharField(widget = forms.PasswordInput, label = ugettext_lazy('Passwort'))
+    password2 = forms.CharField(widget = forms.PasswordInput, label = ugettext_lazy('Passwort wiederholen'))
 
     def clean_email(self):
         if(User.objects.filter(email=self.data['email']).count()):
-            raise ValidationError(mark_safe(_('Your email address has been registered.')))
+            raise ValidationError(mark_safe(_('Diese Emailadresse ist bereits vergeben.')))
         else:
             return self.data['email']
         
     def clean_password2(self):
         if self.data['password'] != self.data['password2']:
-            raise ValidationError(mark_safe(_('Sorry, please check your password.')))
+            raise ValidationError(mark_safe(_(u'Bitte überprüfen Sie Ihr Passwort.')))
         return self.data['password2']
 
     def __init__(self, *args, **kwargs):
@@ -127,22 +152,17 @@ class RegisterForm(forms.Form):
         self.helper.form_action = reverse('WebShop.apps.user.views.auth.signup')
         self.helper.layout = Layout(
             Fieldset(
-                ugettext_lazy('Signup'),
+                ugettext_lazy('Registrierung'),
                 'role',
                 'email',
                 'password',
                 'password2'
             ),
             FormActions(
-                Submit('submit', ugettext_lazy("Signup"), css_class='btn btn-primary')
+                Submit('submit', ugettext_lazy("Registrieren"), css_class='btn btn-primary')
             )
         )
         super(RegisterForm, self).__init__(*args, **kwargs)
-
-
-
-
-
 
 
 
@@ -197,17 +217,6 @@ class AccountForm(forms.Form):
             raise ValidationError(mark_safe(_('Nur nach Zustimmung zu unseren AGB koennen Sie sich registrieren')))
         else:
             return self.data['agree']
-    
-
-class ChangePasswordForm(forms.Form):
-    
-    password = forms.CharField(widget=widgets.PasswordInput)
-    password2 = forms.CharField(widget=widgets.PasswordInput)
-        
-    def clean_password(self):
-        if self.data['password'] != self.data['password2']:
-            raise ValidationError(_('Sorry, please check your password.'))
-        return self.data['password']
     
 class OrderFreeCatalogForm(forms.Form):
     
