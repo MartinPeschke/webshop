@@ -1,7 +1,7 @@
 from WebShop.apps.explore.models import Shop, Line, ArticleFamily
 from django.conf import settings
 
-from django.conf.urls.defaults import *
+from django.conf.urls import *
 from django.contrib.sitemaps import GenericSitemap
 from WebShop.apps.contrib.static_sitemap import StaticSitemap  
 
@@ -39,7 +39,7 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
 
     # Real Index Page
-    (r'^$', 'WebShop.apps.explore.views.pages.main'),
+    url(r'^$', 'WebShop.apps.explore.views.pages.main', name='home-route'),
 
     # Browsing
     (r'^(?P<shop_ref>%s)/$' % SHOPS_URLS, 'WebShop.apps.explore.views.handler.shop'),
@@ -58,8 +58,8 @@ urlpatterns = patterns('',
     (r'^jobs/$', 'WebShop.apps.explore.views.pages.jobs'),
     (r'^materials/$', 'WebShop.apps.explore.views.pages.materials'),
     (r'^impressum/$', 'WebShop.apps.explore.views.pages.impressum'),
-    (r'^gallery/(?P<page>\d*)$', 'WebShop.apps.explore.views.pages.gallery'),    
-    (r'^ourads/$', 'WebShop.apps.explore.views.pages.ourads'),    
+    (r'^gallery/(?P<page>\d*)$', 'WebShop.apps.explore.views.pages.gallery'),
+    (r'^ourads/$', 'WebShop.apps.explore.views.pages.ourads'),
     (r'^coupons/$', 'WebShop.apps.explore.views.pages.coupons'),
     (r'^shipping/$', 'WebShop.apps.explore.views.pages.shipping'),
     (r'^studios/$', 'WebShop.apps.explore.views.pages.studios'),
@@ -75,7 +75,7 @@ urlpatterns = patterns('',
 
     # Web Service
     (r'^services/', include('WebShop.apps.service.urls')),
-    
+
     # media
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 

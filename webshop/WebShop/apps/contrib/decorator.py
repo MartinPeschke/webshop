@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpResponseNotAllowed, HttpResponseForbidden
-import types, sha
+import types, hashlib
 from django.db import models
 from django.utils import simplejson
 from django.core.serializers.json import DateTimeAwareJSONEncoder
@@ -23,8 +23,8 @@ def _guard_bo(f):
         if not(login and password):
             return HttpResponseForbidden('No Login Provided!')
         print 'received Login & Password'
-        bop_key = sha.new(password)
-        if (settings.BOP_PUBLIC != bop_key.hexdigest()):
+        bop_key = hashlib.sha1.new(password)
+        if settings.BOP_PUBLIC != bop_key.hexdigest():
             return HttpResponseForbidden('Incorrect Login!')
         print 'Received Correct BOP Authentication'
         return f(*args, **kwargs)

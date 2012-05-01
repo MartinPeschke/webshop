@@ -6,8 +6,6 @@
 
 {% trans "Your Login" %}:
 {{ email }}
-{% trans "Your Password" %}:
-{{ password }}
 
 {% trans "You have registered as a Studio User, your account will be activated as soon as you open below link, and during the next days, we will check the provided details and approve your wholesale access or get back to you with further questions." %}
 

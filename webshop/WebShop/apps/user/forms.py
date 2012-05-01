@@ -1,20 +1,20 @@
 ﻿from operator import itemgetter, attrgetter
 from django import forms
 from django.forms import widgets, ValidationError
-from django.forms.util import ErrorList
-from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _, ugettext_lazy
 from django.utils.safestring import mark_safe
 from django.conf import settings
 from django.core.urlresolvers import reverse
-from WebShop.apps.contrib.countries.models import Country
 
-
+from django.contrib.auth.models import User
 
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit, Layout, HTML, Fieldset, Hidden
+from crispy_forms.layout import Submit, Layout, HTML, Fieldset
 from crispy_forms.bootstrap import FormActions
+
+from WebShop.apps.contrib.countries.models import Country
 COUNTRIES = map(attrgetter('iso', 'printable_name'), Country.objects.all())
+
 
 
 LANGUAGES = []
@@ -156,7 +156,7 @@ class RegisterForm(forms.Form):
         self.helper.form_id = 'id-signup-form'
         self.helper.form_class = 'form-horizontal form-validated'
         self.helper.form_method = 'post'
-        self.helper.form_action = reverse('WebShop.apps.user.views.auth.signup')
+        self.helper.form_action = reverse('signup-route')
         self.helper.layout = Layout(
             Fieldset(
                 ugettext_lazy('Registrierung'),
@@ -171,7 +171,7 @@ class RegisterForm(forms.Form):
         )
         super(RegisterForm, self).__init__(*args, **kwargs)
 
-class AccountForm(forms.Form):
+class WholesaleAccountForm(forms.Form):
     # Profile
     title = forms.ChoiceField(choices=settings.TITLE_CHOICES, label = ugettext_lazy('Anrede'))
     first_name = forms.CharField(max_length = 32, label = ugettext_lazy('Vorname'))
@@ -193,17 +193,6 @@ class AccountForm(forms.Form):
                               , label = ugettext_lazy(u'Ich stimme den AGB zu'))
 
 
-
-    street = forms.CharField(label = ugettext_lazy('Strasse'))
-    zip = forms.CharField(max_length=16, label = ugettext_lazy('Postleitzahl'))
-    city = forms.CharField(label = ugettext_lazy('Stadt'))
-    country = forms.ChoiceField(choices= COUNTRIES, label = ugettext_lazy('Land'), initial="DE")
-    language = forms.ChoiceField(choices=LANGUAGES, label = ugettext_lazy('Sprachen'))
-    tel = forms.CharField(max_length=32, label = ugettext_lazy('Telefon'))
-    fax = forms.CharField(required=False, max_length=32, label = ugettext_lazy('Fax'))
-
-
-
     def clean_agree(self):
         if(self.data['agree']!=u'Y'):
             raise ValidationError(mark_safe(_(u'Nur nach Zustimmung zu unseren AGB können Sie sich registrieren')))
@@ -214,7 +203,7 @@ class AccountForm(forms.Form):
         self.helper.form_id = 'id-signup-details-form'
         self.helper.form_class = 'form-horizontal form-validated'
         self.helper.form_method = 'post'
-        self.helper.form_action = reverse('WebShop.apps.user.views.auth.signupdetails')
+        self.helper.form_action = reverse('signup-wholesale-details-route')
         self.helper.layout = Layout(
             Fieldset(
                 ugettext_lazy('Registrierung'),
@@ -230,48 +219,13 @@ class AccountForm(forms.Form):
                 'vat_id',
                 'agree'
             ),
-            Fieldset(
-                ugettext_lazy('Rechnungsadresse'),
-                'street',
-                'zip',
-                'city',
-                'country',
-                'language',
-                'tel',
-                'fax'
-            ),
             FormActions(
                 Submit('submit', ugettext_lazy("Registrierung abschliessen"), css_class='btn btn-primary')
             )
         )
-        super(AccountForm, self).__init__(*args, **kwargs)
+        super(WholesaleAccountForm, self).__init__(*args, **kwargs)
 
 
-class AddressForm(forms.Form):
-    '''
-    Form for Billing Information
-    '''
-    street = forms.CharField()
-    city = forms.CharField()
-    zip = forms.CharField(max_length=16)
-    country = forms.CharField(max_length=32)
-    language = forms.ChoiceField(choices=LANGUAGES)
-    tel = forms.CharField(max_length=32)
-    mobile = forms.CharField(required=False, max_length=32)
-    fax = forms.CharField(required=False, max_length=32)
-
-class ShippingForm(AddressForm):
-    '''
-    Form for Billing Information
-    '''
-    street = forms.CharField(required=False)
-    city = forms.CharField(required=False)
-    zip = forms.CharField(required=False, max_length=16)
-    country = forms.CharField(required=False)
-    language = forms.ChoiceField(required=False, choices=LANGUAGES)
-    tel = forms.CharField(required=False, max_length=32)
-    mobile = forms.CharField(required=False, max_length=32)
-    fax = forms.CharField(required=False, max_length=32)
 
 class OrderFreeCatalogForm(forms.Form):
     

@@ -1,18 +1,7 @@
 import os
-
 from django.conf import settings
-from django.core.cache import cache
-from django.core.paginator import Paginator
-
-from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotAllowed
-from django.shortcuts import render_to_response, get_object_or_404
+from django.shortcuts import render_to_response
 from django.template import RequestContext, TemplateDoesNotExist
-from django.utils.translation import ugettext as _
-
-from WebShop.apps.contrib.decorator import json
-from WebShop.apps.explore.models import Shop, Line, ArticleFamily, ArticleOption
-from WebShop.apps.explore.templatetags.explore import check_image
-from WebShop.apps.explore.views import *
 
 def render_with_locale(request, template, context):
     rctxt = RequestContext(request)

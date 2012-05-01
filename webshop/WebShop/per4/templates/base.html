@@ -88,7 +88,7 @@
       </div>
       <div class="span8">
         {% if not request.user.is_authenticated %}
-          <img class="pull-right" src="{{ MEDIA_URL }}images/static/wholesale_{{ LANGUAGE_CODE }}.png"/>
+          <img class="area-pointer pull-right" src="{{ MEDIA_URL }}images/static/wholesale_{{ LANGUAGE_CODE }}.png"/>
         {% endif %}
         <div class="language_bar" id="language_bar">
               <span class="flag" lang="de"><img src="{{ MEDIA_URL }}images/flag_de.png" /></span>
@@ -104,13 +104,18 @@
       <div class="span2">
           <div class="login_panel">
           {% if request.user.is_authenticated %}
-              <div><a href="/user/profile/account/" title="My Account">{% trans 'My Account' %}</a></div>
-              <div><a href="/user/logout/">{% trans "Logout" %}</a></div>
+              {% if request.user.is_active %}
+                <div><a href="{% url 'profile-route' %}" title="My Account">{% trans 'My Account' %}</a></div>
+              {% else %}
+                <div>{% trans 'Please activate your account' %}</div>
+
+              {% endif %}
+              <div><a href="{% url 'logout-route' %}">{% trans "Logout" %}</a></div>
           {% else %}
               <div class="loginlink">
-                <a class="link" href="{% url 'WebShop.apps.user.views.auth.login' %}?forward_URL={{ request.path }}">{% trans "Login" %}</a></div>
+                <a class="link" href="{% url 'login-route' %}?forward_URL={{ request.path }}">{% trans "Login" %}</a></div>
               <div class="loginlink">
-                <a class="link" href="{% url 'WebShop.apps.user.views.auth.signup' %}?forward_URL={{ request.path }}">{% trans "Signup" %}</a></div>
+                <a class="link" href="{% url 'signup-route' %}?forward_URL={{ request.path }}">{% trans "Signup" %}</a></div>
           {% endif %}
           </div>
       </div>

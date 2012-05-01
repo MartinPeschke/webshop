@@ -1,18 +1,16 @@
 from django.db import models, connection
 
-from django.contrib.auth.models import User, Group
-from django.contrib.contenttypes import generic
-
 from django.core.cache import cache
 from django.utils.safestring import mark_safe
 
-from WebShop.utils.etl import USER_ROLES, USER_GROUPS, HAS_RIGHTS, NO_RIGHTS
+from django.contrib.auth.models import User
+from WebShop.apps.user.user_roles import USER_GROUPS, HAS_RIGHTS, NO_RIGHTS
 from WebShop.utils.jsonfield import JSONField
 from django.conf import settings
 
 from django.utils.translation import ugettext as _
 
-import os, random
+import  random
 
 import logging
 log = logging.getLogger(__name__)

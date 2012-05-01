@@ -1,4 +1,4 @@
-import simplejson#, smtplib, socket
+import simplejson
 from operator import itemgetter, add
 from decimal import Decimal, ROUND_UP
 from WebShop.apps.contrib.decorator import json
@@ -9,14 +9,14 @@ from django.template import RequestContext, Context
 from django.http import HttpResponseRedirect, HttpResponseNotAllowed
 
 from django.conf  import settings
-from WebShop.apps.user.models import Address, CreditCard, BankAccount
-from WebShop.apps.user.forms import PaymentFormRetail, PaymentFormWholesale, CreditCardForm, BankAccountForm, AccountForm, AddressForm, ShippingForm
-from WebShop.utils.etl import NO_RIGHTS, HAS_RIGHTS, userRoles, LEAST_ROLE
+from WebShop.apps.user.models.creditcard import CreditCard
+from WebShop.apps.user.models.bank_account import BankAccount
+from WebShop.apps.user.forms import PaymentFormRetail, PaymentFormWholesale, CreditCardForm, BankAccountForm
+from WebShop.apps.user.user_roles import HAS_RIGHTS
 
 import WebShop.utils.mail as mail
 from WebShop.apps.contrib.cart import Cart
 from WebShop.apps.explore.models import OrderItem, Order
-from WebShop.apps.explore.views.handler import LOCALES
 
 from WebShop.apps.user.views.profile import _get_user_data
 

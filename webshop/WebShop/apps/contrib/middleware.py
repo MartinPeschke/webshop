@@ -1,19 +1,13 @@
-import WebShop.utils.mail as mail
-from WebShop.utils.etl import ANONYMOUS_ROLE, HAS_RIGHTS
-from WebShop.apps.explore.models import Promotion, ArticleOption
+import sys, traceback
 from django.conf import settings
-from django.contrib.auth.models import *
-from django.http import HttpResponse
 from django.template import Context
 from django.core.cache import cache
 from datetime import datetime
 
-from email.Iterators import body_line_iterator
-import sys, traceback
-
-from WebShop.apps.explore.models import Shop, Line
-from WebShop.apps.user import get_role, simple_role
-from django.conf import settings
+import WebShop.utils.mail as mail
+from WebShop.apps.explore.models import Shop, Line, Promotion, ArticleOption
+from WebShop.apps.user.lib import get_role
+from WebShop.apps.user.user_roles import simple_role, HAS_RIGHTS
 
 SHOPS = Shop.objects.filter(allowed_shops__icontains = settings.SHOP_NAME).order_by('sort').all()
 

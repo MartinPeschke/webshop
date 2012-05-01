@@ -1,8 +1,7 @@
-from WebShop.apps.explore.models import Article, ArticleFamily, Shop
+from WebShop.apps.explore.models import ArticleFamily
 from django.conf import settings
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from django.db import connection
 import urllib
 
 def index(request):

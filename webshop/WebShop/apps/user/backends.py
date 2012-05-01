@@ -1,10 +1,9 @@
-from WebShop.apps.user.models import PasswordToken, Profile, Address
-
+from WebShop.apps.user.models.password_token import PasswordToken
 from django.contrib.auth.models import User
 
 class ModelBackend:
     """
-    Authenticate against django.contrib.auth.models.User
+    Authenticate against User
     """
     # TODO: Model, login attribute name and password attribute name should be
     # configurable.

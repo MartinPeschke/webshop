@@ -4,23 +4,6 @@ import pprint
 
 DEFAULT_SHOP = 'Piercing'
 
-ANONYMOUS_ROLE = 'F'
-LEAST_ROLE = 'E'
-NORM_ROLE = 'K'
-NO_RIGHTS = [ANONYMOUS_ROLE, 'E', 'X']
-HAS_RIGHTS = ['K', 'P', 'M']
-
-#    role : roleName
-USER_GROUPS = [
-    ('E', 'Retail'),
-    ('K', 'Wholesale'),
-    ('P', 'Partner'),
-    ('M', 'Content Manager'),
-]
-USER_ROLES = [(ANONYMOUS_ROLE, 'Anonymous')] + USER_GROUPS + [('X', 'Disabled')]
-
-userRoles = dict(USER_ROLES)
-
 def deep_import(json):
 	from WebShop.apps.service.views.bo import parseJson
 	return parseJson(json)

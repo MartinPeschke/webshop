@@ -1,15 +1,11 @@
 import os
 from django import template
-from django.db.models import Q
 from django.utils.translation import ugettext as _
-from django.contrib.auth.models import User
-from django.core.cache import cache
 from django.utils.safestring import mark_safe
 
 from django.conf import settings
-from WebShop.apps.explore.models import *
-from WebShop.apps.user import simple_role
-from WebShop.utils.etl import NO_RIGHTS, HAS_RIGHTS, userRoles
+from WebShop.apps.user.lib import userRoles
+from WebShop.apps.user.user_roles import simple_role
 from django.template.loader import render_to_string
 
 register = template.Library()

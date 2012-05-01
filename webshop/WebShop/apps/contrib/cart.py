@@ -1,11 +1,8 @@
 from decimal import Decimal, ROUND_UP
 
-from django.core.serializers.json import DjangoJSONEncoder
-from django.utils.translation import ugettext as _
-
-from WebShop.apps.user import get_role, simple_role
-from WebShop.apps.contrib.decorator import json
-from WebShop.apps.explore.models import ArticleOption, OrderItem, Order, Pricing
+from WebShop.apps.user.lib import get_role
+from WebShop.apps.user.user_roles import simple_role
+from WebShop.apps.explore.models import ArticleOption, Pricing
 from django.conf import settings
 
 class Cart(object):

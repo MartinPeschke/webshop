@@ -1,23 +1,64 @@
-from WebShop.apps.user.models import Profile, Address, PasswordToken, RESETPASSWORDTOKEN
-from WebShop.apps.user.forms import AccountForm, \
-                            ChangePasswordForm, RequestPasswordForm, AddressForm
-from WebShop.utils.etl import LEAST_ROLE, NORM_ROLE, HAS_RIGHTS
-from WebShop.utils import mail
-from django.conf import settings
-from django.contrib.auth.models import User
-from django.contrib import auth
-from django.shortcuts import render_to_response, get_object_or_404
-from django.template import RequestContext, Context
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 from django.http import HttpResponseRedirect
-from django.utils.translation import ugettext as _
 
-import datetime, simplejson
+import  simplejson
+
+from WebShop.apps.user.models.address import Address
+from WebShop.apps.user.forms import WholesaleAccountForm
+from WebShop.apps.lib.baseviews import  BaseLoggedInView
+
 
 def index(request):
-    if(request.user.is_anonymous()):
+    if request.user.is_anonymous():
         return HttpResponseRedirect("/")
     else:
         return account(request)
+
+
+class AccountView(BaseLoggedInView):
+    template_name = 'user/account_wholesale.html'
+    def get(self, request, *args, **kwargs):
+        pass
+
+
+
+
+def account(request):
+    if request.user.is_anonymous(): return HttpResponseRedirect("/")
+    user, profile, billing, shipping = _get_user_data(request.user)
+    try:
+        weekdays = simplejson.loads(profile.weekdays)
+    except ValueError, e:
+        # only needed until all profiles are converted to json
+        try:
+            weekdays = eval(profile.weekdays)
+        except:
+            weekdays = None
+        profile.weekdays = simplejson.dumps(weekdays)
+        profile.save()
+
+    values = profile.__dict__
+    values.update({'weekdays':weekdays, 'same_address': profile.same_address and 'Y' or 'N'})
+    account_form = WholesaleAccountForm(values)
+
+    values = dict(map(lambda (k,v): ('billing-%s'%k, v), billing.__dict__.iteritems()))
+    billing_form = AddressForm(values, prefix='billing')
+    values = dict(map(lambda (k,v): ('shipping-%s'%k, v), shipping.__dict__.iteritems()))
+    shipping_form = AddressForm(values, prefix='shipping')
+
+    if(profile.role in HAS_RIGHTS):
+        return render_to_response('user/account_wholesale.html', locals(), context_instance=RequestContext(request))
+    else:
+        return render_to_response('user/account_retail.html', locals(), context_instance=RequestContext(request))
+
+
+
+
+
+
+
+
 
 
 
@@ -46,33 +87,7 @@ def _get_user_data(user):
         shipping.save()
     return user, profile, billing, shipping
 
-def account(request):
-    if request.user.is_anonymous(): return HttpResponseRedirect("/")
-    user, profile, billing, shipping = _get_user_data(request.user)
-    try:
-        weekdays = simplejson.loads(profile.weekdays)
-    except ValueError, e:
-        # only needed until all profiles are converted to json
-        try:
-            weekdays = eval(profile.weekdays)
-        except:
-            weekdays = None
-        profile.weekdays = simplejson.dumps(weekdays)
-        profile.save()
 
-    values = profile.__dict__
-    values.update({'weekdays':weekdays, 'same_address': profile.same_address and 'Y' or 'N'})
-    account_form = AccountForm(values)
-
-    values = dict(map(lambda (k,v): ('billing-%s'%k, v), billing.__dict__.iteritems()))
-    billing_form = AddressForm(values, prefix='billing')
-    values = dict(map(lambda (k,v): ('shipping-%s'%k, v), shipping.__dict__.iteritems()))
-    shipping_form = AddressForm(values, prefix='shipping')
-
-    if(profile.role in HAS_RIGHTS):
-        return render_to_response('user/account_wholesale.html', locals(), context_instance=RequestContext(request))
-    else:
-        return render_to_response('user/account_retail.html', locals(), context_instance=RequestContext(request))
 
 def save_account(request):
     if request.user.is_anonymous() or request.method != 'POST':

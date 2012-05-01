@@ -1,27 +1,15 @@
-from WebShop.apps.contrib.decorator import json
-from WebShop.apps.explore.models import Shop, Line, ArticleFamily, ArticleOption, ArticleType, Promotion, Pricing
-from WebShop.apps.explore.templatetags.explore import check_image
-from WebShop.apps.explore.views import *
-from WebShop.apps.user import get_role, simple_role
-from WebShop.utils.etl import NO_RIGHTS, HAS_RIGHTS
-from WebShop.urls import SHOPS
-
-from django.conf import settings 
-
-from django.core.cache import cache
-from django.core.paginator import Paginator
-from django.utils.translation import ugettext as _
-from django.utils.safestring import mark_safe 
-from django.template import RequestContext, Context, TemplateDoesNotExist
+from django.conf import settings
+from django.utils.safestring import mark_safe
+from django.template import RequestContext
 from django.template.loader import render_to_string
-from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotAllowed, Http404
-from django.shortcuts import render_to_response, get_object_or_404
+from django.shortcuts import render_to_response
+
+
+from WebShop.apps.user.models import  Line, ArticleFamily, ArticleType
+from WebShop.urls import SHOPS
 
 
 LOCALES  = [l[0] for l in settings.LANGUAGES]
-from datetime import datetime, date
-from decimal import *
-from time import time
 import urllib
 
 

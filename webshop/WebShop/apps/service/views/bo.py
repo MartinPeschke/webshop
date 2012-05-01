@@ -1,24 +1,14 @@
-import sys, sha, simplejson, urllib, bz2, base64, os
+import sys, simplejson, bz2, base64, os
 
 from django.http import *
-from django.shortcuts import render_to_response
-from django.contrib.auth.decorators import user_passes_test
-from django.contrib.auth.models import User
 from django.core.cache import cache
 
-from django.db import models, connection
-from WebShop.apps.explore.models import Shop, Line, ArticleFamily, Promotion, Article, ArticleOption, Pricing, ArticleType, OrderItem, Order
-from WebShop.apps.user.models import Address, BankAccount, CreditCard, Profile, User
-
-from django.conf import settings
+from django.db import  connection
+from WebShop.apps.explore.models import Shop, Line, ArticleFamily, Promotion, Article, ArticleOption, Pricing, ArticleType, Order
+from WebShop.apps.user.models import Address, BankAccount, CreditCard, Profile
+from django.contrib.auth.models import User
 from WebShop.apps.contrib.decorator import _guard_bo, json_encode
 
-from WebShop.utils.etl import userRoles
-
-from zipfile import *
-from tempfile import *
-
-import bz2, time, base64, binascii
 import logging
 
 logging.basicConfig(level=logging.DEBUG,

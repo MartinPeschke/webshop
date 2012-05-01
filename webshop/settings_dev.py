@@ -28,6 +28,9 @@ ORDER_MAIL = 'martin@per-4.net'
 ERROR_MAIL = 'martin@per-4.net'
 CACHE_TOKEN = "1234"
 
+
+MAP_ROLE_TO_GROUP = {"E":"retail", "K":"wholesale"}
+
 TAX_RATE = 19.0
 ARTICLE_LINE_PANE_SIZE = 8
 CACHE_TIMEOUT = 604800

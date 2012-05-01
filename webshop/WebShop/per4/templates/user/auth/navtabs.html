@@ -5,7 +5,7 @@
     {% url 'WebShop.apps.user.views.auth.login' as login_url %}
     {% url 'WebShop.apps.user.views.auth.login_zipcode' as login_zipcode_url %}
     {% url 'WebShop.apps.user.views.auth.forgot_password' as forgot_password_url %}
-    {% url 'WebShop.apps.user.views.auth.signup' as signup_url %}
+    {% url 'signup-route' as signup_url %}
   <ul class="nav nav-tabs">
     <li {% ifequal login_url request.path %}class="active"{% endifequal %}>
       <a href="{{ login_url }}">

@@ -1,14 +1,15 @@
-﻿import md5, datetime
-import logging
-log = logging.getLogger(__name__)
+﻿import hashlib, datetime
+import uuid
 from django.contrib import messages
 from django.template import Context
 from django.conf import settings
-from django.utils.translation import ugettext as _, ugettext_lazy
+from django.utils.translation import ugettext as _
 
-from WebShop.apps.user.models import PasswordToken, RESETPASSWORDTOKEN
+from WebShop.apps.user.models.password_token import PasswordToken, RESETPASSWORDTOKEN
 from WebShop.utils import mail
 
+import logging
+log = logging.getLogger(__name__)
 
 
 
@@ -33,10 +34,7 @@ def remove_token(user, role):
     return token
 
 def create_token(user, role):
-    token = PasswordToken(user=user, role=role)
-    token.value = md5.new(str(datetime.datetime.now())+user.password).hexdigest()
-        # added the hash of password so knowing time of creation is not enough to guess token value
-    return token
+    return PasswordToken(user=user, role=role, value = str(uuid.uuid4()))
 
 
 def sendResetEmail(request, user, form):

@@ -1,5 +1,4 @@
 from django.conf import settings
-from WebShop.apps.explore.models import *
 import os
 
 for af in ArticleFamily.objects.all():
