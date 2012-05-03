@@ -3,7 +3,8 @@
 {% load explore %}
 
 {% block centerbox %}
-  {% block center_block_ignore_header %}<h2 class="title">{% block center_block_header %}{% endblock %}</h2>{% endblock %}
+    {% block center_block_ignore_header %}<h2 class="title">{% block center_block_header %}{% endblock %}</h2>{% endblock %}
+    {% block center_nav_tabs %}{% endblock %}
   {% if messages %}
     {% for message in messages %}
       <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %} fade in">

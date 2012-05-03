@@ -1,0 +1,41 @@
+{% extends "layout_free_center.html" %}
+{% load i18n %}
+{% load explore %}
+{% load url from future %}
+
+{% block centerbox %}
+    {% block center_block_ignore_header %}
+        {% spaceless %}
+            <h2 class="title">{% block center_block_header %}{% endblock %}</h2><ul class="nav nav-tabs">
+                {% url 'shopping-cart-route' as cart_url %}
+                {% url 'orders-route' as orders_url %}
+                {% url 'profile-route' as profile_url %}
+                {% url 'addresses-route' as address_url %}
+                <li {% ifequal cart_url request.path %}class="active"{% endifequal %}>
+                <a class="nav-tab-link" href="{{ cart_url }}">
+                    {% trans 'Shopping Cart' %}</a></li>
+                <li {% ifequal orders_url request.path %}class="active"{% endifequal %}>
+                <a class="nav-tab-link" href="{{ orders_url }}">
+                    {% trans "Meine Bestellungen" %}</a></li>
+                <li {% ifequal profile_url request.path %}class="active"{% endifequal %}>
+                <a class="nav-tab-link" href="{{ profile_url }}">
+                    {% trans "Profile" %}</a></li>
+                <li {% ifequal address_url request.path %}class="active"{% endifequal %}>
+                <a class="nav-tab-link" href="{{ address_url }}">
+                    {% trans 'Meine Adressen'%}</a></li>
+                <li {% ifequal address_url request.path %}class="active"{% endifequal %}>
+            </ul>
+        {% endspaceless %}
+    {% endblock %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %} fade in">
+                <a class="close" data-dismiss="alert" href="#">×</a>
+                {{ message|safe  }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    {% block content %}{% endblock %}
+{% endblock %}
+
+

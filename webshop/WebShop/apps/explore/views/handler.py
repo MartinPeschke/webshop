@@ -9,11 +9,12 @@ from django.shortcuts import render_to_response
 from WebShop.apps.contrib.decorator import json
 from WebShop.apps.explore.models import  Line, ArticleFamily, ArticleOption, ArticleType, Pricing
 from WebShop.apps.user.lib import get_role
+from WebShop.apps.user.models import Language
 from WebShop.apps.user.user_roles import simple_role
 from WebShop.urls import SHOPS
 
 
-LOCALES  = [l[0] for l in settings.LANGUAGES]
+LOCALES  = [l.code for l in Language.objects.all()]
 import urllib
 
 def shop(request, shop_ref=settings.DEFAULT_SHOP):

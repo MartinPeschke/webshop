@@ -13,40 +13,6 @@ from django.template import RequestContext, Context
 from django.utils.translation import gettext_lazy as _
 
 
-#===============================================================================
-# TODO : How to Merge Carts? How to retrieve previous session? when anon user has a new session :/
-#===============================================================================
-@json
-def rlogin(request):
-    '''
-    Login method call for AJAX
-    '''
-    map = {}
-    zip = False
-    email = request.POST.get('email', '')
-    password = request.POST.get('password', '')
-    user = auth.authenticate(email=email, password=password)
-
-    if user is None:
-        user = auth.authenticate(username=email, password=password)
-        zip = True
-
-    if user is not None:
-        if user.is_active:
-            auth.login(request, user)
-            if (request.session.get('cart', None)):
-                request.session['cart'].initUser(user)
-            request.session['zip'] = zip      
-            map['result'] = True
-        else:
-            map['result'] = False
-            map['error'] = str(_('Sorry, please activate your account.'))
-    else:
-        map['result'] = False
-        map['error'] = str(_('Sorry, please check your email and password.'))
-    return map
-
-
 def approve(request, token):
     '''
     Activate user from url: http://host/user/activate/${code}/
@@ -85,17 +51,3 @@ def deny(request, token):
     else:
         message = _('This Approval Code is invalid, maybe you already denied this request?')
     return render_to_response('user/message.html', locals(), context_instance=RequestContext(request))
-
-def orderFreeCatalog(request):
-    if request.method == 'GET':
-        form = OrderFreeCatalogForm()
-    if request.method == 'POST':
-        form = OrderFreeCatalogForm(request.POST.copy())
-        if form.is_valid():
-            c = Context({'form': form,
-                         'user': request.user,})
-            mail.create_mail("%s Order Free Catalog" % settigs.EMAIL_SUBJECT_PREFIX, settings.SERVER_EMAIL, settings.ORDER_MAIL, 'orderFreeCatalog', c)
-            return render_to_response('user/orderFreeCatalogDone.html', locals(), context_instance=RequestContext(request))
-        else:
-            return render_to_response('user/orderFreeCatalog.html', locals(), context_instance=RequestContext(request))
-    return render_to_response('user/orderFreeCatalog.html', locals(), context_instance=RequestContext(request))

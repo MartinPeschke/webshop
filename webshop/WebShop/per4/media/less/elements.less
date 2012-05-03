@@ -19,10 +19,16 @@ h3.title {
     #gradient > .vertical(@navbarBackgroundHighlight, @navbarBackground);
     @shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1);
     .box-shadow(@shadow);
-
     color: white;
     padding: 1px 10px;
     margin: 0 0 15px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    + ul.nav-tabs {
+          #gradient > .vertical(@navbarBackground, @navbarBackgroundHighlight);
+        color: white;
+        margin-top:-15px;
+        padding: 0 10px;
+    }
 }
+.nav-tab-link {color:white;}

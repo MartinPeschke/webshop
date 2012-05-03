@@ -29,16 +29,11 @@
           , unhighlight: function (element, errorClass, validClass) {
             $(element).closest(".control-group").removeClass("error").addClass(validClass);
           }
-
           , rules: {
             first_name: { required: true }
             , last_name: { required: true }
             , company_name: { required: true }
             , opening_hours: { required: true }
-            , street: { required: true }
-            , zip: { required: true }
-            , city: { required: true }
-            , tel: { required: true }
           }
         });
       });

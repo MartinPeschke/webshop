@@ -1,50 +1,44 @@
 from django.conf.urls import *
 
 from .views.auth import SignupScreen, SignupWholesaleDetailsScreen, SignupRetailDetailsScreen
-from .views.profile import AccountView
-
+from .views.profile import AccountView, AccountAddressView
+from .views.cart import ShoppingCartView, OrderHistoryView
 
 
 urlpatterns = patterns('',
 
-    # Login
-    (r'rlogin', 'WebShop.apps.user.views.handler.rlogin'),
+    # AUTHentication
     url(r'^login/$', 'WebShop.apps.user.views.auth.login', name='login-route'),
-    (r'^login/zipcode/$', 'WebShop.apps.user.views.auth.login_zipcode'),
-    (r'^password/$', 'WebShop.apps.user.views.auth.forgot_password'),
-    (r'^profile/setpassword/$', 'WebShop.apps.user.views.auth.set_password'),
+    url(r'^login/zipcode/$', 'WebShop.apps.user.views.auth.login_zipcode', name='login-zipcode-route'),
+    url(r'^password/$', 'WebShop.apps.user.views.auth.forgot_password', name="forgot-password-route"),
+    url(r'^profile/setpassword/$', 'WebShop.apps.user.views.auth.set_password', name='change-password'),
 
     url(r'signup/$', SignupScreen.as_view(), name = 'signup-route'),
     url(r'signup/retail/details$', SignupRetailDetailsScreen.as_view(), name='signup-retail-details-route'),
     url(r'signup/wholesale/details$', SignupWholesaleDetailsScreen.as_view(), name='signup-wholesale-details-route'),
-
+    url(r'activate/(?P<code>[0-9a-z-]+)', 'WebShop.apps.user.views.auth.activate', name="activation-route"),
     url(r'^logout/$', 'WebShop.apps.user.views.auth.logout', name="logout-route"),
     (r'^checkmail/$', 'WebShop.apps.user.views.auth.check_mail'),
-    
 
-    
-    # User settings
-    (r'^profile/$', 'WebShop.apps.user.views.profile.index'),
-    
-    
-    url(r'^profile/account/$', AccountView.as_view(), name='profile-route'),
-    (r'^profile/account/save/$', 'WebShop.apps.user.views.profile.save_account'),
-
-
-    url(r'activate/(?P<code>[0-9a-z-]+)', 'WebShop.apps.user.views.auth.activate', name="activation-route"),
     (r'approve/(?P<token>\w+)', 'WebShop.apps.user.views.handler.approve'),
     (r'deny/(?P<token>\w+)', 'WebShop.apps.user.views.handler.deny'),
 
-    (r'orderFreeCatalog', 'WebShop.apps.user.views.handler.orderFreeCatalog'),
+
+    # User settings
+
+    url(r'^profile/$', AccountView.as_view(), name='profile-route'),
+    url(r'^profile/addresses/$', AccountAddressView.as_view(), name='addresses-route'),
+
+    url(r'cart/$', ShoppingCartView.as_view(), name="cart-route"),
+    url(r'cart/refresh/$', 'WebShop.apps.user.views.cart.update_cart', name="refresh-cart-route"),
+    url(r'cart/history/$', OrderHistoryView.as_view(), name="orders-route"),
+    url(r'cart/add/$', 'WebShop.apps.user.views.cart.add_to_cart', name="add-to-cart-route"),
+    url(r'cart/delete/(?P<id>\d+)/$', 'WebShop.apps.user.views.cart.delete_item', name="delete-from-cart-route"),
+
 
     # Shopping Cart
-    (r'add_to_cart/$', 'WebShop.apps.user.views.order.add_to_cart'),
-    (r'update_cart/$', 'WebShop.apps.user.views.order.update_cart'),
-    (r'shopping_cart/$', 'WebShop.apps.user.views.order.shopping_cart'),
-    (r'shopping_cart/delete/(?P<id>\d+)/$', 'WebShop.apps.user.views.order.delete_item'),
-    (r'shopping_cart/cashier/$', 'WebShop.apps.user.views.order.cashier'),
-    (r'shopping_cart/confirm/$', 'WebShop.apps.user.views.order.confirm_address'),
-    
+    (r'cart/cashier/$', 'WebShop.apps.user.views.order.cashier'),
+    (r'cart/confirm/$', 'WebShop.apps.user.views.order.confirm_address'),
     # Order
     (r'order/submit/$', 'WebShop.apps.user.views.order.process_order')
 )

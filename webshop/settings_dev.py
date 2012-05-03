@@ -124,17 +124,6 @@ DATA_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 
 # http://blogs.law.harvard.edu/tech/stories/storyReader$15
 # from django.utils.translation import gettext_lazy as _
 LANGUAGE_CODE = 'en'
-
-LANGUAGES = (
-    ('de', _('German')),
-    ('en', _('English')),
-    ('es', _('Spanish')),
-    ('fr', _('French')),
-    ('it', _('Italian')),
-    ('pl', _('Polish')),
-)
-
-
 MANAGERS = ADMINS
 
 # URL that handles the media served from MEDIA_ROOT.

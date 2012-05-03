@@ -87,7 +87,7 @@ class BaseLoggedInView(BaseView):
 
 class BaseFormView(BaseView):
     def get(self, request, *args, **kwargs):
-        return {'form' : self.form_cls()}
+        return {'form' : self.get_form_instance(request, *args, **kwargs)}
     def post(self, request, *args, **kwargs):
         _form = self.form_cls(request.POST)
         if not _form.is_valid():
@@ -95,6 +95,7 @@ class BaseFormView(BaseView):
         else:
             result = self.on_success(request, _form.cleaned_data)
         return result
-
+    def get_form_instance(self, request, *args, **kwargs):
+        return self.form_cls()
     def on_success(self, request, cleaned_data):
         pass

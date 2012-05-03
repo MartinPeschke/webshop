@@ -171,13 +171,44 @@ class RegisterForm(forms.Form):
         )
         super(RegisterForm, self).__init__(*args, **kwargs)
 
-class WholesaleAccountForm(forms.Form):
-    # Profile
+class RetailAccountForm(forms.Form):
     title = forms.ChoiceField(choices=settings.TITLE_CHOICES, label = ugettext_lazy('Anrede'))
     first_name = forms.CharField(max_length = 32, label = ugettext_lazy('Vorname'))
     last_name = forms.CharField(max_length = 32, label = ugettext_lazy('Nachname'))
-    webpage = forms.CharField(required=False, label = ugettext_lazy('Webseite'))
+    agree = forms.ChoiceField(widget=widgets.RadioSelect
+        , choices=YESNO
+        , initial=YESNO[1][0]
+        , label = ugettext_lazy(u'Ich stimme den AGB zu'))
 
+    def clean_agree(self):
+        if(self.data['agree']!=u'Y'):
+            raise ValidationError(mark_safe(_(u'Nur nach Zustimmung zu unseren AGB können Sie sich registrieren')))
+        else:
+            return self.data['agree']
+    def __init__(self, *args, **kwargs):
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-signup-details-form'
+        self.helper.form_class = 'form-horizontal form-validated'
+        self.helper.form_method = 'post'
+        self.helper.form_action = reverse('signup-retail-details-route')
+        self.helper.layout = Layout(
+            Fieldset(
+                ugettext_lazy('Registrierung'),
+                'title',
+                'first_name',
+                'last_name',
+                'agree'
+            ),
+            FormActions(
+                Submit('submit', ugettext_lazy("Registrierung abschliessen"), css_class='btn btn-primary')
+            )
+        )
+        super(RetailAccountForm, self).__init__(*args, **kwargs)
+
+
+class WholesaleAccountForm(RetailAccountForm):
+    # Profile
+    webpage = forms.CharField(required=False, label = ugettext_lazy('Webseite'))
     company_name = forms.CharField(label = ugettext_lazy('Studioname'))
     vat_id = forms.CharField(required=False, label = ugettext_lazy('Umsatzsteuer ID'))
     bo_customer_no = forms.CharField(required=False, label = ugettext_lazy('Kundennummer'))
@@ -187,17 +218,6 @@ class WholesaleAccountForm(forms.Form):
                                          ,choices=WEEKDAYS
                                          ,initial=map(itemgetter(0), WEEKDAYS[:5])
                                          , label = ugettext_lazy(u'Wochentage'))
-    agree = forms.ChoiceField(widget=widgets.RadioSelect
-                              , choices=YESNO
-                              , initial=YESNO[1][0]
-                              , label = ugettext_lazy(u'Ich stimme den AGB zu'))
-
-
-    def clean_agree(self):
-        if(self.data['agree']!=u'Y'):
-            raise ValidationError(mark_safe(_(u'Nur nach Zustimmung zu unseren AGB können Sie sich registrieren')))
-        else:
-            return self.data['agree']
     def __init__(self, *args, **kwargs):
         self.helper = FormHelper()
         self.helper.form_id = 'id-signup-details-form'
@@ -226,52 +246,3 @@ class WholesaleAccountForm(forms.Form):
         super(WholesaleAccountForm, self).__init__(*args, **kwargs)
 
 
-
-class OrderFreeCatalogForm(forms.Form):
-    
-    title = forms.ChoiceField(choices=settings.TITLE_CHOICES)
-    first_name = forms.CharField()
-    last_name = forms.CharField()
-    company_name = forms.CharField(required=False)
-    
-    street = forms.CharField()
-    city = forms.CharField()
-    zip = forms.CharField()
-    country = forms.CharField()
-
-    email = forms.EmailField()
-    tel = forms.CharField()
-    fax = forms.CharField(required=False)
-
-class PaymentFormWholesale(forms.Form):
-    def __init__(self, *args, **kwargs):
-        super(PaymentFormWholesale, self).__init__(*args, **kwargs)
-        self.fields['payment_method'].choices = []
-        for key, value in settings.PAYMENT_METHODS:
-            self.fields['payment_method'].choices.append((key, mark_safe(_(value))))
-
-    payment_method = forms.ChoiceField(widget=forms.RadioSelect, choices=())
-    payment_comment = forms.Textarea()
-    
-class PaymentFormRetail(forms.Form):
-    def __init__(self, *args, **kwargs):
-        super(PaymentFormRetail, self).__init__(*args, **kwargs)
-        self.fields['payment_method'].choices = []
-        for key, value in settings.PAYMENT_METHODS[:-2]:
-            self.fields['payment_method'].choices.append((key, mark_safe(_(value))))
-
-    payment_method = forms.ChoiceField(widget=forms.RadioSelect, choices=())
-    payment_comment = forms.Textarea()
-
-class CreditCardForm(forms.Form):
-    owner = forms.CharField()
-    ccNumber = forms.CharField()
-    ctype = forms.ChoiceField(choices=settings.CARD_ROLES)
-    valid_until = forms.CharField()    #models.DateTimeField()
-    security_number = forms.CharField() # new since update, need import 
-    
-class BankAccountForm(forms.Form):
-    owner = forms.CharField()
-    accountno = forms.CharField()
-    blz = forms.CharField()
-    bank_name = forms.CharField()    #models.DateTimeField()

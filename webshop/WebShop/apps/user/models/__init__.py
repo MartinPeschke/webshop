@@ -14,8 +14,7 @@ from WebShop.apps.user.user_roles import USER_GROUPS, userRoles
 from .bank_account import BankAccount
 from .creditcard import CreditCard
 from .password_token import PasswordToken,RESETPASSWORDTOKEN, REGISTERNEWTOKEN, APPROVALWHOLESALETOKEN
-from .address import Address, ADDRESS_TYPES
-
+from .address import Address, Language, AddressType
 
 
 class Profile(models.Model):

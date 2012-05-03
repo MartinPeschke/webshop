@@ -2,11 +2,11 @@
 {% load url from future %}
   
 
-    {% url 'WebShop.apps.user.views.auth.login' as login_url %}
-    {% url 'WebShop.apps.user.views.auth.login_zipcode' as login_zipcode_url %}
-    {% url 'WebShop.apps.user.views.auth.forgot_password' as forgot_password_url %}
-    {% url 'signup-route' as signup_url %}
-  <ul class="nav nav-tabs">
+{% url 'login-route' as login_url %}
+{% url 'login-zipcode-route' as login_zipcode_url %}
+{% url 'forgot-password-route' as forgot_password_url %}
+{% url 'signup-route' as signup_url %}
+<ul class="nav nav-tabs">
     <li {% ifequal login_url request.path %}class="active"{% endifequal %}>
       <a href="{{ login_url }}">
         {% trans "Anmelden mit Email" %}</a></li>
@@ -19,4 +19,4 @@
     <li {% ifequal signup_url request.path %}class="active"{% endifequal %}>
       <a href="{{ signup_url }}">
         {% trans "Registrieren" %}</a></li>
-  </ul>
+</ul>

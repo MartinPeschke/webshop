@@ -1,25 +1,23 @@
 {% load explore %}
 {% load i18n %}
+{% load url from future %}
 
     <h2 class="shopping_cart_title title">
-      <a class="link" class="active" href="/user/shopping_cart/">{% trans "My Cart" %}</a>
+      <a class="link" class="active" href="{% url 'cart-route' %}">{% trans "My Cart" %}</a>
     </h2>
     <table border="0" cellpadding="0" cellspacing="0">
     {% for aoExt in cart.items %}
       <tr>
-          <td style="text-align:right;"><a href="/user/shopping_cart/">{{ aoExt.quantity }}</a></td>
+          <td style="text-align:right;"><a href="{% url 'cart-route' %}">{{ aoExt.quantity }}</a></td>
           <td style="padding-left:4px; padding-right:4px;">x</td>
-          <td style="text-align:left;"><a href="/user/shopping_cart/">{{ aoExt.article.ref }} {{ aoExt.ref }}</a></td>
-          <td ><a href="/user/shopping_cart/" title="{{ aoExt.ref }}"><img alt="{{ aoExt.article.article_family.ref }}"
+          <td style="text-align:left;"><a href="{% url 'cart-route' %}">{{ aoExt.article.ref }} {{ aoExt.ref }}</a></td>
+          <td ><a href="{% url 'cart-route' %}" title="{{ aoExt.ref }}"><img alt="{{ aoExt.article.article_family.ref }}"
               src="{{ aoExt.article.article_family|check_image_low:aoExt.article.article_family.line.shop.ref }}"/></a>
           </td>
         </tr>
     {% endfor %}
     </table>
-
     <div class="cart_bottom">{% trans "SUBTOTAL" %}&nbsp;{% if cart %}{{ cart.total }}{% else %}0.00{% endif %}&nbsp;&euro;</div>
-
-    <div align="right"><a class="link" href="/user/shopping_cart/">{% trans "Zum Bezahlen" %} >></a></div>
-
+    <div align="right"><a class="link" href="{% url 'cart-route' %}">{% trans "Zum Bezahlen" %} >></a></div>
 
 {% include "explore/article_tip.html" %}

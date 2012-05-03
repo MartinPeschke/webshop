@@ -1,25 +1,54 @@
+from crispy_forms.bootstrap import FormActions
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout, Fieldset, Submit
+from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
-
+from django.forms.formsets import formset_factory
+from django.utils.translation import ugettext_lazy
 import  simplejson
+from WebShop.apps.user.forms.profile import AddressForm
 
 from WebShop.apps.user.models.address import Address
-from WebShop.apps.user.forms import WholesaleAccountForm
-from WebShop.apps.lib.baseviews import  BaseLoggedInView
 
+from WebShop.apps.lib.baseviews import  BaseLoggedInView, BaseFormView, HTTPRedirect
 
-def index(request):
-    if request.user.is_anonymous():
-        return HttpResponseRedirect("/")
-    else:
-        return account(request)
+from django.forms.models import modelformset_factory
 
 
 class AccountView(BaseLoggedInView):
-    template_name = 'user/account_wholesale.html'
+    template_name = 'user/profile/index.html'
     def get(self, request, *args, **kwargs):
         pass
+
+class AccountAddressView(BaseFormView):
+    template_name = 'user/profile/addresses.html'
+    form_cls = AddressForm
+
+    def get_form_instance(self, request, *args, **kwargs):
+        AddressFormSet = modelformset_factory(Address)
+        formset = AddressFormSet(queryset = Address.objects.filter(user=request.user))
+        return formset
+
+    def on_success(self, request, cleaned_data):
+        params = {}
+        for k, value in cleaned_data.items():
+            type, field = k.split("_", 1)
+            address_field = params.setdefault(type, {})
+            address_field[field] = value
+
+        for t, fields in params.items():
+            try:
+                address = Address.objects.get(user=request.user, type = t)
+            except Address.DoesNotExist:
+                address = Address(user=request.user, type = t)
+            for field, value in fields.items():
+                setattr(address, 'field', value)
+            address.save()
+        raise HTTPRedirect(request.get_full_path())
+
+
 
 
 
