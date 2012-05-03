@@ -179,7 +179,7 @@ INSTALLED_APPS = (
     'WebShop.apps.user',
     'WebShop.apps.search',
     'WebShop.apps.service',
-    'crispy_forms',
+    'bootstrap',
     'WebShop.apps.contrib.countries'
 )
 CRISPY_TEMPLATE_PACK = 'bootstrap'

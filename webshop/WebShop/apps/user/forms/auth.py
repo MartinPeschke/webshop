@@ -1,5 +1,6 @@
 ﻿from operator import itemgetter, attrgetter
 from django import forms
+from django.contrib import auth
 from django.forms import widgets, ValidationError
 from django.utils.translation import ugettext as _, ugettext_lazy
 from django.utils.safestring import mark_safe
@@ -7,12 +8,9 @@ from django.conf import settings
 from django.core.urlresolvers import reverse
 
 from django.contrib.auth.models import User
-
-from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit, Layout, HTML, Fieldset
-from crispy_forms.bootstrap import FormActions
-
+from WebShop.apps.lib.baseviews import BaseForm, Fieldset
 from WebShop.apps.contrib.countries.models import Country
+
 COUNTRIES = map(attrgetter('iso', 'printable_name'), Country.objects.all())
 
 
@@ -37,72 +35,83 @@ YESNO = (('Y', ugettext_lazy('Yes')), (('N'), ugettext_lazy('No')))
 
 
 
-class LoginEmailForm(forms.Form):
-    email = forms.EmailField(label = ugettext_lazy('Email'))
-    password = forms.CharField(widget = forms.PasswordInput, label = ugettext_lazy('Passwort'))
-    def __init__(self, *args, **kwargs):
-        self.helper = FormHelper()
-        self.helper.form_id = 'id-email-login'
-        self.helper.form_class = 'form-horizontal'
-        self.helper.form_method = 'post'
-        self.helper.form_action = reverse('WebShop.apps.user.views.auth.login')
-        self.helper.layout = Layout(
+class LoginEmailForm(BaseForm):
+    class Meta:
+        layout = (
             Fieldset(
-                ugettext_lazy("Mit Email und Passwort anmelden"),
+                _("Mit Email und Passwort anmelden"),
                 'email',
                 'password'
             ),
-            FormActions(
-                Submit('submit', ugettext_lazy('Anmelden'), css_class='btn btn-primary')
-            )
         )
-        super(LoginEmailForm, self).__init__(*args, **kwargs)
+    email = forms.EmailField(label = ugettext_lazy('Email'))
+    password = forms.CharField(widget = forms.PasswordInput, label = ugettext_lazy('Passwort'))
 
-class LoginZipCodeForm(forms.Form):
-    username = forms.CharField(label = ugettext_lazy('Kundennummer'))
-    password = forms.CharField(widget = forms.PasswordInput, label = ugettext_lazy('PLZ'))
-    def __init__(self, *args, **kwargs):
-        self.helper = FormHelper()
-        self.helper.form_id = 'id-zipcode-login'
-        self.helper.form_class = 'form-horizontal'
-        self.helper.form_method = 'post'
-        self.helper.form_action = reverse('WebShop.apps.user.views.auth.login_zipcode')
-        self.helper.layout = Layout(
+    def getSubmitLabel(self):
+        return _("Anmelden")
+
+    def clean_email(self):
+        user = auth.authenticate(email = self.data['email'], password = self.data['password'])
+        if user is None:
+            raise forms.ValidationError(_('Sorry, please check your email and password.'))
+        elif not user.is_active:
+            raise forms.ValidationError(_('Sorry, please activate your account.'))
+        else:
+            self.cleaned_data['user'] = user
+
+class LoginZipCodeForm(BaseForm):
+    class Meta:
+        layout = (
             Fieldset(
-                ugettext_lazy("Mit Kundennummer und Postleitzahl anmelden"),
+                _("Mit Kundennummer und Postleitzahl anmelden"),
                 'username',
                 'password'
             ),
-            HTML("<p>{}</p>".format(_("Anmeldung mit Kundennummer klappt nur, wenn Sie entsprechende Daten per Post von uns erhalten haben."))),
-            FormActions(
-                Submit('submit', ugettext_lazy('Anmelden'), css_class='btn btn-primary')
-            )
         )
-        super(LoginZipCodeForm, self).__init__(*args, **kwargs)
+    username = forms.CharField(label = ugettext_lazy('Kundennummer'))
+    password = forms.CharField(widget = forms.PasswordInput, label = ugettext_lazy('PLZ'), \
+        help_text=_("Anmeldung mit Kundennummer klappt nur, wenn Sie entsprechende Daten per Post von uns erhalten haben."))
 
+    def clean_username(self):
+        user = auth.authenticate(**self.cleaned_data)
+        if user is None:
+            raise forms.ValidationError(_('Sorry, please check your customer number or ZIP code.'))
+        elif not user.is_active:
+            raise forms.ValidationError(_('Sorry, please activate your account.'))
+        else:
+            self.cleaned_data['user'] = user
+    def getSubmitLabel(self):
+        return _("Anmelden")
 
-class RequestPasswordForm(forms.Form):
-    email = forms.EmailField(label = ugettext_lazy('Email'))
-    def __init__(self, *args, **kwargs):
-        self.helper = FormHelper()
-        self.helper.form_id = 'id-forgot-password-form'
-        self.helper.form_class = 'form-horizontal'
-        self.helper.form_method = 'post'
-        self.helper.form_action = reverse('WebShop.apps.user.views.auth.forgot_password')
-        self.helper.layout = Layout(
+class RequestPasswordForm(BaseForm):
+    class Meta:
+        layout = (
             Fieldset(
-                ugettext_lazy('Passwort &auml;ndern'),
+                _('Passwort &auml;ndern'),
                 'email',
             ),
-            FormActions(
-                Submit('submit', ugettext_lazy("Email senden"), css_class='btn btn-primary')
-            )
         )
-        super(RequestPasswordForm, self).__init__(*args, **kwargs)
+    email = forms.EmailField(label = ugettext_lazy('Email'))
+    def getSubmitLabel(self):
+        return _("Abschicken")
+    def clean_email(self):
+        try:
+            user = User.objects.get(email = self.data['email'])
+        except User.DoesNotExist:
+            raise forms.ValidationError(_('Unbekannte Emailadresse.'))
+        else:
+            self.cleaned_data['user'] = user
+            self.cleaned_data['email'] = self.data['email']
 
-    
-
-class ChangePasswordForm(forms.Form):
+class ChangePasswordForm(BaseForm):
+    class Meta:
+        layout = (
+            Fieldset(
+                _('Passwort &auml;ndern'),
+                'password',
+                'password2'
+            ),
+        )
     password = forms.CharField(widget=widgets.PasswordInput, label = ugettext_lazy('Neues Passwort'))
     password2 = forms.CharField(widget=widgets.PasswordInput, label = ugettext_lazy('Passwort wiederholen'))
         
@@ -110,68 +119,59 @@ class ChangePasswordForm(forms.Form):
         if self.data['password'] != self.data['password2']:
             raise ValidationError(_(u'Passwörter stimmen nicht überein.'))
         return self.data['password']
+    def getSubmitLabel(self):
+        return _("Speichern")
 
-    def __init__(self, *args, **kwargs):
-        self.helper = FormHelper()
-        self.helper.form_id = 'id-reset-pwd-form'
-        self.helper.form_class = 'form-horizontal form-validated'
-        self.helper.form_method = 'post'
-        self.helper.layout = Layout(
+
+
+
+
+class RegisterForm(BaseForm):
+    class Meta:
+        layout = (
             Fieldset(
-                ugettext_lazy('Passwort &auml;ndern'),
+                _('Registrierung'),
+                'role',
+                'email',
                 'password',
                 'password2'
             ),
-            FormActions(
-                Submit('submit', ugettext_lazy("Abschicken"), css_class='btn btn-primary')
-            )
         )
-        super(ChangePasswordForm, self).__init__(*args, **kwargs)
-
-
-
-
-
-
-class RegisterForm(forms.Form):
     role = forms.ChoiceField(choices = [('K', _('Studio')), ('E', _('Endkunde'))], widget=forms.Select
                              , label = ugettext_lazy('Ich bin'))
     email = forms.CharField()
     password = forms.CharField(widget = forms.PasswordInput, label = ugettext_lazy('Passwort'))
     password2 = forms.CharField(widget = forms.PasswordInput, label = ugettext_lazy('Passwort wiederholen'))
 
+    def addRules(self, rules):
+        rules['email']['remote'] = reverse('check-email-route')
+        rules['email']['email'] = True
+        return rules
+
     def clean_email(self):
         if(User.objects.filter(email=self.data['email']).count()):
             raise ValidationError(mark_safe(_('Diese Emailadresse ist bereits vergeben.')))
         else:
             return self.data['email']
-        
     def clean_password2(self):
         if self.data['password'] != self.data['password2']:
             raise ValidationError(mark_safe(_(u'Bitte überprüfen Sie Ihr Passwort.')))
         return self.data['password2']
+    def getSubmitLabel(self):
+        return _("Registrieren")
 
-    def __init__(self, *args, **kwargs):
-        self.helper = FormHelper()
-        self.helper.form_id = 'id-signup-form'
-        self.helper.form_class = 'form-horizontal form-validated'
-        self.helper.form_method = 'post'
-        self.helper.form_action = reverse('signup-route')
-        self.helper.layout = Layout(
+class RetailAccountForm(BaseForm):
+    class Meta:
+        layout = (
             Fieldset(
-                ugettext_lazy('Registrierung'),
-                'role',
-                'email',
-                'password',
-                'password2'
+                _('Registrierung'),
+                'title',
+                'first_name',
+                'last_name',
+                'agree'
             ),
-            FormActions(
-                Submit('submit', ugettext_lazy("Registrieren"), css_class='btn btn-primary')
-            )
         )
-        super(RegisterForm, self).__init__(*args, **kwargs)
 
-class RetailAccountForm(forms.Form):
     title = forms.ChoiceField(choices=settings.TITLE_CHOICES, label = ugettext_lazy('Anrede'))
     first_name = forms.CharField(max_length = 32, label = ugettext_lazy('Vorname'))
     last_name = forms.CharField(max_length = 32, label = ugettext_lazy('Nachname'))
@@ -185,48 +185,14 @@ class RetailAccountForm(forms.Form):
             raise ValidationError(mark_safe(_(u'Nur nach Zustimmung zu unseren AGB können Sie sich registrieren')))
         else:
             return self.data['agree']
-    def __init__(self, *args, **kwargs):
-        self.helper = FormHelper()
-        self.helper.form_id = 'id-signup-details-form'
-        self.helper.form_class = 'form-horizontal form-validated'
-        self.helper.form_method = 'post'
-        self.helper.form_action = reverse('signup-retail-details-route')
-        self.helper.layout = Layout(
-            Fieldset(
-                ugettext_lazy('Registrierung'),
-                'title',
-                'first_name',
-                'last_name',
-                'agree'
-            ),
-            FormActions(
-                Submit('submit', ugettext_lazy("Registrierung abschliessen"), css_class='btn btn-primary')
-            )
-        )
-        super(RetailAccountForm, self).__init__(*args, **kwargs)
-
+    def getSubmitLabel(self):
+        return _("Registrierung abschliessen")
 
 class WholesaleAccountForm(RetailAccountForm):
-    # Profile
-    webpage = forms.CharField(required=False, label = ugettext_lazy('Webseite'))
-    company_name = forms.CharField(label = ugettext_lazy('Studioname'))
-    vat_id = forms.CharField(required=False, label = ugettext_lazy('Umsatzsteuer ID'))
-    bo_customer_no = forms.CharField(required=False, label = ugettext_lazy('Kundennummer'))
-    opening_hours = forms.CharField(label = ugettext_lazy(u'Öffnungszeiten'))
-
-    weekdays = forms.MultipleChoiceField(widget = forms.CheckboxSelectMultiple
-                                         ,choices=WEEKDAYS
-                                         ,initial=map(itemgetter(0), WEEKDAYS[:5])
-                                         , label = ugettext_lazy(u'Wochentage'))
-    def __init__(self, *args, **kwargs):
-        self.helper = FormHelper()
-        self.helper.form_id = 'id-signup-details-form'
-        self.helper.form_class = 'form-horizontal form-validated'
-        self.helper.form_method = 'post'
-        self.helper.form_action = reverse('signup-wholesale-details-route')
-        self.helper.layout = Layout(
+    class Meta:
+        layout = (
             Fieldset(
-                ugettext_lazy('Registrierung'),
+                _('Registrierung'),
                 'company_name',
                 'title',
                 'first_name',
@@ -239,10 +205,17 @@ class WholesaleAccountForm(RetailAccountForm):
                 'vat_id',
                 'agree'
             ),
-            FormActions(
-                Submit('submit', ugettext_lazy("Registrierung abschliessen"), css_class='btn btn-primary')
-            )
         )
-        super(WholesaleAccountForm, self).__init__(*args, **kwargs)
+    # Profile
+    webpage = forms.CharField(required=False, label = ugettext_lazy('Webseite'))
+    company_name = forms.CharField(label = ugettext_lazy('Studioname'))
+    vat_id = forms.CharField(required=False, label = ugettext_lazy('Umsatzsteuer ID'))
+    bo_customer_no = forms.CharField(required=False, label = ugettext_lazy('Kundennummer'))
+    opening_hours = forms.CharField(label = ugettext_lazy(u'Öffnungszeiten'))
 
-
+    weekdays = forms.MultipleChoiceField(widget = forms.CheckboxSelectMultiple
+                                         ,choices=WEEKDAYS
+                                         ,initial=map(itemgetter(0), WEEKDAYS[:5])
+                                         , label = ugettext_lazy(u'Wochentage'))
+    def getSubmitLabel(self):
+        return _("Registrierung abschliessen")

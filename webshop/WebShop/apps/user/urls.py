@@ -1,6 +1,7 @@
 from django.conf.urls import *
 
-from .views.auth import SignupScreen, SignupWholesaleDetailsScreen, SignupRetailDetailsScreen
+from .views.auth import SignupScreen, SignupWholesaleDetailsScreen, SignupRetailDetailsScreen,\
+    LoginZipcodeView, LoginView, RequestPasswordView, SetPasswordView
 from .views.profile import AccountView, AccountAddressView
 from .views.cart import ShoppingCartView, OrderHistoryView
 
@@ -8,17 +9,17 @@ from .views.cart import ShoppingCartView, OrderHistoryView
 urlpatterns = patterns('',
 
     # AUTHentication
-    url(r'^login/$', 'WebShop.apps.user.views.auth.login', name='login-route'),
-    url(r'^login/zipcode/$', 'WebShop.apps.user.views.auth.login_zipcode', name='login-zipcode-route'),
-    url(r'^password/$', 'WebShop.apps.user.views.auth.forgot_password', name="forgot-password-route"),
-    url(r'^profile/setpassword/$', 'WebShop.apps.user.views.auth.set_password', name='change-password'),
+    url(r'^login/$', LoginView.as_view(), name='login-route'),
+    url(r'^login/zipcode/$', LoginZipcodeView.as_view(), name='login-zipcode-route'),
+    url(r'^password/$', RequestPasswordView.as_view(), name="forgot-password-route"),
+    url(r'^profile/setpassword/$', SetPasswordView.as_view(), name='change-password'),
 
     url(r'signup/$', SignupScreen.as_view(), name = 'signup-route'),
     url(r'signup/retail/details$', SignupRetailDetailsScreen.as_view(), name='signup-retail-details-route'),
     url(r'signup/wholesale/details$', SignupWholesaleDetailsScreen.as_view(), name='signup-wholesale-details-route'),
     url(r'activate/(?P<code>[0-9a-z-]+)', 'WebShop.apps.user.views.auth.activate', name="activation-route"),
     url(r'^logout/$', 'WebShop.apps.user.views.auth.logout', name="logout-route"),
-    (r'^checkmail/$', 'WebShop.apps.user.views.auth.check_mail'),
+    url(r'^checkmail/$', 'WebShop.apps.user.views.auth.check_mail', name='check-email-route'),
 
     (r'approve/(?P<token>\w+)', 'WebShop.apps.user.views.handler.approve'),
     (r'deny/(?P<token>\w+)', 'WebShop.apps.user.views.handler.deny'),

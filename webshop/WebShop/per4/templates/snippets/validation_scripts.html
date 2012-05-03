@@ -1,0 +1,21 @@
+<script type="text/javascript" src="{{ MEDIA_URL}}scripts/libs/jquery.validate.min.js?{{ STATIC_TOKEN }}"></script>
+{% ifnotequal LANGUAGE_CODE "en" %}
+<script src="{{ MEDIA_URL}}scripts/localization/messages_{{ LANGUAGE_CODE }}.js"></script>
+{% endifnotequal %}
+<script>
+    $(function () {
+        $("body").find("form.form-validated").each(function (index, form) {
+            $(form).validate({
+                errorClass: "help-inline"
+                , errorElement: "span"
+                , highlight: function (element, errorClass, validClass) {
+                    $(element).closest(".control-group").addClass("error").removeClass(validClass);
+                }
+                , unhighlight: function (element, errorClass, validClass) {
+                    $(element).closest(".control-group").removeClass("error").addClass(validClass);
+                }
+                , rules: {{ form.getRules }}
+    });
+    });
+    });
+</script>

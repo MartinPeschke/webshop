@@ -1,0 +1,53 @@
+{% extends "layout_free_center.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block centerbox %}
+    {% spaceless %}
+        <h2 class="title">{% trans 'Anmeldung' %}</h2><ul class="nav nav-tabs">
+                {% url 'login-route' as login_url %}
+                {% url 'login-zipcode-route' as login_zipcode_url %}
+                {% url 'forgot-password-route' as forgot_password_url %}
+                {% url 'signup-route' as signup_url %}
+                <li {% ifequal login_url request.path %}class="active"{% endifequal %}>
+                <a class="nav-tab-link" href="{{ login_url }}">
+                    {% trans "Anmelden mit Email" %}</a></li>
+                <li {% ifequal login_zipcode_url request.path %}class="active"{% endifequal %}>
+                <a class="nav-tab-link" href="{{ login_zipcode_url }}">
+                    {% trans "Anmelden mit Kundennummer" %}</a></li>
+                <li {% ifequal forgot_password_url request.path %}class="active"{% endifequal %}>
+                <a class="nav-tab-link" href="{{ forgot_password_url }}">
+                    {% trans "Passwort vergessen" %}</a></li>
+                <li {% ifequal signup_url request.path %}class="active"{% endifequal %}>
+                <a class="nav-tab-link" href="{{ signup_url }}">
+                    {% trans "Registrieren" %}</a></li>
+            </ul>
+    {% endspaceless %}
+
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %} fade in">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            {{ message|safe  }}
+        </div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="center_box">
+
+        <div class="tab-content">
+            <div class="tab-pane active">
+                <form method="post" class="form-horizontal form-validated">
+                    {{ form }}
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">{{ form.getSubmitLabel }}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block jscriptlinks %}
+{% include 'snippets/validation_scripts.html' %}
+{% endblock %}

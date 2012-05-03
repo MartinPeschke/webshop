@@ -22,7 +22,6 @@ from WebShop.apps.user.services.token_manager import  sendResetEmail, remove_tok
 from WebShop.apps.user.lib import is_in_signup, create_user, _send_register_mail, _send_approval_mail
 from WebShop.apps.user.user_roles import HAS_RIGHTS, REQUIRES_APPROVAL
 
-
 def logout(request):
     auth.logout(request)
     request.session.pop('cart', None)
@@ -31,144 +30,6 @@ def logout(request):
         return HttpResponseRedirect("/")
     else:
         return HttpResponseRedirect(referer)
-
-def login(request):
-    """ Email Password Login"""
-    forward_URL = request.REQUEST.get('forward_URL', reverse('WebShop.apps.explore.views.pages.main'))
-    map = {'forward_URL':forward_URL}
-    if request.method == 'POST':
-            form = map['login_form'] = LoginEmailForm(request.POST)
-            if form.is_valid():
-                user = auth.authenticate(**form.cleaned_data)
-                if user is None:
-                    errors = form._errors.setdefault("email", ErrorList())
-                    errors.append(ugettext_lazy('Sorry, please check your email and password.'))
-                else:
-                    if user.is_active:
-                        auth.login(request, user)
-                        if (request.session.get('cart', None)):
-                            request.session['cart'].initUser(user)
-                        return HttpResponseRedirect(forward_URL)
-                    else:
-                        errors = form._errors.setdefault("email", ErrorList())
-                        errors.append(ugettext_lazy('Sorry, please activate your account.'))
-    else:
-        map['login_form'] = LoginEmailForm()
-    return render_to_response('user/auth/login.html', map, context_instance=RequestContext(request))
-
-
-
-def login_zipcode(request):
-    """ CustomerNumber ZipCode Login"""
-    forward_URL = request.REQUEST.get('forward_URL', reverse('WebShop.apps.explore.views.pages.main'))
-    map = {'forward_URL':forward_URL}
-    if request.method == 'POST':
-        form = map['login_form'] = LoginZipCodeForm(request.POST)
-            
-        if form.is_valid():
-            user = auth.authenticate(**form.cleaned_data)
-            if user is None:
-                errors = form._errors.setdefault("username", ErrorList())
-                errors.append(ugettext_lazy('Sorry, please check your customer number or ZIP code.'))
-            else:
-                if user.is_active:
-                    auth.login(request, user)
-                    if (request.session.get('cart', None)):
-                        request.session['cart'].initUser(user)
-                    return HttpResponseRedirect(forward_URL)
-                else:
-                    errors = form._errors.setdefault("username", ErrorList())
-                    errors.append(ugettext_lazy('Sorry, please activate your account.'))
-    else:
-        map['login_form'] = LoginZipCodeForm()
-    return render_to_response('user/auth/login_zipcode.html', map, context_instance=RequestContext(request))
-
-def forgot_password(request):
-    form = RequestPasswordForm()
-    if request.method == 'POST':
-        _form = RequestPasswordForm(request.POST)
-        if not _form.is_valid():
-            form = _form
-        else:
-            try:
-                user = User.objects.get(email = _form.data['email'])
-            except User.DoesNotExist:
-                form = _form
-                errors = form._errors.setdefault("email", ErrorList())
-                errors.append(ugettext_lazy('Unbekannte Emailadresse.'))
-            else:
-                try:
-                    pt = PasswordToken.objects.get(user=user, role = RESETPASSWORDTOKEN)
-                except PasswordToken.DoesNotExist:
-                    sendResetEmail(request, user, _form)
-                else:
-                    oneDay = datetime.timedelta(1)
-                    if datetime.datetime.now() - pt.create_time < oneDay:
-                        messages.add_message(request, messages.ERROR, 
-                            _('''Eine Passwort&auml;nderungsemail wurde bereits an die Email-Adresse: <b>%s</b> innerhalb der letzten 24 Stunden versendet.<br/><br/>
-                            Um unsere Nutzer vor Spam
-                            zu sch&uuml;tzen, k&ouml;nnen wir erst Morgen wieder eine neue Email senden, bitte kontakieren Sie uns doch direkt oder versuchen es Morgen noch einmal
-                            !''') % _form.cleaned_data['email'])
-                    else:
-                        sendResetEmail(request, user, _form)
-    else:
-        pass
-    return render_to_response('user/auth/forgot_password.html', locals(), context_instance=RequestContext(request))
-
-
-class SetPasswordView(BaseFormView):
-    template_name = 'user/auth/change_password.html'
-    form_cls = RegisterForm
-    def pre_validate(self, request, *args, **kwargs):
-        user = request.user
-        if user.is_authenticated():
-            raise HTTPRedirect(self.HOME_URL)
-        if 'token' in request.GET:
-            token = request.GET['token']
-            setattr(self, 'user', auth.authenticate(token = token, role = RESETPASSWORDTOKEN))
-        if getattr(self, 'user', None) is None:
-            messages.add_message(request, messages.ERROR, _('The token for this requested password change has expired, please request again!'))
-            raise HTTPRedirect(self.HOME_URL)
-
-    def on_success(self, request, cleaned_data):
-        auth.login(request, user)
-        # Save password
-        request.user.set_password(_form.cleaned_data['password'])
-        request.user.save()
-        remove_token(user = user, role = RESETPASSWORDTOKEN)
-        messages.add_message(request, messages.SUCCESS, _('Passwort erfolgreich ge&auml;ndert!'))
-        return render_to_response('user/auth/change_password.html', locals(), context_instance=RequestContext(request))
-
-
-
-def set_password(request):
-    if request.user.is_authenticated():
-        return HttpResponseRedirect(reverse('WebShop.apps.explore.views.pages.main'))
-    if 'token' in request.GET:
-        token = request.GET['token']
-        
-        user = auth.authenticate(token = token, role = RESETPASSWORDTOKEN)
-        if user:
-            form = ChangePasswordForm()
-
-            if request.method == 'POST':
-                _form = ChangePasswordForm(request.POST)
-                if not _form.is_valid():
-                    form = _form
-                else:
-                    auth.login(request, user)
-                    # Save password
-                    request.user.set_password(_form.cleaned_data['password'])
-                    request.user.save()
-                    remove_token(user = user, role = RESETPASSWORDTOKEN)
-                    messages.add_message(request, messages.SUCCESS, _('Passwort erfolgreich ge&auml;ndert!'))
-            else:
-                pass
-        else:
-            messages.add_message(request, messages.ERROR, _('The token for this requested password change has expired, please request again!'))
-        return render_to_response('user/auth/change_password.html', locals(), context_instance=RequestContext(request))
-    else:
-        return HttpResponseRedirect(reverse('WebShop.apps.explore.views.pages.main'))
 
 
 @json
@@ -187,15 +48,72 @@ def check_mail(request):
 
 
 
-class BaseSignUpView(BaseFormView):
-
+class BaseAuthView(BaseFormView):
+    template_name = 'user/auth/base.html'
     def pre_validate(self, request, *args, **kwargs):
         user = request.user
         if user.is_authenticated() and user.is_active:
             raise HTTPRedirect(self.HOME_URL)
 
-class SignupScreen(BaseSignUpView):
-    template_name = 'user/auth/signup.html'
+
+class LoginView(BaseAuthView):
+    form_cls = LoginEmailForm
+
+    def on_success(self, request, cleaned_data):
+        user = cleaned_data['user']
+        auth.login(request, user)
+        if request.session.get('cart', None):
+            request.session['cart'].initUser(user)
+        forward_URL = request.REQUEST.get('forward_URL', self.HOME_URL)
+        raise HTTPRedirect(forward_URL)
+
+class LoginZipcodeView(LoginView):
+    form_cls = LoginZipCodeForm
+
+class RequestPasswordView(LoginView):
+    form_cls = RequestPasswordForm
+    def on_success(self, request, cleaned_data):
+        user = cleaned_data['user']
+        try:
+            pt = PasswordToken.objects.get(user=user, role = RESETPASSWORDTOKEN)
+        except PasswordToken.DoesNotExist:
+            sendResetEmail(request, user)
+        else:
+            oneDay = datetime.timedelta(1)
+            if datetime.datetime.now() - pt.create_time < oneDay:
+                messages.add_message(request, messages.ERROR,
+                    _('''Eine Passwort&auml;nderungsemail wurde bereits an die Email-Adresse: <b>%s</b> innerhalb der letzten 24 Stunden versendet.<br/><br/>
+                    Um unsere Nutzer vor Spam
+                    zu sch&uuml;tzen, k&ouml;nnen wir erst Morgen wieder eine neue Email senden, bitte kontakieren Sie uns doch direkt oder versuchen es Morgen noch einmal
+                    !''') % user.email)
+            else:
+                sendResetEmail(request, user)
+        raise HTTPRedirect(request.get_full_path())
+
+
+class SetPasswordView(BaseFormView):
+    form_cls = RegisterForm
+    def pre_validate(self, request, *args, **kwargs):
+        user = request.user
+        if user.is_authenticated():
+            raise HTTPRedirect(self.HOME_URL)
+        if 'token' in request.GET:
+            token = request.GET['token']
+            setattr(self, 'user', auth.authenticate(token = token, role = RESETPASSWORDTOKEN))
+        if getattr(self, 'user', None) is None:
+            messages.add_message(request, messages.ERROR, _('The token for this requested password change has expired, please request again!'))
+            raise HTTPRedirect(self.HOME_URL)
+
+    def on_success(self, request, cleaned_data):
+        auth.login(request, user)
+        # Save password
+        request.user.set_password(cleaned_data['password'])
+        request.user.save()
+        remove_token(user = user, role = RESETPASSWORDTOKEN)
+        messages.add_message(request, messages.SUCCESS, _('Passwort erfolgreich ge&auml;ndert!'))
+        return render_to_response('user/auth/change_password.html', locals(), context_instance=RequestContext(request))
+
+class SignupScreen(BaseAuthView):
     form_cls = RegisterForm
     def pre_validate(self, request, *args, **kwargs):
         super(SignupScreen, self).pre_validate(request, *args, **kwargs)
@@ -205,11 +123,16 @@ class SignupScreen(BaseSignUpView):
     def on_success(self, request, cleaned_data):
         email = cleaned_data['email']
         password = cleaned_data['password']
-        create_user(email, password, cleaned_data['role'])
+        role = cleaned_data['role']
+        create_user(email, password, role)
 
         user = auth.authenticate(email = email, password = password)
         if user is not None:
+            # send activation email right away
+            register_token = attach_token(user, role = REGISTERNEWTOKEN)
+            _send_register_mail(user.email, request.META['HTTP_HOST'], register_token.value, role in HAS_RIGHTS)
             auth.login(request, user)
+
             raise HTTPRedirect(self.get_user_signup_details_url(request))
         else:
             messages.add_message(request, messages.ERROR, _('Ein Fehler ist aufgetreten!'))
@@ -217,8 +140,7 @@ class SignupScreen(BaseSignUpView):
 
 
 
-class SignupWholesaleDetailsScreen(BaseSignUpView):
-    template_name = 'user/auth/signupdetails.html'
+class SignupWholesaleDetailsScreen(BaseAuthView):
     form_cls = WholesaleAccountForm
     def pre_validate(self, request, *args, **kwargs):
         super(SignupWholesaleDetailsScreen, self).pre_validate(request, *args, **kwargs)
@@ -236,10 +158,8 @@ class SignupWholesaleDetailsScreen(BaseSignUpView):
         profile.is_signup_complete = True
         profile.save()
 
-        register_token = attach_token(user, role = REGISTERNEWTOKEN)
         # Send Mail
         role = profile.role
-        _send_register_mail(user.email, request.META['HTTP_HOST'], register_token.value, role in HAS_RIGHTS)
         if role in REQUIRES_APPROVAL:
             pt = attach_token(user, role = APPROVALWHOLESALETOKEN)
             _send_approval_mail(request.META['HTTP_HOST'], user, pt)
@@ -251,8 +171,6 @@ class SignupWholesaleDetailsScreen(BaseSignUpView):
 class SignupRetailDetailsScreen(SignupWholesaleDetailsScreen):
     form_cls = RetailAccountForm
     pass
-
-
 
 
 

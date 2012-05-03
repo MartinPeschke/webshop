@@ -1,15 +1,27 @@
 from django.http import HttpResponseRedirect
+from django.utils.safestring import mark_safe
 from django.views.generic.base import View, TemplateView, TemplateResponseMixin
 from django.template.response import TemplateResponse
 from django.core.urlresolvers import reverse_lazy
 from django.contrib import auth, messages
 from django.utils.translation import ugettext as _, ugettext_lazy
+from bootstrap.forms import BootstrapForm, Fieldset
+import simplejson
 
 from WebShop.apps.user.lib import is_studio_user, is_in_signup
 
 class HTTPRedirect(Exception):
     def __init__(self, url):
         self.url = url
+
+
+
+class BaseForm(BootstrapForm):
+    def addRules(self, rules):
+        return rules
+    def getRules(self):
+        rules = {f.name:{"required":True} for f in self}
+        return mark_safe(simplejson.dumps(self.addRules(rules)))
 
 
 
@@ -67,29 +79,29 @@ class BaseView(TemplateResponseMixin, View):
 class BaseLoggedInView(BaseView):
     def dispatch(self, request, *args, **kwargs):
         user = request.user
-        if user.is_active:
-            return super(BaseLoggedInView, self).dispatch(request, *args, **kwargs)
-        elif not user.is_anonymous():
+        if not user.is_anonymous():
             messages.add_message(request, messages.ERROR, _('Anmeldung erforderlich!'))
             return HttpResponseRedirect(self.LOGIN_URL)
         elif is_in_signup(user):
             messages.add_message(request, messages.ERROR, _('Bitte Registrierung beenden!'))
             return HttpResponseRedirect(self.get_user_signup_details_url(request))
-        elif not user.is_active:
+        elif user.is_active:
+            return super(BaseLoggedInView, self).dispatch(request, *args, **kwargs)
+        else:
             messages.add_message(request, messages.ERROR, _('Bitte zuerst Konto aktivieren beenden!'))
             return HttpResponseRedirect(self.HOME_URL)
-        else:
-            raise Exception("User is in unknown state!")
 
 
 
 
 
 class BaseFormView(BaseView):
+    form = None
+
     def get(self, request, *args, **kwargs):
         return {'form' : self.get_form_instance(request, *args, **kwargs)}
     def post(self, request, *args, **kwargs):
-        _form = self.form_cls(request.POST)
+        _form = self.form = self.form_cls(request.POST)
         if not _form.is_valid():
             return {'form' : _form }
         else:

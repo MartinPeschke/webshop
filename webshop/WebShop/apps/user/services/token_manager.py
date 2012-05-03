@@ -37,8 +37,8 @@ def create_token(user, role):
     return PasswordToken(user=user, role=role, value = str(uuid.uuid4()))
 
 
-def sendResetEmail(request, user, form):
+def sendResetEmail(request, user):
     pt = attach_token(user, role = RESETPASSWORDTOKEN)
     c = Context({'user': user, 'token': pt, 'host': request.get_host()})
-    mail.create_mail(_('%s Passwort zuruecksetzen') % settings.EMAIL_SUBJECT_PREFIX, settings.SERVER_EMAIL, form.cleaned_data['email'], 'changepassword', c)
+    mail.create_mail(_('%s Passwort zuruecksetzen') % settings.EMAIL_SUBJECT_PREFIX, settings.SERVER_EMAIL, user.email, 'changepassword', c)
     messages.add_message(request, messages.SUCCESS, _('''Sie erhalten in K&uuml;rze von uns eine E-Mail, in der Sie den Link zum Neusetzen Ihres Passwortes finden!'''))

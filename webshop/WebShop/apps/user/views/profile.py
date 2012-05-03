@@ -1,20 +1,13 @@
-from crispy_forms.bootstrap import FormActions
-from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Fieldset, Submit
-from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
-from django.forms.formsets import formset_factory
-from django.utils.translation import ugettext_lazy
+
 import  simplejson
-from WebShop.apps.user.forms.profile import AddressForm
+from WebShop.apps.contrib.countries.models import Country
 
-from WebShop.apps.user.models.address import Address
-
+from WebShop.apps.user.models.address import Address, Language, AddressType
+from WebShop.apps.user.forms import AddressesForm
 from WebShop.apps.lib.baseviews import  BaseLoggedInView, BaseFormView, HTTPRedirect
-
-from django.forms.models import modelformset_factory
 
 
 class AccountView(BaseLoggedInView):
@@ -24,12 +17,21 @@ class AccountView(BaseLoggedInView):
 
 class AccountAddressView(BaseFormView):
     template_name = 'user/profile/addresses.html'
-    form_cls = AddressForm
+    form_cls = AddressesForm
 
     def get_form_instance(self, request, *args, **kwargs):
-        AddressFormSet = modelformset_factory(Address)
-        formset = AddressFormSet(queryset = Address.objects.filter(user=request.user))
-        return formset
+        params = {}
+        try:
+            addresses = Address.objects.filter(user=request.user).values()
+            for address_map in addresses:
+                print address_map
+                t = AddressType.objects.get(pk = address_map.pop('type_id')).name
+                address_map['language'] = Language.objects.get(pk=address_map.pop('language_id')).code
+                address_map['country'] = Country.objects.get(pk=address_map.pop('country_id')).iso
+                params.update({"{}_{}".format(t, k):v for k,v in address_map.items()})
+        except Address.DoesNotExist:
+            pass
+        return self.form_cls(params)
 
     def on_success(self, request, cleaned_data):
         params = {}
@@ -39,12 +41,17 @@ class AccountAddressView(BaseFormView):
             address_field[field] = value
 
         for t, fields in params.items():
+            print fields
             try:
-                address = Address.objects.get(user=request.user, type = t)
+                address = Address.objects.get(user=request.user, type__name= t)
             except Address.DoesNotExist:
-                address = Address(user=request.user, type = t)
+                address = Address(user=request.user, type__name= t)
             for field, value in fields.items():
-                setattr(address, 'field', value)
+                if field=='language':
+                    value = Language.objects.get(pk=value)
+                elif field=='country':
+                    value = Country.objects.get(pk=value)
+                setattr(address, field, value)
             address.save()
         raise HTTPRedirect(request.get_full_path())
 
