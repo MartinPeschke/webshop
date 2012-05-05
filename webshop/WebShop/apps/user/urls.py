@@ -1,7 +1,7 @@
 from django.conf.urls import *
 
 from .views.auth import SignupScreen, SignupWholesaleDetailsScreen, SignupRetailDetailsScreen,\
-    LoginZipcodeView, LoginView, RequestPasswordView, SetPasswordView
+    LoginZipcodeView, LoginView, RequestPasswordView, SetPasswordView, ActivateAccountView
 from .views.profile import AccountView, AccountAddressView
 from .views.cart import ShoppingCartView, OrderHistoryView
 
@@ -17,7 +17,7 @@ urlpatterns = patterns('',
     url(r'signup/$', SignupScreen.as_view(), name = 'signup-route'),
     url(r'signup/retail/details$', SignupRetailDetailsScreen.as_view(), name='signup-retail-details-route'),
     url(r'signup/wholesale/details$', SignupWholesaleDetailsScreen.as_view(), name='signup-wholesale-details-route'),
-    url(r'activate/(?P<code>[0-9a-z-]+)', 'WebShop.apps.user.views.auth.activate', name="activation-route"),
+    url(r'activate/(?P<code>[0-9a-z-]+)', ActivateAccountView.as_view(), name="activation-route"),
     url(r'^logout/$', 'WebShop.apps.user.views.auth.logout', name="logout-route"),
     url(r'^checkmail/$', 'WebShop.apps.user.views.auth.check_mail', name='check-email-route'),
 

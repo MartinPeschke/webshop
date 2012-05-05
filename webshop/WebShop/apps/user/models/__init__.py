@@ -1,3 +1,5 @@
+from django.core.urlresolvers import reverse
+
 __author__ = 'Martin'
 import simplejson
 
@@ -9,7 +11,7 @@ from django.utils.translation import ugettext as _
 from WebShop.apps.contrib.decorator import json_encode
 from WebShop.apps.user.models.bank_account import BankAccount
 from WebShop.apps.user.models.creditcard import CreditCard
-from WebShop.apps.user.user_roles import USER_GROUPS, userRoles
+from WebShop.apps.user.user_roles import USER_GROUPS, userRoles, NORM_ROLE
 
 from .bank_account import BankAccount
 from .creditcard import CreditCard
@@ -48,6 +50,7 @@ class Profile(models.Model):
     def _getRoleName(self):
         return _(userRoles[self.role])
     roleName = property(_getRoleName)
+
 
     def _serialize(self):
         try:

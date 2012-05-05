@@ -20,7 +20,7 @@ class BaseForm(BootstrapForm):
     def addRules(self, rules):
         return rules
     def getRules(self):
-        rules = {f.name:{"required":True} for f in self}
+        rules = {f.name:{"required":True} for f in self if f.field.required == True}
         return mark_safe(simplejson.dumps(self.addRules(rules)))
 
 
@@ -79,7 +79,7 @@ class BaseView(TemplateResponseMixin, View):
 class BaseLoggedInView(BaseView):
     def dispatch(self, request, *args, **kwargs):
         user = request.user
-        if not user.is_anonymous():
+        if user.is_anonymous():
             messages.add_message(request, messages.ERROR, _('Anmeldung erforderlich!'))
             return HttpResponseRedirect(self.LOGIN_URL)
         elif is_in_signup(user):
