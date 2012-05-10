@@ -2,7 +2,6 @@ from django.core.urlresolvers import reverse
 
 __author__ = 'Martin'
 import simplejson
-
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.db import models
@@ -39,7 +38,6 @@ class Profile(models.Model):
     payment_method = models.CharField(max_length=32, choices=settings.PAYMENT_METHODS, blank=True)
 
     same_address = models.NullBooleanField(null=True)
-    is_signup_complete = models.BooleanField(default=False)
     role = models.CharField(max_length=1, choices=USER_GROUPS)
     weekdays = models.CharField(max_length=128, blank=True)
 
@@ -97,6 +95,13 @@ class Profile(models.Model):
         billing.save()
 
     json = property(_serialize, _deserialize)
+
+    def json_equivalent(self):
+        dictionary = {}
+        for field in self._meta.get_all_field_names():
+            dictionary[field] = self.__getattribute__(field)
+        return dictionary
+
 
     def __repr__(self):
         return '<Profile: %s>' % self.company_name

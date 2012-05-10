@@ -9,6 +9,7 @@ from django.core.urlresolvers import reverse
 import datetime
 
 from django.contrib.auth.models import User
+import simplejson
 from WebShop.apps import user
 
 from WebShop.apps.lib.baseviews import  HTTPRedirect, BaseFormView, BaseView
@@ -64,6 +65,9 @@ class LoginView(BaseAuthView):
         auth.login(request, user)
         if request.session.get('cart', None):
             request.session['cart'].initUser(user)
+        if is_in_signup(user):
+            messages.add_message(request, messages.ERROR, _('Bitte Registrierung beenden!'))
+            raise HTTPRedirect(self.SIGNUP_URL)
         forward_URL = request.REQUEST.get('forward_URL', self.HOME_URL)
         raise HTTPRedirect(forward_URL)
 
@@ -116,7 +120,6 @@ class SetPasswordView(BaseFormView):
 class SignupScreen(BaseAuthView):
     form_cls = RegisterForm
     def pre_validate(self, request, *args, **kwargs):
-        super(SignupScreen, self).pre_validate(request, *args, **kwargs)
         if is_in_signup(request.user):
             raise HTTPRedirect(self.get_user_signup_details_url(request))
 
@@ -150,12 +153,11 @@ class SignupWholesaleDetailsScreen(BaseAuthView):
     def on_success(self, request, cleaned_data):
         user = request.user
         profile = user.get_profile()
-
         for field in profile._meta.fields:
             attr_name = field.attname
             if attr_name in cleaned_data:
                 setattr(profile, attr_name, cleaned_data[attr_name])
-        profile.is_signup_complete = True
+        profile.weekdays = simplejson.dumps(cleaned_data['weekdays'])
         profile.save()
 
         # Send Mail
@@ -174,7 +176,7 @@ class SignupRetailDetailsScreen(SignupWholesaleDetailsScreen):
 
 
 class ActivateAccountView(BaseView):
-    template_name = 'user/message.html'
+    template_name = 'user/auth/signup_finished.html'
     def get(self, request, *args, **kwargs):
         code = kwargs['code']
         user = auth.authenticate(token = code, role = REGISTERNEWTOKEN)

@@ -103,15 +103,14 @@
       <div class="span2">
           <div class="login_panel">
           {% if request.user.is_authenticated %}
-              {% if request.user.is_active %}
-                  {% if request.user.get_profile.is_signup_complete %}
+              {% if USER_IS_IN_SIGNUP %}
+                  <div><a href="{% url 'signup-route' %}">{% trans 'Please finish your registration' %}</a></div>
+              {% else %}
+                  {% if request.user.is_active %}
                       <div><a href="{% url 'profile-route' %}" title="My Account">{% trans 'My Account' %}</a></div>
                   {%  else %}
-                      <div><a href="{% url 'signup-route' %}">{% trans 'Please finish your registration' %}</a></div>
+                      <div>{% trans 'Please activate your account' %}</div>
                   {% endif %}
-              {% else %}
-                <div>{% trans 'Please activate your account' %}</div>
-
               {% endif %}
               <div><a href="{% url 'logout-route' %}">{% trans "Logout" %}</a></div>
           {% else %}

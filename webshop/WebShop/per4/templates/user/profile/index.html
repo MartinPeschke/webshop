@@ -4,6 +4,11 @@
 {% block center_block_header %}{% trans 'MY ACCOUNT'%}{% endblock %}
 {% block content %}
     <div class="center_box">
-        account details
+        <form method="post" class="form-horizontal form-validated">
+            {{ form }}
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">{% trans 'Speichern' %}</button>
+            </div>
+        </form>
     </div>
 {% endblock %}

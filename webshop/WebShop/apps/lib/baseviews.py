@@ -76,6 +76,7 @@ class BaseView(TemplateResponseMixin, View):
         return TemplateResponse(request, self.template_name, template_context)
 
 
+
 class BaseLoggedInView(BaseView):
     def dispatch(self, request, *args, **kwargs):
         user = request.user
@@ -101,7 +102,7 @@ class BaseFormView(BaseView):
     def get(self, request, *args, **kwargs):
         return {'form' : self.get_form_instance(request, *args, **kwargs)}
     def post(self, request, *args, **kwargs):
-        _form = self.form = self.form_cls(request.POST)
+        _form = self.form = self.get_validation_form_instance(request)
         if not _form.is_valid():
             return {'form' : _form }
         else:
@@ -109,5 +110,7 @@ class BaseFormView(BaseView):
         return result
     def get_form_instance(self, request, *args, **kwargs):
         return self.form_cls()
+    def get_validation_form_instance(self, request):
+        return self.form_cls(request.POST)
     def on_success(self, request, cleaned_data):
         pass

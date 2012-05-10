@@ -18,7 +18,7 @@ class Language(models.Model):
 class AddressType(models.Model):
     class Meta:
         db_table = 'apps_address_type'
-    name = models.CharField(max_length=128)
+    name = models.CharField(max_length=128, unique=True)
 
     def __unicode__(self):
         if self.name =='billing':

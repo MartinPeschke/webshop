@@ -2,7 +2,7 @@ from django.conf.urls import *
 
 from .views.auth import SignupScreen, SignupWholesaleDetailsScreen, SignupRetailDetailsScreen,\
     LoginZipcodeView, LoginView, RequestPasswordView, SetPasswordView, ActivateAccountView
-from .views.profile import AccountView, AccountAddressView
+from .views.profile import ProfileView, AccountAddressView
 from .views.cart import ShoppingCartView, OrderHistoryView
 
 
@@ -27,7 +27,7 @@ urlpatterns = patterns('',
 
     # User settings
 
-    url(r'^profile/$', AccountView.as_view(), name='profile-route'),
+    url(r'^profile/$', ProfileView.as_view(), name='profile-route'),
     url(r'^profile/addresses/$', AccountAddressView.as_view(), name='addresses-route'),
 
     url(r'cart/$', ShoppingCartView.as_view(), name="cart-route"),

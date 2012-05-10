@@ -32,6 +32,8 @@ CREATE TABLE `apps_address_type` (
   `name` varchar(128) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+ALTER TABLE apps_address_type ADD UNIQUE (name);
+
 insert into apps_address_type values (1, 'billing'), (2, 'shipping');
 
 alter table apps_address add column address_type int(11);
@@ -48,3 +50,5 @@ alter table apps_address change country_iso country_id varchar(2);
 alter table apps_address change `language` language_legacy varchar(32);
 alter table apps_address change language_code `language_id` varchar(2);
 
+
+update apps_profile set weekdays = REPLACE(weekdays, "'", '"');

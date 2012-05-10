@@ -27,17 +27,6 @@ def approve(request, token):
         user.message_set.create(message=str(_('You have been approved for Wholesale access, enjoy your shopping!')))        
     else:
         message = _('This Approval Code is invalid, maybe you already approved this user?')
-
-
-    approved_users = User.objects.filter(profile__role='K').order_by('id')
-    
-    profiles = dict([(p.user_id, p) for p in Profile.objects.filter(user__in = approved_users)])
-    address = dict([(a.user_id, a) for a in Address.objects.filter(user__in=approved_users, type='billing')])
-
-    for a in approved_users:
-        a.profile = profiles.get(a.id, False)
-        a.address = address.get(a.id, False)
-    
     return render_to_response('user/approved.html', locals(), context_instance=RequestContext(request))
 
 def deny(request, token):
@@ -50,4 +39,4 @@ def deny(request, token):
         user.message_set.create(message=str(_('Sorry, we could not approve your Wholesale Access request, please call us or contact us by email to clarify.')))
     else:
         message = _('This Approval Code is invalid, maybe you already denied this request?')
-    return render_to_response('user/message.html', locals(), context_instance=RequestContext(request))
+    return render_to_response('user/approved.html', locals(), context_instance=RequestContext(request))

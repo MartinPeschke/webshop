@@ -12,21 +12,18 @@ from WebShop.apps.lib.baseviews import BaseForm, Fieldset
 from WebShop.apps.contrib.countries.models import Country
 
 COUNTRIES = map(attrgetter('iso', 'printable_name'), Country.objects.all())
-
-
-
 LANGUAGES = []
 for key, value in settings.LANGUAGES:
     LANGUAGES.append((key, mark_safe(_(value))))
 
 WEEKDAYS = (
-    ('Mon', mark_safe(ugettext_lazy('Monday'))),
-    ('Tue', mark_safe(ugettext_lazy('Tuesday'))),
-    ('Wed', mark_safe(ugettext_lazy('Wednesday'))),
-    ('Thu', mark_safe(ugettext_lazy('Thursday'))),
-    ('Fri', mark_safe(ugettext_lazy('Friday'))),
-    ('Sat', mark_safe(ugettext_lazy('Saturday'))),
-    ('Sun', mark_safe(ugettext_lazy('Sunday'))),
+    (u'Mon', mark_safe(ugettext_lazy('Monday'))),
+    (u'Tue', mark_safe(ugettext_lazy('Tuesday'))),
+    (u'Wed', mark_safe(ugettext_lazy('Wednesday'))),
+    (u'Thu', mark_safe(ugettext_lazy('Thursday'))),
+    (u'Fri', mark_safe(ugettext_lazy('Friday'))),
+    (u'Sat', mark_safe(ugettext_lazy('Saturday'))),
+    (u'Sun', mark_safe(ugettext_lazy('Sunday')))
 )
 
 
@@ -54,8 +51,6 @@ class LoginEmailForm(BaseForm):
         user = auth.authenticate(email = self.data['email'], password = self.data['password'])
         if user is None:
             raise forms.ValidationError(_('Sorry, please check your email and password.'))
-        elif not user.is_active:
-            raise forms.ValidationError(_('Sorry, please activate your account.'))
         else:
             self.cleaned_data['user'] = user
 
@@ -173,12 +168,12 @@ class RetailAccountForm(BaseForm):
         )
 
     title = forms.ChoiceField(choices=settings.TITLE_CHOICES, label = ugettext_lazy('Anrede'))
-    first_name = forms.CharField(max_length = 32, label = ugettext_lazy('Vorname'))
-    last_name = forms.CharField(max_length = 32, label = ugettext_lazy('Nachname'))
+    first_name = forms.CharField(max_length = 32, label = ugettext_lazy('Vorname*'))
+    last_name = forms.CharField(max_length = 32, label = ugettext_lazy('Nachname*'))
     agree = forms.ChoiceField(widget=widgets.RadioSelect
         , choices=YESNO
         , initial=YESNO[1][0]
-        , label = ugettext_lazy(u'Ich stimme den AGB zu'))
+        , label = ugettext_lazy(u'Ich stimme den AGB zu*'))
 
     def clean_agree(self):
         if(self.data['agree']!=u'Y'):
@@ -187,6 +182,7 @@ class RetailAccountForm(BaseForm):
             return self.data['agree']
     def getSubmitLabel(self):
         return _("Registrierung abschliessen")
+
 
 class WholesaleAccountForm(RetailAccountForm):
     class Meta:
@@ -208,14 +204,15 @@ class WholesaleAccountForm(RetailAccountForm):
         )
     # Profile
     webpage = forms.CharField(required=False, label = ugettext_lazy('Webseite'))
-    company_name = forms.CharField(label = ugettext_lazy('Studioname'))
+    company_name = forms.CharField(label = ugettext_lazy('Studioname*'))
     vat_id = forms.CharField(required=False, label = ugettext_lazy('Umsatzsteuer ID'))
     bo_customer_no = forms.CharField(required=False, label = ugettext_lazy('Kundennummer'))
-    opening_hours = forms.CharField(label = ugettext_lazy(u'Öffnungszeiten'))
+    opening_hours = forms.CharField(label = ugettext_lazy(u'Öffnungszeiten*'))
 
     weekdays = forms.MultipleChoiceField(widget = forms.CheckboxSelectMultiple
                                          ,choices=WEEKDAYS
                                          ,initial=map(itemgetter(0), WEEKDAYS[:5])
-                                         , label = ugettext_lazy(u'Wochentage'))
+                                         ,label = ugettext_lazy(u'Wochentage'))
     def getSubmitLabel(self):
         return _("Registrierung abschliessen")
+
