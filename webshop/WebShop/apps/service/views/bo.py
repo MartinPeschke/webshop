@@ -4,8 +4,8 @@ from django.http import *
 from django.core.cache import cache
 
 from django.db import  connection
-from WebShop.apps.explore.models import Shop, Line, ArticleFamily, Promotion, Article, ArticleOption, Pricing, ArticleType, Order
-from WebShop.apps.user.models import Address, BankAccount, CreditCard, Profile
+from WebShop.apps.explore.models import Shop, Line, ArticleFamily, Promotion, Article, ArticleOption, Pricing, ArticleType
+from WebShop.apps.user.models import Address, BankAccount, CreditCard, Profile, Order
 from django.contrib.auth.models import User
 from WebShop.apps.contrib.decorator import _guard_bo, json_encode
 

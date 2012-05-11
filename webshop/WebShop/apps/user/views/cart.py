@@ -2,8 +2,10 @@ from django.http import HttpResponseNotAllowed, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.template.loader import render_to_string
+
 from WebShop.apps.contrib.cart import Cart
 from WebShop.apps.contrib.decorator import json
+from WebShop.apps.user.models import Order
 from WebShop.apps.lib.baseviews import BaseLoggedInView
 
 __author__ = 'Martin'
@@ -15,10 +17,13 @@ class ShoppingCartView(BaseLoggedInView):
         cart = request.session.get('cart', None)
         if not isinstance(cart, Cart):
             request.session['cart'] = Cart(request.user)
+        return {'cart':cart}
 
 class OrderHistoryView(BaseLoggedInView):
     template_name = 'user/profile/order_history.html'
-
+    def get(self, request, *args, **kwargs):
+        orders = Order.objects.select_related().filter(user = request.user, status_id__gt = 0).order_by('-create_time')
+        return {'orders': orders}
 
 
 @json
@@ -47,19 +52,6 @@ def update_cart(request):
     cart = request.session['cart'] = Cart(request.user, items)
 
     return render_to_response('user/profile/cart_items.html', locals())
-
-def shopping_cart(request):
-    '''
-     Page for shopping cart
-     '''
-    # AJAX
-    if request.method == 'POST':
-        return add_to_cart(request)
-
-    if 'cart' not in request.session:
-        request.session['cart'] = Cart(request.user)
-
-    return render_to_response('user/profile/shopping_cart.html', locals(), context_instance=RequestContext(request))
 
 def delete_item(request, id):
     '''

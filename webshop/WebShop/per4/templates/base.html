@@ -1,6 +1,3 @@
-{% load i18n %}
-{% load explore %}
-{% load url from future %}
 <!doctype html>
 <!--[if lt IE 7 ]> <html class="no-js ie6" lang="{{ LANGUAGE_CODE }}" xmlns:fb="http://www.facebook.com/2008/fbml"> <![endif]-->
 <!--[if IE 7 ]>    <html class="no-js ie7" lang="{{ LANGUAGE_CODE }}" xmlns:fb="http://www.facebook.com/2008/fbml"> <![endif]-->
@@ -8,6 +5,11 @@
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html class="no-js" lang="{{ LANGUAGE_CODE }}" xmlns:fb="http://www.facebook.com/2008/fbml">
 <!--<![endif]-->
+
+{% load i18n %}
+{% load explore %}
+{% load url from future %}
+
 <head>
   <title>{% block title %}{% block pagetitle %}{% endblock %}Willkommen auf Per-4 - Piercing - Tattoo - Jewellery – Medical Equipment – Permanent Make Up - Online Shop{% endblock %}</title>
   <meta charset="utf-8">
@@ -15,7 +17,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description" content="{% block meta_description %}Per-4, Ihr Piercing - Tattoo - Jewellery – Medical Equipment – Permanent Make Up - Online Shop{% endblock %}"/>
-  <meta name="keywords"content= "{% block meta_keywords %}{% endblock %}Piercing,Tattoo,Grosshandel,Studiobedarf,Medical Equipment,Cutting,Branding,Scarification,Bodyart,Bodypiercing,Tatto,Piercingschmuck,Piercen,Titan,Titanium,Schmuck,Per-4,Bodypiercing,Zungenpiercing,Intimpiercing,Brustpiercing,Pflege,Piercingpflege,Nipplepiercing,Piercingshop,Brustwarzeberlin,Deutschland,Europa" />
+  <meta name="keywords" content="{% block meta_keywords %}{% endblock %}Piercing,Tattoo,Grosshandel,Studiobedarf,Medical Equipment,Cutting,Branding,Scarification,Bodyart,Bodypiercing,Tatto,Piercingschmuck,Piercen,Titan,Titanium,Schmuck,Per-4,Bodypiercing,Zungenpiercing,Intimpiercing,Brustpiercing,Pflege,Piercingpflege,Nipplepiercing,Piercingshop,Brustwarzeberlin,Deutschland,Europa" />
   <link rel="shortcut icon" href="{{ MEDIA_URL }}images/favicon.ico" type="image/x-icon"/>
   <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
   {% if debug %}
@@ -176,51 +178,23 @@
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script src="{{ MEDIA_URL}}scripts/libs/bootstrap.min.js"></script>
   <script type="text/javascript" src="{{ MEDIA_URL}}scripts/tools.js?{{ STATIC_TOKEN }}"></script>
+
+  {% if debug %}
+      <script src="{{ MEDIA_URL}}scripts/libs/bootstrap.min.js"></script>
+      <script src="{{ MEDIA_URL}}scripts/libs/JSON.js"></script>
+      <script src="{{ MEDIA_URL}}scripts/libs/underscore.js"></script>
+      <script src="{{ MEDIA_URL}}scripts/libs/Backbone.js"></script>
+      <script src="{{ MEDIA_URL}}scripts/site.js"></script>
+  {% else %}
+      <script src="{{ MEDIA_URL}}scripts/build/libs.js?${STATIC_TOKEN}"></script>
+  {% endif %}
+
+
+
   {% block jscriptlinks %}{% endblock %}
-  <script>
-    showLogin = function(evt){
-    {% if not request.user.is_authenticated %}
-        setLanguage(evt, '/user/login/');
-      {% else %}
-        setLanguage(evt, '/');
-      {% endif %}
-    }
-  
-   
-    $(function () {
-      $('#language_bar span[lang]').click(setLanguage);
-      {% if not request.user.is_authenticated %}
-        {% block onloadStudio %}{% endblock %}
-      {% endif %}
-    {% block onloadAll %}{% endblock %}
-      
-  });
   {% block jscripts %}{% endblock %}
-  </script>
 
   <div id="fb-root"></div>
-  <script>
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId={{ FB_APP_ID }}";
-      fjs.parentNode.insertBefore(js, fjs);
-    } (document, 'script', 'facebook-jssdk'));
-
-    $(function () {
-      var container = $('#fbLikeContainer');
-      $(window).bind("load resize", function () {
-        var container_width = container.width();
-        container.html('<div class="fb-like-box" ' +
-        'data-href="http://www.facebook.com/Per4Store"' +
-        ' data-width="' + container_width + '" data-height="730" data-show-faces="true" ' +
-        'data-stream="false" data-header="true"></div>');
-        FB.XFBML.parse(container[0]);
-      });
-    });
-  </script>
-
   {% track_pagehits %}
   {% block very_last_items %}{% endblock %}
 </body>

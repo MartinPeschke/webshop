@@ -1,123 +1,111 @@
 {% extends "user/profile/layout.html" %}
 {% load i18n %}
 {% load explore %}
+{% load url from future %}
 
 {% block center_block_header %}{% trans 'Mein Einkaufskorb'%}{% endblock %}
 
 {% block content %}
-<div class="center_box">
-<br/>
-<table width="98%" cellpadding="6px" cellspacing="0" id="tbArticles" style="clear:both; margin: 0 auto;">
-<tr>
-	<th width="46" class="top"></th>
-	<th width="41" class="top">{% trans 'Article' %}</th>
-	<th width="86" class="top">{% trans 'Reference' %}</th>
-	<th class="top">{% trans 'Size in MM' %}</th>
-	<th width="52" class="top">{% trans 'COLOR' %}</th>
-	<th width="66" class="top">{% trans 'Price P/P' %}</th>
-		{% if request.user|has_PricePrivilege %}
-			<th width="5%">{% trans 'DISCOUNT PRICE' %}</th>
-		{% endif %}
-	<th width="67" class="top">{% trans 'QUANTITY' %}</th>
-	<th width="53" class="top">{% trans 'Total' %}</th>
-</tr>
-<tbody>
-{% for option in cart.items %}
-	<tr id="{{ option.id }}">
-		<td><a href="javascript:confirmDelete('delete/{{ option.id }}/')"><img src="/media/images/trash.png"></a></td>
-		<td><input type="checkbox" checked="checked" style="display:none"><img alt="{{ option.article.article_family.ref }}"
-			src="{{ option.article.article_family|check_image_low:option.article.article_family.line.shop.ref }}"/>	</td>
-		<td><a href="/{{ option.article.article_family.line.shop.ref }}/{{ option.article.article_family.line.ref }}/{{ option.article.article_family.id }}/" >{{ option.article.ref }}</a></td>
-		<td>{{ option.article.compiledSize }}</td>
-		<td>{{ option|create_ao_imgtag:option.article.article_family.line.shop.ref }}</td>
-		<td class="pricing"><span>{{ option.price }}</span>&nbsp;&euro;</td>
-		{% if request.user|has_PricePrivilege %}
-			<td class="data discount">{{ option.discount|safe }}</td>
-		{% endif %}
-		<td><input type="text" id="quantityfield_{{ option.id }}" name="{{ option.id }}" class="ultramini" value="{{ option.quantity }}"
-			maxlength="4"/></td>
-		<td class="total"><span>{{ option.total }}</span>&nbsp;&euro;</td>
-	</tr>
-{% endfor %}
+<div class="center_box" id="shopping-cart-body" >
+    <table class="table table-striped table-condensed">
+        <thead>
+            <tr>
+                <th width="46" class="top"></th>
+                <th width="41" class="top">{% trans 'Article' %}</th>
+                <th width="86" class="top">{% trans 'Reference' %}</th>
+                <th class="top">{% trans 'Size in MM' %}</th>
+                <th width="52" class="top">{% trans 'COLOR' %}</th>
+                <th width="66" class="top">{% trans 'Price P/P' %}</th>
+                    {% if request.user|has_PricePrivilege %}
+                        <th width="5%">{% trans 'DISCOUNT PRICE' %}</th>
+                    {% endif %}
+                <th width="67" class="top">{% trans 'QUANTITY' %}</th>
+                <th width="53" class="top">{% trans 'Total' %}</th>
+            </tr>
+        <thead>
+        <tbody>
+            {% for option in cart.items %}
+                <tr class="cart-item-row" id="{{ option.id }}">
+                    <td><a class="link delete-link" href="{% url "delete-from-cart-route" option.id %}"><img src="/media/images/trash.png"></a></td>
+                    <td><img alt="{{ option.article.article_family.ref }}" src="{{ option.article.article_family|check_image_low:option.article.article_family.line.shop.ref }}"/>	</td>
+                    <td><a href="/{{ option.article.article_family.line.shop.ref }}/{{ option.article.article_family.line.ref }}/{{ option.article.article_family.id }}/" >{{ option.article.ref }}</a></td>
+                    <td>{{ option.article.compiledSize }}</td>
+                    <td>{{ option|create_ao_imgtag:option.article.article_family.line.shop.ref }}</td>
+                    <td class="pricing"><span>{{ option.price }}</span>&nbsp;&euro;</td>
+                    {% if request.user|has_PricePrivilege %}
+                        <td class="data discount">{{ option.discount|safe }}</td>
+                    {% endif %}
+                    <td><input type="text" id="quantityfield_{{ option.id }}" name="{{ option.id }}" class="span1 number cartQtyInput" value="{{ option.quantity }}"
+                        maxlength="4"/></td>
+                    <td class="total"><span class="articleoption_total">{{ option.total }}</span>&nbsp;&euro;</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="{{ colspan|add:"9" }}"><h3 class="centered">{% trans "Noch keine Artikel hinzugef&uuml;gt!" %}</h3></td>
+                </tr>
 
-{% with request.user|has_PricePrivilege as colspan %}
-<tbody class="subTotalBox">
-<tr>
-	<td colspan = "{{ colspan|add:"4" }}"></td>
-	<td align="right" class="top" colspan="2">{% trans "Subtotal" %}</td>
-	<td align="right" class="top" colspan="2"><span id="totalPrice">{{ cart.total }}</span>&euro;</td>
-</tr>
-<tr>
-	<td colspan = "{{ colspan|add:"4" }}"></td>
-	<td class="top" align="right" colspan="2">
-	{% ifequal simple_role 'E' %}
-		{% trans "Thereof VAT" %}
-	{% else %}
-		{% trans "VAT" %}
-	{% endifequal %}
-	<span id="taxRate">{{ cart.taxRate }}</span>%</td>
-	<td class="top" align="right" colspan="2"><span id="taxAmount">
-	{% ifequal simple_role 'E' %}
-		{{ cart.tax_E }}
-	{% else %}
-		{{ cart.tax }}
-	{% endifequal %}
+            {% endfor %}
+        </tbody>
+        {% with request.user|has_PricePrivilege as colspan %}
+            <tfoot class="subTotalBox">
+                <tr>
+                    <td class="noborder" colspan="{{ colspan|add:"5" }}"></td>
+                    <td colspan="2">{% trans "Subtotal" %}</td>
+                    <td><span id="totalPrice">{{ cart.total }}</span>&euro;</td>
+                </tr>
+                <tr>
+                    <td class="noborder" colspan="{{ colspan|add:"5" }}"></td>
+                    <td align="right" colspan="2">
+                    {% ifequal simple_role 'E' %}
+                        {% trans "Thereof VAT" %}
+                    {% else %}
+                        {% trans "VAT" %}
+                    {% endifequal %}
+                    <span id="taxRate">{{ cart.taxRate }}</span>%</td>
+                    <td><span id="taxAmount">
+                    {% ifequal simple_role 'E' %}
+                        {{ cart.tax_E }}
+                    {% else %}
+                        {{ cart.tax }}
+                    {% endifequal %}
+                    </span>&euro;</td>
+                </tr>
+                <tr>
+                    <td class="noborder" colspan="{{ colspan|add:"5" }}"></td>
+                    <td colspan="5"><u><a href="/shipping/">{% trans 'Shipping Costs Apply' %}</a></u></td>
+                </tr>
+                <tr>
+                    <td class="noborder" colspan="{{ colspan|add:"5" }}"></td>
+                    <td colspan="2">{% trans 'Total' %}:</td>
+                    <td colspan="2"><span id="allTotal">
+                    {% ifequal simple_role 'E' %}
+                        {{ cart.all_total_E }}
+                    {% else %}
+                        {{ cart.all_total }}
+                    {% endifequal %}
+                    </span>&euro;</td>
+                </tr>
+            </tfoot>
+        {% endwith %}
+    </table>
 
-	</span>&euro;</td>
-</tr>
-<tr>
-	<td colspan = "{{ colspan|add:"4" }}"></td>
-	<td class="top" align="right" colspan="4"><u><a href="/shipping/">{% trans 'Shipping Costs Apply' %}</a></u></td>
-</tr>
-<tr>
-	<td colspan = "{{ colspan|add:"4" }}"></td>
-	<td class="top" align="right" colspan="2">{% trans 'Total' %}:</td>
-	<td class="top" align="right" colspan="2"><span id="allTotal">
-	{% ifequal simple_role 'E' %}
-		{{ cart.all_total_E }}
-	{% else %}
-		{{ cart.all_total }}
-	{% endifequal %}
-	</span>&euro;</td>
-</tr>
-</tbody>
-</table>
-{% endwith %}
-
-	<div id="cart_loading">
-		<img src="/media/images/Throbber.gif"/>{% trans "Updating Shopping Cart, please wait..." %}
-	</div>
-
-
-   	<div class="button_parent" style="float:left; padding: 20px;">
-	    <div class="button active" onclick="saveChanges()"><a>{% trans "Save Cart" %}</a></div>
-    </div>
-	<div class="button_parent float" style="float:right; padding: 20px;">
-	    <div class="button {% if cart.items %}active" onclick="toCashier()"{% endif %}"><a>{% trans "Confirm Order" %}</a></div>
-    </div>
-
-	<div style="padding: 28px;text-align: center;">
-		<label for="id_use_ssl">{% trans 'Continue secure:' %}</label>
-		<input id="id_use_ssl" type="checkbox" name="use_ssl" />
-	</div>
-
+	<a class="btn {% if cart.items %}refresh-cart-btn{% else %}disabled{% endif %}">{% trans "Save Cart" %}</a>
+	<a
+        {% if cart.items %}href="{% url "checkout-route" %}"{% endif %}
+        class="pull-right btn btn-primary submit-cart-btn {% if not cart.items %}disabled{% endif %}">
+            {% trans "Confirm Order" %}</a>
 </div>
 
 {% endblock %}
 
-
-
-{% block onloadAll %}
-	$('#tbArticles input').keyup(calcCartPrice);
-	{% if use_ssl %}
-		$('#id_use_ssl').checked = true;
-	{% else %}
-		$('#id_use_ssl').checked = false;
-	{% endif %}
+{% block jscripts %}
+    <script>
+        window.__options__ = {updateCartUrl: "{% url "refresh-cart-route" %}"};
+    </script>
+    <script src="{{ MEDIA_URL}}scripts/libs/require.js" data-main="{{ MEDIA_URL}}scripts/pages/shopping_cart"></script>
 {% endblock %}
 
-
-{% block jscripts %}
+{% comment %}
 	calcCartPrice = function(){
 		calculateRow(0, this);
 		updateTotalCartPrice();
@@ -139,13 +127,6 @@
 		$('#allTotal').text( parseFloat(taxAmount + totalPrice).toFixed(2) );
 	}
 
-
-	function confirmDelete(url) {
-		if (confirm('{% trans 'Do you want to delete this item?' %}')) {
-			window.location.href += url;
-		}
-	}
-
 	function saveChanges() {
 		var items = $('#tbArticles input.ultramini[value!=0]').serialize();
 		$.ajax({
@@ -160,11 +141,4 @@
 				document.close();
 			}});
 		}
-
-	function toCashier() {
-		if($('#id_use_ssl').get(0).checked)
-			window.location.href = 'https://{{ request.META.HTTP_HOST }}/user/shopping_cart/cashier/';
-		else
-			window.location.href = '/user/shopping_cart/cashier/';
-	}
-{% endblock %}
+{% endcomment %}

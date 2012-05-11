@@ -157,7 +157,6 @@ class SignupWholesaleDetailsScreen(BaseAuthView):
             attr_name = field.attname
             if attr_name in cleaned_data:
                 setattr(profile, attr_name, cleaned_data[attr_name])
-        profile.weekdays = simplejson.dumps(cleaned_data['weekdays'])
         profile.save()
 
         # Send Mail

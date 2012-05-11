@@ -2,22 +2,28 @@
 {% load i18n %}
 {% load url from future %}
 
+<div id="shopping-cart-container">
     <h2 class="shopping_cart_title title">
       <a class="link" class="active" href="{% url 'cart-route' %}">{% trans "My Cart" %}</a>
     </h2>
-    <table border="0" cellpadding="0" cellspacing="0">
-    {% for aoExt in cart.items %}
+    <table class="table table-striped table-condensed shopping-cart-content">
+    {% for option in cart.items %}
       <tr>
-          <td style="text-align:right;"><a href="{% url 'cart-route' %}">{{ aoExt.quantity }}</a></td>
-          <td style="padding-left:4px; padding-right:4px;">x</td>
-          <td style="text-align:left;"><a href="{% url 'cart-route' %}">{{ aoExt.article.ref }} {{ aoExt.ref }}</a></td>
-          <td ><a href="{% url 'cart-route' %}" title="{{ aoExt.ref }}"><img alt="{{ aoExt.article.article_family.ref }}"
-              src="{{ aoExt.article.article_family|check_image_low:aoExt.article.article_family.line.shop.ref }}"/></a>
+          <td class="cart-item-cell" style="text-align:right;"><a href="{% url 'cart-route' %}">{{ option.quantity }}</a></td>
+          <td class="cart-item-cell" style="padding-left:4px; padding-right:4px;">x</td>
+          <td class="cart-item-cell" style="text-align:left;">
+                <a href="{% url 'cart-route' %}">{{ option.get_display_ref }}</a>
+          </td>
+          <td class="cart-item-cell">
+              <a href="{% url 'cart-route' %}" title="{{ option.ref }}"><img alt="{{ option.article.article_family.ref }}"
+              src="{{ option.article.article_family|check_image_low:option.article.article_family.line.shop.ref }}"/></a>
           </td>
         </tr>
     {% endfor %}
     </table>
-    <div class="cart_bottom">{% trans "SUBTOTAL" %}&nbsp;{% if cart %}{{ cart.total }}{% else %}0.00{% endif %}&nbsp;&euro;</div>
+    <div class="cart_bottom">
+        <b class="pull-right">{% if cart %}{{ cart.total }}{% else %}0.00{% endif %}&euro;</b>
+        {% trans "SUBTOTAL" %}
+        </div>
     <div align="right"><a class="link" href="{% url 'cart-route' %}">{% trans "Zum Bezahlen" %} >></a></div>
-
-{% include "explore/article_tip.html" %}
+</div>

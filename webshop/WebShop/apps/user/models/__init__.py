@@ -1,4 +1,5 @@
 from django.core.urlresolvers import reverse
+from WebShop.utils.jsonfield import JSONField
 
 __author__ = 'Martin'
 import simplejson
@@ -16,7 +17,7 @@ from .bank_account import BankAccount
 from .creditcard import CreditCard
 from .password_token import PasswordToken,RESETPASSWORDTOKEN, REGISTERNEWTOKEN, APPROVALWHOLESALETOKEN
 from .address import Address, Language, AddressType
-
+from .order import Order, OrderItem, OrderStatus
 
 class Profile(models.Model):
     create_time = models.DateTimeField(auto_now_add=True)
@@ -39,7 +40,7 @@ class Profile(models.Model):
 
     same_address = models.NullBooleanField(null=True)
     role = models.CharField(max_length=1, choices=USER_GROUPS)
-    weekdays = models.CharField(max_length=128, blank=True)
+    weekdays = JSONField(blank=True)
 
     user = models.ForeignKey(User)
 

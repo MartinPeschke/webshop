@@ -1,6 +1,6 @@
 from django.contrib import admin
 from WebShop.apps.explore.models import Shop, Line, ArticleType, ArticleFamily, Promotion, Article, \
-    ArticleOption, Pricing, LanguagePack, Order, OrderItem
+    ArticleOption, Pricing, LanguagePack
 
 class ShopAdmin(admin.ModelAdmin):
     list_display = ('ref', 'logopath')
@@ -52,11 +52,3 @@ class LanguagePackAdmin(admin.ModelAdmin):
     list_display = ('message_id', 'en', 'de', 'fr', 'it', 'es', 'pl')
     search_fields = ('en','message_id')
 admin.site.register(LanguagePack, LanguagePackAdmin)
-
-class OrderAdmin(admin.ModelAdmin):
-    list_display = ('id', 'user',)
-admin.site.register(Order, OrderAdmin)
-
-class OrderItemAdmin(admin.ModelAdmin):
-    pass
-admin.site.register(OrderItem, OrderItemAdmin)

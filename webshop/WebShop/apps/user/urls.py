@@ -1,4 +1,5 @@
 from django.conf.urls import *
+from WebShop.apps.user.views.order import CheckoutView
 
 from .views.auth import SignupScreen, SignupWholesaleDetailsScreen, SignupRetailDetailsScreen,\
     LoginZipcodeView, LoginView, RequestPasswordView, SetPasswordView, ActivateAccountView
@@ -38,7 +39,7 @@ urlpatterns = patterns('',
 
 
     # Shopping Cart
-    (r'cart/cashier/$', 'WebShop.apps.user.views.order.cashier'),
+    url(r'cart/checkout/$', CheckoutView.as_view(), name="checkout-route"),
     (r'cart/confirm/$', 'WebShop.apps.user.views.order.confirm_address'),
     # Order
     (r'order/submit/$', 'WebShop.apps.user.views.order.process_order')

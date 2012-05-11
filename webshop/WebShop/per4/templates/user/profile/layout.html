@@ -7,7 +7,7 @@
     {% block center_block_ignore_header %}
         {% spaceless %}
             <h2 class="title">{% block center_block_header %}{% endblock %}</h2><ul class="nav nav-tabs">
-                {% url 'shopping-cart-route' as cart_url %}
+                {% url 'cart-route' as cart_url %}
                 {% url 'orders-route' as orders_url %}
                 {% url 'profile-route' as profile_url %}
                 {% url 'addresses-route' as address_url %}

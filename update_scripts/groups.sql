@@ -52,3 +52,23 @@ alter table apps_address change language_code `language_id` varchar(2);
 
 
 update apps_profile set weekdays = REPLACE(weekdays, "'", '"');
+
+
+
+
+CREATE TABLE `apps_order_status` (
+  `id` integer NOT NULL,
+  `name` varchar(128) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+insert into apps_order_status values (-2, 'ERROR'), (-1, 'DELETED'), (0, 'CURRENT'), (1, 'ORDERED'), (2, 'SUBMITTED_TO_BACKEND');
+alter table apps_order change status `status_id` int not null;
+
+
+CREATE TABLE apps_payment_methods (
+  `id` integer NOT NULL,
+  `name` varchar(128) NOT NULL UNIQUE,
+  `least_role` char(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+insert into apps_payment_methods values (1, 'CASH', 'E'), (2, 'CASH_ON_DELIVERY', 'E'), (3, 'BANK_TRANSFER', 'E'), (4, 'CREDITCARD', 'E'), (5, 'DIRECT_DEBIT', 'K'), (6, 'PAYPAL', 'X');

@@ -84,10 +84,6 @@ class ProfileView(BaseLoggedInView, BaseFormView):
 
     def get_form_instance(self, request, *args, **kwargs):
         initial = request.user.get_profile().json_equivalent()
-        try:
-            initial['weekdays'] = simplejson.loads(initial['weekdays'])
-        except:
-            pass
         if is_studio_user(request.user):
             return AccountWholesaleDetailsForm(initial = initial)
         else:

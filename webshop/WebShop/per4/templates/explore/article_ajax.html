@@ -14,7 +14,7 @@
             {{ options|create_ao_images:shop_ref }}
         </div>
 
-    <button type="submit" class="pull-right btn btn-primary" onclick="addToCart()">{% trans "Add to Cart" %}</button>
+    <button type="submit" class="pull-right btn btn-primary addToCartBtn">{% trans "Add to Cart" %}</button>
 
     <table id="tbArticles" class="article-data-table table-bordered table-striped table-condensed" width="100%">
     <thead>
@@ -40,7 +40,7 @@
       {% with pricings|getelem:article.id|last as dp %}
         {% for ao in options|getelem:article.id %}
           {% with cart|get_cart_qty:ao.id as cart_qty %}
-          <tr class="{% if not forloop.first %}not{% endif %}first {% if cart_qty %}in_cart{% endif %}" article="{{ article.ref }}" id="{{ ao.id }}" optionRow="true">
+          <tr class="articleoption_row {% if not forloop.first %}not{% endif %}first {% if cart_qty %}in_cart{% endif %}" article="{{ article.ref }}" id="{{ ao.id }}" optionRow="true">
             <td class="available"  width="25px">
             {% if ao.available %}
               <img src="/media/images/btn_avail_green.png" alt="{% trans 'Available' %}"/>
@@ -61,29 +61,30 @@
 
             <td class="data pricing">
               {% if pricing %}
-                <span>{{ pricing.price|floatformat:"2" }}</span>&nbsp;&euro;
-                <span>{% if pricing.tax_included %}{% trans 'incl. VAT' %}{% else %}{% trans 'excl. VAT' %}{% endif %}</span>
+                <span class="base_price">{{ pricing.price|floatformat:"2" }}</span>&nbsp;&euro;
+                <div class="text-note">{% if pricing.tax_included %}{% trans 'incl. VAT' %}{% else %}{% trans 'excl. VAT' %}{% endif %}</div>
               {% endif %}
             </td>
 
               {% if has_discount_price %}
                   <td class="data discount">
                   {% ifnotequal pricing dp %}
-                      <div class="discount_box rounded_elems"><span>{{ dp.discountQty }}</span>+</div> <span>{{ dp.price|floatformat:"2" }}</span>&euro;
-                      <div>{% if pricing.tax_included %}{% trans 'incl. VAT' %}{% else %}{% trans 'excl. VAT' %}{% endif %}</div>
+                      <span class="label label-success">{%  trans "ab " %}<span class="discountQty">{{ dp.discountQty }}</span></span>
+                      <span class="discountPrice">{{ dp.price|floatformat:"2" }}</span>&euro;
+                      <div class="text-note">{% if pricing.tax_included %}{% trans 'incl. VAT' %}{% else %}{% trans 'excl. VAT' %}{% endif %}</div>
                   {% else %}
                       <div style="display:none;">from <span>0</span> only <span>0</span></div>
                   {% endifnotequal %}
                   </td>
               {% endif %}
 
-            <td class="data quantity">&nbsp;
+            <td class="data quantity">
               {% if pricing %}
-                <span class="{% if not cart_qty %}hidden{% endif %}">(<span class="cart_qty">{{ cart_qty }}</span>+)</span>
-                <input type="number" id="quantityfield_{{ ao.id }}" name="{{ ao.id }}" class="span1" value="" maxlength="4"/>
-            {% endif %}
+                <div class="cart-quantity-wrapper {% if not cart_qty %}hidden{% endif %}">(<span class="cart_qty">{{ cart_qty }}</span>+)</div>
+                <input type="number" id="quantityfield_{{ ao.id }}" name="{{ ao.id }}" class="span1 number cartQtyInput" value="" maxlength="4"/>
+              {% endif %}
             </td>
-            <td class="data total"><span>0</span>&nbsp;&euro;</td>
+            <td class="data total"><span class="articleoption_total">0</span>&nbsp;&euro;</td>
           </tr>
           {% endwith %}
         {% endfor %}
@@ -96,11 +97,6 @@
     </tr>
     </tbody>
     </table>
-    <button type="submit" class="pull-right btn btn-primary" onclick="addToCart()">{% trans "Add to Cart" %}</button>
+    <button type="submit" class="pull-right btn btn-primary addToCartBtn">{% trans "Add to Cart" %}</button>
     <div style="clear:both"></div>
-    <div id="cart_loading">
-      <img src="/media/images/Throbber.gif"/>
-      <span>{% trans "Sending/Loading Data, please wait..." %}</span>
-    </div>
-
 
