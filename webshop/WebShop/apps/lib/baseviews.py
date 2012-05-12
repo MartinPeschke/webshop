@@ -82,7 +82,7 @@ class BaseLoggedInView(BaseView):
         user = request.user
         if user.is_anonymous():
             messages.add_message(request, messages.ERROR, _('Anmeldung erforderlich!'))
-            return HttpResponseRedirect("{}".format(self.LOGIN_URL, request.)
+            return HttpResponseRedirect("{}?furl={}".format(self.LOGIN_URL, request.META.HTTP_REFERER))
         elif is_in_signup(user):
             messages.add_message(request, messages.ERROR, _('Bitte Registrierung beenden!'))
             return HttpResponseRedirect(self.get_user_signup_details_url(request))

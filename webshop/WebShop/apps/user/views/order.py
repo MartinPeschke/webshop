@@ -9,15 +9,16 @@ from django.http import HttpResponseRedirect, HttpResponseNotAllowed
 
 from django.conf  import settings
 from WebShop.apps.lib.baseviews import BaseFormView, BaseLoggedInView, HTTPRedirect
+from WebShop.apps.user.forms.order import PaymentMethodForm
 from WebShop.apps.user.models.creditcard import CreditCard
 from WebShop.apps.user.models.bank_account import BankAccount
-from WebShop.apps.user.forms import PaymentFormRetail, PaymentFormWholesale, CreditCardForm, BankAccountForm
+from WebShop.apps.user.forms import PaymentMethodForm, CreditCardForm, BankAccountForm
 from WebShop.apps.user.user_roles import HAS_RIGHTS
 from WebShop.apps.user.views import profile
 
 import WebShop.utils.mail as mail
 from WebShop.apps.contrib.cart import Cart
-from WebShop.apps.user.models import OrderItem, Order
+from WebShop.apps.user.models import OrderItem, Order, PaymentMethod
 from WebShop.apps.user.views.profile import _get_user_data
 
 
@@ -28,11 +29,32 @@ def _get_current_cid(request):
 		cid_candidate = cids[0].get('cid', '') or ''
 	return cid_candidate
 
-class CheckoutView(BaseLoggedInView):
+class CheckoutView(BaseLoggedInView, BaseFormView):
     template_name = 'user/order/payment.html'
+    form_cls = PaymentMethodForm
     def pre_validate(self, request, *args, **kwargs):
         if not request.session.get('cart',None):
             raise HTTPRedirect(self.LOGIN_URL)
+
+    def get_form_instance(self, request, *args, **kwargs):
+        role = request.user.get_profile().role
+        try:
+            form =  self.form_cls(role,
+                initial = {"payment_method": request.user.get_profile().preferred_payment_method}
+            )
+        except PaymentMethod.DoesNotExist:
+            form =  self.form_cls(role,
+                initial = {"payment_method": PaymentMethod.objects.filter(least_role__lt = role)[0]}
+            )
+        return form
+
+    def get(self, request, *args, **kwargs):
+        return {'form' : self.get_form_instance(request, *args, **kwargs),
+                'bankaccount_form': BankAccountForm(),
+                'creditcard_form': CreditCardForm()
+        }
+
+
 
 def checkout(request):
     errors = []

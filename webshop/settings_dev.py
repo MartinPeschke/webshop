@@ -40,20 +40,6 @@ TITLE_CHOICES = (
     ('MS', _('MS.')),
 )
 
-PAYMENT_METHODS = (
-    ('CASH', mark_safe(_('Cash in our Office'))),
-    ('COD', mark_safe(_('C.O.D (+10 EUR, except Germany)'))),    
-    ('Transfer', mark_safe(_('Bank Transfer in advance (2% discount)'))),
-    ('Credit', mark_safe(_('Credit Card'))),
-    ('Direct', mark_safe(_('Direct debit (only for Germany and Spain)'))),
-    ('Paypal', mark_safe(_('per Paypal'))),
-)
-
-CARD_ROLES = (
-    ('V', 'Visa'),
-    ('M', 'Mastercard'),
-)
-
 GOOGLE_TRACKING = '''<script type="text/javascript">
                 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
                 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

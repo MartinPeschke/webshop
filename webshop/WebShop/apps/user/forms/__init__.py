@@ -5,4 +5,4 @@ from .auth import  LoginEmailForm, LoginZipCodeForm, \
     RetailAccountForm, WholesaleAccountForm
 from .profile import AddressesForm
 
-from .order import PaymentFormRetail, PaymentFormWholesale, CreditCardForm, BankAccountForm
+from .order import PaymentMethodForm, CreditCardForm, BankAccountForm

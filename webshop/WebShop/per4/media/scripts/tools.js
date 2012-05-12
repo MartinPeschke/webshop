@@ -25,8 +25,8 @@ function login() {
 		success : 
 			function(data, textStatus) {
 				if(data['result']){
-					if($('#forwardURL'))
-						window.location.href=$('#forwardURL').val();
+					if($('#furl'))
+						window.location.href=$('#furl').val();
 				} else {
 					$('#login_error').html(data['error']).show();
 				}

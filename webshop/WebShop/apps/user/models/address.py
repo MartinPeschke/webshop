@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 
 from WebShop.apps.contrib.countries.models import Country
 
@@ -12,6 +12,7 @@ class Language(models.Model):
     code = models.CharField(max_length=2, primary_key = True)
     name = models.CharField(max_length=256)
     enabled = models.BooleanField(default = True)
+    is_default = models.BooleanField(default = False)
     def __unicode__(self):
         return self.name
 

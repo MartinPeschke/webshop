@@ -41,13 +41,21 @@ class AccountAddressView(BaseLoggedInView, BaseFormView):
         if len(addresses):
             for address_map in addresses:
                 t = AddressType.objects.get(pk = address_map.pop('type_id')).name
-                address_map['language'] = Language.objects.get(pk=address_map.pop('language_id')).code
-                address_map['country'] = Country.objects.get(pk=address_map.pop('country_id')).iso
+                try:
+                    address_map['language'] = Language.objects.get(pk=address_map.pop('language_id')).code
+                except Language.DoesNotExist:
+                    address_map['language'] = Language.objects.get(is_default = True).code
+                try:
+                    address_map['country'] = Country.objects.get(pk=address_map.pop('country_id')).iso
+                except Country.DoesNotExist:
+                    address_map['country'] = Country.objects.get(is_default = True).iso
                 params.update({"{}_{}".format(t, k):v for k,v in address_map.items()})
         else:
             params = {}
-            params['billing_language'] = params['shipping_language']= 'de'
-            params['billing_country'] = params['shipping_country'] = 'DE'
+            params['billing_language'] = params['shipping_language'] \
+                = Language.objects.get(is_default = True).code
+            params['billing_country'] = params['shipping_country'] \
+                = Country.objects.get(is_default = True).iso
         return self.form_cls(initial = params)
 
     def on_success(self, request, cleaned_data):
