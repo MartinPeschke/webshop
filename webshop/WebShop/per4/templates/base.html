@@ -99,7 +99,7 @@
               <span class="flag" lang="it"><img src="{{ MEDIA_URL }}images/flag_it.png" /></span>
         </div>
         <div class="headerannounce">
-            <h2>Order Online 24 hours a day, 7 days a week</h2>
+            <h2>{% trans "Order Online 24 hours a day, 7 days a week" %}</h2>
         </div>
       </div>
       <div class="span2">
@@ -117,9 +117,9 @@
               <div><a href="{% url 'logout-route' %}">{% trans "Logout" %}</a></div>
           {% else %}
               <div class="loginlink">
-                <a class="link" href="{% url 'login-route' %}?forward_URL={{ request.path }}">{% trans "Login" %}</a></div>
+                <a class="link" href="{% url 'login-route' %}?furl={{ request.path }}">{% trans "Login" %}</a></div>
               <div class="loginlink">
-                <a class="link" href="{% url 'signup-route' %}?forward_URL={{ request.path }}">{% trans "Signup" %}</a></div>
+                <a class="link" href="{% url 'signup-route' %}?furl={{ request.path }}">{% trans "Signup" %}</a></div>
           {% endif %}
           </div>
       </div>
@@ -142,7 +142,7 @@
         <div class="span4">
             <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css"/>
             <style type="text/css">
-                #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+                #mc_embed_signup {background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
                 #mc_embed_signup form {padding: 0}
                 #mc_embed_signup label {font-family:sans-serif;font-size:13px;font-weight:bold;padding:0 0 1em 0}
                 #mc_embed_signup input.email {width: 95%}

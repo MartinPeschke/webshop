@@ -4,16 +4,16 @@
 {% block center_block_header %}{% trans 'Establish Payment Method' %} {% trans request.user.get_profile.roleName.upper %}{% endblock %}
 
 {% block content %}
-<div class="center_box">
+<div class="center_box" id="payment-page">
     <form method="post" class="form-horizontal form-validated">
         <div class="reg_notice"><p>
             {% trans "You will only need to fill in your payment method for your first purchase or when you wish to change it." %}</p></div>
 
         {{ form  }}
-        <div id="DirectForm" class="paymentforms hidden">
+        <div id="DirectForm" class="paymentforms hidden for-DIRECT_DEBIT">
             {{ bankaccount_form  }}
         </div>
-        <div id="CreditForm" class="paymentforms hidden">
+        <div id="CreditForm" class="paymentforms hidden for-CREDITCARD">
             {{ creditcard_form  }}
         </div>
         <div class="form-actions">
@@ -23,14 +23,13 @@
 </div>
 {% endblock %}
 
-{% block jscripts %}
-$(function(){
-    $('#methodfields input[type="radio"]').click(
-                function()
-                {
-                    $('#myForm div.paymentforms').hide();
-                    $('#' + this.value + 'Form').show();
-                }
-    );
-});
+{% block jscriptlinks %}
+    {% include 'snippets/validation_scripts.html' %}
 {% endblock %}
+{% block jscripts %}
+    <script>
+        window.__options__ = {methodTranslation: {{ available_methods }}};
+    </script>
+    <script src="{{ MEDIA_URL}}scripts/libs/require.js" data-main="{{ MEDIA_URL}}scripts/pages/payment"></script>
+{% endblock %}
+

@@ -1,15 +1,10 @@
-from django.conf import settings
-from WebShop.apps.contrib.decorator import json
+from WebShop.apps.user.models import APPROVALWHOLESALETOKEN
 
-from WebShop.apps.user.models import Profile, Address, APPROVALWHOLESALETOKEN, REGISTERNEWTOKEN
-
-from django.contrib.auth.models import User
 from WebShop.apps.user.user_roles import    NORM_ROLE
-from WebShop.utils import mail
 
 from django.contrib import auth
 from django.shortcuts import render_to_response
-from django.template import RequestContext, Context
+from django.template import RequestContext
 from django.utils.translation import gettext_lazy as _
 
 

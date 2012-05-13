@@ -72,6 +72,8 @@ urlpatterns = patterns('',
 
     # User
     (r'^user/', include('WebShop.apps.user.urls')),
+    # Order
+    (r'^order/', include('WebShop.apps.order.urls')),
 
     # Web Service
     (r'^services/', include('WebShop.apps.service.urls')),

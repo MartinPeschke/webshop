@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% load url from future %}
+{% load i18n %}
+
+{% block center_block_header %}{% trans "Bestellung erfolgreich" %}{% endblock %}
+
+
+{% block content %}
+    <div class="center_box">
+        <p>{% trans "Bestellung wurde erfolgreich verschickt. Sie erhalten in K&uuml;rze eine Best&auml;tigungsemail" %} </p>
+        <a href="{% url 'home-route' %}" class="btn btn-primary">{%  trans "Home" %}</a>
+    </div>
+{% endblock %}

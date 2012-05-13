@@ -1,5 +1,4 @@
 from django.conf.urls import *
-from WebShop.apps.user.views.order import CheckoutView
 
 from .views.auth import SignupScreen, SignupWholesaleDetailsScreen, SignupRetailDetailsScreen,\
     LoginZipcodeView, LoginView, RequestPasswordView, SetPasswordView, ActivateAccountView
@@ -35,13 +34,6 @@ urlpatterns = patterns('',
     url(r'cart/refresh/$', 'WebShop.apps.user.views.cart.update_cart', name="refresh-cart-route"),
     url(r'cart/history/$', OrderHistoryView.as_view(), name="orders-route"),
     url(r'cart/add/$', 'WebShop.apps.user.views.cart.add_to_cart', name="add-to-cart-route"),
-    url(r'cart/delete/(?P<id>\d+)/$', 'WebShop.apps.user.views.cart.delete_item', name="delete-from-cart-route"),
-
-
-    # Shopping Cart
-    url(r'cart/checkout/$', CheckoutView.as_view(), name="checkout-route"),
-    (r'cart/confirm/$', 'WebShop.apps.user.views.order.confirm_address'),
-    # Order
-    (r'order/submit/$', 'WebShop.apps.user.views.order.process_order')
+    url(r'cart/delete/(?P<id>\d+)/$', 'WebShop.apps.user.views.cart.delete_item', name="delete-from-cart-route")
 )
  

@@ -1,7 +1,6 @@
 # Django settings for WebShop project.
 import os
-from django.utils.translation import ugettext as _, ugettext_lazy
-from django.utils.safestring import mark_safe
+from django.utils.translation import ugettext as _
 
 DEBUG = True
 TEMPLATE_DEBUG = True
@@ -161,15 +160,15 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    'WebShop.apps.contrib.countries',
+    'WebShop.apps.order',
     'WebShop.apps.explore',
     'WebShop.apps.user',
     'WebShop.apps.search',
     'WebShop.apps.service',
     'bootstrap',
-    'WebShop.apps.contrib.countries'
 )
-CRISPY_TEMPLATE_PACK = 'bootstrap'
-# CRISPY_FAIL_SILENTLY = not DEBUG
+
 
 AUTHENTICATION_BACKENDS = (
     'WebShop.apps.user.backends.ModelBackend',
@@ -178,21 +177,3 @@ AUTHENTICATION_BACKENDS = (
 AUTH_PROFILE_MODULE = 'user.Profile'
 ACTIVATE_ROOT = '/user/activate/'
 
-
-
-
-
-#------------------------ CMS ------------------------------------
-TINYMCE_JS_URL = MEDIA_URL + 'javascript/tinymce/tiny_mce.js'
-TINYMCE_JS_ROOT = os.path.normpath(os.path.join(MEDIA_ROOT, 'javascript/tinymce'))
-TINYMCE_DEFAULT_CONFIG = {'theme': "simple", 'relative_urls': False}
-TINYMCE_FILEBROWSER = True
-
-SITE_TITLE = 'Per-4 | Piercing & Tattoo Grosshandel'
-SITE_NAME = 'Per-4'
-CMS_USE_TINYMCE = True
-CMS_DEFAULT_TEMPLATE = 'cms/layout.html'
-
-CMS_TEMPLATES =(
-    ('cms/free_layout.html', 'LayoutFreeCenter')
- )

@@ -1,21 +1,14 @@
 from django.db import models, connection
-
 from django.core.cache import cache
 from django.utils.safestring import mark_safe
-
-from django.contrib.auth.models import User
-from WebShop.apps.user.user_roles import USER_GROUPS, HAS_RIGHTS, NO_RIGHTS
-from WebShop.utils.jsonfield import JSONField
+from django.utils.translation import ugettext as _
 from django.conf import settings
 
-from django.utils.translation import ugettext as _
-
+from WebShop.apps.user.user_roles import USER_GROUPS, HAS_RIGHTS, NO_RIGHTS
 import  random
 
 import logging
 log = logging.getLogger(__name__)
-
-
 
 def has_privilege(self, role):
     return self.viewableByRole <= role

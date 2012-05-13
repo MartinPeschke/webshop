@@ -1,10 +1,8 @@
 ﻿from django.http import HttpResponseRedirect
 from django.contrib import auth, messages
-from django.forms.util import ErrorList
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.utils.translation import ugettext as _, ugettext_lazy
-from django.core.urlresolvers import reverse
 
 import datetime
 
@@ -68,8 +66,8 @@ class LoginView(BaseAuthView):
         if is_in_signup(user):
             messages.add_message(request, messages.ERROR, _('Bitte Registrierung beenden!'))
             raise HTTPRedirect(self.SIGNUP_URL)
-        forward_URL = request.REQUEST.get('forward_URL', self.HOME_URL)
-        raise HTTPRedirect(forward_URL)
+        furl = request.REQUEST.get('forward_URL', self.HOME_URL)
+        raise HTTPRedirect(furl)
 
 class LoginZipcodeView(LoginView):
     form_cls = LoginZipCodeForm

@@ -23,12 +23,12 @@ class AddressType(models.Model):
 
     def __unicode__(self):
         if self.name =='billing':
-            return _('Rechnungsadresse')
+            return unicode(_('Rechnungsadresse'))
         elif self.name =='shipping':
-            return _('Lieferadresse')
+            return unicode(_('Lieferadresse'))
 
 class Address(models.Model):
-    type = language = models.ForeignKey(AddressType)
+    type = models.ForeignKey(AddressType)
 
     street = models.CharField(max_length=255)
     city = models.CharField(max_length=64)

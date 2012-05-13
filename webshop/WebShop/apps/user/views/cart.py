@@ -5,8 +5,8 @@ from django.template.loader import render_to_string
 
 from WebShop.apps.contrib.cart import Cart
 from WebShop.apps.contrib.decorator import json
-from WebShop.apps.user.models import Order
 from WebShop.apps.lib.baseviews import BaseLoggedInView
+from WebShop.apps.order.models import Order
 
 __author__ = 'Martin'
 

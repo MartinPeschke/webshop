@@ -1,7 +1,6 @@
 from django.core.urlresolvers import reverse
 import simplejson
 from WebShop.apps.contrib.countries.models import Country
-from WebShop.apps.user.forms.auth import WholesaleAccountForm, RetailAccountForm
 from WebShop.apps.user.forms.profile import AccountRetailDetailsForm, AccountWholesaleDetailsForm
 from WebShop.apps.user.lib import is_studio_user
 
@@ -13,13 +12,13 @@ from WebShop.apps.lib.baseviews import  BaseLoggedInView, BaseFormView, HTTPRedi
 def _get_user_data(user):
     profile = user.get_profile()
     try:
-        billing = Address.objects.get(user=user, type='billing')
+        billing = Address.objects.get(user=user, type__name='billing')
     except Address.DoesNotExist:
         billing = Address(user=user, type='billing')
         billing.save()
 
     try:
-        shipping = Address.objects.get(user=user, type='shipping')
+        shipping = Address.objects.get(user=user, type__name='shipping')
     except Address.DoesNotExist:
         params = billing.__dict__
         params.pop('_user_cache', None)
