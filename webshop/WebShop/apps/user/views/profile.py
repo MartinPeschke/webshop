@@ -14,18 +14,11 @@ def _get_user_data(user):
     try:
         billing = Address.objects.get(user=user, type__name='billing')
     except Address.DoesNotExist:
-        billing = Address(user=user, type='billing')
-        billing.save()
-
+        billing = None
     try:
         shipping = Address.objects.get(user=user, type__name='shipping')
     except Address.DoesNotExist:
-        params = billing.__dict__
-        params.pop('_user_cache', None)
-        params.pop('type', None)
-        params.pop('_state', None)
-        shipping = Address(type='shipping', **params)
-        shipping.save()
+        shipping = None
     return user, profile, billing, shipping
 
 
@@ -35,7 +28,7 @@ class AccountAddressView(BaseLoggedInView, BaseFormView):
     form_cls = AddressesForm
 
     def get_form_instance(self, request, *args, **kwargs):
-        params = {}
+        params = {'same_address':request.user.get_profile().same_address}
         addresses = Address.objects.filter(user=request.user).values()
         if len(addresses):
             for address_map in addresses:
@@ -59,25 +52,32 @@ class AccountAddressView(BaseLoggedInView, BaseFormView):
 
     def on_success(self, request, cleaned_data):
         params = {}
+
+        profile = request.user.get_profile()
+        profile.same_address = cleaned_data['same_address']
+        profile.save()
+
         for k, value in cleaned_data.items():
             type, field = k.split("_", 1)
             address_field = params.setdefault(type, {})
             address_field[field] = value
 
-        for t, fields in params.items():
-            try:
-                type = AddressType.objects.get(name = t)
-                address = Address.objects.get(user=request.user, type = type)
-            except Address.DoesNotExist:
-                address = Address(user=request.user, type = type)
 
-            for field, value in fields.items():
-                if field=='language':
-                    value = Language.objects.get(pk=value)
-                elif field=='country':
-                    value = Country.objects.get(pk=value)
-                setattr(address, field, value)
-            address.save()
+        for t, fields in params.items():
+            if t in ['shipping', 'billing']:
+                try:
+                    type = AddressType.objects.get(name = t)
+                    address = Address.objects.get(user=request.user, type = type)
+                except Address.DoesNotExist:
+                    address = Address(user=request.user, type = type)
+
+                for field, value in fields.items():
+                    if field=='language':
+                        value = Language.objects.get(pk=value)
+                    elif field=='country':
+                        value = Country.objects.get(pk=value)
+                    setattr(address, field, value)
+                address.save()
         raise HTTPRedirect(request.get_full_path())
 
 

@@ -47,7 +47,10 @@ def is_in_signup(user):
     except Profile.DoesNotExist:
         profile = Profile(user = user, role=LEAST_ROLE)
         profile.save()
-    return profile.company_name is None or len(profile.company_name) == 0
+    if profile.role == 'E':
+        return profile.first_name is None or profile.last_name is None
+    else:
+        return profile.company_name is None or len(profile.company_name) == 0
 
 def is_studio_user(user):
     if user.is_anonymous():

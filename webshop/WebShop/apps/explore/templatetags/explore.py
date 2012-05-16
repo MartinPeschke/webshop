@@ -93,9 +93,7 @@ def from_price(af, role):
                                                                          {'price':getattr(af, 'price%s'%role), 'has_more':getattr(af, 'has_more_%s'%simple_role[role])})\
                                                                          or FROM_PRICE_HTML_A
 
-@register.filter
-def getRoleName(role):
-    return userRoles.get(role,'')
+
 
 @register.simple_tag
 def track_pagehits():

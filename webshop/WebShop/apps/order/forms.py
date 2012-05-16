@@ -1,3 +1,5 @@
+from WebShop.apps.lib.validators import ValidateDigits, CreditCardExpiryField, CreditCardNumberField
+
 __author__ = 'Martin'
 from bootstrap.forms import Fieldset
 from django.forms.widgets import RadioSelect, Textarea, TextInput
@@ -5,7 +7,6 @@ from django.utils.translation import ugettext as _, ugettext_lazy
 from WebShop.apps.lib.baseviews import BaseForm
 from WebShop.apps.order.models import PaymentMethod, CreditCardType, BankAccount, CreditCard
 
-__author__ = 'Martin'
 from django import forms
 from django.conf import settings
 
@@ -20,7 +21,7 @@ class PaymentMethodForm(BaseForm):
             ),
             )
     payment_method = forms.ModelChoiceField(queryset=PaymentMethod.objects.all()
-        , widget = RadioSelect
+        , widget = RadioSelect(attrs={"class":"paymentmethod"})
         , required=True
         , empty_label=None
         , label = ugettext_lazy("Zahlart")
@@ -34,7 +35,7 @@ class PaymentMethodForm(BaseForm):
         self.fields['payment_method'].queryset =\
         PaymentMethod.objects.filter_by_role(role)
 
-class CreditCardForm(BaseForm):
+class CreditCardForm(BaseForm, ):
     class Meta:
         layout = (
             Fieldset(
@@ -47,10 +48,10 @@ class CreditCardForm(BaseForm):
             ),
             )
     owner = forms.CharField(label=ugettext_lazy("Karteninhaber*"), widget = TextInput(attrs={"class":"required"}))
-    ccNumber = forms.CharField(label=ugettext_lazy("Kartennummer*"), widget = TextInput(attrs={"class":"required"}))
+    ccNumber = forms.CharField(label=ugettext_lazy("Kartennummer*"), widget = TextInput(attrs={"class":"required"}), min_length=15, max_length=16)
     cctype = forms.ModelChoiceField(queryset=CreditCardType.objects.all(), label=ugettext_lazy("Typ"), empty_label=None)
-    valid_until = forms.CharField(label=ugettext_lazy("G&uuml;ltig bis*"), widget = TextInput(attrs={"class":"required"}))
-    security_number = forms.CharField(label=ugettext_lazy("Sicherheitscode*"), widget = TextInput(attrs={"class":"required"}))
+    valid_until = CreditCardExpiryField(label=ugettext_lazy("G&uuml;ltig bis*"), widget = TextInput(attrs={"class":"required"}), help_text=ugettext_lazy("Beispiel: 10/2015"))
+    security_number = forms.CharField(label=ugettext_lazy("Sicherheitscode*"), widget = TextInput(attrs={"class":"required"}), max_length=3)
     def __init__(self, user = None, *args, **kwargs):
         if user is not None:
             try:
@@ -64,10 +65,12 @@ class CreditCardForm(BaseForm):
         super(CreditCardForm, self).__init__(*args, **kwargs)
 
     def save(self, user):
-        card, created = CreditCard.objects.get_or_create(user=user)
+        card, created = CreditCard.objects.get_or_create(user=user, cctype = self.cleaned_data['cctype'])
         for k,v in self.cleaned_data.items():
             setattr(card, k,v)
         card.save()
+
+
 
 class BankAccountForm(BaseForm):
     class Meta:

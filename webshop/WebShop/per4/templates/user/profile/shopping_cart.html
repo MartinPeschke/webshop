@@ -91,7 +91,7 @@
 
 	<a class="btn {% if cart.items %}refresh-cart-btn{% else %}disabled{% endif %}">{% trans "Save Cart" %}</a>
 	<a
-        {% if cart.items %}href="{% url "checkout-route" %}"{% endif %}
+        {% if cart.items %}href="{% url "confirm-address-route" %}"{% endif %}
         class="pull-right btn btn-primary submit-cart-btn {% if not cart.items %}disabled{% endif %}">
             {% trans "Confirm Order" %}</a>
 </div>
@@ -104,41 +104,3 @@
     </script>
     <script src="{{ MEDIA_URL}}scripts/libs/require.js" data-main="{{ MEDIA_URL}}scripts/pages/shopping_cart"></script>
 {% endblock %}
-
-{% comment %}
-	calcCartPrice = function(){
-		calculateRow(0, this);
-		updateTotalCartPrice();
-	}
-
-	var INTEGER_WARNING = '{% trans 'Please input an integer!' %}';
-
-	function updateTotalCartPrice() {
-		lastCol = $('#tbArticles').children('tbody').children('tr').children('td.total').children('span');
-		var totalPrice = 0.00;
-		for (var i = 0, j = lastCol.length; i < j; i++) {
-			totalPrice += parseFloat(lastCol[i].innerHTML);
-		}
-
-		var totalPrice = (totalPrice * 100)/100;
-		$('#totalPrice').text(parseFloat(totalPrice).toFixed(2));
-		var taxAmount = parseFloat($('#taxRate').text())/100 * totalPrice;
-		$('#taxAmount').text(taxAmount.toFixed(2));
-		$('#allTotal').text( parseFloat(taxAmount + totalPrice).toFixed(2) );
-	}
-
-	function saveChanges() {
-		var items = $('#tbArticles input.ultramini[value!=0]').serialize();
-		$.ajax({
-			data : items,
-			url: '/user/update_cart/',
-			type: 'POST',
-			success : function(data, textStatus) {
-				window.location.reload();
-			},
-			error : function(data, textStatus) {
-				document.write(data.responseText);
-				document.close();
-			}});
-		}
-{% endcomment %}

@@ -5,7 +5,7 @@
 
 {% block content %}
     <div class="center_box">
-        <form method="post" class="form-horizontal form-validated">
+        <form method="post" id="address-form"  class="form-horizontal form-validated">
             {{ form }}
             <div class="form-actions">
                 <button type="submit" class="btn btn-primary">{% trans 'Speichern' %}</button>
@@ -16,4 +16,8 @@
 
 {% block jscriptlinks %}
 {% include 'snippets/validation_scripts.html' %}
+    <script>
+        window.__options__ = {};
+    </script>
+    <script src="{{ MEDIA_URL}}scripts/libs/require.js" data-main="{{ MEDIA_URL}}scripts/pages/addresses"></script>
 {% endblock %}

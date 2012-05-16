@@ -3,10 +3,9 @@ from operator import itemgetter, attrgetter
 from django import forms
 from django.conf import settings
 from django.forms.widgets import Select
-from django.utils.translation import ugettext, ugettext_lazy
 from django.utils.translation import ugettext as _, ugettext_lazy
 from WebShop.apps.lib.baseviews import BaseForm, Fieldset
-
+from django.forms import widgets
 
 from .auth import WEEKDAYS, COUNTRIES, LANGUAGES
 
@@ -14,7 +13,7 @@ class AddressesForm(BaseForm):
     class Meta:
         layout = (
             Fieldset(
-                ugettext("Rechnungsadresse"),
+                _("Rechnungsadresse"),
                 'billing_street',
                 'billing_city',
                 'billing_zip',
@@ -22,9 +21,10 @@ class AddressesForm(BaseForm):
                 'billing_language',
                 'billing_tel',
                 'billing_mobile',
-                'billing_fax'
-            ), Fieldset(
-                ugettext("Lieferadresse"),
+                'billing_fax',
+                'same_address'
+            ), Fieldset (
+                _("Lieferadresse"),
                 'shipping_street',
                 'shipping_city',
                 'shipping_zip',
@@ -36,24 +36,26 @@ class AddressesForm(BaseForm):
             )
         )
 
-    billing_street = forms.CharField(label = ugettext_lazy('Strasse*'), required=True)
-    billing_city = forms.CharField(label = ugettext_lazy('Stadt*'), required=True)
-    billing_zip = forms.CharField(label = ugettext_lazy('PLZ*'), required=True)
-    billing_country = forms.ChoiceField(choices=COUNTRIES, widget=Select, label = ugettext_lazy('Land'), required=True)
-    billing_language = forms.ChoiceField(choices=LANGUAGES, widget=Select, label = ugettext_lazy('Bevorzugte Sprache'), required=True)
-    billing_tel = forms.CharField(label = ugettext_lazy('Telefon*'), required=True)
-    billing_mobile = forms.CharField(label = ugettext_lazy('Mobil'), required=False)
-    billing_fax = forms.CharField(label = ugettext_lazy('Fax'), required=False)
+    billing_street = forms.CharField(label = ugettext_lazy('Strasse*'), required=True, widget = widgets.TextInput(attrs={"class":"billing-detail", "_form_key":"street"}))
+    billing_city = forms.CharField(label = ugettext_lazy('Stadt*'), required=True, widget = widgets.TextInput(attrs={"class":"billing-detail", "_form_key":"city"}))
+    billing_zip = forms.CharField(label = ugettext_lazy('PLZ*'), required=True, widget = widgets.TextInput(attrs={"class":"billing-detail", "_form_key":"zip"}))
+    billing_country = forms.ChoiceField(choices=COUNTRIES, widget=Select(attrs={"class":"billing-detail", "_form_key":"country"}), label = ugettext_lazy('Land'), required=True)
+    billing_language = forms.ChoiceField(choices=LANGUAGES, widget=Select(attrs={"class":"billing-detail", "_form_key":"language"}), label = ugettext_lazy('Bevorzugte Sprache'), required=True)
+    billing_tel = forms.CharField(label = ugettext_lazy('Telefon*'), required=True, widget = widgets.TextInput(attrs={"class":"billing-detail", "_form_key":"phone"}))
+    billing_mobile = forms.CharField(label = ugettext_lazy('Mobil'), required=False, widget = widgets.TextInput(attrs={"class":"billing-detail", "_form_key":"mobile"}))
+    billing_fax = forms.CharField(label = ugettext_lazy('Fax'), required=False, widget = widgets.TextInput(attrs={"class":"billing-detail", "_form_key":"fax"}))
 
-    shipping_street = forms.CharField(label = ugettext_lazy('Strasse*'), required=True)
-    shipping_city = forms.CharField(label = ugettext_lazy('Stadt*'), required=True)
-    shipping_zip = forms.CharField(label = ugettext_lazy('PLZ*'), required=True)
-    shipping_country = forms.ChoiceField(choices=COUNTRIES, widget=Select, label = ugettext_lazy('Land'), required=True)
-    shipping_language = forms.ChoiceField(choices=LANGUAGES, widget=Select, label = ugettext_lazy('Bevorzugte Sprache'), required=True)
-    shipping_tel = forms.CharField(label = ugettext_lazy('Telefon'), required=False)
-    shipping_mobile = forms.CharField(label = ugettext_lazy('Mobil'), required=False)
-    shipping_fax = forms.CharField(label = ugettext_lazy('Fax'), required=False)
+    same_address = forms.BooleanField(label = ugettext_lazy('Lieferadresse weicht ab'), required=False, initial=True
+                    , widget=widgets.CheckboxInput)
 
+    shipping_street = forms.CharField(label = ugettext_lazy('Strasse*'), required=True, widget = widgets.TextInput(attrs={"class":"shipping-detail", "_form_key":"street"}))
+    shipping_city = forms.CharField(label = ugettext_lazy('Stadt*'), required=True, widget = widgets.TextInput(attrs={"class":"shipping-detail", "_form_key":"city"}))
+    shipping_zip = forms.CharField(label = ugettext_lazy('PLZ*'), required=True, widget = widgets.TextInput(attrs={"class":"shipping-detail", "_form_key":"zip"}))
+    shipping_country = forms.ChoiceField(choices=COUNTRIES, widget=Select(attrs={"class":"shipping-detail", "_form_key":"country"}), label = ugettext_lazy('Land'), required=True)
+    shipping_language = forms.ChoiceField(choices=LANGUAGES, widget=Select(attrs={"class":"shipping-detail", "_form_key":"language"}), label = ugettext_lazy('Bevorzugte Sprache'), required=True)
+    shipping_tel = forms.CharField(label = ugettext_lazy('Telefon'), required=False, widget = widgets.TextInput(attrs={"class":"shipping-detail", "_form_key":"phone"}))
+    shipping_mobile = forms.CharField(label = ugettext_lazy('Mobil'), required=False, widget = widgets.TextInput(attrs={"class":"shipping-detail", "_form_key":"mobile"}))
+    shipping_fax = forms.CharField(label = ugettext_lazy('Fax'), required=False, widget = widgets.TextInput(attrs={"class":"shipping-detail", "_form_key":"fax"}))
 
 
 class AccountRetailDetailsForm(BaseForm):

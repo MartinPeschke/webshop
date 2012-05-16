@@ -10,11 +10,10 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
 from WebShop.apps.lib.baseviews import BaseForm, Fieldset
 from WebShop.apps.contrib.countries.models import Country
+from WebShop.apps.user.models.address import Language
 
 COUNTRIES = map(attrgetter('iso', 'printable_name'), Country.objects.all())
-LANGUAGES = []
-for key, value in settings.LANGUAGES:
-    LANGUAGES.append((key, mark_safe(_(value))))
+LANGUAGES = map(attrgetter('code', 'name'), Language.objects.all())
 
 WEEKDAYS = (
     (u'Mon', mark_safe(ugettext_lazy('Monday'))),

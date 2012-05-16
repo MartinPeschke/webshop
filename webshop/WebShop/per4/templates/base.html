@@ -8,6 +8,7 @@
 
 {% load i18n %}
 {% load explore %}
+{% load auth_tags %}
 {% load url from future %}
 
 <head>
@@ -105,6 +106,9 @@
       <div class="span2">
           <div class="login_panel">
           {% if request.user.is_authenticated %}
+              <h1>{{ request.user|getRoleNameForUser }}</h1>
+
+
               {% if USER_IS_IN_SIGNUP %}
                   <div><a href="{% url 'signup-route' %}">{% trans 'Please finish your registration' %}</a></div>
               {% else %}

@@ -1,25 +1,21 @@
 from django.core.urlresolvers import reverse
-from django.utils.safestring import mark_safe
-import simplejson
-from operator import itemgetter, add
+from operator import itemgetter
 from decimal import Decimal, ROUND_UP
-
-from django.shortcuts import render_to_response
-from django.template import RequestContext, Context
-from django.http import HttpResponseRedirect, HttpResponseNotAllowed
-
+from django.utils.translation import ugettext as _, ugettext_lazy
+from django.utils.safestring import mark_safe
+from django.template import Context
+from django.contrib import messages
 from django.conf  import settings
+
 from WebShop.apps.lib.baseviews import BaseFormView, BaseLoggedInView, HTTPRedirect
 from WebShop.apps.order.models import OrderItem
 from .forms import PaymentMethodForm, CreditCardForm, BankAccountForm
-from .models import CreditCard, BankAccount
-from WebShop.apps.user.user_roles import HAS_RIGHTS
-from WebShop.apps.user.views import profile
+from .models import CreditCard, BankAccount, Order, PaymentMethod
 
 import WebShop.utils.mail as mail
-from .models import Order, PaymentMethod
-from WebShop.apps.user.views.profile import _get_user_data
+from WebShop.apps.user.views.profile import _get_user_data, AccountAddressView
 
+import simplejson
 
 def _get_current_cid(request):
     cids = sorted(request.session.get('cid_list') or [], key = itemgetter('timestamp'), reverse = True)
@@ -28,12 +24,28 @@ def _get_current_cid(request):
         cid_candidate = cids[0].get('cid', '') or ''
     return cid_candidate
 
+
+class ConfirmAddressView(AccountAddressView):
+    template_name = 'user/order/addresses.html'
+    def on_success(self, request, cleaned_data):
+        try:
+            return super(ConfirmAddressView, self).on_success(request, cleaned_data)
+        except HTTPRedirect:
+            raise HTTPRedirect(reverse("checkout-route"))
+
+
+
+
 class CheckoutView(BaseLoggedInView, BaseFormView):
     template_name = 'user/order/payment.html'
     form_cls = PaymentMethodForm
     def pre_validate(self, request, *args, **kwargs):
         if not request.session.get('cart',None):
             raise HTTPRedirect(self.LOGIN_URL)
+        user, profile, billing, shipping = _get_user_data(request.user)
+        if billing is None or shipping is None:
+            messages.add_message(request, messages.ERROR, _('Bitte geben Sie erst Ihre Liefer- und Rechnungsadresse an!'))
+            raise HTTPRedirect(reverse('confirm-address-route'))
 
     def get_form_instance(self, request, *args, **kwargs):
         role = request.user.get_profile().role
@@ -111,6 +123,7 @@ class CheckoutView(BaseLoggedInView, BaseFormView):
                 oi.save()
 
             user, profile, billing, shipping = _get_user_data(request.user)
+
             c = Context({'user': user,
                          'profile': profile,
                          'cart':cart, 'order':order})
