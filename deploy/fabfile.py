@@ -14,10 +14,24 @@ workspace = '{}workspace/'.format(root)
 deploy_space = '{}deployment/'.format(root)
 transport_name = "deploypackage"
 
+statics_source = root
+statics_destination = 'WebShop/per4/media'
+
+
+dependencies = ['django', 'mysql-python']
+extra_dependencies = ['pip install -e git+git://github.com/earle/django-bootstrap.git#egg=bootstrap']
+
+
+
+
 def get_deploy_path(env):
   return "{}{}/".format(deploy_space, env)
 def get_full_transport_name(env):
   return "{}.{}.tar.bz2".format(transport_name, env)
+def get_full_statics_destination(env):
+  return "{}{}/code/{}".format(deploy_space, env, statics_destination)
+  
+  
   
 def clean_local():
   if(os.path.exists('tmp')):
@@ -28,17 +42,17 @@ def clean_remote(env):
   with cd(environment_path):
     run("rm -rf env/*")
     run("virtualenv --no-site-packages env")
-    run("env/bin/easy_install supervisor")
+    for package in dependencies:
+      run("env/bin/easy_install {}".format(package))
+    for command in extra_dependencies:
+      run("env/bin/{}".format(command))
 
 def create_env(env):
   environment_path = get_deploy_path(env)
   with cd(deploy_space):
+    run("rm -rf {}".format(env))
     run("mkdir -p %s/{run,logs,code,env}" % env)
   clean_remote(env)
-  cfg_template = Template(filename='supervisor.cfg.mako')
-  with cd(environment_path):
-    files.append("supervisor.cfg", cfg_template.render(env = env), escape=False)
-    run("env/bin/supervisord -c supervisor.cfg")
 
 
 def package(env):
@@ -57,24 +71,16 @@ def unpack_package(env):
     run("rm -rf {}".format(env))
     run("mkdir {}".format(env))
     run("tar xfvj {} -C {}".format(get_full_transport_name(env), env))
-  
-  
-  
 
 def build(env):
   environment_path = get_deploy_path(env)
-  with cd(environment_path):
-    run("env/bin/supervisorctl -c supervisor.cfg stop all", pty=True)
-
   run("rm -rf {}code/*".format(environment_path))
   run("cp -R {}{}/* {}code/".format(workspace, env, environment_path))
-  with cd("{}code".format(environment_path)):
-    run("../env/bin/python setup.py develop")
-  with cd(environment_path):
-    result = run("env/bin/supervisorctl -c supervisor.cfg start all", pty=True)
-    if "ERROR" in result:
-      run("tail -n50 logs/python.log", pty=True)
-      fabric.utils.abort("supervisord did not start: {}".format(result))
+  with cd(get_full_statics_destination()):
+    run("ln -s {}files files".format(statics_source))
+    run("ln -s {}downloads downloads".format(statics_source))
+  
+
 
 def build_statics(env):
   environment_path = get_deploy_path(env)
@@ -95,6 +101,6 @@ def deploy(env):
   push_package(env)
   unpack_package(env)
   build(env)
-  build_statics(env)
+  #build_statics(env)
   clean_local()  
     

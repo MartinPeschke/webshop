@@ -20,6 +20,10 @@ update apps_language set is_default = 1 where code = 'de';
 alter table apps_address add column language_code varchar(2);
 alter table apps_address add constraint language_code FOREIGN KEY (language_code) references apps_language.code;
 
+alter table apps_address add column name varchar(256);
+update apps_address, apps_profile set name = concat(first_name, " ", last_name)
+where apps_address.user_id = apps_profile.user_id;
+
 
 CREATE TABLE `apps_address_type` (
   `id` integer auto_increment NOT NULL,
@@ -107,3 +111,9 @@ update apps_profile set preferred_payment_method_id = 5 where payment_method = '
 update apps_profile set preferred_payment_method_id = 6 where payment_method = 'Paypal';
 alter table apps_profile add constraint preferred_payment_method_id FOREIGN KEY (preferred_payment_method_id) references apps_payment_method.id;
 alter table apps_profile drop column payment_method;
+
+
+
+
+update apps_pricing set discountQty=0 where discountQty is null;
+alter table apps_pricing change discountQty discountQty int(11) not null default 0;
