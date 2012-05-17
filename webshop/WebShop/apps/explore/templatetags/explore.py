@@ -23,7 +23,7 @@ def get_option_img_tag(ao, shop_ref=None, classes = None):
     if os.path.exists(os.path.join(settings.MEDIA_ROOT, 'files', shop_ref, 'options', ao.imgName)):
         return mark_safe('<img alt="{ao_ref}" class="small {classes}" src="/media/files/{shop_ref}/options/{img}"/>'.format(ao_ref = ao.ref, shop_ref = shop_ref, img = ao.imgName, classes = classes or ""))
     else:
-        return mark_safe('%s' % (ao.ref, ao.ref))
+        return mark_safe('%s' % ao.ref)
 
 
 

@@ -1,5 +1,9 @@
 $(function(){
-    $('#language_bar span[lang]').click(setLanguage);
+    $('#language_bar span[lang]').on({"click":function(evt){
+        $('#languageCode').val($(evt.target).parents('span.flag').attr('lang'));
+        if (next) $('#next').val(next);
+        $('#setlang').submit();
+    }});
 
     (function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -20,4 +24,21 @@ $(function(){
             FB.XFBML.parse(container[0]);
         });
     });
+
+    switchLinePane = function(page){
+        $.ajax({
+            data : {page:page, promo: '1'},
+            url: '/'+shop_ref+'/'+line_ref+'/page/',
+            type: 'POST', dataType: 'json',
+            success : function(data, textStatus) {
+                $('#center_block_thumbnails').html(data['html']);
+                $('#center_block_paginating').children('a').removeClass('selected');
+                $($('#center_block_paginating').children('a').get(data['page_no']-1)).addClass('selected');
+
+            },
+            error : function(data, textStatus) {
+                document.write(data.responseText);
+                document.close();
+            }});
+    }
 });

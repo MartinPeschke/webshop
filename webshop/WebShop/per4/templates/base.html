@@ -192,15 +192,13 @@
 {% block jst %}{% endblock %}
 
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script src="{{ MEDIA_URL }}/scripts/libs/bootstrap.min.js"></script>
-  <script type="text/javascript" src="{{ MEDIA_URL }}/scripts/tools.js?{{ STATIC_TOKEN }}"></script>
 
   {% if debug %}
       <script src="{{ MEDIA_URL }}/scripts/libs/bootstrap.min.js"></script>
       <script src="{{ MEDIA_URL }}/scripts/libs/JSON.js"></script>
       <script src="{{ MEDIA_URL }}/scripts/libs/underscore.js"></script>
       <script src="{{ MEDIA_URL }}/scripts/libs/Backbone.js"></script>
-      <script src="{{ MEDIA_URL }}/scripts/site.js"></script>
+      <script src="{{ MEDIA_URL }}/scripts/site.js?{{ STATIC_TOKEN }}"></script>
   {% else %}
       <script src="{{ MEDIA_URL }}/scripts/build/libs.js?${STATIC_TOKEN}"></script>
   {% endif %}
