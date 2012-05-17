@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse
 from django.http import HttpResponseNotAllowed, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
@@ -37,10 +38,9 @@ def add_to_cart(request):
 		cart = Cart(request.user)
 	else:
 		cart = request.session['cart']
-	added = cart.addToCart(items)
+	was_added = cart.addToCart(items)
 	request.session['cart'] = cart
-	return {'added_id_qty':added,
-			'cart_html':render_to_string('user/profile/cart_items.html', locals(), context_instance=RequestContext(request))}
+	return {'cart_html':render_to_string('user/profile/cart_items.html', locals(), context_instance=RequestContext(request))}
 
 
 
@@ -49,17 +49,17 @@ def update_cart(request):
         return HttpResponseNotAllowed(['GET'])
 
     items = request.POST.items()
-    cart = request.session['cart'] = Cart(request.user, items)
+    cart = request.session['cart'] = Cart(request.user)
+    cart.addToCart(items)
 
-    return render_to_response('user/profile/cart_items.html', locals())
+    return HttpResponseRedirect(reverse("cart-route"))
 
 def delete_item(request, id):
     '''
      Used by delete button on shopping cart page
      '''
-    id = int(id)
     cart = request.session.get('cart',None)
-    if cart and id in cart._get_ItemDict():
+    if cart:
         cart.removeItem(id)
         request.session['cart'] = cart
-    return HttpResponseRedirect('/user/shopping_cart/')
+    return HttpResponseRedirect(reverse("cart-route"))

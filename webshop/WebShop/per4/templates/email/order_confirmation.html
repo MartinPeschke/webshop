@@ -1,0 +1,102 @@
+{% extends "email/layout.html" %}
+{% load i18n %}
+{% load explore %}
+
+{% block content %}
+    <h2>Hey {{ user.get_profile.first_name }},</h2>
+
+    <p>{% trans "Danke f&uuml;r Deine Bestellung." %}</p>
+
+    <p>{%  trans 'Soeben haben wir von Dir eine Bestellung in <a href="www.per-4.com">unseren Webshop</a> erhalten. Die folgenden Artikel hast Du bestellt.' %}
+
+    {% if billing_address %}
+        <p>
+            <h3>{% trans "Ihre Rechnungsadresse:" %}</h3>
+            <div class="address-line">{% trans "Empf&auml;nger:" %} {{ billing_address.name }}</div>
+            <div class="address-line">{% trans "Strasse:" %} {{ billing_address.street }}</div>
+            <div class="address-line">{% trans "Ort:" %} {{ billing_address.zip }} {{ billing_address.city }}, {{ billing_address.country }}</div>
+        </p>
+    {% endif %}
+    {% if shipping_address %}
+        <p>
+            <h3>{% trans "Ihre Lieferadresse:" %}</h3>
+            <div class="address-line">{% trans "Empf&auml;nger:" %} {{ shipping_address.name }}</div>
+            <div class="address-line">{% trans "Strasse:" %} {{ shipping_address.street }}</div>
+            <div class="address-line">{% trans "Ort:" %} {{ shipping_address.zip }} {{ shipping_address.city }}, {{ shipping_address.country }}</div>
+        </p>
+    {% endif %}
+
+    <hr/>
+    <h2>{%  trans "Deine Bestellung" %}</h2>
+    <p>{% trans "Zahlart:" %} {{ order.payment_method }}</p>
+    <p>{% trans "(*) Mengenrabattpreis" %}</p>
+
+    <table border="0" cellspacing="0">
+        <tr>
+            <th class="top">{% trans "Kategorie" %}</th>
+            <th class="top">{% trans 'REFERENCE' %}</th>
+            <th class="top">{% trans 'Menge' %}</th>
+            <th class="top">{% trans 'St&uumlckpreis' %}</th>
+            <th class="top">{% trans "Summe" %}</th>
+        </tr>
+        {% for option in cart.items %}
+            <tr align="center" class="{% if forloop.last %}last-row{% endif %}">
+                <td>{{ option.article.article_family.line.shop.name|locale:LANGUAGE_CODE }}</td>
+                <td>{{ option.get_display_ref }}</td>
+                <td>{{ option.quantity }}</td>
+                <td>{{ option.price }} &euro; {% if option.discounted %}(*){% endif %}</td>
+                <td>{{ option.total }} &euro;</td>
+            </tr>
+        {% endfor %}
+        <tfoot class="subTotalBox">
+            <tr>
+                <td class="noborder" colspan="3"></td>
+                <td>{% trans "Subtotal" %}</td>
+                <td align="center"><span id="totalPrice">{{ cart.total }}</span> &euro;</td>
+            </tr>
+            <tr>
+                <td class="noborder" colspan="3"></td>
+                <td>
+                    {% ifequal simple_role 'E' %}
+                        {% trans "Thereof VAT" %}
+                    {% else %}
+                        {% trans "VAT" %}
+                    {% endifequal %}
+                    <span id="taxRate">{{ cart.taxRate }}</span>%</td>
+                <td align="center"><span id="taxAmount">
+                            {% ifequal simple_role 'E' %}
+                                {{ cart.tax_E }}
+                            {% else %}
+                                {{ cart.tax }}
+                            {% endifequal %}
+                            </span>&euro;</td>
+            </tr>
+            <tr>
+                <td class="noborder" colspan="3"></td>
+                <td colspan="2" align="center"><u><a href="http://www.per-4.com/shipping/">{% trans 'Shipping Costs Apply' %}</a></u></td>
+            </tr>
+            <tr>
+                <td class="noborder" colspan="3"></td>
+                <td>{% trans 'Total' %}:</td>
+                <td align="center">
+                            <span id="allTotal">
+                            {% ifequal simple_role 'E' %}
+                                {{ cart.all_total_E }}
+                            {% else %}
+                                {{ cart.all_total }}
+                            {% endifequal %}
+                            </span>&euro;</td>
+            </tr>
+        </tfoot>
+    </table>
+    {% if order.comment %}
+        <p>{% trans "Ihre Bestellbemerkung:" %}
+            <div>
+                {{ order.comment }}
+            </div>
+        </p>
+    {% endif %}
+
+    <p></p>
+    <p>{% trans "Solltest Du diese Bestellung nicht abgeschickt haben, schreibe uns bitte als Antwort auf diese Email oder rufe uns an." %}
+{% endblock %}

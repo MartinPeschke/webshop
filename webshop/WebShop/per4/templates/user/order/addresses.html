@@ -1,11 +1,9 @@
 {% extends "user/order/layout.html" %}
 {% load i18n %}
 
-{% block center_block_header %}{% trans 'Meine Adressen'%}{% endblock %}
-
 {% block content %}
     <div class="center_box">
-        <form method="post" class="form-horizontal form-validated">
+        <form method="post" class="form-horizontal form-validated" id="address-form">
             {{ form }}
             <div class="form-actions">
                 <button type="submit" class="btn btn-primary">{% trans 'Weiter' %}</button>
@@ -15,5 +13,9 @@
 {% endblock %}
 
 {% block jscriptlinks %}
-{% include 'snippets/validation_scripts.html' %}
+    {% include 'snippets/validation_scripts.html' %}
+    <script>
+        window.__options__ = {};
+    </script>
+    <script src="{{ MEDIA_URL }}/scripts/libs/require.js" data-main="{{ MEDIA_URL }}/scripts/pages/addresses"></script>
 {% endblock %}

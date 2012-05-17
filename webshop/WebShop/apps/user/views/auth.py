@@ -66,7 +66,7 @@ class LoginView(BaseAuthView):
         if is_in_signup(user):
             messages.add_message(request, messages.ERROR, _('Bitte Registrierung beenden!'))
             raise HTTPRedirect(self.SIGNUP_URL)
-        furl = request.REQUEST.get('forward_URL', self.HOME_URL)
+        furl = request.REQUEST.get('furl', self.HOME_URL)
         raise HTTPRedirect(furl)
 
 class LoginZipcodeView(LoginView):
@@ -144,6 +144,7 @@ class SignupScreen(BaseAuthView):
 class SignupWholesaleDetailsScreen(BaseAuthView):
     template_name = 'user/auth/finish_signup.html'
     form_cls = WholesaleAccountForm
+
     def pre_validate(self, request, *args, **kwargs):
         if not is_in_signup(request.user):
             raise HTTPRedirect(self.SIGNUP_URL)

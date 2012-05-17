@@ -1,8 +1,10 @@
+from django.contrib import messages
 from django.core.urlresolvers import reverse
 import simplejson
 from WebShop.apps.contrib.countries.models import Country
 from WebShop.apps.user.forms.profile import AccountRetailDetailsForm, AccountWholesaleDetailsForm
 from WebShop.apps.user.lib import is_studio_user
+from django.utils.translation import ugettext as _, ugettext_lazy
 
 from WebShop.apps.user.models.address import Address, Language, AddressType
 from WebShop.apps.user.forms import AddressesForm
@@ -23,7 +25,7 @@ def _get_user_data(user):
 
 
 
-class AccountAddressView(BaseLoggedInView, BaseFormView):
+class BaseAccountAddressView(BaseLoggedInView, BaseFormView):
     template_name = 'user/profile/addresses.html'
     form_cls = AddressesForm
 
@@ -48,6 +50,7 @@ class AccountAddressView(BaseLoggedInView, BaseFormView):
                 = Language.objects.get(is_default = True).code
             params['billing_country'] = params['shipping_country'] \
                 = Country.objects.get(is_default = True).iso
+            params['billing_name'] = params['shipping_name'] = request.user.get_profile().get_pretty_name()
         return self.form_cls(initial = params)
 
     def on_success(self, request, cleaned_data):
@@ -81,6 +84,16 @@ class AccountAddressView(BaseLoggedInView, BaseFormView):
         raise HTTPRedirect(request.get_full_path())
 
 
+
+class AccountAddressView(BaseAccountAddressView):
+    def on_success(self, request, cleaned_data):
+        try:
+            return super(AccountAddressView, self).on_success(request, cleaned_data)
+        except HTTPRedirect:
+            messages.add_message(request, messages.SUCCESS, _('&Auml;nderungen gespeichert!'))
+            raise
+
+
 class ProfileView(BaseLoggedInView, BaseFormView):
     template_name = 'user/profile/index.html'
     def get_validation_form_instance(self, request):
@@ -103,4 +116,5 @@ class ProfileView(BaseLoggedInView, BaseFormView):
                 setattr(profile, attr_name, cleaned_data[attr_name])
         profile.weekdays = simplejson.dumps(cleaned_data['weekdays'])
         profile.save()
-        raise HTTPRedirect(reverse('profile-route'))
+        messages.add_message(request, messages.SUCCESS, _('&Auml;nderungen gespeichert!'))
+        raise HTTPRedirect(request.get_full_path())

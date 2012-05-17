@@ -30,6 +30,7 @@ class AddressType(models.Model):
 class Address(models.Model):
     type = models.ForeignKey(AddressType)
 
+    name = models.CharField(max_length=255)
     street = models.CharField(max_length=255)
     city = models.CharField(max_length=64)
     zip = models.CharField(max_length=16)

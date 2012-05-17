@@ -106,6 +106,8 @@ class Profile(models.Model):
                 pass
         return dictionary
 
+    def get_pretty_name(self):
+        return " ".join([self.first_name, self.last_name])
 
     def __repr__(self):
         return '<Profile: %s>' % self.company_name

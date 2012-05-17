@@ -22,7 +22,7 @@ class ModelBackend:
                 return user
             except PasswordToken.DoesNotExist:
                 return None
-        elif(username and password):
+        elif username and password:
             try:
                 user = User.objects.get(username=username)
                 if user.check_password(password):

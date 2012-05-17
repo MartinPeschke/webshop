@@ -15,7 +15,7 @@ $(function(){
             var container_width = container.width();
             container.html('<div class="fb-like-box" ' +
                     'data-href="http://www.facebook.com/Per4Store"' +
-                    ' data-width="' + container_width + '" data-height="730" data-show-faces="true" ' +
+                    ' data-width="' + container_width + '" data-height="430" data-show-faces="true" ' +
                     'data-stream="false" data-header="true"></div>');
             FB.XFBML.parse(container[0]);
         });

@@ -22,7 +22,7 @@
     {% endfor %}
     </table>
     <div class="cart_bottom">
-        <b class="pull-right">{% if cart %}{{ cart.total }}{% else %}0.00{% endif %}&euro;</b>
+        <b class="pull-right">{% if cart %}{{ cart.total }}{% else %}0.00{% endif %} &euro;</b>
         {% trans "SUBTOTAL" %}
         </div>
     <div align="right"><a class="link" href="{% url 'cart-route' %}">{% trans "Zum Bezahlen" %} >></a></div>

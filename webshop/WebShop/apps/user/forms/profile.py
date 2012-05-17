@@ -14,6 +14,7 @@ class AddressesForm(BaseForm):
         layout = (
             Fieldset(
                 _("Rechnungsadresse"),
+                'billing_name',
                 'billing_street',
                 'billing_city',
                 'billing_zip',
@@ -25,6 +26,7 @@ class AddressesForm(BaseForm):
                 'same_address'
             ), Fieldset (
                 _("Lieferadresse"),
+                'shipping_name',
                 'shipping_street',
                 'shipping_city',
                 'shipping_zip',
@@ -36,6 +38,7 @@ class AddressesForm(BaseForm):
             )
         )
 
+    billing_name = forms.CharField(label = ugettext_lazy('Empf&auml;nger*'), required=True, widget = widgets.TextInput(attrs={"class":"billing-detail", "_form_key":"name"}))
     billing_street = forms.CharField(label = ugettext_lazy('Strasse*'), required=True, widget = widgets.TextInput(attrs={"class":"billing-detail", "_form_key":"street"}))
     billing_city = forms.CharField(label = ugettext_lazy('Stadt*'), required=True, widget = widgets.TextInput(attrs={"class":"billing-detail", "_form_key":"city"}))
     billing_zip = forms.CharField(label = ugettext_lazy('PLZ*'), required=True, widget = widgets.TextInput(attrs={"class":"billing-detail", "_form_key":"zip"}))
@@ -48,6 +51,7 @@ class AddressesForm(BaseForm):
     same_address = forms.BooleanField(label = ugettext_lazy('Lieferadresse weicht ab'), required=False, initial=True
                     , widget=widgets.CheckboxInput)
 
+    shipping_name = forms.CharField(label = ugettext_lazy('Empf&auml;nger*'), required=True, widget = widgets.TextInput(attrs={"class":"shipping-detail", "_form_key":"name"}))
     shipping_street = forms.CharField(label = ugettext_lazy('Strasse*'), required=True, widget = widgets.TextInput(attrs={"class":"shipping-detail", "_form_key":"street"}))
     shipping_city = forms.CharField(label = ugettext_lazy('Stadt*'), required=True, widget = widgets.TextInput(attrs={"class":"shipping-detail", "_form_key":"city"}))
     shipping_zip = forms.CharField(label = ugettext_lazy('PLZ*'), required=True, widget = widgets.TextInput(attrs={"class":"shipping-detail", "_form_key":"zip"}))

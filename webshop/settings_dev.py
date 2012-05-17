@@ -98,6 +98,11 @@ TIME_ZONE = 'Europe/Berlin'
 
 SITE_ID = 1
 
+
+# URL that handles the media served from MEDIA_ROOT.
+# Example: "http://media.lawrence.com"
+MEDIA_URL = '/media'
+
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
 MEDIA_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 'per4', 'media'))
@@ -111,9 +116,7 @@ DATA_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 
 LANGUAGE_CODE = 'en'
 MANAGERS = ADMINS
 
-# URL that handles the media served from MEDIA_ROOT.
-# Example: "http://media.lawrence.com"
-MEDIA_URL = '/media/'
+
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.

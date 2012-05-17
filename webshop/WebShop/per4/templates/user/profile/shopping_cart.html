@@ -16,9 +16,6 @@
                 <th class="top">{% trans 'Size in MM' %}</th>
                 <th width="52" class="top">{% trans 'COLOR' %}</th>
                 <th width="66" class="top">{% trans 'Price P/P' %}</th>
-                    {% if request.user|has_PricePrivilege %}
-                        <th width="5%">{% trans 'DISCOUNT PRICE' %}</th>
-                    {% endif %}
                 <th width="67" class="top">{% trans 'QUANTITY' %}</th>
                 <th width="53" class="top">{% trans 'Total' %}</th>
             </tr>
@@ -26,18 +23,22 @@
         <tbody>
             {% for option in cart.items %}
                 <tr class="cart-item-row" id="{{ option.id }}">
-                    <td><a class="link delete-link" href="{% url "delete-from-cart-route" option.id %}"><img src="/media/images/trash.png"></a></td>
-                    <td><img alt="{{ option.article.article_family.ref }}" src="{{ option.article.article_family|check_image_low:option.article.article_family.line.shop.ref }}"/>	</td>
-                    <td><a href="/{{ option.article.article_family.line.shop.ref }}/{{ option.article.article_family.line.ref }}/{{ option.article.article_family.id }}/" >{{ option.article.ref }}</a></td>
-                    <td>{{ option.article.compiledSize }}</td>
-                    <td>{{ option|create_ao_imgtag:option.article.article_family.line.shop.ref }}</td>
-                    <td class="pricing"><span>{{ option.price }}</span>&nbsp;&euro;</td>
-                    {% if request.user|has_PricePrivilege %}
-                        <td class="data discount">{{ option.discount|safe }}</td>
-                    {% endif %}
-                    <td><input type="text" id="quantityfield_{{ option.id }}" name="{{ option.id }}" class="span1 number cartQtyInput" value="{{ option.quantity }}"
+                    <td class="cart-cell"><a class="link delete-link" href="{% url "delete-from-cart-route" option.id %}"><img src="/media/images/trash.png"></a></td>
+                    <td class="cart-cell"><img alt="{{ option.article.article_family.ref }}" src="{{ option.article.article_family|check_image_low:option.article.article_family.line.shop.ref }}"/>	</td>
+                    <td class="cart-cell"><a href="/{{ option.article.article_family.line.shop.ref }}/{{ option.article.article_family.line.ref }}/{{ option.article.article_family.id }}/" >{{ option.article.ref }}</a></td>
+                    <td class="cart-cell">{{ option.article.compiledSize }}</td>
+                    <td class="cart-cell">{{ option|create_ao_imgtag:option.article.article_family.line.shop.ref }}</td>
+                    <td class="pricing cart-cell">
+                    <span>{{ option.price }}</span>&nbsp;&euro;
+                        {%  if option.discounted %}
+                            <div class="is-discounted-tooltip">{%  trans "Mengenrabattpreis" %}</div>
+                        {% endif %}
+                    </td>
+
+
+                    <td class="cart-cell"><input type="number" id="quantityfield_{{ option.id }}" name="{{ option.id }}" class="span1 digit cartQtyInput" value="{{ option.quantity }}"
                         maxlength="4"/></td>
-                    <td class="total"><span class="articleoption_total">{{ option.total }}</span>&nbsp;&euro;</td>
+                    <td class="cart-cell total"><span class="articleoption_total">{{ option.total }}</span>&nbsp;&euro;</td>
                 </tr>
             {% empty %}
                 <tr>
@@ -46,15 +47,14 @@
 
             {% endfor %}
         </tbody>
-        {% with request.user|has_PricePrivilege as colspan %}
             <tfoot class="subTotalBox">
                 <tr>
-                    <td class="noborder" colspan="{{ colspan|add:"5" }}"></td>
+                    <td class="noborder" colspan="5"></td>
                     <td colspan="2">{% trans "Subtotal" %}</td>
                     <td><span id="totalPrice">{{ cart.total }}</span>&euro;</td>
                 </tr>
                 <tr>
-                    <td class="noborder" colspan="{{ colspan|add:"5" }}"></td>
+                    <td class="noborder" colspan="5"></td>
                     <td align="right" colspan="2">
                     {% ifequal simple_role 'E' %}
                         {% trans "Thereof VAT" %}
@@ -71,11 +71,11 @@
                     </span>&euro;</td>
                 </tr>
                 <tr>
-                    <td class="noborder" colspan="{{ colspan|add:"5" }}"></td>
+                    <td class="noborder" colspan="5"></td>
                     <td colspan="5"><u><a href="/shipping/">{% trans 'Shipping Costs Apply' %}</a></u></td>
                 </tr>
                 <tr>
-                    <td class="noborder" colspan="{{ colspan|add:"5" }}"></td>
+                    <td class="noborder" colspan="5"></td>
                     <td colspan="2">{% trans 'Total' %}:</td>
                     <td colspan="2"><span id="allTotal">
                     {% ifequal simple_role 'E' %}
@@ -86,14 +86,14 @@
                     </span>&euro;</td>
                 </tr>
             </tfoot>
-        {% endwith %}
     </table>
 
-	<a class="btn {% if cart.items %}refresh-cart-btn{% else %}disabled{% endif %}">{% trans "Save Cart" %}</a>
-	<a
-        {% if cart.items %}href="{% url "confirm-address-route" %}"{% endif %}
-        class="pull-right btn btn-primary submit-cart-btn {% if not cart.items %}disabled{% endif %}">
-            {% trans "Confirm Order" %}</a>
+        <div class="form-actions">
+            <a class="btn {% if cart.items %}refresh-cart-btn{% else %}disabled{% endif %}">{% trans "Save Cart" %}</a>
+            <a {% if cart.items %}href="{% url "confirm-address-route" %}"{% endif %}
+               class="pull-right btn btn-primary submit-cart-btn {% if not cart.items %}disabled{% endif %}">
+                {% trans "Confirm Order" %}</a>
+        </div>
 </div>
 
 {% endblock %}
@@ -102,5 +102,5 @@
     <script>
         window.__options__ = {updateCartUrl: "{% url "refresh-cart-route" %}"};
     </script>
-    <script src="{{ MEDIA_URL}}scripts/libs/require.js" data-main="{{ MEDIA_URL}}scripts/pages/shopping_cart"></script>
+    <script src="{{ MEDIA_URL }}/scripts/libs/require.js" data-main="{{ MEDIA_URL }}/scripts/pages/shopping_cart"></script>
 {% endblock %}

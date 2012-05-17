@@ -1,3 +1,4 @@
+from operator import attrgetter
 import os
 from django import template
 from django.utils.translation import ugettext as _
@@ -10,6 +11,37 @@ from django.template.loader import render_to_string
 
 register = template.Library()
 FROM_PRICE_HTML_A = render_to_string('snippets/from_price_a.html',{})
+
+
+
+# new filters, 2012
+
+@register.filter
+def get_option_img_tag(ao, shop_ref=None, classes = None):
+    if ao.ref == '-':
+        return '-'
+    if os.path.exists(os.path.join(settings.MEDIA_ROOT, 'files', shop_ref, 'options', ao.imgName)):
+        return mark_safe('<img alt="{ao_ref}" class="small {classes}" src="/media/files/{shop_ref}/options/{img}"/>'.format(ao_ref = ao.ref, shop_ref = shop_ref, img = ao.imgName, classes = classes or ""))
+    else:
+        return mark_safe('%s' % (ao.ref, ao.ref))
+
+
+
+@register.filter
+def get_single_option_list(article_options):
+    aos = {}
+    for l in article_options.values():
+        aos.update({ao.ref:ao for ao in l})
+    return sorted(aos.values(), key = attrgetter('ref'))
+
+
+
+
+
+
+
+
+# LEGACY
 
 @register.filter
 def simple_locale(locale_string):
@@ -127,6 +159,7 @@ def check_image_low(af, shop_ref):
 def path_exists(path):
     return os.path.exists(path)
 
+
 @register.filter
 def create_ao_imgtag(ao, shop_ref=None, classes = None):
     if ao.ref == '-':
@@ -135,23 +168,6 @@ def create_ao_imgtag(ao, shop_ref=None, classes = None):
         return mark_safe('<div title="{ao_ref}" class={classes}><img alt="{ao_ref}" class="small" src="/media/files/{shop_ref}/options/{img}"/></div>'.format(ao_ref = ao.ref, shop_ref = shop_ref, img = ao.imgName, classes = classes or ""))
     else:
         return mark_safe('<span name="%s" class="optionLink">%s</span>' % (ao.ref, ao.ref))
-
-@register.filter
-def create_ao_images(article_options, shop_ref):
-    aos = []
-    for l in article_options.itervalues():
-        aos += l
-    
-    imgs = filter(lambda x: x!='' and x!='-', [create_ao_imgtag(ao, shop_ref, classes='optionLink') for ao in aos])
-    if imgs:
-        imgs = list(set(imgs))
-        imgs.sort()
-#===============================================================================
-#        imgs[0]=imgs[0].replace('oldeselected', 'olselected') - how top select 1st one ?
-#===============================================================================
-        return mark_safe('\n'.join(imgs))
-    else:
-        return '' # mark_safe(_('No further colors available!'))
 
 @register.filter
 def truncate(stringthing, length=None):

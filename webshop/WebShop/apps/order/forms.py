@@ -35,6 +35,15 @@ class PaymentMethodForm(BaseForm):
         self.fields['payment_method'].queryset =\
         PaymentMethod.objects.filter_by_role(role)
 
+
+
+
+
+class CreditCardNumber(forms.CharField):
+    def to_python(self, value):
+        value = value.replace(" ", "")
+        return value
+
 class CreditCardForm(BaseForm, ):
     class Meta:
         layout = (
@@ -48,7 +57,7 @@ class CreditCardForm(BaseForm, ):
             ),
             )
     owner = forms.CharField(label=ugettext_lazy("Karteninhaber*"), widget = TextInput(attrs={"class":"required"}))
-    ccNumber = forms.CharField(label=ugettext_lazy("Kartennummer*"), widget = TextInput(attrs={"class":"required"}), min_length=15, max_length=16)
+    ccNumber = CreditCardNumber(label=ugettext_lazy("Kartennummer*"), widget = TextInput(attrs={"class":"required"}), min_length=15)
     cctype = forms.ModelChoiceField(queryset=CreditCardType.objects.all(), label=ugettext_lazy("Typ"), empty_label=None)
     valid_until = CreditCardExpiryField(label=ugettext_lazy("G&uuml;ltig bis*"), widget = TextInput(attrs={"class":"required"}), help_text=ugettext_lazy("Beispiel: 10/2015"))
     security_number = forms.CharField(label=ugettext_lazy("Sicherheitscode*"), widget = TextInput(attrs={"class":"required"}), max_length=3)

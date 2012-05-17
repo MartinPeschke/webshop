@@ -76,7 +76,7 @@ class Order(models.Model):
     meta_data = JSONField(null=True, blank=True)
 
     def __unicode__(self):
-        return u'<Order:%s, Status: %s>' % (self.id, self.status)
+        return u'<Order:{}  Status: {}>'.format(self.id, self.status.name)
 
     class Meta:
         db_table = 'apps_order'
@@ -137,8 +137,9 @@ class BankAccount(models.Model): # no change for import, if IDs are same
     user = models.ForeignKey(User)
 
     def __str__(self):
-        return self.name
-
+        return self.owner
+    def __unicode__(self):
+        return self.owner
     class Meta:
         db_table = 'apps_bankaccount'
 
@@ -172,7 +173,7 @@ class CreditCard(models.Model):
     def setCCNumber(self, value):
         self.cardno = value
     def getCCNumber(self):
-        return '%s%s' % ('x'*16,self.cardno[-4:])
+        return '%s%s' % ('x'*12,self.cardno[-4:])
     ccNumber = property(getCCNumber, setCCNumber)
     def __repr__(self):
         return u'%s' % self.cardno

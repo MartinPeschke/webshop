@@ -48,7 +48,7 @@ def is_in_signup(user):
         profile = Profile(user = user, role=LEAST_ROLE)
         profile.save()
     if profile.role == 'E':
-        return profile.first_name is None or profile.last_name is None
+        return len((profile.first_name or '' )+ (profile.last_name or '')) == 0
     else:
         return profile.company_name is None or len(profile.company_name) == 0
 

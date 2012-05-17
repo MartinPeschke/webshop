@@ -13,7 +13,7 @@ body{
 </head>
 <body>
 {{ profile.roleName }} Order for: {{ profile.first_name }} {{ profile.last_name }}, {{ user.email }}, {{ address.tel }}<br/>
-Payment Method: {{ profile.get_payment_method }}
+Payment Method: {{ order.payment_method }}
 
 {% if credit_card %}
 <table border="1" cellspacing="0">
@@ -24,7 +24,7 @@ Payment Method: {{ profile.get_payment_method }}
 	<td>Card Number</td><td>{{ credit_card.cardno }}</td>
 </tr>
 <tr>
-	<td>Type</td><td>{{ credit_card.ctype }}</td>
+	<td>Type</td><td>{{ credit_card.cctype.name }}</td>
 </tr>
 <tr>
 	<td>Valid Until</td><td>{{ credit_card.valid_until }}</td>

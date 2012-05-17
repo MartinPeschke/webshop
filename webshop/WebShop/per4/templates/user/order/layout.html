@@ -6,7 +6,7 @@
 {% block centerbox %}
     {% block center_block_ignore_header %}
         {% spaceless %}
-            <h2 class="title">{% block center_block_header %}{% endblock %}</h2><ul class="nav nav-tabs">
+            <h2 class="title">{% block center_block_header %}{% trans "Bestellung abschliessen" %}{% endblock %}</h2><ul class="nav nav-tabs">
                 {% url 'cart-route' as cart_url %}
                 {% url 'confirm-address-route' as address_url %}
                 {% url 'checkout-route' as checkout_url %}
@@ -25,14 +25,6 @@
             </ul>
         {% endspaceless %}
     {% endblock %}
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %} fade in">
-                <a class="close" data-dismiss="alert" href="#">×</a>
-                {{ message|safe  }}
-            </div>
-        {% endfor %}
-    {% endif %}
     {% block content %}{% endblock %}
 {% endblock %}
 

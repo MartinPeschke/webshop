@@ -132,7 +132,7 @@ def article(request, shop_ref, line_ref, af_ref = None):
     lang = rctxt['LANGUAGE_CODE'][:2].lower()
     if lang not in LOCALES:
         lang = 'en'
-    toplevel = Line.objects.get_from_cache(shop_ref)
+
     
     af = None
     line = None
@@ -146,6 +146,8 @@ def article(request, shop_ref, line_ref, af_ref = None):
             
     af.shop_ref = shop_ref
     line = af.line
+
+    toplevel = Line.objects.get_from_cache(shop_ref)
     secondlevel = line.articletype_set.order_by(lang).all()
 
     query = ArticleFamily.objects.select_related().filter(line=line)
@@ -168,9 +170,7 @@ def article(request, shop_ref, line_ref, af_ref = None):
     tablespan = 6 + has_old_price + has_discount_price
     show_state = 1
 
-    a = render_to_response('explore/article.html', locals(), context_instance=rctxt)
-
-    return a
+    return render_to_response('explore/article.html', locals(), context_instance=rctxt)
 
 @json
 def pane(request, type_id):

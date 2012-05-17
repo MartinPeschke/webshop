@@ -1,3 +1,4 @@
+from collections import namedtuple
 from django.db import models, connection
 from django.core.cache import cache
 from django.utils.safestring import mark_safe
@@ -488,6 +489,28 @@ class ArticleOption(models.Model):
         db_table = 'apps_articleoption'
         ordering = ['ref']
 
+
+PricingInfo = namedtuple("PricingInfo", ['price', 'discountQty', 'is_discounted', 'tax_included'])
+
+
+class PricingManager(models.Manager):
+    def get_article_prices(self, article_qty_map, simple_role):
+        price_info_map = {}
+        pricings = Pricing.objects.filter(forRole = simple_role, article_id__in = article_qty_map.keys())
+        for price in pricings:
+            qty = article_qty_map[price.article_id]
+            info = price_info_map.setdefault(price.article_id, PricingInfo(price.price
+                                                                           , price.discountQty
+                                                                           , price.discountQty > 0
+                                                                           , price.tax_included))
+            if qty >= price.discountQty > info.discountQty:
+                price_info_map[price.article_id] = PricingInfo(price.price
+                                                            , price.discountQty
+                                                            , price.discountQty > 0
+                                                            , price.tax_included)
+        return price_info_map
+
+
 class Pricing(models.Model):
     is_articleDB = True
 
@@ -525,6 +548,7 @@ class Pricing(models.Model):
     def __unicode__(self):
         return u'%s %s %s' % (str(self.article), str(self.forRole), str(self.price))
 
+    objects = PricingManager()
     class Meta:
         db_table = 'apps_pricing'
         ordering = ['article','-_price']

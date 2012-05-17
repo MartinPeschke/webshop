@@ -19,7 +19,7 @@
                     {% trans "Meine Bestellungen" %}</a></li>
                 <li {% ifequal profile_url request.path %}class="active"{% endifequal %}>
                 <a class="nav-tab-link" href="{{ profile_url }}">
-                    {% trans "Profile" %}</a></li>
+                    {% trans "Mein Konto" %}</a></li>
                 <li {% ifequal address_url request.path %}class="active"{% endifequal %}>
                 <a class="nav-tab-link" href="{{ address_url }}">
                     {% trans 'Meine Adressen'%}</a></li>
@@ -27,14 +27,6 @@
             </ul>
         {% endspaceless %}
     {% endblock %}
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %} fade in">
-                <a class="close" data-dismiss="alert" href="#">×</a>
-                {{ message|safe  }}
-            </div>
-        {% endfor %}
-    {% endif %}
     {% block content %}{% endblock %}
 {% endblock %}
 

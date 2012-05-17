@@ -1,8 +1,6 @@
 {% extends "user/order/layout.html" %}
 {% load i18n %}
 
-{% block center_block_header %}{% trans 'Zahlweise' %}{% endblock %}
-
 {% block content %}
 <div class="center_box" id="payment-page">
     <form method="post" class="form-horizontal form-validated">
@@ -30,6 +28,6 @@
     <script>
         window.__options__ = {methodTranslation: {{ available_methods }}};
     </script>
-    <script src="{{ MEDIA_URL}}scripts/libs/require.js" data-main="{{ MEDIA_URL}}scripts/pages/payment"></script>
+    <script src="{{ MEDIA_URL }}/scripts/libs/require.js" data-main="{{ MEDIA_URL }}/scripts/pages/payment"></script>
 {% endblock %}
 

@@ -35,10 +35,22 @@
   float: left;
   margin: 15px;
 }
-.optionLink {
+.listed-option-link {
   float: left;
   margin: 15px 0 0 15px ;
+  cursor:pointer;
+  &.selected {
+    margin: 13px 0 0 13px;
+    border: 1px solid #999;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+  }
 }
+#tbArticles .dataSeperator {
+    height:3px;
+    padding:0;
+    background-color: black !important;
+}
+
 .error {color:red !important;}
 .addToCartBtn {
     margin:10px;
@@ -53,10 +65,32 @@
   .article-pricing-total-amount-label {text-align:right;}
   .text-note {font-size:0.8em;padding-top: 3px;}
   .cart-quantity-wrapper {font-size:.8em;}
-  .cartQtyInput {margin-bottom:0;}
   .label-success {top: -3px;position: relative;}
 }
+.cartQtyInput {margin-bottom:0;}
+
 .order-articles-form {
   margin-bottom:0px;
   .btn {margin:15px 0;width:25%;}
+}
+
+.articlePictures {
+    position:relative;
+    .promotionalIcon {
+        position: absolute;
+        top: -8px;
+        right: -10px;
+    }
+}
+
+.articleOptionFilter-label {padding-top:15px;}
+
+// Article Ajax list
+.additionalitem{
+    display:block;
+    float:left;
+    width:90px;
+    height:90px;
+    margin:3px;
+    .medium {width:auto;max-height:100%}
 }
