@@ -45,7 +45,7 @@ class CheckoutView(BaseLoggedInView, BaseFormView):
             raise HTTPRedirect(self.LOGIN_URL)
         user, profile, billing, shipping = _get_user_data(request.user)
         if billing is None or shipping is None:
-            messages.add_message(request, messages.ERROR, _('Bitte geben Sie erst Ihre Liefer- und Rechnungsadresse an!'))
+            messages.add_message(request, messages.ERROR, _('Bitte gib erst eine Liefer- und Rechnungsadresse an!'))
             raise HTTPRedirect(reverse('confirm-address-route'))
 
     def get_form_instance(self, request, *args, **kwargs):
@@ -138,7 +138,7 @@ class CheckoutView(BaseLoggedInView, BaseFormView):
                          , 'profile': profile
                          , 'cart':cart
                          , 'order':order
-                         , 'billing_address,' : billing
+                         , 'billing_address' : billing
                          , 'shipping_address' : shipping})
 
             try:
@@ -153,7 +153,7 @@ class CheckoutView(BaseLoggedInView, BaseFormView):
                 pass
             try:
                 mail.create_mail("%s Order" % settings.EMAIL_SUBJECT_PREFIX, settings.SERVER_EMAIL, settings.ORDER_MAIL, 'orderToBackoffice', c)
-                mail.create_mail(_("Vielen Dank fuer Ihre Bestellung bei Per-4"), settings.SERVER_EMAIL, user.email, 'order_confirmation', c)
+                mail.create_mail(_("Vielen Dank fuer Deine Bestellung bei Per-4"), settings.SERVER_EMAIL, user.email, 'order_confirmation', c)
             except:
                 order.status_id = -2
                 order.save()

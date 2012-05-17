@@ -85,9 +85,7 @@ class RequestPasswordView(LoginView):
             if datetime.datetime.now() - pt.create_time < oneDay:
                 messages.add_message(request, messages.ERROR,
                     _('''Eine Passwort&auml;nderungsemail wurde bereits an die Email-Adresse: <b>%s</b> innerhalb der letzten 24 Stunden versendet.<br/><br/>
-                    Um unsere Nutzer vor Spam
-                    zu sch&uuml;tzen, k&ouml;nnen wir erst Morgen wieder eine neue Email senden, bitte kontakieren Sie uns doch direkt oder versuchen es Morgen noch einmal
-                    !''') % user.email)
+                    Um unsere Nutzer vor Spam zu sch&uuml;tzen, k&ouml;nnen wir erst Morgen wieder eine neue Email senden, bitte kontakiere uns doch direkt oder versuche es Morgen noch einmal!''') % user.email)
             else:
                 sendResetEmail(request, user)
         raise HTTPRedirect(request.get_full_path())
@@ -131,9 +129,8 @@ class SignupScreen(BaseAuthView):
         if user is not None:
             # send activation email right away
             register_token = attach_token(user, role = REGISTERNEWTOKEN)
-            _send_register_mail(user.email, request.META['HTTP_HOST'], register_token.value, role in HAS_RIGHTS)
+            _send_register_mail(user.email, request.META['HTTP_HOST'], register_token.value, role in REQUIRES_APPROVAL)
             auth.login(request, user)
-
             raise HTTPRedirect(self.get_user_signup_details_url(request))
         else:
             messages.add_message(request, messages.ERROR, _('Ein Fehler ist aufgetreten!'))
@@ -163,9 +160,6 @@ class SignupWholesaleDetailsScreen(BaseAuthView):
         if role in REQUIRES_APPROVAL:
             pt = attach_token(user, role = APPROVALWHOLESALETOKEN)
             _send_approval_mail(request.META['HTTP_HOST'], user, pt)
-        else:
-            user.is_active = True
-            user.save()
         raise HTTPRedirect(self.HOME_URL)
 
 class SignupRetailDetailsScreen(SignupWholesaleDetailsScreen):

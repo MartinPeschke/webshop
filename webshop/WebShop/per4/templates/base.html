@@ -83,6 +83,7 @@
       </div>
     </div>
   </header>
+
   <div class="container">
     <div class="row subheader">
       <div class="span2">
@@ -130,6 +131,17 @@
     </div>
 
     <div class="row body">
+        {% if messages %}
+            <div class="span12">
+                {% for message in messages %}
+                    <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %} fade in">
+                        <a class="close" data-dismiss="alert" href="#">×</a>
+                        {{ message|safe  }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
        {% block body %}{% endblock %}
     </div>
 

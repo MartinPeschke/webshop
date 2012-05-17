@@ -1,13 +1,23 @@
 {% extends "layout.html" %}
 {% load url from future %}
 {% load i18n %}
+{% load auth_tags %}
 
 {% block center_block_header %}{{ title }}{% endblock %}
 
 
 {% block content %}
     <div class="center_box">
-        <a href="{% url 'home-route' %}" class="btn btn-primary pull-right">{%  trans "Home" %}</a>
-        <a href="{% url 'addresses-route' %}" class="btn btn-primary">{%  trans  "Adressen hinzuf&uuml;gen" %}</a>
+        <p>{% trans "Deine Registrierung ist nun abgeschlossen!" %}</p>
+        <p>{% trans "Um eine Bestellung aufzugeben, musst du noch Rechnungs- und Lieferdresse angeben, mach das doch gleich jetzt!" %}</p>
+
+        {% if user|is_studio %}
+            <p>{% trans "Du hast dich als Studio angemeldet. Daf&uuml; m&uuml;ssen wir noch deine Angaben &uuml;berpr&uuml;fen. Im Laufe der n&*auml;chsten Tage wird dein Konto als Studio freigeschaltet." %}</p>
+            <p>{% trans "Leider kannst du die Studiopreise erst sehen wenn Dein Konto freigeschaltet wurde." %}</p>
+        {% endif %}
+        <hr/>
+        <p>
+        <a href="{% url 'addresses-route' %}" class="btn btn-primary">{%  trans  "Adressen jetzt hinzuf&uuml;gen" %}</a>
+        </p>
     </div>
 {% endblock %}

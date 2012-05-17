@@ -89,7 +89,7 @@ class Cart(object):
             if qty:
                 ao = items.setdefault(id, ArticleOption.objects.get(pk=id))
                 ao.quantity = getattr(ao, 'quantity', 0) + qty
-                if ao.quantity == 0:
+                if ao.quantity <= 0:
                     items.pop(id)
         self.items = items.values()
         return self.refreshPricings()

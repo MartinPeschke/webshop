@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from django.template.context import Context
 from WebShop.apps.user.models import Profile
 from WebShop.apps.user.models.password_token import APPROVALWHOLESALETOKEN, PasswordToken
-from WebShop.apps.user.user_roles import ANONYMOUS_ROLE, userRoles, LEAST_ROLE, NORM_ROLE
+from WebShop.apps.user.user_roles import ANONYMOUS_ROLE, userRoles, LEAST_ROLE, NORM_ROLE, REQUIRES_APPROVAL
 from WebShop.utils import mail
 
 
@@ -56,7 +56,7 @@ def is_studio_user(user):
     if user.is_anonymous():
         return False
     profile = user.get_profile()
-    return profile.role >= NORM_ROLE
+    return profile.role in REQUIRES_APPROVAL
 
 
 

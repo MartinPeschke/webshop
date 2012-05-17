@@ -24,7 +24,7 @@ require([], function () {
                         var $elem = $(elem)
                             , $target = $elem.parent().find(".cart_qty")
                             , row = $target.closest(".articleoption_row")
-                            , newAddedQty = parseInt($target.text(), 10) + parseInt(elem.value, 10);
+                            , newAddedQty = Math.max(parseInt($target.text(), 10) + parseInt(elem.value, 10), 0);
                         if(newAddedQty){
                             $target.html(newAddedQty)
                                     .closest(".cart-quantity-wrapper ").removeClass("hidden");

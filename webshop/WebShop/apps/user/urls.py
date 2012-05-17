@@ -21,8 +21,8 @@ urlpatterns = patterns('',
     url(r'^logout/$', 'WebShop.apps.user.views.auth.logout', name="logout-route"),
     url(r'^checkmail/$', 'WebShop.apps.user.views.auth.check_mail', name='check-email-route'),
 
-    (r'approve/(?P<token>\w+)', 'WebShop.apps.user.views.handler.approve'),
-    (r'deny/(?P<token>\w+)', 'WebShop.apps.user.views.handler.deny'),
+    (r'approve/(?P<token>[0-9a-z-]+)', 'WebShop.apps.user.views.handler.approve'),
+    (r'deny/(?P<token>[0-9a-z-]+)', 'WebShop.apps.user.views.handler.deny'),
 
 
     # User settings

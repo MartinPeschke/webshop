@@ -11,6 +11,7 @@ from django.contrib.auth.models import User
 from WebShop.apps.lib.baseviews import BaseForm, Fieldset
 from WebShop.apps.contrib.countries.models import Country
 from WebShop.apps.user.models.address import Language
+from WebShop.apps.user.user_roles import LEAST_ROLE, AWAITING_APPROVAL_ROLE
 
 COUNTRIES = map(attrgetter('iso', 'printable_name'), Country.objects.all())
 LANGUAGES = map(attrgetter('code', 'name'), Language.objects.all())
@@ -131,7 +132,7 @@ class RegisterForm(BaseForm):
                 'password2'
             ),
         )
-    role = forms.ChoiceField(choices = [('K', _('Studio')), ('E', _('Endkunde'))], widget=forms.Select
+    role = forms.ChoiceField(choices = [(AWAITING_APPROVAL_ROLE, ugettext_lazy('Studio')), (LEAST_ROLE, ugettext_lazy('Endkunde'))], widget=forms.Select
                              , label = ugettext_lazy('Ich bin'))
     email = forms.CharField()
     password = forms.CharField(widget = forms.PasswordInput, label = ugettext_lazy('Passwort'))

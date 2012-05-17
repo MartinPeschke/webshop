@@ -1,6 +1,7 @@
+from django.utils.safestring import mark_safe
 from WebShop.apps.user.models import APPROVALWHOLESALETOKEN
 
-from WebShop.apps.user.user_roles import    NORM_ROLE
+from WebShop.apps.user.user_roles import NORM_ROLE, LEAST_ROLE
 
 from django.contrib import auth
 from django.shortcuts import render_to_response
@@ -15,11 +16,13 @@ def approve(request, token):
     '''
 
     user = auth.authenticate(token=token, role = APPROVALWHOLESALETOKEN)
-    if(user):
+    if user:
         profile = user.get_profile()
         profile.role = NORM_ROLE
         profile.save()
-        user.message_set.create(message=str(_('You have been approved for Wholesale access, enjoy your shopping!')))        
+        # TODO: this dont work no more, mabe can make it work later?
+        #user.message_set.create(message=str(_('You have been approved for Wholesale access, enjoy your shopping!')))
+        message = _('user {} ({} {}), {} approved').format(profile.company_name, profile.first_name, profile.last_name, user.email)
     else:
         message = _('This Approval Code is invalid, maybe you already approved this user?')
     return render_to_response('user/approved.html', locals(), context_instance=RequestContext(request))
@@ -31,7 +34,12 @@ def deny(request, token):
     '''
     user = auth.authenticate(token=token, role = APPROVALWHOLESALETOKEN)
     if(user):
-        user.message_set.create(message=str(_('Sorry, we could not approve your Wholesale Access request, please call us or contact us by email to clarify.')))
+        profile = user.get_profile()
+        profile.role = LEAST_ROLE
+        profile.save()
+        # TODO: this dont work no more, mabe can make it work later?
+        #user.message_set.create(message=str(_('Sorry, we could not approve your Wholesale Access request, please call us or contact us by email to clarify.')))
+        message = mark_safe(_('<font style="color:red">user {} ({} {}), {} DENIED</font>').format(profile.company_name, profile.first_name, profile.last_name, user.email))
     else:
         message = _('This Approval Code is invalid, maybe you already denied this request?')
     return render_to_response('user/approved.html', locals(), context_instance=RequestContext(request))

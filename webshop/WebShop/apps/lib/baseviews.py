@@ -89,7 +89,7 @@ class BaseLoggedInView(BaseView):
         elif user.is_active:
             return super(BaseLoggedInView, self).dispatch(request, *args, **kwargs)
         else:
-            messages.add_message(request, messages.ERROR, _('Bitte zuerst Konto aktivieren beenden!'))
+            messages.add_message(request, messages.ERROR, _('Bitte zuerst Konto aktivieren!'))
             return HttpResponseRedirect(self.HOME_URL)
 
 

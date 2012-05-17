@@ -11,7 +11,7 @@
 
     {% if billing_address %}
         <p>
-            <h3>{% trans "Ihre Rechnungsadresse:" %}</h3>
+            <h3>{% trans "Rechnungsadresse:" %}</h3>
             <div class="address-line">{% trans "Empf&auml;nger:" %} {{ billing_address.name }}</div>
             <div class="address-line">{% trans "Strasse:" %} {{ billing_address.street }}</div>
             <div class="address-line">{% trans "Ort:" %} {{ billing_address.zip }} {{ billing_address.city }}, {{ billing_address.country }}</div>
@@ -19,7 +19,7 @@
     {% endif %}
     {% if shipping_address %}
         <p>
-            <h3>{% trans "Ihre Lieferadresse:" %}</h3>
+            <h3>{% trans "Lieferadresse:" %}</h3>
             <div class="address-line">{% trans "Empf&auml;nger:" %} {{ shipping_address.name }}</div>
             <div class="address-line">{% trans "Strasse:" %} {{ shipping_address.street }}</div>
             <div class="address-line">{% trans "Ort:" %} {{ shipping_address.zip }} {{ shipping_address.city }}, {{ shipping_address.country }}</div>
@@ -29,7 +29,6 @@
     <hr/>
     <h2>{%  trans "Deine Bestellung" %}</h2>
     <p>{% trans "Zahlart:" %} {{ order.payment_method }}</p>
-    <p>{% trans "(*) Mengenrabattpreis" %}</p>
 
     <table border="0" cellspacing="0">
         <tr>
@@ -72,7 +71,7 @@
                             </span>&euro;</td>
             </tr>
             <tr>
-                <td class="noborder" colspan="3"></td>
+                <td class="noborder" colspan="3">{% trans "(*) Mengenrabattpreis" %}</td>
                 <td colspan="2" align="center"><u><a href="http://www.per-4.com/shipping/">{% trans 'Shipping Costs Apply' %}</a></u></td>
             </tr>
             <tr>
