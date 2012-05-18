@@ -18,7 +18,7 @@ statics_source = root
 statics_destination = 'WebShop/per4/media'
 
 
-dependencies = ['django', 'mysql-python', 'simplejson', 'supervisor']
+dependencies = ['django', 'mysql-python', 'simplejson', 'supervisor', 'PIL']
 extra_dependencies = ['pip install -e git+git://github.com/earle/django-bootstrap.git#egg=bootstrap']
 
 

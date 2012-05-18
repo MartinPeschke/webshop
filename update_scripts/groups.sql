@@ -9,7 +9,7 @@ alter table apps_address add column country_iso varchar(2);
 alter table apps_address add constraint country_iso FOREIGN KEY (country_iso) references country.iso;
 CREATE TABLE `apps_language` (
   `code` varchar(2) NOT NULL,
-  `name` varchar(128) NOT NULL,
+  `name` varchar(128) NOT NULL UNIQUE,
   `enabled` tinyint(1) NOT NULL default 1,
   `is_default` tinyint(1) NOT NULL default 0,
   PRIMARY KEY (`code`)
@@ -24,18 +24,9 @@ alter table apps_address add column name varchar(256);
 update apps_address, apps_profile set name = concat(first_name, " ", last_name)
 where apps_address.user_id = apps_profile.user_id;
 
-
 CREATE TABLE `apps_address_type` (
   `id` integer auto_increment NOT NULL,
-  `name` varchar(128) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-insert into apps_address_type values (1, 'billing'), (2, 'shipping');
-
-
-CREATE TABLE `apps_address_type` (
-  `id` integer auto_increment NOT NULL,
-  `name` varchar(128) NOT NULL,
+  `name` varchar(128) NOT NULL UNIQUE,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 ALTER TABLE apps_address_type ADD UNIQUE (name);

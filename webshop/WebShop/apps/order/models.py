@@ -149,7 +149,7 @@ class BankAccount(models.Model): # no change for import, if IDs are same
 class CreditCardType(models.Model):
     class Meta:
         db_table = 'apps_creditcard_type'
-    name = models.TextField(unique=True)
+    name = models.TextField(unique=True, max_length = 32)
     LABEL_MAP = {
         'VISA' : _("CREDITCARD_VISA"),
         'MASTERCARD':_("CREDITCARD_MASTERCARD"),
