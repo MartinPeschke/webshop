@@ -17,7 +17,7 @@ class PaymentMethod(models.Model):
         db_table = 'apps_payment_method'
     objects = PaymentMethodManager()
 
-    name = models.TextField(unique=True)
+    name = models.CharField(unique=True, max_length=64)
     least_role = models.CharField(max_length=1)
 
     LABEL_MAP = {
@@ -39,7 +39,7 @@ class PaymentMethod(models.Model):
 class OrderStatus(models.Model):
     class Meta:
         db_table = 'apps_order_status'
-    name = models.TextField(unique=True)
+    name = models.CharField(unique=True, max_length=64)
     LABEL_MAP = {
         'ERROR' : ("important", _("ORDER_STATUS_ERROR")),
         'DELETED':("inverse", _("ORDER_STATUS_DELETED")),
@@ -71,7 +71,7 @@ class Order(models.Model):
     comment = models.TextField(null=True, blank = True)
     create_time = models.DateTimeField(auto_now_add=True)
     update_time = models.DateTimeField(auto_now=True)
-    ordered_in_shop = models.TextField(null=True, blank = True, default = settings.SHOP_NAME)
+    ordered_in_shop = models.CharField(null=True, blank = True, default = settings.SHOP_NAME, max_length=255)
     #alter table devel.apps_order add column meta_data text;
     meta_data = JSONField(null=True, blank=True)
 
