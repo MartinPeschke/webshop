@@ -20,4 +20,5 @@ class SlideShowItem(models.Model):
     title = models.CharField(max_length=1024)
     description = models.TextField()
     slideshow = models.ForeignKey(SlideShow)
+    sortOrder = models.IntegerField(default = 1)
 

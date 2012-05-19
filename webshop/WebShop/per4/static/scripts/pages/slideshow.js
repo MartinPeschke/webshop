@@ -14,6 +14,9 @@ require([], function () {
                                     elems.push(view.entryTempl(elem));
                                 });
                             view.$el.html(elems.join(""));
+
+                            view.$el.anythingSlider();
+
                         }
                         , type:"GET"
                     });

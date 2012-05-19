@@ -41,8 +41,10 @@
 
 
 {% block jscriptlinks %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}scripts/slider/css/anythingslider.css" type="text/css" media="screen" />
+    <script src="{{ STATIC_URL }}scripts/slider/js/jquery.anythingslider.min.js"></script>
     <script>
-        window.__options__ = {slideShow:{getURL:"{% url 'slideshow-get-route' name='homepage' %}", root:"#slideshow-container"}};
+        window.__options__ = {slideShow:{getURL:"{% url 'slideshow-get-route' name='homepage_slide_show' %}", root:"#slideshow-container"}};
     </script>
-    <script src="{{ STATIC_URL }}/scripts/libs/require.js" data-main="{{ STATIC_URL }}/scripts/pages/slideshow"></script>
+    <script src="{{ STATIC_URL }}scripts/libs/require.js" data-main="{{ STATIC_URL }}/scripts/pages/slideshow"></script>
 {% endblock %}

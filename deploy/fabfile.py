@@ -88,7 +88,7 @@ def build(env):
 
 def build_statics(env):
   environment_path = get_deploy_path(env)
-  with cd("{}code/WebShop/per4/media".format(environment_path)):
+  with cd("{}code/WebShop/per4/static".format(environment_path)):
     if(not files.exists("css")):
       run("mkdir -p css")
     run("~/node_modules/less/bin/lessc less/site.less css/site.css")

@@ -3,11 +3,15 @@ from WebShop.apps.slideshow.models import SlideShow, SlideShowItem
 
 __author__ = 'Martin'
 
+class SlideShowItemInline(admin.TabularInline):
+    model = SlideShowItem
+    list_display = ('id', 'src', 'link', 'title', 'description')
+    ordering = ['sortOrder']
+    extra = 1
 
 class SlideShowAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name')
+    list_display = ('name', )
+    inlines = [
+        SlideShowItemInline,
+    ]
 admin.site.register(SlideShow, SlideShowAdmin)
-
-class SlideShowItemAdmin(admin.ModelAdmin):
-    list_display = ('id', 'src', 'link', 'title', 'description')
-admin.site.register(SlideShowItem, SlideShowItemAdmin)
