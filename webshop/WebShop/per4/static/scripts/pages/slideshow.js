@@ -10,12 +10,14 @@ require([], function () {
                         url: this.options.getURL
                         , success : function(resp, status, xhr){
                             var elems = [];
+                                slider = view.$el.find("#slideShow");
                                 _.each(resp, function(elem){
                                     elems.push(view.entryTempl(elem));
                                 });
-                            view.$el.html(elems.join(""));
+                            slider.html(elems.join(""));
 
-                            view.$el.anythingSlider();
+                            slider.anythingSlider({ expand : true, buildStartStop : false, buildArrows : false, autoPlay : true, animationTime       : 300});
+
 
                         }
                         , type:"GET"
