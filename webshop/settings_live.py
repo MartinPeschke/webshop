@@ -102,7 +102,8 @@ SITE_ID = 1
 # URL that handles the media served from MEDIA_ROOT.
 # Example: "http://media.lawrence.com"
 MEDIA_URL = '/media'
-
+STATIC_URL = '/static/'
+STATIC_ROOT=os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 'per4', 'static'))
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
 MEDIA_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 'per4', 'media'))
@@ -169,6 +170,7 @@ INSTALLED_APPS = (
     'WebShop.apps.user',
     'WebShop.apps.search',
     'WebShop.apps.service',
+    'WebShop.apps.slideshow',
     'bootstrap',
 )
 

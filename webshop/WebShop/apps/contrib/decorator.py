@@ -1,3 +1,4 @@
+from django.db.models.fields.files import ImageFieldFile
 from django.http import HttpResponse, HttpResponseNotAllowed, HttpResponseForbidden
 import types, hashlib
 from django.db import models
@@ -47,6 +48,11 @@ def json_encode(data):
         elif isinstance(data, Decimal):
             # json.dumps() cant handle Decimal
             ret = str(data)
+        elif isinstance(data, ImageFieldFile):
+            try:
+                return "{}{}".format(settings.MEDIA_URL, data.url)
+            except ValueError, e:
+                return ''
         elif isinstance(data, models.query.QuerySet):
             # Actually its the same as a list ...
             ret = _list(data)

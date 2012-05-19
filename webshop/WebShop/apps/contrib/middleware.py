@@ -22,13 +22,14 @@ class CampaignTracker(object):
 
 def cart_shops_processor(request):
     role = get_role(request)
+
     return {'request' : request,
             'cart': request.session.get('cart',[]),
             'role': role,
             'simple_role': simple_role[role],
             'has_rights' : (role in HAS_RIGHTS) and True or False,
             'USER_IS_IN_SIGNUP': is_in_signup(request.user),
-            'host': request.META['HTTP_HOST'],
+            'host': request.get_host(),
             'shops': SHOPS,
             'default_lines': Line.objects.get_from_cache(settings.DEFAULT_SHOP),
             'default_shop': settings.DEFAULT_SHOP,

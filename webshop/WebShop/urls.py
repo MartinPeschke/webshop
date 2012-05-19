@@ -74,12 +74,14 @@ urlpatterns = patterns('',
     (r'^user/', include('WebShop.apps.user.urls')),
     # Order
     (r'^order/', include('WebShop.apps.order.urls')),
+    (r'^slideshow/', include('WebShop.apps.slideshow.urls')),
 
     # Web Service
     (r'^services/', include('WebShop.apps.service.urls')),
 
     # media
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 
     # i18n
     (r'^i18n/', include('django.conf.urls.i18n')),

@@ -1,9 +1,18 @@
 ﻿{% extends "layout_free_center.html" %}
 {% load explore %}
 {% load i18n %}
+{% load url from future %}
 
 {% block centerbox %}
-  <div class="homepage">
+  <div class="homepage" id="home-page-content">
+    <div id="slideshow-container"></div>
+
+
+
+
+
+
+
     <div class="vertical first">
       <a href="/tattoo/" title="Neu in TATTOO">
         <img src="/media/images/news/welcome_1.jpg?20120321"  alt="Neu in TATTOO"/>
@@ -28,4 +37,12 @@
       </div>
     </div>
   </div>
+{% endblock %}
+
+
+{% block jscriptlinks %}
+    <script>
+        window.__options__ = {slideShow:{getURL:"{% url 'slideshow-get-route' name='homepage' %}", root:"#slideshow-container"}};
+    </script>
+    <script src="{{ STATIC_URL }}/scripts/libs/require.js" data-main="{{ STATIC_URL }}/scripts/pages/slideshow"></script>
 {% endblock %}

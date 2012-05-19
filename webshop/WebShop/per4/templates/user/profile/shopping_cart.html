@@ -102,5 +102,5 @@
     <script>
         window.__options__ = {updateCartUrl: "{% url "refresh-cart-route" %}"};
     </script>
-    <script src="{{ MEDIA_URL }}/scripts/libs/require.js" data-main="{{ MEDIA_URL }}/scripts/pages/shopping_cart"></script>
+    <script src="{{ STATIC_URL }}/scripts/libs/require.js" data-main="{{ STATIC_URL }}/scripts/pages/shopping_cart"></script>
 {% endblock %}

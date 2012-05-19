@@ -2,6 +2,7 @@ import os
 from django.conf import settings
 from django.shortcuts import render_to_response
 from django.template import RequestContext, TemplateDoesNotExist
+from WebShop.apps.slideshow.models import SlideShow
 
 def render_with_locale(request, template, context):
     rctxt = RequestContext(request)
@@ -13,7 +14,7 @@ def render_with_locale(request, template, context):
         return render_to_response('pages/%s_en.html' % template, context, context_instance=rctxt)
 
 def main(request):
-    return render_with_locale(request, 'main', locals())
+    return render_with_locale(request, 'main', {})
 
 def news(request):
     return render_to_response('pages/news.html', locals(), context_instance=RequestContext(request))

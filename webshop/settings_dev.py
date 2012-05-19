@@ -102,7 +102,8 @@ SITE_ID = 1
 # URL that handles the media served from MEDIA_ROOT.
 # Example: "http://media.lawrence.com"
 MEDIA_URL = '/media'
-
+STATIC_URL = '/static/'
+STATIC_ROOT=os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 'per4', 'static'))
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
 MEDIA_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 'per4', 'media'))
@@ -116,12 +117,6 @@ DATA_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 
 LANGUAGE_CODE = 'en'
 MANAGERS = ADMINS
 
-
-
-# URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
-# trailing slash.
-# Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/admin_media/'
 
 
 # List of callables that know how to import templates from various sources.
@@ -153,7 +148,7 @@ MIDDLEWARE_CLASSES = (
    'django.contrib.sessions.middleware.SessionMiddleware',
    'django.middleware.locale.LocaleMiddleware',
    'django.contrib.auth.middleware.AuthenticationMiddleware',
-   'django.contrib.messages.middleware.MessageMiddleware',
+   'django.contrib.messages.middleware.MessageMiddleware'
 )
 
 INSTALLED_APPS = (
@@ -161,6 +156,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.messages',
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'WebShop.apps.contrib.countries',
@@ -169,6 +165,7 @@ INSTALLED_APPS = (
     'WebShop.apps.user',
     'WebShop.apps.search',
     'WebShop.apps.service',
+    'WebShop.apps.slideshow',
     'bootstrap',
 )
 
