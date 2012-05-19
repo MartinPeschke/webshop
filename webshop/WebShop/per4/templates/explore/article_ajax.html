@@ -4,7 +4,7 @@
             {% with af.promotion as p %}
                 {% if p %}
                     <span class="promotionalIcon" class="{{ p.type_ref|lower }}">
-                        <img src="/media/images/icon_{{ p.type_ref }}.png" alt="{{ p.type_ref|upper }}"/>
+                        <img src="{{ STATIC_URL }}images/icon_{{ p.type_ref }}.png" alt="{{ p.type_ref|upper }}"/>
                     </span>
                 {% endif %}
             {% endwith %}
@@ -57,9 +57,9 @@
           <tr class="articleoption_row option-{{ ao.ref }} {% if cart_qty %}in_cart{% endif %}" article="{{ article.ref }}" id="{{ ao.id }}" optionRow="true">
             <td class="available"  width="25px">
             {% if ao.available %}
-              <img src="/media/images/btn_avail_green.png" alt="{% trans 'Available' %}"/>
+              <img src="{{ STATIC_URL }}images/btn_avail_green.png" alt="{% trans 'Available' %}"/>
             {% else %}
-              <img src="/media/images/btn_avail_red.png" alt="{% trans 'Not Available' %}"/>
+              <img src="{{ STATIC_URL }}images/btn_avail_red.png" alt="{% trans 'Not Available' %}"/>
             {% endif %}
             </td>
             <td class="data">{{ article.ref }}</td>

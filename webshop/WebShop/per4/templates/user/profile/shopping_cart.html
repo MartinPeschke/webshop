@@ -23,7 +23,7 @@
         <tbody>
             {% for option in cart.items %}
                 <tr class="cart-item-row" id="{{ option.id }}">
-                    <td class="cart-cell"><a class="link delete-link" href="{% url "delete-from-cart-route" option.id %}"><img src="/media/images/trash.png"></a></td>
+                    <td class="cart-cell"><a class="link delete-link" href="{% url "delete-from-cart-route" option.id %}"><img src="{{ STATIC_URL }}images/trash.png"></a></td>
                     <td class="cart-cell"><img alt="{{ option.article.article_family.ref }}" src="{{ option.article.article_family|check_image_low:option.article.article_family.line.shop.ref }}"/>	</td>
                     <td class="cart-cell"><a href="/{{ option.article.article_family.line.shop.ref }}/{{ option.article.article_family.line.ref }}/{{ option.article.article_family.id }}/" >{{ option.article.ref }}</a></td>
                     <td class="cart-cell">{{ option.article.compiledSize }}</td>

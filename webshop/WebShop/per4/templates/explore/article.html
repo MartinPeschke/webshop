@@ -27,7 +27,7 @@
                                 href="/{{  article_family.line.shop.ref }}/{{  article_family.line.ref }}/{{ article_family.ref }}/">
                             <img class="medium" alt="{{ article_family.line.name|locale:LANGUAGE_CODE }}" src="{{ article_family|check_image_med:article_family.line.shop.ref }}"/>
                             {% with article_family.promotion as p %}{% if p %}
-                                    <span class="promotionalIcons {{ p.type_ref|lower }}"><img src="/media/images/icon_{{ p.type_ref }}_s.png" alt="{{ p.type_ref|upper }}"/></span>
+                                    <span class="promotionalIcons {{ p.type_ref|lower }}"><img src="{{ STATIC_URL }}images/icon_{{ p.type_ref }}_s.png" alt="{{ p.type_ref|upper }}"/></span>
                             {% endif %}{% endwith %}
                         </a>
                     {% endfor %}
