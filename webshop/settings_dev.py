@@ -27,9 +27,6 @@ ORDER_MAIL = 'martin@per-4.net'
 ERROR_MAIL = 'martin@per-4.net'
 CACHE_TOKEN = "1234"
 
-
-MAP_ROLE_TO_GROUP = {"E":"retail", "K":"wholesale"}
-
 TAX_RATE = 19.0
 ARTICLE_LINE_PANE_SIZE = 8
 CACHE_TIMEOUT = 604800
@@ -72,8 +69,10 @@ CACHES = {
     }
 }
 
-TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'WebShop', 'per4', 'templates'),)
-LOCALE_PATHS = (os.path.join(os.path.dirname(__file__), 'WebShop', 'per4', 'locale'),)
+TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'WebShop', 'templates'),)
+LOCALE_PATHS = (
+    'd:/home/Martin/Documents/python/ws/webshop/WebShop/locale',
+    os.path.join(os.path.dirname(__file__), 'WebShop', 'locale'),)
 DATABASES = {
     'default': {
          'ENGINE':'django.db.backends.mysql'           # 'postgresql', 'mysql', 'sqlite3' or 'ado_mssql'.
@@ -103,12 +102,11 @@ SITE_ID = 1
 # Example: "http://media.lawrence.com"
 MEDIA_URL = '/media'
 STATIC_URL = '/static/'
-STATIC_ROOT=os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 'per4', 'static'))
+STATIC_ROOT=os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 'static'))
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 'per4', 'media'))
-DATA_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 'per4', 'data'))
-
+MEDIA_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 'media'))
+DATA_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 'data'))
 
 # Language code for this installation. All choices can be found here:
 # http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes
@@ -116,8 +114,6 @@ DATA_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 
 # from django.utils.translation import gettext_lazy as _
 LANGUAGE_CODE = 'en'
 MANAGERS = ADMINS
-
-
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (

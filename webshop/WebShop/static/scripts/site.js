@@ -1,7 +1,6 @@
 $(function(){
     $('#language_bar span[lang]').on({"click":function(evt){
         $('#languageCode').val($(evt.target).parents('span.flag').attr('lang'));
-        if (next) $('#next').val(next);
         $('#setlang').submit();
     }});
 
