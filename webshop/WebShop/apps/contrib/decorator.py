@@ -58,6 +58,8 @@ def json_encode(data):
             ret = _list(data)
         elif isinstance(data, models.Model):
             ret = _model(data)
+        elif isinstance(data, HttpResponseNotAllowed):
+            ret = {'error':'not_allowed'}
         else:
             ret = data
         return ret

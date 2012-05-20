@@ -5,48 +5,35 @@
 
 {% block centerbox %}
   <div class="homepage" id="home-page-content">
-    <div id="slideshow-container" style="height:500px;width:100%;">
-        <div id="slideShow"></div>
-    </div>
-
-
-
-
-
-
-
-    <div class="vertical first">
-      <a href="/tattoo/" title="Neu in TATTOO">
-        <img src="/media/images/news/welcome_1.jpg?20120321"  alt="Neu in TATTOO"/>
-       </a>
-    </div>
-    <div class="vertical" style="margin-top:1em;">
-        <img src="/media/images/news/welcome_5.jpg?20120321" alt="&th Anniversary Discount / 7ter Geburtstagsrabatt"/>
+    <div id="slideshow-container"  class="slideshow-container">
+        <div id="slideShow">
+            {% for item in slideshow %}
+                <div>
+                   {% if item.link %}<a href="{{ item.link }}" title="{{ item.title }}">{% endif %}
+                    <img src="{{ MEDIA_URL }}/{{  item.src }}" alt="{{ item.title }}"/><p>{{ item.description }}
+                  {% if item.link %}</a>{% endif %}
+                </div>
+            {% endfor %}
+        </div>
     </div>
     <div class="homepage-previews">
-      <div class="preview-item">
-        <a href="/piercing/uv_fluor/AXS-SET/" title="NEUES ACRYL DEHNSPIRALEN SET">
-          <img src="/media/images/news/welcome_2.jpg?20111208" alt="NEUES ACRYL DEHNSPIRALEN SET"/><p class="caption">NEUES ACRYL DEHNSPIRALEN SET</p>
-        </a>
-      </div>
-      <div class="preview-item">
-        <a href="/tattoo/tattoo_inks/XSPA/" title="SCHABLONENPAPIER - HEKTOGRAPHISCHES PAPIER">
-          <img src="/media/images/news/welcome_3.jpg?20120321" alt="SCHABLONENPAPIER - HEKTOGRAPHISCHES PAPIER"/><p class="caption">SCHABLONENPAPIER - HEKTOGRAPHISCHES PAPIER</p>
-        </a>
-      </div>
-      <div class="preview-item">
-        <img src="/media/images/news/welcome_4.jpg?20120321" alt="FAKE SPIRAL"/><p class="caption">Frankfurt Convention<br/>30. M&auml;rz - 1. April</p>
-      </div>
+    {% for item in links %}
+        <div class="preview-item">
+            {% if item.link %}<a href="{{ item.link }}" title="{{ item.title }}">{% endif %}
+                <img src="{{ MEDIA_URL }}/{{  item.src }}" alt="{{ item.title }}"/><p class="caption">{{ item.description }}</p>
+            {% if item.link %}</a>{% endif %}
+        </div>
+    {%  endfor %}
     </div>
   </div>
 {% endblock %}
 
 
 {% block jscriptlinks %}
-    <link rel="stylesheet" href="{{ STATIC_URL }}scripts/slider/css/anythingslider.css" type="text/css" media="screen" />
     <script src="{{ STATIC_URL }}scripts/slider/js/jquery.anythingslider.min.js"></script>
     <script>
-        window.__options__ = {slideShow:{getURL:"{% url 'slideshow-get-route' name='homepage_slide_show' %}", root:"#slideshow-container"}};
+        $(function(){
+            $("#slideShow").anythingSlider({ expand : true, buildStartStop : false, buildArrows : false, autoPlay : true, animationTime : 300, startPanel : 1, delay : 4000});
+        });
     </script>
-    <script src="{{ STATIC_URL }}scripts/libs/require.js" data-main="{{ STATIC_URL }}/scripts/pages/slideshow"></script>
 {% endblock %}

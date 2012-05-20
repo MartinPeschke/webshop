@@ -2,7 +2,7 @@ import os
 from django.conf import settings
 from django.shortcuts import render_to_response
 from django.template import RequestContext, TemplateDoesNotExist
-from WebShop.apps.slideshow.models import SlideShow
+from WebShop.apps.cms.models import LinkGalleryItem
 
 def render_with_locale(request, template, context):
     rctxt = RequestContext(request)
@@ -14,7 +14,14 @@ def render_with_locale(request, template, context):
         return render_to_response('pages/%s_en.html' % template, context, context_instance=rctxt)
 
 def main(request):
-    return render_with_locale(request, 'main', {})
+    galleries = LinkGalleryItem.objects.filter(linkgallery__name__in = ['homepage_slideshow', 'homepage_links'])
+    slideshow, links = [], []
+    for item in galleries:
+        if item.linkgallery.name ==  'homepage_slideshow':
+            slideshow.append(item)
+        else:
+            links.append(item)
+    return render_with_locale(request, 'main', {'slideshow':slideshow, 'links':links})
 
 def news(request):
     return render_to_response('pages/news.html', locals(), context_instance=RequestContext(request))

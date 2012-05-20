@@ -39,7 +39,7 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
 
     # Real Index Page
-    url(r'^$', 'WebShop.apps.explore.views.pages.main', name='home-route'),
+    url(r'^$', 'WebShop.apps.cms.pages.main', name='home-route'),
 
     # Browsing
     (r'^(?P<shop_ref>%s)/$' % SHOPS_URLS, 'WebShop.apps.explore.views.handler.shop'),
@@ -49,23 +49,23 @@ urlpatterns = patterns('',
     (r'^(?P<shop_ref>%s)/(?P<line_ref>[\w\d\-_]+)/(?P<af_ref>[\w\d\-_. ]+)/$' % SHOPS_URLS, 'WebShop.apps.explore.views.handler.article'),
 
     # Static
-    (r'^news/$', 'WebShop.apps.explore.views.pages.news'),
-    (r'^downloads/$', 'WebShop.apps.explore.views.pages.downloads'),
-    (r'^contact/$', 'WebShop.apps.explore.views.pages.contact'),
-    (r'^aboutus/$', 'WebShop.apps.explore.views.pages.aboutus'),
-    (r'^agb/$', 'WebShop.apps.explore.views.pages.agb'),
-    (r'^faq/$', 'WebShop.apps.explore.views.pages.faq'),
-    (r'^jobs/$', 'WebShop.apps.explore.views.pages.jobs'),
-    (r'^materials/$', 'WebShop.apps.explore.views.pages.materials'),
-    (r'^impressum/$', 'WebShop.apps.explore.views.pages.impressum'),
-    (r'^gallery/(?P<page>\d*)$', 'WebShop.apps.explore.views.pages.gallery'),
-    (r'^ourads/$', 'WebShop.apps.explore.views.pages.ourads'),
-    (r'^coupons/$', 'WebShop.apps.explore.views.pages.coupons'),
-    (r'^shipping/$', 'WebShop.apps.explore.views.pages.shipping'),
-    (r'^studios/$', 'WebShop.apps.explore.views.pages.studios'),
-    (r'^seminar/$', 'WebShop.apps.explore.views.pages.seminar'),
-    (r'^convention/$', 'WebShop.apps.explore.views.pages.convention'),
-    (r'^content/(?P<page>[a-zA-Z0-9_-]*)$', 'WebShop.apps.explore.views.pages.generic'),
+    (r'^news/$', 'WebShop.apps.cms.pages.news'),
+    (r'^downloads/$', 'WebShop.apps.cms.pages.downloads'),
+    (r'^contact/$', 'WebShop.apps.cms.pages.contact'),
+    (r'^aboutus/$', 'WebShop.apps.cms.pages.aboutus'),
+    (r'^agb/$', 'WebShop.apps.cms.pages.agb'),
+    (r'^faq/$', 'WebShop.apps.cms.pages.faq'),
+    (r'^jobs/$', 'WebShop.apps.cms.pages.jobs'),
+    (r'^materials/$', 'WebShop.apps.cms.pages.materials'),
+    (r'^impressum/$', 'WebShop.apps.cms.pages.impressum'),
+    (r'^gallery/(?P<page>\d*)$', 'WebShop.apps.cms.pages.gallery'),
+    (r'^ourads/$', 'WebShop.apps.cms.pages.ourads'),
+    (r'^coupons/$', 'WebShop.apps.cms.pages.coupons'),
+    (r'^shipping/$', 'WebShop.apps.cms.pages.shipping'),
+    (r'^studios/$', 'WebShop.apps.cms.pages.studios'),
+    (r'^seminar/$', 'WebShop.apps.cms.pages.seminar'),
+    (r'^convention/$', 'WebShop.apps.cms.pages.convention'),
+    (r'^content/(?P<page>[a-zA-Z0-9_-]*)$', 'WebShop.apps.cms.pages.generic'),
 
     # Search
     (r'^search/', 'WebShop.apps.search.views.index'),
@@ -74,7 +74,7 @@ urlpatterns = patterns('',
     (r'^user/', include('WebShop.apps.user.urls')),
     # Order
     (r'^order/', include('WebShop.apps.order.urls')),
-    (r'^slideshow/', include('WebShop.apps.slideshow.urls')),
+    (r'^cms/', include('WebShop.apps.cms.urls')),
 
     # Web Service
     (r'^services/', include('WebShop.apps.service.urls')),

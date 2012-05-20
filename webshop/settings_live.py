@@ -170,7 +170,7 @@ INSTALLED_APPS = (
     'WebShop.apps.user',
     'WebShop.apps.search',
     'WebShop.apps.service',
-    'WebShop.apps.slideshow',
+    'WebShop.apps.cms',
     'bootstrap',
 )
 
