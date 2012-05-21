@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: TurboGearShop VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-05-20 22:46+0200\n"
-"PO-Revision-Date: 2011-09-27 11:04+0100\n"
+"PO-Revision-Date: 2012-05-21 20:24+0100\n"
 "Last-Translator: \n"
 "Language-Team: turbogearshop <turbogearshop@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -30,9 +30,8 @@ msgid "Official name (CAPS)"
 msgstr ""
 
 #: .\apps\contrib\countries\models.py:24
-#, fuzzy
 msgid "Country name"
-msgstr "Company name"
+msgstr "Country name"
 
 #: .\apps\contrib\countries\models.py:25
 msgid "ISO alpha-3"
@@ -48,191 +47,186 @@ msgid "Country"
 msgstr "Country"
 
 #: .\apps\contrib\countries\models.py:32
-#, fuzzy
 msgid "Countries"
-msgstr "Country"
+msgstr "Countries"
 
 #: .\apps\contrib\countries\models.py:53
-#, fuzzy
 msgid "State name"
-msgstr "Last name"
+msgstr "State name"
 
 #: .\apps\contrib\countries\models.py:54
 msgid "Abbreviation"
-msgstr ""
+msgstr "Abbreviation"
 
 #: .\apps\contrib\countries\models.py:58
-#, fuzzy
 msgid "US State"
-msgstr "UPS Standard"
+msgstr "US State"
 
 #: .\apps\contrib\countries\models.py:59
-#, fuzzy
 msgid "US States"
-msgstr "United states"
+msgstr "US States"
 
 #: .\apps\explore\models.py:422
 msgid "pcs"
-msgstr ""
+msgstr "pcs"
 
 #: .\apps\explore\templatetags\explore.py:180
 msgid "Misc"
-msgstr ""
+msgstr "Misc"
 
 #: .\apps\lib\baseviews.py:84
 msgid "Anmeldung erforderlich!"
-msgstr ""
+msgstr "Registration required!"
 
-#: .\apps\lib\baseviews.py:87 .\apps\user\views\auth.py:67
+#: .\apps\lib\baseviews.py:87
+#: .\apps\user\views\auth.py:67
 msgid "Bitte Registrierung beenden!"
-msgstr ""
+msgstr "Please finish registration!"
 
 #: .\apps\lib\baseviews.py:92
 msgid "Bitte zuerst Konto aktivieren!"
-msgstr ""
+msgstr "Please activate your account!"
 
 #: .\apps\order\forms.py:18
 msgid "Zahlweise angeben"
-msgstr ""
+msgstr "Enter payment method"
 
-#: .\apps\order\forms.py:27 .\templates\user\order\layout.html.py:24
+#: .\apps\order\forms.py:27
+#: .\templates\user\order\layout.html.py:24
 #: .\templates\user\profile\order_history.html.py:13
 msgid "Zahlart"
-msgstr ""
+msgstr "Payment method"
 
 #: .\apps\order\forms.py:30
 msgid "Bestellkommentar"
-msgstr ""
+msgstr "Order comment"
 
 #: .\apps\order\forms.py:51
 msgid "Kreditkartendetails"
-msgstr ""
+msgstr "Credit card details"
 
 #: .\apps\order\forms.py:59
 msgid "Karteninhaber*"
-msgstr ""
+msgstr "card holder*"
 
 #: .\apps\order\forms.py:60
-#, fuzzy
 msgid "Kartennummer*"
-msgstr "Customernumber"
+msgstr "card number*"
 
 #: .\apps\order\forms.py:61
-#, fuzzy
 msgid "Typ"
-msgstr "Type"
+msgstr "type"
 
 #: .\apps\order\forms.py:62
 msgid "G&uuml;ltig bis*"
-msgstr ""
+msgstr "valid until*"
 
 #: .\apps\order\forms.py:62
 msgid "Beispiel: 10/2015"
-msgstr ""
+msgstr "e.g. 10 / 2015"
 
 #: .\apps\order\forms.py:63
 msgid "Sicherheitscode*"
-msgstr ""
+msgstr "CVC*"
 
 #: .\apps\order\forms.py:88
 msgid "Kontodaten"
-msgstr ""
+msgstr "Bank Account"
 
 #: .\apps\order\forms.py:95
 msgid "Kontoinhaber*"
-msgstr ""
+msgstr "account holder*"
 
 #: .\apps\order\forms.py:96
-#, fuzzy
 msgid "Kontonummer*"
-msgstr "Customernumber"
+msgstr "account number*"
 
 #: .\apps\order\forms.py:97
-#, fuzzy
 msgid "BLZ*"
-msgstr "BLZ"
+msgstr "sort code*"
 
 #: .\apps\order\forms.py:98
-#, fuzzy
 msgid "Bank*"
-msgstr "Back"
+msgstr "bank*"
 
 #: .\apps\order\models.py:24
 msgid "PAYMENT_METHOD_CASH"
-msgstr ""
+msgstr "Cash"
 
 #: .\apps\order\models.py:25
 msgid "PAYMENT_METHOD_CASH_ON_DELIVERY"
-msgstr ""
+msgstr "Cash on delivery"
 
 #: .\apps\order\models.py:26
 msgid "PAYMENT_METHOD_BANK_TRANSFER"
-msgstr ""
+msgstr "Bank transfer"
 
 #: .\apps\order\models.py:27
 msgid "PAYMENT_METHOD_CREDITCARD"
-msgstr ""
+msgstr "Creditcard"
 
 #: .\apps\order\models.py:28
 msgid "PAYMENT_METHOD_DIRECT_DEBIT"
-msgstr ""
+msgstr "Direct Debit"
 
 #: .\apps\order\models.py:29
 msgid "PAYMENT_METHOD_PAYPAL"
-msgstr ""
+msgstr "Paypal"
 
 #: .\apps\order\models.py:44
 msgid "ORDER_STATUS_ERROR"
-msgstr ""
+msgstr "ERROR"
 
 #: .\apps\order\models.py:45
 msgid "ORDER_STATUS_DELETED"
-msgstr ""
+msgstr "deleted"
 
 #: .\apps\order\models.py:46
 msgid "ORDER_STATUS_CURRENT"
-msgstr ""
+msgstr "current"
 
 #: .\apps\order\models.py:47
 msgid "ORDER_STATUS_ORDERED"
-msgstr ""
+msgstr "ordered"
 
 #: .\apps\order\models.py:48
 msgid "ORDER_STATUS_SUBMITTED_TO_BACKEND"
-msgstr ""
+msgstr "submitted"
 
 #: .\apps\order\models.py:154
 msgid "CREDITCARD_VISA"
-msgstr ""
+msgstr "Visa"
 
 #: .\apps\order\models.py:155
 msgid "CREDITCARD_MASTERCARD"
-msgstr ""
+msgstr "Mastercard"
 
 #: .\apps\order\views.py:48
 msgid "Bitte gib erst eine Liefer- und Rechnungsadresse an!"
-msgstr ""
+msgstr "Please enter a shipping and billing address!"
 
 #: .\apps\order\views.py:156
 msgid "Vielen Dank fuer Deine Bestellung bei Per-4"
-msgstr ""
+msgstr "Thank you for your order with per-4"
 
-#: .\apps\user\user_roles.py:21 .\apps\user\forms\auth.py:135
+#: .\apps\user\user_roles.py:21
+#: .\apps\user\forms\auth.py:135
 msgid "Endkunde"
-msgstr ""
+msgstr "Retail"
 
-#: .\apps\user\user_roles.py:22 .\apps\user\user_roles.py:23
+#: .\apps\user\user_roles.py:22
+#: .\apps\user\user_roles.py:23
 #: .\apps\user\forms\auth.py:135
 msgid "Studio"
-msgstr ""
+msgstr "Studio"
 
 #: .\apps\user\user_roles.py:24
 msgid "Partner"
-msgstr ""
+msgstr "Partner"
 
 #: .\apps\user\user_roles.py:25
 msgid "Content Manager"
-msgstr ""
+msgstr "Content Manager"
 
 #: .\apps\user\forms\auth.py:20
 msgid "Monday"
@@ -252,20 +246,19 @@ msgstr "Thursday"
 
 #: .\apps\user\forms\auth.py:24
 msgid "Friday"
-msgstr ""
+msgstr "Friday"
 
 #: .\apps\user\forms\auth.py:25
 msgid "Saturday"
 msgstr "Saturday"
 
 #: .\apps\user\forms\auth.py:26
-#, fuzzy
 msgid "Sunday"
-msgstr "Sudan"
+msgstr "Sunday"
 
 #: .\apps\user\forms\auth.py:31
 msgid "Yes"
-msgstr ""
+msgstr "Yes"
 
 #: .\apps\user\forms\auth.py:31
 msgid "No"
@@ -273,339 +266,343 @@ msgstr "No"
 
 #: .\apps\user\forms\auth.py:39
 msgid "Mit Email und Passwort anmelden"
-msgstr ""
+msgstr "Log in with email and password"
 
-#: .\apps\user\forms\auth.py:44 .\apps\user\forms\auth.py:89
+#: .\apps\user\forms\auth.py:44
+#: .\apps\user\forms\auth.py:89
 #: .\templates\email\orderFreeCatalog.html.py:49
 msgid "Email"
-msgstr "Email"
+msgstr "email"
 
-#: .\apps\user\forms\auth.py:45 .\apps\user\forms\auth.py:138
-#, fuzzy
+#: .\apps\user\forms\auth.py:45
+#: .\apps\user\forms\auth.py:138
 msgid "Passwort"
-msgstr "Password"
+msgstr "password"
 
-#: .\apps\user\forms\auth.py:48 .\apps\user\forms\auth.py:79
+#: .\apps\user\forms\auth.py:48
+#: .\apps\user\forms\auth.py:79
 msgid "Anmelden"
-msgstr ""
+msgstr "Login"
 
 #: .\apps\user\forms\auth.py:53
 msgid "Sorry, please check your email and password."
-msgstr "Sorry, please check your email and password."
+msgstr "Please check your email and password."
 
 #: .\apps\user\forms\auth.py:61
 msgid "Mit Kundennummer und Postleitzahl anmelden"
-msgstr ""
+msgstr "Login with customer number and zip code"
 
-#: .\apps\user\forms\auth.py:66 .\apps\user\forms\auth.py:209
+#: .\apps\user\forms\auth.py:66
+#: .\apps\user\forms\auth.py:209
 #: .\apps\user\forms\profile.py:83
 msgid "Kundennummer"
-msgstr "Customernumber"
+msgstr "customer number"
 
 #: .\apps\user\forms\auth.py:67
 msgid "PLZ"
-msgstr "ZIP"
+msgstr "zip code"
 
 #: .\apps\user\forms\auth.py:68
-msgid ""
-"Anmeldung mit Kundennummer klappt nur, wenn Sie entsprechende Daten per Post "
-"von uns erhalten haben."
-msgstr ""
+msgid "Anmeldung mit Kundennummer klappt nur, wenn Sie entsprechende Daten per Post von uns erhalten haben."
+msgstr "Login with customer number only works if you have received the login by mail."
 
 #: .\apps\user\forms\auth.py:73
-#, fuzzy
 msgid "Sorry, please check your customer number or ZIP code."
-msgstr "Sorry, please check your password."
+msgstr "Please check your customer number or zip code."
 
 #: .\apps\user\forms\auth.py:75
 msgid "Sorry, please activate your account."
-msgstr "Sorry, please activate your account."
+msgstr "Please activate your account."
 
-#: .\apps\user\forms\auth.py:85 .\apps\user\forms\auth.py:105
+#: .\apps\user\forms\auth.py:85
+#: .\apps\user\forms\auth.py:105
 msgid "Passwort &auml;ndern"
-msgstr ""
+msgstr "change password"
 
-#: .\apps\user\forms\auth.py:91 .\templates\user\order\payment.html.py:18
+#: .\apps\user\forms\auth.py:91
+#: .\templates\user\order\payment.html.py:18
 msgid "Abschicken"
-msgstr ""
+msgstr "Submit"
 
 #: .\apps\user\forms\auth.py:96
-#, fuzzy
 msgid "Unbekannte Emailadresse."
-msgstr "Enter Email Address"
+msgstr "Unknown email address"
 
 #: .\apps\user\forms\auth.py:110
-#, fuzzy
 msgid "Neues Passwort"
-msgstr "New Password"
+msgstr "new password"
 
-#: .\apps\user\forms\auth.py:111 .\apps\user\forms\auth.py:139
+#: .\apps\user\forms\auth.py:111
+#: .\apps\user\forms\auth.py:139
 msgid "Passwort wiederholen"
-msgstr ""
+msgstr "repeat password"
 
 #: .\apps\user\forms\auth.py:115
 msgid "PasswÃ¶rter stimmen nicht Ã¼berein."
-msgstr ""
+msgstr "Passwords do not match."
 
-#: .\apps\user\forms\auth.py:118 .\templates\user\profile\addresses.html.py:11
+#: .\apps\user\forms\auth.py:118
+#: .\templates\user\profile\addresses.html.py:11
 #: .\templates\user\profile\index.html.py:10
 msgid "Speichern"
-msgstr ""
+msgstr "Save"
 
-#: .\apps\user\forms\auth.py:128 .\apps\user\forms\auth.py:162
-#: .\apps\user\forms\auth.py:191 .\apps\user\forms\profile.py:72
+#: .\apps\user\forms\auth.py:128
+#: .\apps\user\forms\auth.py:162
+#: .\apps\user\forms\auth.py:191
+#: .\apps\user\forms\profile.py:72
 #: .\apps\user\forms\profile.py:91
-#, fuzzy
 msgid "Registrierung"
-msgstr "Register"
+msgstr "Registration"
 
 #: .\apps\user\forms\auth.py:136
 msgid "Ich bin"
-msgstr ""
+msgstr "I am"
 
 #: .\apps\user\forms\auth.py:148
 msgid "Diese Emailadresse ist bereits vergeben."
-msgstr ""
+msgstr "This email address us already registered"
 
 #: .\apps\user\forms\auth.py:153
 msgid "Bitte Ã¼berprÃ¼fen Sie Ihr Passwort."
-msgstr ""
+msgstr "Please check your password."
 
-#: .\apps\user\forms\auth.py:156 .\templates\user\auth\base.html.py:23
-#, fuzzy
+#: .\apps\user\forms\auth.py:156
+#: .\templates\user\auth\base.html.py:23
 msgid "Registrieren"
-msgstr "Register"
+msgstr "Sign up"
 
-#: .\apps\user\forms\auth.py:170 .\apps\user\forms\profile.py:66
+#: .\apps\user\forms\auth.py:170
+#: .\apps\user\forms\profile.py:66
 msgid "Anrede"
-msgstr ""
+msgstr "salutation"
 
-#: .\apps\user\forms\auth.py:171 .\apps\user\forms\profile.py:67
-#, fuzzy
+#: .\apps\user\forms\auth.py:171
+#: .\apps\user\forms\profile.py:67
 msgid "Vorname*"
-msgstr "Suriname"
+msgstr "first name"
 
-#: .\apps\user\forms\auth.py:172 .\apps\user\forms\profile.py:68
-#, fuzzy
+#: .\apps\user\forms\auth.py:172
+#: .\apps\user\forms\profile.py:68
 msgid "Nachname*"
-msgstr "Name"
+msgstr "last name"
 
 #: .\apps\user\forms\auth.py:176
 msgid "Ich stimme den AGB zu*"
-msgstr ""
+msgstr "I agree with Per-4's terms and conditions."
 
 #: .\apps\user\forms\auth.py:180
-#, fuzzy
 msgid "Nur nach Zustimmung zu unseren AGB kÃ¶nnen Sie sich registrieren"
-msgstr ""
-"Only after agreeing with our Terms and Conditions can you complete the "
-"Registration Process."
+msgstr "You need to agree to our terms and conditions to complete your registration."
 
-#: .\apps\user\forms\auth.py:184 .\apps\user\forms\auth.py:217
+#: .\apps\user\forms\auth.py:184
+#: .\apps\user\forms\auth.py:217
 #: .\templates\user\auth\finish_signup.html.py:6
 msgid "Registrierung abschliessen"
-msgstr ""
+msgstr "Finish registration"
 
-#: .\apps\user\forms\auth.py:206 .\apps\user\forms\profile.py:80
-#, fuzzy
+#: .\apps\user\forms\auth.py:206
+#: .\apps\user\forms\profile.py:80
 msgid "Webseite"
-msgstr "Reset"
+msgstr "web site"
 
-#: .\apps\user\forms\auth.py:207 .\apps\user\forms\profile.py:81
-#, fuzzy
+#: .\apps\user\forms\auth.py:207
+#: .\apps\user\forms\profile.py:81
 msgid "Studioname*"
-msgstr "Suriname"
+msgstr "studio name"
 
-#: .\apps\user\forms\auth.py:208 .\apps\user\forms\profile.py:82
+#: .\apps\user\forms\auth.py:208
+#: .\apps\user\forms\profile.py:82
 msgid "Umsatzsteuer ID"
-msgstr ""
+msgstr "VAT ID"
 
 #: .\apps\user\forms\auth.py:210
 msgid "Ãffnungszeiten*"
-msgstr ""
+msgstr "opening hours "
 
-#: .\apps\user\forms\auth.py:215 .\apps\user\forms\profile.py:87
+#: .\apps\user\forms\auth.py:215
+#: .\apps\user\forms\profile.py:87
 msgid "Wochentage"
-msgstr ""
+msgstr "opening days"
 
-#: .\apps\user\forms\profile.py:16 .\apps\user\models\address.py:26
+#: .\apps\user\forms\profile.py:16
+#: .\apps\user\models\address.py:26
 msgid "Rechnungsadresse"
-msgstr ""
+msgstr "Billing address"
 
-#: .\apps\user\forms\profile.py:28 .\apps\user\models\address.py:28
+#: .\apps\user\forms\profile.py:28
+#: .\apps\user\models\address.py:28
 msgid "Lieferadresse"
-msgstr ""
+msgstr "Shipping address"
 
-#: .\apps\user\forms\profile.py:41 .\apps\user\forms\profile.py:54
+#: .\apps\user\forms\profile.py:41
+#: .\apps\user\forms\profile.py:54
 msgid "Empf&auml;nger*"
-msgstr ""
+msgstr "recipient name*"
 
-#: .\apps\user\forms\profile.py:42 .\apps\user\forms\profile.py:55
+#: .\apps\user\forms\profile.py:42
+#: .\apps\user\forms\profile.py:55
 msgid "Strasse*"
-msgstr ""
+msgstr "street*"
 
-#: .\apps\user\forms\profile.py:43 .\apps\user\forms\profile.py:56
+#: .\apps\user\forms\profile.py:43
+#: .\apps\user\forms\profile.py:56
 msgid "Stadt*"
-msgstr ""
+msgstr "city*"
 
-#: .\apps\user\forms\profile.py:44 .\apps\user\forms\profile.py:57
-#, fuzzy
+#: .\apps\user\forms\profile.py:44
+#: .\apps\user\forms\profile.py:57
 msgid "PLZ*"
-msgstr "ZIP"
+msgstr "zip code*"
 
-#: .\apps\user\forms\profile.py:45 .\apps\user\forms\profile.py:58
-#, fuzzy
+#: .\apps\user\forms\profile.py:45
+#: .\apps\user\forms\profile.py:58
 msgid "Land"
-msgstr "Uganda"
+msgstr "country"
 
-#: .\apps\user\forms\profile.py:46 .\apps\user\forms\profile.py:59
+#: .\apps\user\forms\profile.py:46
+#: .\apps\user\forms\profile.py:59
 msgid "Bevorzugte Sprache"
-msgstr ""
+msgstr "preferred language"
 
 #: .\apps\user\forms\profile.py:47
-#, fuzzy
 msgid "Telefon*"
-msgstr "Phone"
+msgstr "phone*"
 
-#: .\apps\user\forms\profile.py:48 .\apps\user\forms\profile.py:61
+#: .\apps\user\forms\profile.py:48
+#: .\apps\user\forms\profile.py:61
 msgid "Mobil"
-msgstr ""
+msgstr "cell"
 
-#: .\apps\user\forms\profile.py:49 .\apps\user\forms\profile.py:62
+#: .\apps\user\forms\profile.py:49
+#: .\apps\user\forms\profile.py:62
 #: .\templates\email\orderFreeCatalog.html.py:51
 msgid "Fax"
-msgstr "Fax"
+msgstr "fax"
 
 #: .\apps\user\forms\profile.py:51
 msgid "Lieferadresse weicht ab"
-msgstr ""
+msgstr "same shipping address"
 
 #: .\apps\user\forms\profile.py:60
 msgid "Telefon"
-msgstr "Phone"
+msgstr "phone"
 
 #: .\apps\user\forms\profile.py:84
 msgid "&Ouml;ffnungszeiten*"
-msgstr ""
+msgstr "opening hours "
 
 #: .\apps\user\services\token_manager.py:43
 #, python-format
 msgid "%s Passwort zuruecksetzen"
-msgstr ""
+msgstr "%s passwort reset"
 
 #: .\apps\user\services\token_manager.py:44
-msgid ""
-"Sie erhalten in K&uuml;rze von uns eine E-Mail, in der Sie den Link zum "
-"Neusetzen Ihres Passwortes finden!"
-msgstr ""
+msgid "Sie erhalten in K&uuml;rze von uns eine E-Mail, in der Sie den Link zum Neusetzen Ihres Passwortes finden!"
+msgstr "We sent you an email with a link to reset your password!"
 
-#: .\apps\user\views\auth.py:41 .\apps\user\views\auth.py:45
+#: .\apps\user\views\auth.py:41
+#: .\apps\user\views\auth.py:45
 msgid "Emailadresse bereits vergeben"
-msgstr ""
+msgstr "Email address alredy registered"
 
 #: .\apps\user\views\auth.py:87
 #, python-format
 msgid ""
-"Eine Passwort&auml;nderungsemail wurde bereits an die Email-Adresse: <b>%s</"
-"b> innerhalb der letzten 24 Stunden versendet.<br/><br/>\n"
-"                    Um unsere Nutzer vor Spam zu sch&uuml;tzen, k&ouml;nnen "
-"wir erst Morgen wieder eine neue Email senden, bitte kontakiere uns doch "
-"direkt oder versuche es Morgen noch einmal!"
-msgstr ""
+"Eine Passwort&auml;nderungsemail wurde bereits an die Email-Adresse: <b>%s</b> innerhalb der letzten 24 Stunden versendet.<br/><br/>\n"
+"                    Um unsere Nutzer vor Spam zu sch&uuml;tzen, k&ouml;nnen wir erst Morgen wieder eine neue Email senden, bitte kontakiere uns doch direkt oder versuche es Morgen noch einmal!"
+msgstr "A password reset email has already been sent to <b>%s</b> within the last 24 hours. To protect our users from spam, we only send out this email every 24 hours. Please check your email inbox or try again tomorrow!"
 
 #: .\apps\user\views\auth.py:104
-msgid ""
-"The token for this requested password change has expired, please request "
-"again!"
-msgstr ""
+msgid "The token for this requested password change has expired, please request again!"
+msgstr "The token for this password change request has expired, please request again!"
 
 #: .\apps\user\views\auth.py:113
 msgid "Passwort erfolgreich ge&auml;ndert!"
-msgstr ""
+msgstr "Password changed!"
 
 #: .\apps\user\views\auth.py:136
 msgid "Ein Fehler ist aufgetreten!"
-msgstr ""
+msgstr "An error has occurred!"
 
 #: .\apps\user\views\auth.py:180
-msgid ""
-"Congratulations! Your account has been activated. Please finish your "
-"registration!"
-msgstr ""
+msgid "Congratulations! Your account has been activated. Please finish your registration!"
+msgstr "Congratulations! Your account has been activated. Please finish your registration!"
 
 #: .\apps\user\views\auth.py:183
 msgid "REGISTRATION - COMPLETED"
-msgstr ""
+msgstr "REGISTRATION - COMPLETED"
 
 #: .\apps\user\views\auth.py:184
 msgid "Congratulations! Your account has been activated."
-msgstr ""
+msgstr "Congratulations! Your account has been activated."
 
 #: .\apps\user\views\auth.py:186
 msgid "SORRY"
-msgstr ""
+msgstr "SORRY"
 
 #: .\apps\user\views\auth.py:187
-msgid ""
-"This Activation Code is invalid, maybe you already activated? Please check "
-"login or the link in your email and try again!"
-msgstr ""
+msgid "This Activation Code is invalid, maybe you already activated? Please check login or the link in your email and try again!"
+msgstr "This activation code is invalid, maybe you already activated your account? Please try logging in with the link in your email!"
 
 #: .\apps\user\views\handler.py:25
 msgid "user {} ({} {}), {} approved"
-msgstr ""
+msgstr "user {} ({} {}), {} approved"
 
 #: .\apps\user\views\handler.py:27
 msgid "This Approval Code is invalid, maybe you already approved this user?"
-msgstr ""
+msgstr "This approval code is invalid, maybe you already approved this user?"
 
 #: .\apps\user\views\handler.py:42
 msgid "<font style=\"color:red\">user {} ({} {}), {} DENIED</font>"
-msgstr ""
+msgstr "<font style=\"color:red\">user {} ({} {}), {} DENIED</font>"
 
 #: .\apps\user\views\handler.py:44
 msgid "This Approval Code is invalid, maybe you already denied this request?"
-msgstr ""
+msgstr "This approval code is invalid, maybe you already denied this request?"
 
-#: .\apps\user\views\profile.py:93 .\apps\user\views\profile.py:119
+#: .\apps\user\views\profile.py:93
+#: .\apps\user\views\profile.py:119
 msgid "&Auml;nderungen gespeichert!"
-msgstr ""
+msgstr "Changes saved!"
 
-#: .\templates\404.html.py:4 .\templates\404.html.py:11
+#: .\templates\404.html.py:4
+#: .\templates\404.html.py:11
 msgid "Page not found!"
-msgstr ""
+msgstr "Page not found!"
 
 #: .\templates\404.html.py:14
 msgid "The Page you requested does not exist on this server."
-msgstr ""
+msgstr "The Page you requested does not exist on this server."
 
 #: .\templates\404.html.py:15
 msgid "Check if you typed the address correctly or go back to"
-msgstr ""
+msgstr "Check if you typed the address correctly or go back to"
 
-#: .\templates\404.html.py:15 .\templates\404.html.py:18
-#: .\templates\500.html.py:22 .\templates\base.html.py:44
+#: .\templates\404.html.py:15
+#: .\templates\404.html.py:18
+#: .\templates\500.html.py:22
+#: .\templates\base.html.py:44
 #: .\templates\user\order\complete.html.py:17
 #: .\templates\user\order\success.html.py:11
 msgid "Home"
 msgstr "Home"
 
-#: .\templates\500.html.py:5 .\templates\500.html.py:13
+#: .\templates\500.html.py:5
+#: .\templates\500.html.py:13
 msgid "An Internal Server Error Occurred!"
-msgstr ""
+msgstr "An Internal Server Error Occurred!"
 
 #: .\templates\500.html.py:16
 msgid "The Error has been reported to the WebAdmin."
-msgstr ""
+msgstr "The Error has been reported to the WebAdmin."
 
 #: .\templates\500.html.py:18
-msgid ""
-"We are constantly improving our webshop, fixing bugs and adding "
-"functionality, the site admin has received your error report and will work "
-"hard to fix it! Please check back with us in the very near future time."
-msgstr ""
+msgid "We are constantly improving our webshop, fixing bugs and adding functionality, the site admin has received your error report and will work hard to fix it! Please check back with us in the very near future time."
+msgstr "We are constantly improving our webshop, fixing bugs and adding functionality, the site admin has received your error report and will work hard to fix it! Please check back with us in the very near future time."
 
-#: .\templates\base.html.py:49 .\templates\pages\aboutus_de.html.py:9
+#: .\templates\base.html.py:49
+#: .\templates\pages\aboutus_de.html.py:9
 #: .\templates\pages\aboutus_en.html.py:9
 #: .\templates\pages\aboutus_es.html.py:9
 #: .\templates\pages\aboutus_fr.html.py:9
@@ -621,7 +618,8 @@ msgstr "Shipping"
 msgid "Downloads"
 msgstr "Downloads"
 
-#: .\templates\base.html.py:58 .\templates\pages\material_de.html.py:4
+#: .\templates\base.html.py:58
+#: .\templates\pages\material_de.html.py:4
 #: .\templates\pages\material_en.html.py:4
 #: .\templates\pages\material_es.html.py:4
 #: .\templates\pages\material_fr.html.py:4
@@ -631,17 +629,19 @@ msgstr "Material Guide"
 
 #: .\templates\base.html.py:61
 msgid "Gallery"
-msgstr ""
+msgstr "Gallery"
 
-#: .\templates\base.html.py:64 .\templates\snippets\from_price_a.html.py:2
+#: .\templates\base.html.py:64
+#: .\templates\snippets\from_price_a.html.py:2
 msgid "Studios"
-msgstr ""
+msgstr "Studios"
 
 #: .\templates\base.html.py:67
 msgid "AGB"
-msgstr "Terms and Conditions"
+msgstr "AGB"
 
-#: .\templates\base.html.py:70 .\templates\pages\contact.html.py:8
+#: .\templates\base.html.py:70
+#: .\templates\pages\contact.html.py:8
 msgid "Contact"
 msgstr "Contact"
 
@@ -651,25 +651,24 @@ msgstr "FAQ"
 
 #: .\templates\base.html.py:80
 msgid "Search"
-msgstr ""
+msgstr "Search"
 
 #: .\templates\base.html.py:104
 msgid "Order Online 24 hours a day, 7 days a week"
-msgstr ""
+msgstr "Order Online 24 hours a day, 7 days a week"
 
 #: .\templates\base.html.py:114
-#, fuzzy
 msgid "Please finish your registration"
-msgstr "Finish Registration"
+msgstr "Please finish your registration"
 
-#: .\templates\base.html.py:117 .\templates\user\profile\layout.html.py:22
+#: .\templates\base.html.py:117
+#: .\templates\user\profile\layout.html.py:22
 msgid "Mein Konto"
-msgstr ""
+msgstr "My Account"
 
 #: .\templates\base.html.py:119
-#, fuzzy
 msgid "Please activate your account"
-msgstr "Please activate your account!"
+msgstr "Please activate your account"
 
 #: .\templates\base.html.py:122
 msgid "Logout"
@@ -681,7 +680,7 @@ msgstr "Login"
 
 #: .\templates\base.html.py:127
 msgid "Signup"
-msgstr ""
+msgstr "Signup"
 
 #: .\templates\base.html.py:151
 msgid "payment methods"
@@ -693,7 +692,7 @@ msgstr "Our shipping partner"
 
 #: .\templates\base.html.py:168
 msgid "receive trends, offers and coupons via email"
-msgstr ""
+msgstr "receive trends, offers and coupons via email"
 
 #: .\templates\base.html.py:169
 msgid "enter email address"
@@ -701,26 +700,24 @@ msgstr "Enter Email Address"
 
 #: .\templates\base.html.py:170
 msgid "Subscribe"
-msgstr ""
+msgstr "Subscribe"
 
-#: .\templates\base.html.py:178 .\templates\pages\impressum_en.html.py:8
+#: .\templates\base.html.py:178
+#: .\templates\pages\impressum_en.html.py:8
 msgid "Impressum"
-msgstr "Imprint"
+msgstr "Impressum"
 
 #: .\templates\base.html.py:180
-msgid ""
-"Per-4 â¢ Piercing â¢ Tattoo â¢ Jewellery â¢ Fashion & Media â¢ "
-"Studioequipment"
-msgstr ""
+msgid "Per-4 â¢ Piercing â¢ Tattoo â¢ Jewellery â¢ Fashion & Media â¢ Studioequipment"
+msgstr "Per-4 - Piercing - Tattoo - Jewellery - Fashion & Media - Studioequipment"
 
 #: .\templates\base.html.py:181
-#, fuzzy
 msgid "Ãber"
-msgstr "About"
+msgstr "About Us"
 
 #: .\templates\base.html.py:181
 msgid "Produkte im Webshop!"
-msgstr "Products in our Werbshop!"
+msgstr "Products in our Werbshop"
 
 #: .\templates\error.html.py:12
 msgid "Error"
@@ -734,7 +731,7 @@ msgstr "reporting..."
 #: .\templates\email\activation_email.txt.py:3
 #: .\templates\email\changepassword.txt.py:3
 msgid "Hey"
-msgstr ""
+msgstr "Hey"
 
 #: .\templates\email\activation_email.html.py:7
 #: .\templates\email\activation_email.txt.py:5
@@ -748,164 +745,146 @@ msgstr "Login"
 
 #: .\templates\email\activation_email.html.py:17
 #: .\templates\email\activation_email.txt.py:10
-msgid ""
-"You have registered as a Studio User, your account will be activated as soon "
-"as you open below link, and during the next days, we will check the provided "
-"details and approve your wholesale access or get back to you with further "
-"questions."
-msgstr ""
+msgid "You have registered as a Studio User, your account will be activated as soon as you open below link, and during the next days, we will check the provided details and approve your wholesale access or get back to you with further questions."
+msgstr "You have registered as a Studio User, your account will be activated as soon as you open below link, and during the next days, we will check the provided details and approve your wholesale access or get back to you with further questions."
 
 #: .\templates\email\activation_email.html.py:21
 #: .\templates\email\activation_email.txt.py:12
-msgid ""
-"To activate the registered account, please open the following URL in your "
-"browser"
-msgstr ""
+msgid "To activate the registered account, please open the following URL in your browser"
+msgstr "To activate the registered account, please open the following URL in your browser"
 
 #: .\templates\email\activation_email.html.py:25
-msgid ""
-"If you have not registered with per-4.com, please ignore this email, your "
-"personal data will be deleted automatically during the next few days."
-msgstr ""
+msgid "If you have not registered with per-4.com, please ignore this email, your personal data will be deleted automatically during the next few days."
+msgstr "If you have not registered with per-4.com, please ignore this email, your personal data will be deleted automatically during the next few days."
 
 #: .\templates\email\activation_email.html.py:28
 #: .\templates\email\activation_email.txt.py:18
 #: .\templates\email\changepassword.txt.py:16
 msgid "Thanks"
-msgstr ""
+msgstr "Thanks"
 
 #: .\templates\email\activation_email.txt.py:15
 msgid "If you have not registered with per-4.com, please ignore this email,"
-msgstr ""
+msgstr "If you have not registered with per-4.com, please ignore this email,"
 
 #: .\templates\email\activation_email.txt.py:16
-msgid ""
-"your personal data will be deleted automatically during the next few days."
-msgstr ""
+msgid "your personal data will be deleted automatically during the next few days."
+msgstr "your personal data will be deleted automatically during the next few days"
 
 #: .\templates\email\activation_email.txt.py:19
 #: .\templates\email\changepassword.txt.py:17
 #: .\templates\email\layout.html.py:12
 msgid "Your Per-4 Team"
-msgstr ""
+msgstr "Your Per-4 Team"
 
 #: .\templates\email\activation_email.txt.py:22
 #: .\templates\email\changepassword.txt.py:20
 #: .\templates\email\layout.html.py:14
-msgid ""
-"Landsberger Allee 117A - 10407 Berlin - Telefon +49 30 93 66 38 21 - Fax +49 "
-"30 93 66 38 22"
-msgstr ""
+msgid "Landsberger Allee 117A - 10407 Berlin - Telefon +49 30 93 66 38 21 - Fax +49 30 93 66 38 22"
+msgstr "Landsberger Allee 117A - 10407 Berlin - Telefon +49 30 93 66 38 21 - Fax +49 30 93 66 38 22"
 
 #: .\templates\email\changepassword.html.py:7
 #: .\templates\email\changepassword.txt.py:6
 msgid "We have received your request to change your password."
-msgstr ""
+msgstr "We have received your request to change your password."
 
 #: .\templates\email\changepassword.html.py:10
 #: .\templates\email\changepassword.txt.py:8
-msgid ""
-"Please follow the link below, which will open a page to set a new password "
-"for your account!"
-msgstr ""
+msgid "Please follow the link below, which will open a page to set a new password for your account!"
+msgstr "Please follow the link below, which will open a page to set a new password for your account!"
 
 #: .\templates\email\changepassword.html.py:16
 #: .\templates\email\changepassword.txt.py:13
-msgid ""
-"If you did not request a password change, no problem, your account remains "
-"active as always and you can savely ignore this email!"
-msgstr ""
+msgid "If you did not request a password change, no problem, your account remains active as always and you can savely ignore this email!"
+msgstr "If you did not request a password change, no problem, your account remains active as always and you can savely ignore this email!"
 
 #: .\templates\email\orderFreeCatalog.html.py:22
 msgid "User"
-msgstr "User Name"
+msgstr "user "
 
 #: .\templates\email\orderFreeCatalog.html.py:30
 msgid "Address"
-msgstr "Address"
+msgstr "address"
 
 #: .\templates\email\orderFreeCatalog.html.py:43
 msgid "Name"
-msgstr "Name"
+msgstr "name"
 
 #: .\templates\email\orderFreeCatalog.html.py:44
 msgid "Street"
-msgstr "Street"
+msgstr "street"
 
 #: .\templates\email\orderFreeCatalog.html.py:45
 msgid "Zip"
-msgstr ""
+msgstr "zip code"
 
 #: .\templates\email\orderFreeCatalog.html.py:46
 msgid "City"
-msgstr "City"
+msgstr "city"
 
 #: .\templates\email\orderFreeCatalog.html.py:50
 msgid "Phone"
-msgstr "Phone"
+msgstr "phone"
 
 #: .\templates\email\order_confirmation.html.py:8
 msgid "Danke f&uuml;r Deine Bestellung."
-msgstr ""
+msgstr "Thank you for your order."
 
 #: .\templates\email\order_confirmation.html.py:10
-msgid ""
-"Soeben haben wir von Dir eine Bestellung in <a href=\"www.per-4.com"
-"\">unserem Webshop</a> erhalten. Die folgenden Artikel hast Du bestellt."
-msgstr ""
+msgid "Soeben haben wir von Dir eine Bestellung in <a href=\"www.per-4.com\">unserem Webshop</a> erhalten. Die folgenden Artikel hast Du bestellt."
+msgstr "We have just received your order in <a href=\"www.per-4.com\">our web shop</a>. You can find the details for your order below."
 
 #: .\templates\email\order_confirmation.html.py:14
 msgid "Rechnungsadresse:"
-msgstr ""
+msgstr "Billing address:"
 
 #: .\templates\email\order_confirmation.html.py:15
 #: .\templates\email\order_confirmation.html.py:23
 msgid "Empf&auml;nger:"
-msgstr ""
+msgstr "Recipient:"
 
 #: .\templates\email\order_confirmation.html.py:16
 #: .\templates\email\order_confirmation.html.py:24
 msgid "Strasse:"
-msgstr ""
+msgstr "street:"
 
 #: .\templates\email\order_confirmation.html.py:17
 #: .\templates\email\order_confirmation.html.py:25
 msgid "Ort:"
-msgstr ""
+msgstr "city:"
 
 #: .\templates\email\order_confirmation.html.py:22
 msgid "Lieferadresse:"
-msgstr ""
+msgstr "Shipping address:"
 
 #: .\templates\email\order_confirmation.html.py:30
 msgid "Deine Bestellung"
-msgstr ""
+msgstr "Your order"
 
 #: .\templates\email\order_confirmation.html.py:31
 msgid "Zahlart:"
-msgstr ""
+msgstr "Payment method:"
 
 #: .\templates\email\order_confirmation.html.py:35
 msgid "Kategorie"
-msgstr ""
+msgstr "Category"
 
 #: .\templates\email\order_confirmation.html.py:36
 #: .\templates\explore\article_ajax.html.py:33
 msgid "REFERENCE"
-msgstr ""
+msgstr "Reference"
 
 #: .\templates\email\order_confirmation.html.py:37
 msgid "Menge"
-msgstr ""
+msgstr "Quantity"
 
 #: .\templates\email\order_confirmation.html.py:38
 msgid "St&uumlckpreis"
-msgstr ""
+msgstr "Price per unit"
 
 #: .\templates\email\order_confirmation.html.py:39
-#, fuzzy
 msgid "Summe"
-msgstr "Suriname"
+msgstr "Sum"
 
 #: .\templates\email\order_confirmation.html.py:53
 #: .\templates\user\profile\shopping_cart.html.py:53
@@ -915,16 +894,16 @@ msgstr "Subtotal"
 #: .\templates\email\order_confirmation.html.py:60
 #: .\templates\user\profile\shopping_cart.html.py:60
 msgid "Thereof VAT"
-msgstr ""
+msgstr "Thereof VAT"
 
 #: .\templates\email\order_confirmation.html.py:62
 #: .\templates\user\profile\shopping_cart.html.py:62
 msgid "VAT"
-msgstr ""
+msgstr "VAT"
 
 #: .\templates\email\order_confirmation.html.py:74
 msgid "(*) Mengenrabattpreis"
-msgstr ""
+msgstr "(*) Discounted"
 
 #: .\templates\email\order_confirmation.html.py:75
 #: .\templates\user\profile\shopping_cart.html.py:75
@@ -939,21 +918,19 @@ msgstr "Total"
 
 #: .\templates\email\order_confirmation.html.py:92
 msgid "Ihre Bestellbemerkung:"
-msgstr ""
+msgstr "Your order comments:"
 
 #: .\templates\email\order_confirmation.html.py:100
-msgid ""
-"Solltest Du diese Bestellung nicht abgeschickt haben, schreibe uns bitte als "
-"Antwort auf diese Email oder rufe uns an."
-msgstr ""
+msgid "Solltest Du diese Bestellung nicht abgeschickt haben, schreibe uns bitte als Antwort auf diese Email oder rufe uns an."
+msgstr "If you did not submit this order, please respond to this email or call us."
 
 #: .\templates\explore\article.html.py:23
 msgid "Others who bought this also bought:"
-msgstr ""
+msgstr "Others who bought this also bought:"
 
 #: .\templates\explore\article_ajax.html.py:17
 msgid "Zum Filtern Klicken"
-msgstr ""
+msgstr "Click to filter"
 
 #: .\templates\explore\article_ajax.html.py:27
 #: .\templates\explore\article_ajax.html.py:117
@@ -962,37 +939,37 @@ msgstr "Add to Cart"
 
 #: .\templates\explore\article_ajax.html.py:34
 msgid "SIZE"
-msgstr ""
+msgstr "Size"
 
 #: .\templates\explore\article_ajax.html.py:35
 #: .\templates\user\profile\shopping_cart.html.py:17
 msgid "COLOR"
-msgstr "OPTION"
+msgstr "Color"
 
 #: .\templates\explore\article_ajax.html.py:37
 msgid "OLD PRICE"
-msgstr ""
+msgstr "Old Price"
 
 #: .\templates\explore\article_ajax.html.py:39
 msgid "PRICE P/P"
-msgstr ""
+msgstr "Price p/p"
 
 #: .\templates\explore\article_ajax.html.py:41
 msgid "DISCOUNT PRICE"
-msgstr ""
+msgstr "Discount price"
 
 #: .\templates\explore\article_ajax.html.py:43
 #: .\templates\user\profile\shopping_cart.html.py:19
 msgid "QUANTITY"
-msgstr ""
+msgstr "Quantity"
 
 #: .\templates\explore\article_ajax.html.py:44
 msgid "PRICE"
-msgstr ""
+msgstr "Price"
 
 #: .\templates\explore\article_ajax.html.py:60
 msgid "Available"
-msgstr ""
+msgstr "Available"
 
 #: .\templates\explore\article_ajax.html.py:62
 msgid "Not Available"
@@ -1001,16 +978,16 @@ msgstr "Not Available"
 #: .\templates\explore\article_ajax.html.py:82
 #: .\templates\explore\article_ajax.html.py:91
 msgid "incl. VAT"
-msgstr ""
+msgstr "incl. VAT"
 
 #: .\templates\explore\article_ajax.html.py:82
 #: .\templates\explore\article_ajax.html.py:91
 msgid "excl. VAT"
-msgstr ""
+msgstr "excl. VAT"
 
 #: .\templates\explore\article_ajax.html.py:89
 msgid "ab "
-msgstr ""
+msgstr "from"
 
 #: .\templates\explore\article_ajax.html.py:112
 msgid "Total Amount:"
@@ -1022,27 +999,28 @@ msgstr "All Materials:"
 
 #: .\templates\explore\article_tip.html.py:5
 msgid "Neu bei uns!"
-msgstr "New in Shop"
+msgstr "New in Shop!"
 
 #: .\templates\explore\line_result.html.py:25
 msgid "No Articles Found!"
-msgstr ""
+msgstr "No Articles Found!"
 
-#: .\templates\explore\news_item.html.py:3 .\templates\pages\news.html.py:5
+#: .\templates\explore\news_item.html.py:3
+#: .\templates\pages\news.html.py:5
 msgid "News"
 msgstr "News"
 
 #: .\templates\pages\agb_en.html.py:10
 msgid "TERMS AND CONDITIONS"
-msgstr ""
+msgstr "TERMS AND CONDITIONS"
 
 #: .\templates\pages\coupons_en.html.py:5
 msgid "Coupons"
-msgstr ""
+msgstr "Coupons"
 
 #: .\templates\pages\downloads_en.html.py:16
 msgid "SOME FLYERS INCLUDE PRICES, PLEASE LOG IN TO VIEW ALL FLYERS!"
-msgstr ""
+msgstr "SOME FLYERS INCLUDE PRICES, PLEASE LOG IN TO VIEW ALL FLYERS!"
 
 #: .\templates\pages\downloads_en.html.py:23
 #: .\templates\pages\downloads_en.html.py:28
@@ -1058,79 +1036,79 @@ msgstr ""
 #: .\templates\pages\downloads_en.html.py:90
 #: .\templates\pages\downloads_en.html.py:96
 msgid "DOWNLOAD MONTHLY FLYER"
-msgstr ""
+msgstr "DOWNLOAD MONTHLY FLYER"
 
 #: .\templates\pages\downloads_en.html.py:23
 msgid "FEBRUARY/MARCH"
-msgstr ""
+msgstr "FEBRUARY/MARCH"
 
 #: .\templates\pages\downloads_en.html.py:28
 msgid "NOVEMBER/DECEMBER"
-msgstr ""
+msgstr "NOVEMBER/DECEMBER"
 
 #: .\templates\pages\downloads_en.html.py:35
 msgid "JULY/AUGUST"
-msgstr ""
+msgstr "JULY/AUGUST"
 
 #: .\templates\pages\downloads_en.html.py:41
 msgid "MAY/JUNE"
-msgstr ""
+msgstr "MAY/JUNE"
 
 #: .\templates\pages\downloads_en.html.py:47
 msgid "APRIL/MAY"
-msgstr ""
+msgstr "APRIL/MAY"
 
 #: .\templates\pages\downloads_en.html.py:53
 msgid "FEBRUARY"
-msgstr ""
+msgstr "FEBRUARY"
 
 #: .\templates\pages\downloads_en.html.py:59
 msgid "JANUARY"
-msgstr ""
+msgstr "JANUARY"
 
 #: .\templates\pages\downloads_en.html.py:66
 msgid "DECEMBER"
-msgstr ""
+msgstr "DECEMBER"
 
 #: .\templates\pages\downloads_en.html.py:72
 msgid "OCTOBER"
-msgstr ""
+msgstr "OCTOBER"
 
 #: .\templates\pages\downloads_en.html.py:72
 msgid "NOVEMBER"
-msgstr ""
+msgstr "NOVEMBER"
 
 #: .\templates\pages\downloads_en.html.py:78
 msgid "SEPTEMBER"
-msgstr ""
+msgstr "SEPTEMBER"
 
 #: .\templates\pages\downloads_en.html.py:84
 msgid "AUGUST"
-msgstr ""
+msgstr "AUGUST"
 
 #: .\templates\pages\downloads_en.html.py:90
 msgid "JULY"
-msgstr ""
+msgstr "JULY"
 
 #: .\templates\pages\downloads_en.html.py:96
 msgid "JUNE"
-msgstr ""
+msgstr "JUNE"
 
 #: .\templates\pages\downloads_en.html.py:103
 msgid "PIERCING KATALOG"
-msgstr ""
+msgstr "PIERCING KATALOG"
 
 #: .\templates\pages\downloads_en.html.py:122
 msgid "TATTOO KATALOG"
-msgstr ""
+msgstr "TATTOO CATALOGUE"
 
 #: .\templates\pages\downloads_en.html.py:133
 msgid "SPRING FLYER"
-msgstr ""
+msgstr "SPRING FLYER"
 
 #: .\templates\pages\downloads_en.html.py:139
 msgid "VORDRUCK"
-msgstr ""
+msgstr "FORM"
 
 #: .\templates\pages\downloads_en.html.py:141
 msgid "Lastschrift Formular zum Download"
@@ -1138,11 +1116,11 @@ msgstr "Direct Debit Form for Download"
 
 #: .\templates\pages\downloads_en.html.py:142
 msgid "PDF Format"
-msgstr ""
+msgstr "PDF format"
 
 #: .\templates\pages\downloads_en.html.py:143
 msgid "MS WORD Format"
-msgstr ""
+msgstr "MS WORD format"
 
 #: .\templates\pages\gallery_en.html.py:15
 msgid "Zurueck zur vorherigen Seite"
@@ -1154,7 +1132,7 @@ msgstr "Forward to next Page"
 
 #: .\templates\pages\jobs_en.html.py:9
 msgid "JOBS"
-msgstr ""
+msgstr "JOBS"
 
 #: .\templates\pages\news.html.py:97
 msgid "Montag bis Freitag"
@@ -1162,19 +1140,19 @@ msgstr "Monday to Friday"
 
 #: .\templates\pages\news.html.py:98
 msgid "9 Uhr bis 18 Uhr"
-msgstr "9am to 7pm"
+msgstr "9am to 6pm"
 
 #: .\templates\pages\news.html.py:99
 msgid "Landsberger Allee 117A"
-msgstr ""
+msgstr "Landsberger Allee 117A"
 
 #: .\templates\pages\news.html.py:100
 msgid "10407 Berlin"
-msgstr ""
+msgstr "10407 Berlin"
 
 #: .\templates\pages\ourads_en.html.py:47
 msgid "OUR ADVERTISEMENTS"
-msgstr ""
+msgstr "Our Ads"
 
 #: .\templates\pages\studios_en.html.py:5
 msgid "Studios & Kunden"
@@ -1187,7 +1165,7 @@ msgstr "Studios & Customers"
 #: .\templates\pages\studios_en.html.py:92
 #: .\templates\pages\studios_en.html.py:96
 msgid "This Could Be YOU!"
-msgstr ""
+msgstr "This could be YOU!"
 
 #: .\templates\search\search_result.html.py:9
 msgid "Results for"
@@ -1195,60 +1173,51 @@ msgstr "Results for"
 
 #: .\templates\snippets\from_price_b.html.py:2
 msgid "from"
-msgstr ""
+msgstr "from"
 
 #: .\templates\user\approved.html.py:6
 msgid "Welcome to Per-4.com"
-msgstr ""
+msgstr "Welcome to Per-4.com"
 
 #: .\templates\user\auth\base.html.py:7
 msgid "Anmeldung"
-msgstr ""
+msgstr "Registration"
 
 #: .\templates\user\auth\base.html.py:14
 msgid "Anmelden mit Email"
-msgstr ""
+msgstr "Login with email"
 
 #: .\templates\user\auth\base.html.py:17
-#, fuzzy
 msgid "Anmelden mit Kundennummer"
-msgstr "Customernumber"
+msgstr "Login with customer number"
 
 #: .\templates\user\auth\base.html.py:20
 msgid "Passwort vergessen"
-msgstr ""
+msgstr "Forgot password"
 
 #: .\templates\user\auth\signup_finished.html.py:11
 msgid "Deine Registrierung ist nun abgeschlossen!"
-msgstr ""
+msgstr "Your registration is now complete!"
 
 #: .\templates\user\auth\signup_finished.html.py:12
-msgid ""
-"Um eine Bestellung aufzugeben, musst du noch Rechnungs- und Lieferdresse "
-"angeben, mach das doch gleich jetzt!"
-msgstr ""
+msgid "Um eine Bestellung aufzugeben, musst du noch Rechnungs- und Lieferdresse angeben, mach das doch gleich jetzt!"
+msgstr "To place an order, you need to specify billing and shipping address. Why not do it now?"
 
 #: .\templates\user\auth\signup_finished.html.py:15
-msgid ""
-"Du hast dich als Studio angemeldet. Daf&uuml; m&uuml;ssen wir noch deine "
-"Angaben &uuml;berpr&uuml;fen. Im Laufe der n&*auml;chsten Tage wird dein "
-"Konto als Studio freigeschaltet."
-msgstr ""
+msgid "Du hast dich als Studio angemeldet. Daf&uuml; m&uuml;ssen wir noch deine Angaben &uuml;berpr&uuml;fen. Im Laufe der n&*auml;chsten Tage wird dein Konto als Studio freigeschaltet."
+msgstr "You have registered as a Studio. We need to check your information before we can approve access to our studio prices. Your account will be approved as soon as possible."
 
 #: .\templates\user\auth\signup_finished.html.py:16
-msgid ""
-"Leider kannst du die Studiopreise erst sehen wenn Dein Konto freigeschaltet "
-"wurde."
-msgstr ""
+msgid "Leider kannst du die Studiopreise erst sehen wenn Dein Konto freigeschaltet wurde."
+msgstr "You can only see studio prices, when your account has been approved."
 
 #: .\templates\user\auth\signup_finished.html.py:20
 msgid "Adressen jetzt hinzuf&uuml;gen"
-msgstr ""
+msgstr "Add addresses now"
 
 #: .\templates\user\order\addresses.html.py:9
-#, fuzzy
 msgid "Weiter"
-msgstr "Register"
+msgstr ""
 
 #: .\templates\user\order\complete.html.py:4
 msgid "Completed"
@@ -1256,7 +1225,7 @@ msgstr "Completed"
 
 #: .\templates\user\order\complete.html.py:4
 msgid "Order Successfully!"
-msgstr ""
+msgstr "Order Successful!"
 
 #: .\templates\user\order\complete.html.py:9
 msgid "Order Completed"
@@ -1264,47 +1233,41 @@ msgstr "Order Completed"
 
 #: .\templates\user\order\complete.html.py:14
 msgid "You have completed your order successfully."
-msgstr ""
+msgstr "You have completed your order successfully."
 
 #: .\templates\user\order\complete.html.py:14
-msgid ""
-"Shortly you will receive a confirmation and invoice of your order by email."
-msgstr ""
+msgid "Shortly you will receive a confirmation and invoice of your order by email."
+msgstr "You will receive your order confirmation shortly."
 
 #: .\templates\user\order\layout.html.py:9
 msgid "Bestellung abschliessen"
-msgstr ""
+msgstr "Finish order"
 
 #: .\templates\user\order\layout.html.py:16
 #: .\templates\user\profile\layout.html.py:16
 msgid "Shopping Cart"
-msgstr "Shopping Cart"
+msgstr "Shopping cart"
 
 #: .\templates\user\order\layout.html.py:20
 msgid "Adresse Best&auml;tigen"
-msgstr ""
+msgstr "Confirm address"
 
 #: .\templates\user\order\payment.html.py:8
-msgid ""
-"You will only need to fill in your payment method for your first purchase or "
-"when you wish to change it."
-msgstr ""
+msgid "You will only need to fill in your payment method for your first purchase or when you wish to change it."
+msgstr "You will only need to fill in your payment method for your first purchase or when you wish to change it."
 
 #: .\templates\user\order\success.html.py:5
 msgid "Bestellung erfolgreich"
-msgstr ""
+msgstr "Order successful"
 
 #: .\templates\user\order\success.html.py:10
-msgid ""
-"Bestellung wurde erfolgreich verschickt. Sie erhalten in K&uuml;rze eine "
-"Best&auml;tigungsemail"
-msgstr ""
+msgid "Bestellung wurde erfolgreich verschickt. Sie erhalten in K&uuml;rze eine Best&auml;tigungsemail"
+msgstr "Order has been sent successfully. You will receive a confirmation email shortly"
 
 #: .\templates\user\profile\addresses.html.py:4
 #: .\templates\user\profile\layout.html.py:25
-#, fuzzy
 msgid "Meine Adressen"
-msgstr "Billing Address"
+msgstr "My Addresses"
 
 #: .\templates\user\profile\cart_items.html.py:7
 msgid "My Cart"
@@ -1312,7 +1275,7 @@ msgstr "My Cart"
 
 #: .\templates\user\profile\cart_items.html.py:26
 msgid "SUBTOTAL"
-msgstr ""
+msgstr "Sub total"
 
 #: .\templates\user\profile\cart_items.html.py:28
 msgid "Zum Bezahlen"
@@ -1320,33 +1283,32 @@ msgstr "Proceed to Checkout"
 
 #: .\templates\user\profile\index.html.py:4
 msgid "MY ACCOUNT"
-msgstr ""
+msgstr "My Account"
 
 #: .\templates\user\profile\layout.html.py:19
 #: .\templates\user\profile\order_history.html.py:5
 msgid "Meine Bestellungen"
-msgstr ""
+msgstr "My Orders"
 
 #: .\templates\user\profile\order_history.html.py:11
 msgid "Bestelldatum"
-msgstr ""
+msgstr "Order date"
 
 #: .\templates\user\profile\order_history.html.py:12
 msgid "Bestellung"
-msgstr ""
+msgstr "Order"
 
 #: .\templates\user\profile\order_history.html.py:14
-#, fuzzy
 msgid "Artikel"
-msgstr "Article"
+msgstr "Articles"
 
 #: .\templates\user\profile\order_history.html.py:35
 msgid "Noch keine Bestellungen vorhanden!"
-msgstr ""
+msgstr "No orders yet!"
 
 #: .\templates\user\profile\shopping_cart.html.py:6
 msgid "Mein Einkaufskorb"
-msgstr ""
+msgstr "My shopping cart"
 
 #: .\templates\user\profile\shopping_cart.html.py:14
 msgid "Article"
@@ -1354,7 +1316,7 @@ msgstr "Article"
 
 #: .\templates\user\profile\shopping_cart.html.py:15
 msgid "Reference"
-msgstr ""
+msgstr "Reference"
 
 #: .\templates\user\profile\shopping_cart.html.py:16
 msgid "Size in MM"
@@ -1362,19 +1324,19 @@ msgstr "Size in "
 
 #: .\templates\user\profile\shopping_cart.html.py:18
 msgid "Price P/P"
-msgstr "Price"
+msgstr "Price p/p"
 
 #: .\templates\user\profile\shopping_cart.html.py:34
 msgid "Mengenrabattpreis"
-msgstr ""
+msgstr "Discount price"
 
 #: .\templates\user\profile\shopping_cart.html.py:45
 msgid "Noch keine Artikel hinzugef&uuml;gt!"
-msgstr ""
+msgstr "No articles added yet!"
 
 #: .\templates\user\profile\shopping_cart.html.py:92
 msgid "Save Cart"
-msgstr "Save Changes"
+msgstr "Save Cart"
 
 #: .\templates\user\profile\shopping_cart.html.py:95
 msgid "Confirm Order"

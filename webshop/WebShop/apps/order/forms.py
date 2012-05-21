@@ -15,7 +15,7 @@ class PaymentMethodForm(BaseForm):
     class Meta:
         layout = (
             Fieldset(
-                _("Zahlweise angeben"),
+                ugettext_lazy("Zahlweise angeben"),
                 'payment_method',
                 'payment_comment'
             ),
@@ -48,7 +48,7 @@ class CreditCardForm(BaseForm, ):
     class Meta:
         layout = (
             Fieldset(
-                _("Kreditkartendetails"),
+                ugettext_lazy("Kreditkartendetails"),
                 'owner',
                 'ccNumber',
                 'cctype',
@@ -85,7 +85,7 @@ class BankAccountForm(BaseForm):
     class Meta:
         layout = (
             Fieldset(
-                _("Kontodaten"),
+                ugettext_lazy("Kontodaten"),
                 'owner',
                 'accountno',
                 'blz',

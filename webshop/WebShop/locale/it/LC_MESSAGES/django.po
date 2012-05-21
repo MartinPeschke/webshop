@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: turbogearshop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-20 22:47+0200\n"
+"POT-Creation-Date: 2012-05-21 20:19+0200\n"
 "PO-Revision-Date: 2011-09-27 14:52+0100\n"
 "Last-Translator: \n"
 "Language-Team: turbogearshop <turbogearshop@googlegroups.com>\n"
@@ -621,6 +621,11 @@ msgstr ""
 "nuove funzioni, il responsabile Web ha ricevuto informazioni relative a "
 "questo problema ,  lavoriamo per correggerlo il piú presto possiblie!  "
 "Riprova piú tardi. "
+
+#: .\templates\base.html.py:15
+#, fuzzy
+msgid "Willkommen auf Per-4"
+msgstr "Benvenuti da Per-4"
 
 #: .\templates\base.html.py:49 .\templates\pages\aboutus_de.html.py:9
 #: .\templates\pages\aboutus_en.html.py:9
@@ -1645,9 +1650,6 @@ msgstr "Conferma l'ordine"
 
 #~ msgid "Confirmation"
 #~ msgstr "Conferma"
-
-#~ msgid "Herzlich Willkommen bei Per-4"
-#~ msgstr "Benvenuti da Per-4"
 
 #~ msgid "Only For Studios"
 #~ msgstr "Riservato agli studio"

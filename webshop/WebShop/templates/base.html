@@ -12,7 +12,7 @@
 {% load url from future %}
 
 <head>
-  <title>{% block title %}{% block pagetitle %}{% endblock %}Willkommen auf Per-4 - Piercing - Tattoo - Jewellery – Medical Equipment – Permanent Make Up - Online Shop{% endblock %}</title>
+  <title>{% block title %}{% block pagetitle %}{% endblock %}{% trans "Willkommen auf Per-4" %} - Piercing - Tattoo - Jewellery – Medical Equipment – Permanent Make Up - Online Shop{% endblock %}</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,7 +75,7 @@
           </ul>
         </div>
         <form action="/search/" method="get" class="navbar-search pull-right">
-            <input class="{{ simple_role }}" type="search" value=""
+            <input class="{{ simple_role }} span2" type="search" value=""
               id="search_text" name="s" accesskey="s" autosave="" results="5"  />
             <input class="{{ simple_role }}" type="submit" id="a" value="{% trans 'Search' %}"/>
         </form>

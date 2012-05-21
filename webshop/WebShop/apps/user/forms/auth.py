@@ -36,7 +36,7 @@ class LoginEmailForm(BaseForm):
     class Meta:
         layout = (
             Fieldset(
-                _("Mit Email und Passwort anmelden"),
+                ugettext_lazy("Mit Email und Passwort anmelden"),
                 'email',
                 'password'
             ),
@@ -58,14 +58,14 @@ class LoginZipCodeForm(BaseForm):
     class Meta:
         layout = (
             Fieldset(
-                _("Mit Kundennummer und Postleitzahl anmelden"),
+                ugettext_lazy("Mit Kundennummer und Postleitzahl anmelden"),
                 'username',
                 'password'
             ),
         )
     username = forms.CharField(label = ugettext_lazy('Kundennummer'))
     password = forms.CharField(widget = forms.PasswordInput, label = ugettext_lazy('PLZ'), \
-        help_text=_("Anmeldung mit Kundennummer klappt nur, wenn Sie entsprechende Daten per Post von uns erhalten haben."))
+        help_text=ugettext_lazy("Anmeldung mit Kundennummer klappt nur, wenn Sie entsprechende Daten per Post von uns erhalten haben."))
 
     def clean_username(self):
         user = auth.authenticate(**self.cleaned_data)
@@ -82,7 +82,7 @@ class RequestPasswordForm(BaseForm):
     class Meta:
         layout = (
             Fieldset(
-                _('Passwort &auml;ndern'),
+                ugettext_lazy('Passwort &auml;ndern'),
                 'email',
             ),
         )
@@ -102,7 +102,7 @@ class ChangePasswordForm(BaseForm):
     class Meta:
         layout = (
             Fieldset(
-                _('Passwort &auml;ndern'),
+                ugettext_lazy('Passwort &auml;ndern'),
                 'password',
                 'password2'
             ),
@@ -125,7 +125,7 @@ class RegisterForm(BaseForm):
     class Meta:
         layout = (
             Fieldset(
-                _('Registrierung'),
+                ugettext_lazy('Registrierung'),
                 'role',
                 'email',
                 'password',
@@ -159,7 +159,7 @@ class RetailAccountForm(BaseForm):
     class Meta:
         layout = (
             Fieldset(
-                _('Registrierung'),
+                ugettext_lazy('Registrierung'),
                 'title',
                 'first_name',
                 'last_name',
@@ -188,7 +188,7 @@ class WholesaleAccountForm(RetailAccountForm):
     class Meta:
         layout = (
             Fieldset(
-                _('Registrierung'),
+                ugettext_lazy('Registrierung'),
                 'company_name',
                 'title',
                 'first_name',

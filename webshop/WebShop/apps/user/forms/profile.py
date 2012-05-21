@@ -13,7 +13,7 @@ class AddressesForm(BaseForm):
     class Meta:
         layout = (
             Fieldset(
-                _("Rechnungsadresse"),
+                ugettext_lazy("Rechnungsadresse"),
                 'billing_name',
                 'billing_street',
                 'billing_city',
@@ -25,7 +25,7 @@ class AddressesForm(BaseForm):
                 'billing_fax',
                 'same_address'
             ), Fieldset (
-                _("Lieferadresse"),
+                ugettext_lazy("Lieferadresse"),
                 'shipping_name',
                 'shipping_street',
                 'shipping_city',
@@ -69,7 +69,7 @@ class AccountRetailDetailsForm(BaseForm):
     class Meta:
         layout = (
             Fieldset(
-                _('Registrierung'),
+                ugettext_lazy('Registrierung'),
                 'title',
                 'first_name',
                 'last_name'
@@ -88,7 +88,7 @@ class AccountWholesaleDetailsForm(AccountRetailDetailsForm):
     class Meta:
         layout = (
             Fieldset(
-                _('Registrierung'),
+                ugettext_lazy('Registrierung'),
                 'company_name',
                 'title',
                 'first_name',

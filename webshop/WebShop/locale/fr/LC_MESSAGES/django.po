@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-20 22:47+0200\n"
+"POT-Creation-Date: 2012-05-21 20:19+0200\n"
 "PO-Revision-Date: 2011-09-27 19:54+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -606,6 +606,11 @@ msgstr ""
 "Nous actualisons notre Website regulièrement, eliminons les fautes et "
 "rajoutons des nouvelles fonctions. L´adminstrateur a pris connaissance de "
 "votre problème et travaille à corriger le defaut. Réessayer plus tard, merci."
+
+#: .\templates\base.html.py:15
+#, fuzzy
+msgid "Willkommen auf Per-4"
+msgstr "Bienvenue a Per-4"
 
 #: .\templates\base.html.py:49 .\templates\pages\aboutus_de.html.py:9
 #: .\templates\pages\aboutus_en.html.py:9
@@ -1630,9 +1635,6 @@ msgstr "Confirmation de  la commande"
 
 #~ msgid "Confirmation"
 #~ msgstr "Confirmation"
-
-#~ msgid "Herzlich Willkommen bei Per-4"
-#~ msgstr "Bienvenue a Per-4"
 
 #~ msgid "Only For Studios"
 #~ msgstr "Reserve´aux Studios"
