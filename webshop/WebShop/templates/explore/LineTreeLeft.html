@@ -4,7 +4,12 @@
 <ul id="leftBarNav" class="clearfix leftBarNav">
 	{% for currshop in shops %}
 		<li class="toplevel {% if forloop.first %}first{% else %}next{%endif%} {{ request.path|selected_start:currshop.ref }}">
-			<h2><a class="link" href="/{{ currshop.ref }}/">&raquo;&nbsp;{{ currshop.name|locale:LANGUAGE_CODE }}</a></h2>
+			<h2><a class="link" href="/{{ currshop.ref }}/">
+                {% ifequal shop.ref currshop.ref %}
+                    &raquo;&nbsp;
+                {% endifequal %}
+                {{ currshop.name|locale:LANGUAGE_CODE }}
+                </a></h2>
 		</li>
 		{% ifequal shop.ref currshop.ref %}
 			<li><ul class="selectedshop_content">

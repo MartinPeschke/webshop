@@ -88,11 +88,10 @@ def build(env):
 
 def build_statics(env):
   environment_path = get_deploy_path(env)
-  with cd("{}code/WebShop/per4/static".format(environment_path)):
+  with cd("{}code/WebShop/static".format(environment_path)):
     if(not files.exists("css")):
       run("mkdir -p css")
-    run("~/node_modules/less/bin/lessc less/site.less css/site.css")
-    run("java -jar ~/resources/yuicompressor-2.4.7.jar --type css -o css/site.css css/site.min.css")
+    run("~/node_modules/less/bin/lessc less/site.less css/site.min.css")
     run("java -jar ~/resources/compiler.jar --compilation_level WHITESPACE_ONLY --js scripts/libs/bootstrap.min.js scripts/libs/JSON.js scripts/libs/underscore.js scripts/libs/Backbone.js scripts/site.js --js_output_file scripts/build/libs.js")
     run("echo $RANDOM$RANDOM$RANDOM > ./VERSION_TOKEN")
     

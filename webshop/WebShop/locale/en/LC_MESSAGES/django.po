@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TurboGearShop VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-20 22:46+0200\n"
-"PO-Revision-Date: 2012-05-21 20:24+0100\n"
+"POT-Creation-Date: 2012-05-23 14:27+0200\n"
+"PO-Revision-Date: 2012-05-23 14:29+0100\n"
 "Last-Translator: \n"
 "Language-Team: turbogearshop <turbogearshop@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -151,11 +151,11 @@ msgstr "bank*"
 
 #: .\apps\order\models.py:24
 msgid "PAYMENT_METHOD_CASH"
-msgstr "Cash"
+msgstr "Cash in our office"
 
 #: .\apps\order\models.py:25
 msgid "PAYMENT_METHOD_CASH_ON_DELIVERY"
-msgstr "Cash on delivery"
+msgstr "Cash on delivery (+4 EUR in Germany, elswhere +9.90 EUR)"
 
 #: .\apps\order\models.py:26
 msgid "PAYMENT_METHOD_BANK_TRANSFER"
@@ -167,37 +167,41 @@ msgstr "Creditcard"
 
 #: .\apps\order\models.py:28
 msgid "PAYMENT_METHOD_DIRECT_DEBIT"
-msgstr "Direct Debit"
+msgstr "Direct Debit (only after agreement)"
 
 #: .\apps\order\models.py:29
 msgid "PAYMENT_METHOD_PAYPAL"
 msgstr "Paypal"
 
-#: .\apps\order\models.py:44
+#: .\apps\order\models.py:30
+msgid "PAYMENT_METHOD_INVOICE"
+msgstr "10 days net (only after agreement)"
+
+#: .\apps\order\models.py:45
 msgid "ORDER_STATUS_ERROR"
 msgstr "ERROR"
 
-#: .\apps\order\models.py:45
+#: .\apps\order\models.py:46
 msgid "ORDER_STATUS_DELETED"
 msgstr "deleted"
 
-#: .\apps\order\models.py:46
+#: .\apps\order\models.py:47
 msgid "ORDER_STATUS_CURRENT"
 msgstr "current"
 
-#: .\apps\order\models.py:47
+#: .\apps\order\models.py:48
 msgid "ORDER_STATUS_ORDERED"
 msgstr "ordered"
 
-#: .\apps\order\models.py:48
+#: .\apps\order\models.py:49
 msgid "ORDER_STATUS_SUBMITTED_TO_BACKEND"
 msgstr "submitted"
 
-#: .\apps\order\models.py:154
+#: .\apps\order\models.py:155
 msgid "CREDITCARD_VISA"
 msgstr "Visa"
 
-#: .\apps\order\models.py:155
+#: .\apps\order\models.py:156
 msgid "CREDITCARD_MASTERCARD"
 msgstr "Mastercard"
 
@@ -417,8 +421,8 @@ msgid "Umsatzsteuer ID"
 msgstr "VAT ID"
 
 #: .\apps\user\forms\auth.py:210
-msgid "Ãffnungszeiten*"
-msgstr "opening hours "
+msgid "&Ouml;ffnungszeiten"
+msgstr "opening hours"
 
 #: .\apps\user\forms\auth.py:215
 #: .\apps\user\forms\profile.py:87
@@ -600,6 +604,10 @@ msgstr "The Error has been reported to the WebAdmin."
 #: .\templates\500.html.py:18
 msgid "We are constantly improving our webshop, fixing bugs and adding functionality, the site admin has received your error report and will work hard to fix it! Please check back with us in the very near future time."
 msgstr "We are constantly improving our webshop, fixing bugs and adding functionality, the site admin has received your error report and will work hard to fix it! Please check back with us in the very near future time."
+
+#: .\templates\base.html.py:15
+msgid "Willkommen auf Per-4"
+msgstr "Welcome to Per-4"
 
 #: .\templates\base.html.py:49
 #: .\templates\pages\aboutus_de.html.py:9
@@ -1217,7 +1225,7 @@ msgstr "Add addresses now"
 
 #: .\templates\user\order\addresses.html.py:9
 msgid "Weiter"
-msgstr ""
+msgstr "next"
 
 #: .\templates\user\order\complete.html.py:4
 msgid "Completed"
@@ -1342,6 +1350,9 @@ msgstr "Save Cart"
 msgid "Confirm Order"
 msgstr "Confirm Order"
 
+#~ msgid "Ãffnungszeiten*"
+#~ msgstr "opening hours "
+
 #~ msgid "German"
 #~ msgstr "German"
 
@@ -1434,9 +1445,6 @@ msgstr "Confirm Order"
 
 #~ msgid "Confirmation"
 #~ msgstr "Confirmation"
-
-#~ msgid "Herzlich Willkommen bei Per-4"
-#~ msgstr "Welcome to Per-4"
 
 #~ msgid "Retype Password"
 #~ msgstr "Retype Password"

@@ -1,4 +1,13 @@
 $(function(){
+    $(function () {
+        if (typeof jQuery.validator != 'undefined') {
+            jQuery.validator.addMethod("phone-number", function (value, element) {
+                return this.optional(element) || /^[+]?([0-9]+[()/-]?)+$/gi.test(value.replace(/ /g, ""));
+            }, "Bitte geben sie eine Telefonnummer an.");
+        }
+    });
+
+
     $('#language_bar span[lang]').on({"click":function(evt){
         $('#languageCode').val($(evt.target).parents('span.flag').attr('lang'));
         $('#setlang').submit();
@@ -8,7 +17,7 @@ $(function(){
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId={{ FB_APP_ID }}";
+        js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=" + window.__options__.FB_APP_ID;
         fjs.parentNode.insertBefore(js, fjs);
     } (document, 'script', 'facebook-jssdk'));
 

@@ -17,15 +17,19 @@ DEFAULT_SHOP ='piercing'
 # ---------------------- Basic Django - Customized for Per4 --------------------------
 # Email
 DEFAULT_FROM_EMAIL = 'webshop@per-4.com'
+
 EMAIL_HOST = 'post.strato.de'
 EMAIL_HOST_USER = 'webshop@per-4.net'
 EMAIL_HOST_PASSWORD = 'erwin0309'
 EMAIL_PORT = 25
 EMAIL_SUBJECT_PREFIX = '[PER4]'
-SERVER_EMAIL = 'martin@per-4.net'
-ORDER_MAIL = 'martin@per-4.net'
-ERROR_MAIL = 'martin@per-4.net'
+SERVER_EMAIL = 'webshop@per-4.net'
+ORDER_MAIL = 'webshop@per-4.net'
+ERROR_MAIL = 'martin@per-4.com'
+
 CACHE_TOKEN = "1234"
+
+
 
 TAX_RATE = 19.0
 ARTICLE_LINE_PANE_SIZE = 8
@@ -74,14 +78,14 @@ LOCALE_PATHS = (os.path.join(os.path.dirname(__file__), 'WebShop', 'locale'),)
 DATABASES = {
     'default': {
          'ENGINE':'django.db.backends.mysql'           # 'postgresql', 'mysql', 'sqlite3' or 'ado_mssql'.
-        ,'NAME':'per4_webshop'           # Or path to database file if using sqlite3.
+        ,'NAME':'per4_database'           # Or path to database file if using sqlite3.
         ,'USER':'per4'             # Not used with sqlite3.
         ,'PASSWORD':'asrfg234kl213hsklvn9sv3lj4kf'         # Not used with sqlite3.
         ,'HOST':'localhost'             # Set to empty string for localhost. Not used with sqlite3.
         ,'PORT':'3306'             # Set to empty string for default. Not used with sqlite3.
     },	'articledb': {
          'ENGINE':'django.db.backends.mysql'           # 'postgresql', 'mysql', 'sqlite3' or 'ado_mssql'.
-        ,'NAME':'per4_webshop'           # Or path to database file if using sqlite3.
+        ,'NAME':'per4_database'           # Or path to database file if using sqlite3.
         ,'USER':'per4'             # Not used with sqlite3.
         ,'PASSWORD':'asrfg234kl213hsklvn9sv3lj4kf'         # Not used with sqlite3.
         ,'HOST':'localhost'             # Set to empty string for localhost. Not used with sqlite3.
@@ -103,7 +107,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT=os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 'static'))
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 'media'))
+MEDIA_ROOT = "/server/www/per4_files_live/"
 DATA_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 'data'))
 
 

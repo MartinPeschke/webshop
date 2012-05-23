@@ -9,6 +9,19 @@ require([], function () {
             this.originalTotalBox = this.$el.find("#totalPrice");
             this.originalTotal = this.originalTotalBox.html();
             this.calculateTotal();
+            this.togglePane(this.options.toggleState);
+        }
+
+        , togglePane : function(show_state){
+            if(!show_state == null)show_state = ''
+            $.ajax({
+                data : {show_state:show_state},
+                url : '/pane/' + this.options.artTypeId + '/',
+                type: 'POST', dataType: 'json',
+                success :
+                    function(data, textStatus) {
+                        $('#type_pane').html(data['body']);
+                    }});
         }
 
         , addToCart : function(e){

@@ -207,7 +207,7 @@ class WholesaleAccountForm(RetailAccountForm):
     company_name = forms.CharField(label = ugettext_lazy('Studioname*'))
     vat_id = forms.CharField(required=False, label = ugettext_lazy('Umsatzsteuer ID'))
     bo_customer_no = forms.CharField(required=False, label = ugettext_lazy('Kundennummer'))
-    opening_hours = forms.CharField(label = ugettext_lazy(u'Öffnungszeiten*'))
+    opening_hours = forms.CharField(required = False, label = ugettext_lazy(u'&Ouml;ffnungszeiten'))
 
     weekdays = forms.MultipleChoiceField(widget = forms.CheckboxSelectMultiple
                                          ,choices=WEEKDAYS

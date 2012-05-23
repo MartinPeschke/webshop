@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: turbogearshop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-21 20:18+0200\n"
-"PO-Revision-Date: 2012-05-21 20:24+0100\n"
+"POT-Creation-Date: 2012-05-23 14:27+0200\n"
+"PO-Revision-Date: 2012-05-23 14:28+0100\n"
 "Last-Translator: \n"
 "Language-Team: turbogearshop <turbogearshop@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -147,11 +147,11 @@ msgstr "Bank*"
 
 #: .\apps\order\models.py:24
 msgid "PAYMENT_METHOD_CASH"
-msgstr "Zahlungsweise Barzahlung"
+msgstr "Barzahlung im Büro"
 
 #: .\apps\order\models.py:25
 msgid "PAYMENT_METHOD_CASH_ON_DELIVERY"
-msgstr "Nachnahme"
+msgstr "Nachnahme (+4,00 EUR in D, +9,90 EUR andere)"
 
 #: .\apps\order\models.py:26
 msgid "PAYMENT_METHOD_BANK_TRANSFER"
@@ -163,37 +163,41 @@ msgstr "Kreditkarte"
 
 #: .\apps\order\models.py:28
 msgid "PAYMENT_METHOD_DIRECT_DEBIT"
-msgstr "Lastschrift"
+msgstr "Lastschrift (nur nach Absprache)"
 
 #: .\apps\order\models.py:29
 msgid "PAYMENT_METHOD_PAYPAL"
 msgstr "Paypal"
 
-#: .\apps\order\models.py:44
+#: .\apps\order\models.py:30
+msgid "PAYMENT_METHOD_INVOICE"
+msgstr "10 Tage netto (nur nach Absprache)"
+
+#: .\apps\order\models.py:45
 msgid "ORDER_STATUS_ERROR"
 msgstr "Fehler"
 
-#: .\apps\order\models.py:45
+#: .\apps\order\models.py:46
 msgid "ORDER_STATUS_DELETED"
 msgstr "gelöscht"
 
-#: .\apps\order\models.py:46
+#: .\apps\order\models.py:47
 msgid "ORDER_STATUS_CURRENT"
 msgstr "aktuell"
 
-#: .\apps\order\models.py:47
+#: .\apps\order\models.py:48
 msgid "ORDER_STATUS_ORDERED"
 msgstr "bestellt"
 
-#: .\apps\order\models.py:48
+#: .\apps\order\models.py:49
 msgid "ORDER_STATUS_SUBMITTED_TO_BACKEND"
 msgstr "bearbeitet"
 
-#: .\apps\order\models.py:154
+#: .\apps\order\models.py:155
 msgid "CREDITCARD_VISA"
 msgstr "Visa"
 
-#: .\apps\order\models.py:155
+#: .\apps\order\models.py:156
 msgid "CREDITCARD_MASTERCARD"
 msgstr "Mastercard"
 
@@ -203,7 +207,7 @@ msgstr "Bitte gib erst eine Liefer- und Rechnungsadresse an!"
 
 #: .\apps\order\views.py:156
 msgid "Vielen Dank fuer Deine Bestellung bei Per-4"
-msgstr "Vielen Dank f&uuml;r Deine Bestellung bei Per-4"
+msgstr "Vielen Dank fuer Deine Bestellung bei Per-4"
 
 #: .\apps\user\user_roles.py:21
 #: .\apps\user\forms\auth.py:135
@@ -413,8 +417,8 @@ msgid "Umsatzsteuer ID"
 msgstr "Umsatzsteuer ID"
 
 #: .\apps\user\forms\auth.py:210
-msgid "Ãffnungszeiten*"
-msgstr "Öffnungszeiten*"
+msgid "&Ouml;ffnungszeiten"
+msgstr "&Ouml;ffnungszeiten"
 
 #: .\apps\user\forms\auth.py:215
 #: .\apps\user\forms\profile.py:87
@@ -1343,6 +1347,9 @@ msgstr "Änderungen speichern"
 #: .\templates\user\profile\shopping_cart.html.py:95
 msgid "Confirm Order"
 msgstr "Bestellung bestätigen"
+
+#~ msgid "Ãffnungszeiten*"
+#~ msgstr "Öffnungszeiten*"
 
 #~ msgid "German"
 #~ msgstr "Deutsch"

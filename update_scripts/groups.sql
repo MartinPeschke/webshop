@@ -70,7 +70,7 @@ CREATE TABLE apps_payment_method (
   `least_role` char(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-insert into apps_payment_method values (1, 'CASH', 'E'), (2, 'CASH_ON_DELIVERY', 'E'), (3, 'BANK_TRANSFER', 'E'), (4, 'CREDITCARD', 'E'), (5, 'DIRECT_DEBIT', 'K'), (6, 'PAYPAL', 'X');
+insert into apps_payment_method values (1, 'CASH', 'E'), (2, 'CASH_ON_DELIVERY', 'E'), (3, 'BANK_TRANSFER', 'E'), (4, 'CREDITCARD', 'E'), (5, 'DIRECT_DEBIT', 'E'), (6, 'PAYPAL', 'E'), (7, 'INVOICE', 'K');
 
 alter table apps_order add column payment_method_id int(11);
 alter table apps_order add constraint payment_method_id FOREIGN KEY (payment_method_id) references apps_payment_method.id;

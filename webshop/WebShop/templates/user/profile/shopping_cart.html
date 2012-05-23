@@ -100,7 +100,7 @@
 
 {% block jscripts %}
     <script>
-        window.__options__ = {updateCartUrl: "{% url "refresh-cart-route" %}"};
+        window.__options__.updateCartUrl = "{% url "refresh-cart-route" %}";
     </script>
     <script src="{{ STATIC_URL }}/scripts/libs/require.js" data-main="{{ STATIC_URL }}/scripts/pages/shopping_cart"></script>
 {% endblock %}

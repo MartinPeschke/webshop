@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-21 20:18+0200\n"
+"POT-Creation-Date: 2012-05-23 14:27+0200\n"
 "PO-Revision-Date: 2011-09-27 11:11+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -168,31 +168,35 @@ msgstr ""
 msgid "PAYMENT_METHOD_PAYPAL"
 msgstr ""
 
-#: .\apps\order\models.py:44
-msgid "ORDER_STATUS_ERROR"
+#: .\apps\order\models.py:30
+msgid "PAYMENT_METHOD_INVOICE"
 msgstr ""
 
 #: .\apps\order\models.py:45
-msgid "ORDER_STATUS_DELETED"
+msgid "ORDER_STATUS_ERROR"
 msgstr ""
 
 #: .\apps\order\models.py:46
-msgid "ORDER_STATUS_CURRENT"
+msgid "ORDER_STATUS_DELETED"
 msgstr ""
 
 #: .\apps\order\models.py:47
-msgid "ORDER_STATUS_ORDERED"
+msgid "ORDER_STATUS_CURRENT"
 msgstr ""
 
 #: .\apps\order\models.py:48
+msgid "ORDER_STATUS_ORDERED"
+msgstr ""
+
+#: .\apps\order\models.py:49
 msgid "ORDER_STATUS_SUBMITTED_TO_BACKEND"
 msgstr ""
 
-#: .\apps\order\models.py:154
+#: .\apps\order\models.py:155
 msgid "CREDITCARD_VISA"
 msgstr ""
 
-#: .\apps\order\models.py:155
+#: .\apps\order\models.py:156
 msgid "CREDITCARD_MASTERCARD"
 msgstr ""
 
@@ -408,7 +412,7 @@ msgid "Umsatzsteuer ID"
 msgstr ""
 
 #: .\apps\user\forms\auth.py:210
-msgid "Ãffnungszeiten*"
+msgid "&Ouml;ffnungszeiten"
 msgstr ""
 
 #: .\apps\user\forms\auth.py:215 .\apps\user\forms\profile.py:87
@@ -909,8 +913,9 @@ msgid "Lieferadresse:"
 msgstr ""
 
 #: .\templates\email\order_confirmation.html.py:30
+#, fuzzy
 msgid "Deine Bestellung"
-msgstr ""
+msgstr "Direcci&oacute;n para la facturaci&oacute;n"
 
 #: .\templates\email\order_confirmation.html.py:31
 msgid "Zahlart:"
@@ -1241,8 +1246,9 @@ msgid "Anmeldung"
 msgstr ""
 
 #: .\templates\user\auth\base.html.py:14
+#, fuzzy
 msgid "Anmelden mit Email"
-msgstr ""
+msgstr "Número de cliente"
 
 #: .\templates\user\auth\base.html.py:17
 #, fuzzy
@@ -1250,8 +1256,9 @@ msgid "Anmelden mit Kundennummer"
 msgstr "Número de cliente"
 
 #: .\templates\user\auth\base.html.py:20
+#, fuzzy
 msgid "Passwort vergessen"
-msgstr ""
+msgstr "Contrase&ntilde;a"
 
 #: .\templates\user\auth\signup_finished.html.py:11
 msgid "Deine Registrierung ist nun abgeschlossen!"
@@ -1365,16 +1372,18 @@ msgstr "Mi Cuenta -"
 
 #: .\templates\user\profile\layout.html.py:19
 #: .\templates\user\profile\order_history.html.py:5
+#, fuzzy
 msgid "Meine Bestellungen"
-msgstr ""
+msgstr "Direcci&oacute;n para la facturaci&oacute;n"
 
 #: .\templates\user\profile\order_history.html.py:11
 msgid "Bestelldatum"
 msgstr ""
 
 #: .\templates\user\profile\order_history.html.py:12
+#, fuzzy
 msgid "Bestellung"
-msgstr ""
+msgstr "Registrar"
 
 #: .\templates\user\profile\order_history.html.py:14
 #, fuzzy

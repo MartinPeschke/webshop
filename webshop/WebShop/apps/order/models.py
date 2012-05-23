@@ -26,7 +26,8 @@ class PaymentMethod(models.Model):
         'BANK_TRANSFER':_("PAYMENT_METHOD_BANK_TRANSFER"),
         'CREDITCARD':_("PAYMENT_METHOD_CREDITCARD"),
         'DIRECT_DEBIT':_("PAYMENT_METHOD_DIRECT_DEBIT"),
-        'PAYPAL': _("PAYMENT_METHOD_PAYPAL")
+        'PAYPAL': _("PAYMENT_METHOD_PAYPAL"),
+        'INVOICE': _("PAYMENT_METHOD_INVOICE")
     }
     def get_html_label(self):
         return mark_safe('<span class="">{}</span>'.format(self.__unicode__()))

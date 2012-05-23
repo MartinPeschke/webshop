@@ -20,7 +20,7 @@ FROM_PRICE_HTML_A = render_to_string('snippets/from_price_a.html',{})
 def get_option_img_tag(ao, shop_ref=None, classes = None):
     if ao.ref == '-':
         return '-'
-    if os.path.exists(os.path.join(settings.MEDIA_ROOT, 'files', shop_ref, 'options', ao.imgName)):
+    if os.path.exists(os.path.join(settings.MEDIA_ROOT, shop_ref, 'options', ao.imgName)):
         return mark_safe('<img alt="{ao_ref}" class="small {classes}" src="/media/files/{shop_ref}/options/{img}"/>'.format(ao_ref = ao.ref, shop_ref = shop_ref, img = ao.imgName, classes = classes or ""))
     else:
         return mark_safe('%s' % ao.ref)
@@ -164,7 +164,7 @@ def path_exists(path):
 def create_ao_imgtag(ao, shop_ref=None, classes = None):
     if ao.ref == '-':
     	return '-'
-    if os.path.exists(os.path.join(settings.MEDIA_ROOT, 'files', shop_ref, 'options', ao.imgName)):
+    if os.path.exists(os.path.join(settings.MEDIA_ROOT, shop_ref, 'options', ao.imgName)):
         return mark_safe('<div title="{ao_ref}" class={classes}><img alt="{ao_ref}" class="small" src="/media/files/{shop_ref}/options/{img}"/></div>'.format(ao_ref = ao.ref, shop_ref = shop_ref, img = ao.imgName, classes = classes or ""))
     else:
         return mark_safe('<span name="%s" class="optionLink">%s</span>' % (ao.ref, ao.ref))
