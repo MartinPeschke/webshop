@@ -24,7 +24,7 @@ def _guard_bo(f):
         if not(login and password):
             return HttpResponseForbidden('No Login Provided!')
         print 'received Login & Password'
-        bop_key = hashlib.sha1.new(password)
+        bop_key = hashlib.sha1(password)
         if settings.BOP_PUBLIC != bop_key.hexdigest():
             return HttpResponseForbidden('Incorrect Login!')
         print 'Received Correct BOP Authentication'

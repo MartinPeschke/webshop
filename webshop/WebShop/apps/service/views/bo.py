@@ -6,7 +6,7 @@ from django.core.cache import cache
 from django.db import  connection
 from WebShop.apps.explore.models import Shop, Line, ArticleFamily, Promotion, Article, ArticleOption, Pricing, ArticleType
 from WebShop.apps.user.models import Address, BankAccount, CreditCard, Profile
-from WebShop.apps.order.models import Order
+from WebShop.apps.order.models import Order, PaymentMethod
 from django.contrib.auth.models import User
 from WebShop.apps.contrib.decorator import _guard_bo, json_encode
 
@@ -42,12 +42,12 @@ def getAllOrders(request):
         profile = order.user.get_profile()
         
         try:
-            address = Address.objects.get(user=order.user, type='billing')
+            address = Address.objects.get(user=order.user, type__name='billing')
         except Address.DoesNotExist:
             address = None
 
         try:
-            shipping = Address.objects.get(user=order.user, type='shipping')
+            shipping = Address.objects.get(user=order.user, type__name='shipping')
         except Address.DoesNotExist:
             shipping = None
 
@@ -61,7 +61,10 @@ def getAllOrders(request):
             creditcard = None
         
         order.user_email = order.user.email
-        profile.verbose_payment_method = profile.get_payment_method()
+        try:
+            profile.verbose_payment_method = unicode(order.payment_method)
+        except PaymentMethod.DoesNotExist:
+            profile.verbose_payment_method = 'unknown'
         order.profile = profile
         order.address = address
         order.shipping = shipping

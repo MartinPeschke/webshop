@@ -61,7 +61,7 @@ class Shop(models.Model):
     logopath = models.CharField(max_length=128, null=True, blank=True) # ImageField
     viewableByRole = models.CharField(max_length=2, null=True, blank=True)
     sort = models.IntegerField(null=True, default=0)
-    allowed_shops = models.TextField(null=True)
+    allowed_shops = models.TextField(null=True, max_length=512)
     name_I18N_id = models.IntegerField()
     name = property(_get_I18N_default('name_I18N_id'), _set_I18N_default('name_I18N_id'))
     def __str__(self):

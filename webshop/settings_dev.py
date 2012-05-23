@@ -49,7 +49,7 @@ GOOGLE_TRACKING = '''<script type="text/javascript">
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '&rl9146h%z6o+ph(8xap24@@ohy@o#5@7st@d69*v**ol(44v@'
-BOP_PUBLIC = 'd579f14e26fa6cf85584107135fbb9d0fd9f8659'
+BOP_PUBLIC = 'b259a54d7febad1f979ef801d2ca3b2198f090cb'
 
 FB_APP_ID="369049056473174"
 FB_APP_SECRET="8d775ba60036d30ee74586ed0771610e"
