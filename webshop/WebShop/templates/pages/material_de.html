@@ -2,16 +2,18 @@
 {% load i18n explore %}
 {% block meta_keywords %}Materials,Information,Materialien,{% endblock %}
 {% block center_block_header %}{% trans 'Material Guide' %}{% endblock %}
-{% block head %} <link rel="stylesheet" type="text/css" href="/media/css/static.css?20090319" />{% endblock %}
-
 {% block content %}
-<div id="material" style="padding: 15px;">
+    <style type="text/css">
+        ul {list-style-type:none;}
+    </style>
+
+    <div id="material" style="padding: 15px;">
     <ul>
-    	<li><a name="puretitanium"><img src="/media/images/static/material_puretitanium.gif" width="291" height="58" alt="puretitanium" /></a></li>
+    	<li><a name="puretitanium"><img src="{{ STATIC_URL }}images/static/material_puretitanium.gif" width="291" height="58" alt="puretitanium" /></a></li>
         <li class="material_part">Titanium, ein Material, welches schon seit Jahrzehnten in der Medizin f&uuml;r Implantate genutzt wird, ist heutzutage eines der bevorzugten Materialen zum Ersteinsatz f&uuml;r Piercer. Titanium ist ein elementares, sehr leichtes Metal. Es ist widerstandsf&auml;hig gegen&uuml;ber K&ouml;rperfl&uuml;ssigkeiten. 
 PER4 benutzt nickelfreies Titanium der Grade 2 und 23 (Ti6AL 4V Eli), welche sowohl anodisiert als auch in seiner polierten nat&uuml;rlichen Farbe f&uuml;r den Ersteinsatz zugelassen sind. Das Titanium von PER4 entspricht der Europ&auml;ischen Nickeldirektive.</li>
 
-        <li><a name="ptfe"><img src="/media/images/static/material_ptfe.gif" width="130" height="57" alt="ptfe" /></a></li>
+        <li><a name="ptfe"><img src="{{ STATIC_URL }}images/static/material_ptfe.gif" width="130" height="57" alt="ptfe" /></a></li>
         <li class="material_part">Vorteile von P.T.F.E. (Polytetrafluorethylen):
 			<ul>
            		<li>Sterilisation bei 160 Grad in Autoclave.</li>
@@ -22,7 +24,7 @@ PER4 benutzt nickelfreies Titanium der Grade 2 und 23 (Ti6AL 4V Eli), welche sow
 			</ul>
         </li>
 
-        <li><a name="pmfk"><img src="/media/images/static/material_pmfk.gif" width="127" height="89" alt="pmfk" /></a></li>
+        <li><a name="pmfk"><img src="{{ STATIC_URL }}images/static/material_pmfk.gif" width="127" height="89" alt="pmfk" /></a></li>
         <li class="material_part">Vorteile von  P.M.F.K. (polymzeric medical flexible plastic):
         	<ul>
             	<li>Sterilisation bei 120 Grad (20 Minuten) und  134 Grad (5 Minuten) in Autoclave.</li>
@@ -32,24 +34,24 @@ PER4 benutzt nickelfreies Titanium der Grade 2 und 23 (Ti6AL 4V Eli), welche sow
             </ul>
         </li>
         
-        <li><a name="surgical"><img src="/media/images/static/material_surgical.gif" width="344" height="52" alt="surgical" /></a></li>
+        <li><a name="surgical"><img src="{{ STATIC_URL }}images/static/material_surgical.gif" width="344" height="52" alt="surgical" /></a></li>
         <li class="material_part">PER-4  benutzt 316LVM - ASTM F138-97 Chirurgenstahl. Diese Legierung wird in der Implantatmedizin seit Jahrzehnten erfolgreich eingesetzt. Der Chirurgenstahl 316LVM wird im Vakuum. frei von Sauerstoff und Luftverschmutzung. verarbeitet und garantiert so einen geringeren Schadstoffeinschluss als Chirurgenstahl 316L in den K&ouml;rperschmuck. Der von PER-4  angebotene Chirurgenstahl erf&uuml;llt die Kriterien der EU Nickel Direktive.</li>
 
-        <li><a name="black_gold"><img src="/media/images/static/material_balckgold.gif" width="344" height="56" alt="black & gold" /></a></li>
+        <li><a name="black_gold"><img src="{{ STATIC_URL }}images/static/material_balckgold.gif" width="344" height="56" alt="black & gold" /></a></li>
         <li class="material_part">Unsere Black & Gold Artikel sind aus 316L Chirurgenstahl hergestellt und mit einer abriebfesten PVD (Physical Vapour Deposition) Schicht &uuml;berzogen.
         </li>
 
-        <li><a name="organics"><img src="/media/images/static/material_organics.gif" width="240" height="70" alt="organics" /></a></li>
+        <li><a name="organics"><img src="{{ STATIC_URL }}images/static/material_organics.gif" width="240" height="70" alt="organics" /></a></li>
         <li class="material_part">Unsere Produkte aus Horn bzw. Holz sind allesamt Unikate, die nach unseren/Euren W&uuml;nshen in Handarbeit hergestellt werden. Kein Teil gleicht 100%-ig dem anderen. Die Materialen entsprechen den europ&auml;ishen Einfuhrbestimmungen und sind echte Naturprodukte. Per-4 empfiehlt diese Produkte nicht f&uuml;r den Einsatz.
 Die Metallverbindungen bestehen aus 316L Chrirugenstahl.</li>
 
-        <li><a name="gold"><img src="/media/images/static/material_gold.gif" width="206" height="49" alt="Gold 18K" /></a></li>
+        <li><a name="gold"><img src="{{ STATIC_URL }}images/static/material_gold.gif" width="206" height="49" alt="Gold 18K" /></a></li>
         <li class="material_part">PER4 bietet Basis – Piercings und Schmuck ausschließlich in 18K Gold (750er Gold) an. Unser Gold ist nickelfrei und hochglanzpoliert.</li>
 
-        <li><a name="silver"><img src="/media/images/static/material_sterling.gif" width="330" height="76" alt="sterling silver" /></a></li>
+        <li><a name="silver"><img src="{{ STATIC_URL }}images/static/material_sterling.gif" width="330" height="76" alt="sterling silver" /></a></li>
         <li class="material_part">Alle von uns angebotenen Silberschmuckpiercings werden unter st&auml;ndiger Qualit&auml;tskontrolle produziert. PER4 nutzt ausschließlich Sterling Silber 925. Alle Swarowski Kristalle sind eingefasst. Der Bananenstab, welcher in direktem Kontakt mit der Haut steht, besteht wahlweise aus 316L Chirurgenstahl bzw. Titanium.</li>
 
-        <li><a name="fluor"><img src="/media/images/static/material_uv.gif" width="227" height="51" alt="UV Fluur" /></a></li>
+        <li><a name="fluor"><img src="{{ STATIC_URL }}images/static/material_uv.gif" width="227" height="51" alt="UV Fluur" /></a></li>
         <li class="material_part">PER4 bietet ein umfangreiches Sortiment an Acrylic Piercings an. Diese UV reaktiven Schmuckteile  haben auf Grund ihrer Farbvielfalt, ihres Formenreichtums und guten Preisen in den letzten Jahren den Piercingmarkt durchdrungen. 
 Nichtsdestotrotz m&ouml;chten wir darauf hinweisen, dass Biokompatibilit&auml;t bis jetzt nicht nachgewiesen wurde. Acrylic Piercings eignen sich nicht zum Sterilisieren im Autoklaven und sind nicht zum Ersteinsatz geeignet. Die Metallst&auml;be der Acryl Piercings k&ouml;nnen wahlweise aus Titanium oder Chirurgenstahl 316L bestellt werden.</li>
     </ul>

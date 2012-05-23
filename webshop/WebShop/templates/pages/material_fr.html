@@ -2,14 +2,17 @@
 {% load i18n explore %}
 {% block meta_keywords %}Materials,Information,Materialien,{% endblock %}
 {% block center_block_header %}{% trans 'Material Guide' %}{% endblock %}
-{% block head %} <link rel="stylesheet" type="text/css" href="/media/css/static.css?20090319" />{% endblock %}
-{% block content %}
+{% block content
 <div id="material" style="padding: 15px;">
+    <style type="text/css">
+        ul {list-style-type:none;}
+    </style>
+
     <ul>
-    	<li><a name="puretitanium"><img src="/media/images/static/material_puretitanium.gif" width="291" height="58" alt="puretitanium" /></a></li>
+    	<li><a name="puretitanium"><img src="{{ STATIC_URL }}images/static/material_puretitanium.gif" width="291" height="58" alt="puretitanium" /></a></li>
         <li class="material_part">Le Titanium, déjà utilisé depuis des dizaines d’années dans le domaine médical pour des implants, est désormais un des matériaux de prédilection des piercers. Le Titanium est un métal très léger qui ne se corrompt pas au contact des fluides corporels. Per4 utilise du Titanium sans nickel de degré 2 à 23 (Ti6AL 4V Eli), anodé ou bien poli et de couleur naturelle, pour les premiers piercings. Le Titanium employé par Per-4 répond bien entendu aux directives européennes concernant le nickel.</li>
 
-        <li><a name="ptfe"><img src="/media/images/static/material_ptfe.gif" width="130" height="57" alt="ptfe" /></a></li>
+        <li><a name="ptfe"><img src="{{ STATIC_URL }}images/static/material_ptfe.gif" width="130" height="57" alt="ptfe" /></a></li>
         <li class="material_part">Les avantages du P.T.F.E (Polytétrafluoréthylène):
           <ul>
 					<li>Stérilisation à 160 degrés en autoclave</li>
@@ -19,7 +22,7 @@
 					<li>Per-4 recommande ce matériau pour une première insertion</li>
             </ul>
         </li>
-        <li><a name="pmfk"><img src="/media/images/static/material_pmfk.gif" width="127" height="89" alt="pmfk" /></a></li>
+        <li><a name="pmfk"><img src="{{ STATIC_URL }}images/static/material_pmfk.gif" width="127" height="89" alt="pmfk" /></a></li>
         <li class="material_part">Les avantages du P.M.F.K (Polymeric Medical Flexible Plastic):
           <ul>
 				<li>Stérilisation à 120 degrés (20 minutes) et 134 degrés (5 minutes) en autoclave</li>
@@ -29,22 +32,22 @@
           </ul>
         </li>
         
-        <li><a name="surgical"><img src="/media/images/static/material_surgical.gif" width="344" height="52" alt="surgical" /></a></li>
+        <li><a name="surgical"><img src="{{ STATIC_URL }}images/static/material_surgical.gif" width="344" height="52" alt="surgical" /></a></li>
         <li class="material_part">En ce qui concerne l'acier, Per-4 propse les degrés 316L et 316LVM-ASTM F 138-97, un alliage employé avec succès dans le domaine medical depuis des dizaines d'années L'acier chirurgical 316LVM est façonné sous vide afin d'éviter toute contamination par l' air ou l' oxygène, et  ces deux degrés  répondent égalament aux directives européennes concernant le nickel. Depuis le 27 Septembre 2004, l'acier chirurgical  316L et 316 LVM est à nouveau autorisé en première insertion.</li>
 
-        <li><a name="black_gold"><img src="/media/images/static/material_balckgold.gif" width="344" height="56" alt="black & gold" /></a></li>
+        <li><a name="black_gold"><img src="{{ STATIC_URL }}images/static/material_balckgold.gif" width="344" height="56" alt="black & gold" /></a></li>
         <li class="material_part">Nos articles Blalck &amp; Gold sont produits à partir d’ acier chirurgical 316L et recouverts par une pellicule de PVD (Physical Vapour Deposition) empêchant toute érosión.</li>
 
-        <li><a name="organics"><img src="/media/images/static/material_organics.gif" width="240" height="70" alt="organics" /></a></li>
+        <li><a name="organics"><img src="{{ STATIC_URL }}images/static/material_organics.gif" width="240" height="70" alt="organics" /></a></li>
         <li class="material_part">Nos produits en corneo ou en bois sont des pièces uniques réalisées d’apres nos commandes -ou vôutres. Aucun d’entre eux n’est rigoureuseument identique aux autres. Les matériaux répondent aux directives europèennes sur l’importation et sont d’authentique produits naturels. Per-4 déconseille ces produits pour un premier piercing. Les parties métalliques sont en acier chirugical 316L.</li>
 
-        <li><a name="gold"><img src="/media/images/static/material_gold.gif" width="206" height="49" alt="Gold 18K" /></a></li>
+        <li><a name="gold"><img src="{{ STATIC_URL }}images/static/material_gold.gif" width="206" height="49" alt="Gold 18K" /></a></li>
         <li class="material_part">Per4 propose des piercings de base – des piercings et des bijoux en or de 18 carats ; notre or ne contient pas de nickel et il est extrêmement poli pour une plus grande brillance.</li>
 
-        <li><a name="silver"><img src="/media/images/static/material_sterling.gif" width="330" height="76" alt="sterling silver" /></a></li>
+        <li><a name="silver"><img src="{{ STATIC_URL }}images/static/material_sterling.gif" width="330" height="76" alt="sterling silver" /></a></li>
         <li class="material_part"> Tous les bijoux pour piercing en argent que nous proposons sont produits sous un contrôle qualité draconien. Per4 utilise exclusivement de l’argent sterling 925. Tous les cristaux de Swarovski sont sertis. Les clous, lorsqu’ils sont en contact direct avec la peau, peuvent être en acier chirurgical 316 L ou bien en Titanium. </li>
 
-        <li><a name="fluor"><img src="/media/images/static/material_uv.gif" width="227" height="51" alt="UV Fluur" /></a></li>
+        <li><a name="fluor"><img src="{{ STATIC_URL }}images/static/material_uv.gif" width="227" height="51" alt="UV Fluur" /></a></li>
         <li class="material_part"> PER-4 offre un éventail très complet de piercings en acrylique. Ces bijoux réactifs aux UV se sont très largement répandus sur le marché du piercing ces dernières années en raison de leur prix abordable, de leurs formes variées et du grand choix de couleur qu’ils offrent. Cependant, il est important de préciser que leur compatibilité avec l’organisme n’a pas encore été formellement reconnue. Les piercings en acrylique ne se prêtent pas à la stérilisation en autoclave et ne sont pas recommandés pour un premier piercing. La partie métallique des piercings en acrylique peut être au choix commandée en Titanium ou bien en acier chirurgical 316L.</li>
     </ul>
 </div>

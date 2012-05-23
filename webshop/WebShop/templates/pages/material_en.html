@@ -2,13 +2,16 @@
 {% load i18n explore %}
 {% block meta_keywords %}Materials,Information,Materialien,{% endblock %}
 {% block center_block_header %}{% trans 'Material Guide' %}{% endblock %}
-{% block head %} <link rel="stylesheet" type="text/css" href="/media/css/static.css?20090319" />{% endblock %}
+
 {% block content %}
-<div id="material" style="padding: 15px;">
+    <style type="text/css">
+        ul {list-style-type:none;}
+    </style>
+    <div id="material" style="padding: 15px;">
   <ul>
-    <li><a name="puretitanium"><img src="/media/images/static/material_puretitanium.gif" width="291" height="58" alt="puretitanium" /></a></li>
+    <li><a name="puretitanium"><img src="{{ STATIC_URL }}images/static/material_puretitanium.gif" width="291" height="58" alt="puretitanium" /></a></li>
     <li class="material_part">Titanium became one of the most favourite materials of professional piercers. It's, at the same time, very strong and very light; it is able to resist to body acids and fluids. Thanks to its properties, this material is able to avoid all types of tissue and bone allergies. For these reasons it is widely used for permanent surgical transplants. PER4 only uses titanium grade 2 and 23 (Ti6AL 4V Eli) and suggests its use to perforate. We fulfil the European Nickel Directive.</li>
-    <li><a name="ptfe"><img src="/media/images/static/material_ptfe.gif" width="130" height="57" alt="ptfe" /></a></li>
+    <li><a name="ptfe"><img src="{{ STATIC_URL }}images/static/material_ptfe.gif" width="130" height="57" alt="ptfe" /></a></li>
     <li class="material_part">P.T.F.E. (polytetrafluorethylen) benefits:
       <ul>
         <li>It can be sterilized by autoclave at 160 degrees.</li>
@@ -18,7 +21,7 @@
         <li>This material is highly recommended to perforate.</li>
       </ul>
     </li>
-    <li><a name="pmfk"><img src="/media/images/static/material_pmfk.gif" width="127" height="89" alt="pmfk" /></a></li>
+    <li><a name="pmfk"><img src="{{ STATIC_URL }}images/static/material_pmfk.gif" width="127" height="89" alt="pmfk" /></a></li>
     <li class="material_part">P.M.F.K. (polymeric medical flexible plastic) benefits:
       <ul>
         <li>It can be sterilized by autoclave at 120 degrees for 20 minutes or at 134 degrees for 5 minutes.</li>
@@ -28,20 +31,20 @@
         <li>It's easy to cut following one’s need.</li>
       </ul>
     </li>
-    <li><a name="surgical"><img src="/media/images/static/material_surgical.gif" width="344" height="52" alt="surgical" /></a></li>
+    <li><a name="surgical"><img src="{{ STATIC_URL }}images/static/material_surgical.gif" width="344" height="52" alt="surgical" /></a></li>
     <li class="material_part">PER-4 uses 316LVM - ASTM F138-97 surgical steel. the same that has been used in surgical implantation for more than 20 years.<br/>
       The 316LVM steel is melted in an oxygen free atmosphere. thanks to it. the quantity of carbon is highly reduced and. at the same time. the material turns out to be free of toxic elements that could contaminate the jewels surface. </li>
-    <li><a name="black_gold"><img src="/media/images/static/material_balckgold.gif" width="344" height="56" alt="black & gold" /></a></li>
+    <li><a name="black_gold"><img src="{{ STATIC_URL }}images/static/material_balckgold.gif" width="344" height="56" alt="black & gold" /></a></li>
     <li class="material_part">All our Black & Gold Items are made from 316L Surgical Steel with Black PVD (Physical Vapour Deposition) coating. </li>
-    <li><a name="organics"><img src="/media/images/static/material_organics.gif" width="240" height="70" alt="organics" /></a></li>
+    <li><a name="organics"><img src="{{ STATIC_URL }}images/static/material_organics.gif" width="240" height="70" alt="organics" /></a></li>
     <li class="material_part">Our horn and wood products are unique and are handmade. No items esquals 100% another one.<br/>
       Our materials are real natural products and fulfill the European Import Directives. Per-4 does not recommend these product for initial piercing.<br/>
       The metal bars of our horn piercings are made from 361L surgical steel.</li>
-    <li><a name="gold"><img src="/media/images/static/material_gold.gif" width="206" height="49" alt="Gold 18K" /></a></li>
+    <li><a name="gold"><img src="{{ STATIC_URL }}images/static/material_gold.gif" width="206" height="49" alt="Gold 18K" /></a></li>
     <li class="material_part">PER4 only uses gold 18 k (75% of gold) on all items of the following section. All the jewels are nickel free and high polished.</li>
-    <li><a name="silver"><img src="/media/images/static/material_sterling.gif" width="330" height="76" alt="sterling silver" /></a></li>
+    <li><a name="silver"><img src="{{ STATIC_URL }}images/static/material_sterling.gif" width="330" height="76" alt="sterling silver" /></a></li>
     <li class="material_part">All the jewellery of this section is submitted to a severe quality control that guarantees a safe and satisfactory purchase. We only work with stone setting and with first choice silver, the “925” branded one. The banana bar, the part of the jewel that enters in direct contact with the skin, can be made either of 316L surgical steel or Titanium.</li>
-    <li><a name="fluor"><img src="/media/images/static/material_uv.gif" width="227" height="51" alt="UV Fluur" /></a></li>
+    <li><a name="fluor"><img src="{{ STATIC_URL }}images/static/material_uv.gif" width="227" height="51" alt="UV Fluur" /></a></li>
     <li class="material_part">PER4 offers you a wide range of acrylic articles that thanks to their colours, designs, fluorescent properties and competitive prices have been very warmly welcomed in the market.
       Anyway, we suggest you to be careful in using the UV products, because they can’t be sterilized and they can’t be used for perforation. Their biocompatibility has not been certified yet. The banana bar, the part of the piercing that enters in direct contact with the skin, can be made either of 316L surgical steel or Titanium.</li>
   </ul>

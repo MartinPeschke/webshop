@@ -2,16 +2,12 @@
 {% load explore %}
 {% load i18n %}
 {% block meta_keywords %}AboutUs,About,Team,Management,{% endblock %}
-    {% block head %}
-    	<link rel="stylesheet" type="text/css" href="/media/css/static.css" />		 
-	{% endblock %}
-
 {% block center_block_header %}{% trans 'About Us' %}{% endblock %}
 
 {% block content %}
-
-    <img src="/media/images/static/about_title_en.jpg?20100208" alt="About Us" />
-
+    <div style="text-align:center;">
+        <img src="{{ STATIC_URL }}images/static/about_title_en.jpg?20100208" alt="About Us" />
+    </div>
     <div id="about_content">
     <h1>Per-4 – wir stehen für Qualität, Schnelligkeit und Service – und das in 9 Sprachen*!</h1>
     <div class="about_text" style="margin: 10px 10px;">
