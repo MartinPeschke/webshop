@@ -19,9 +19,11 @@
     <div class="homepage-previews">
     {% for item in links %}
         <div class="preview-item">
-            {% if item.link %}<a href="{{ item.link }}" title="{{ item.title }}">{% endif %}
-                <img src="{{ MEDIA_URL }}/{{  item.src }}" alt="{{ item.title }}"/><p class="caption">{{ item.description }}</p>
-            {% if item.link %}</a>{% endif %}
+            <div class="preview-picture">
+                {% if item.link %}<a href="{{ item.link }}" title="{{ item.title }}">{% endif %}
+                    <img src="{{ MEDIA_URL }}/{{  item.src }}" alt="{{ item.title }}"/><p class="caption">{{ item.description }}</p>
+                {% if item.link %}</a>{% endif %}
+            </div>
         </div>
     {%  endfor %}
     </div>

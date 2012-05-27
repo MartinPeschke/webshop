@@ -28,8 +28,10 @@ def get_deploy_path(env):
   return "{}{}/".format(deploy_space, env)
 def get_full_transport_name(env):
   return "{}.{}.tar.bz2".format(transport_name, env)
+def get_code_destination(env):
+  return "{}{}/code/".format(deploy_space, env)
 def get_full_statics_destination(env):
-  return "{}{}/code/{}".format(deploy_space, env, statics_destination)
+  return "{}".format(get_code_destination(env), statics_destination)
   
   
   
@@ -93,7 +95,8 @@ def build_statics(env):
       run("mkdir -p css")
     run("~/node_modules/less/bin/lessc less/site.less css/site.min.css")
     run("java -jar ~/resources/compiler.jar --compilation_level WHITESPACE_ONLY --js scripts/libs/bootstrap.min.js scripts/libs/JSON.js scripts/libs/underscore.js scripts/libs/Backbone.js scripts/site.js --js_output_file scripts/build/libs.js")
-    run("echo $RANDOM$RANDOM$RANDOM > ./VERSION_TOKEN")
+  with cd(get_code_destination(env)):
+      run("echo $RANDOM$RANDOM$RANDOM > ./VERSION_TOKEN")
     
 def deploy(env):
   clean_local()

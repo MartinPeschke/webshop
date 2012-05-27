@@ -33,7 +33,7 @@ def cart_shops_processor(request):
             'shops': SHOPS,
             'default_lines': Line.objects.get_from_cache(settings.DEFAULT_SHOP),
             'default_shop': settings.DEFAULT_SHOP,
-            'STATIC_TOKEN': settings.CACHE_TOKEN,
+            'STATIC_TOKEN': settings.STATIC_VERSION_TOKEN,
             "FB_APP_ID":settings.FB_APP_ID,
             "FB_APP_SECRET":settings.FB_APP_SECRET
             }

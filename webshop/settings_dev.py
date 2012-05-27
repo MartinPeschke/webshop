@@ -1,6 +1,16 @@
 # Django settings for WebShop project.
+import random
 import os
 from django.utils.translation import ugettext as _
+
+here = os.path.abspath(os.path.join(__file__, ".."))
+VERSION_FILE = os.path.join(here, "VERSION_TOKEN")
+
+if os.path.exists(VERSION_FILE):
+    STATIC_VERSION_TOKEN = open(VERSION_FILE).read().strip()
+else:
+    STATIC_VERSION_TOKEN = random.random()
+
 
 DEBUG = True
 TEMPLATE_DEBUG = True
@@ -25,7 +35,6 @@ EMAIL_SUBJECT_PREFIX = '[PER4]'
 SERVER_EMAIL = 'martin@per-4.net'
 ORDER_MAIL = 'martin@per-4.net'
 ERROR_MAIL = 'martin@per-4.net'
-CACHE_TOKEN = "1234"
 
 TAX_RATE = 19.0
 ARTICLE_LINE_PANE_SIZE = 8

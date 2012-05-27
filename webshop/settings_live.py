@@ -28,8 +28,9 @@ ORDER_MAIL = 'webshop@per-4.net'
 ERROR_MAIL = 'martin@per-4.com'
 
 CACHE_TOKEN = "1234"
-
-
+SESSION_COOKIE_DOMAIN=".per-4.com"
+SESSION_EXPIRE_AT_BROWSER_CLOSE=False
+SESSION_COOKIE_AGE=31449600
 
 TAX_RATE = 19.0
 ARTICLE_LINE_PANE_SIZE = 8
@@ -49,7 +50,6 @@ GOOGLE_TRACKING = '''<script type="text/javascript">
                 pageTracker._initData();
                 pageTracker._trackPageview();
             </script>'''
-
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '&rl9146h%z6o+ph(8xap24@@ohy@o#5@7st@d69*v**ol(44v@'

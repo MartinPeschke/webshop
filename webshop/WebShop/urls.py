@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from WebShop.apps.explore.models import Shop, Line, ArticleFamily
 from django.conf import settings
 
@@ -40,6 +41,7 @@ urlpatterns = patterns('',
 
     # Real Index Page
     url(r'^$', 'WebShop.apps.cms.pages.main', name='home-route'),
+    url(r'^main/?$',  lambda x: HttpResponseRedirect('/')),
 
     # Browsing
     (r'^(?P<shop_ref>%s)/$' % SHOPS_URLS, 'WebShop.apps.explore.views.handler.shop'),
