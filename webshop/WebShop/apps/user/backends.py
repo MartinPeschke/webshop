@@ -7,7 +7,7 @@ class ModelBackend:
     """
     # TODO: Model, login attribute name and password attribute name should be
     # configurable.
-    def authenticate(self, username = None, email=None, password=None, token=None, role = None):
+    def authenticate(self, username = None, email=None, password=None, token=None, role = None, customer_number = None, zipcode = None):
         if email and password:
             try:
                 user = User.objects.get(email=email)
@@ -33,11 +33,14 @@ class ModelBackend:
                     if user.check_password(password):
                         return user
                 except User.DoesNotExist:
-                    users = User.objects.filter(profile__bo_customer_no=username.lstrip('K'), address__zip = password).distinct()
-                    try:
-                        return users[0]
-                    except IndexError:
-                        return None
+                    return None
+        elif customer_number and zipcode:
+            users = User.objects.filter(profile__bo_customer_no=customer_number.lstrip('K'), address__zip = zipcode)
+            try:
+                return users[0]
+            except IndexError:
+                return None
+
         return None
         
         

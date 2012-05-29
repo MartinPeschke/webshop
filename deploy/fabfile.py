@@ -76,12 +76,10 @@ def unpack_package(env):
 
 def build(env):
   environment_path = get_deploy_path(env)
-  with cd(environment_path):
-    run("env/bin/supervisorctl -c supervisor.cfg stop all", pty=True)
   run("rm -rf {}code/*".format(environment_path))
   run("cp -R {}{}/* {}code/".format(workspace, env, environment_path))
   with cd(environment_path):
-    result = run("env/bin/supervisorctl -c supervisor.cfg start all", pty=True)
+    result = run("env/bin/supervisorctl -c supervisor.cfg restart all", pty=True)
     if "ERROR" in result:
       run("tail -n50 logs/python.log", pty=True)
       fabric.utils.abort("supervisord did not start: {}".format(result))

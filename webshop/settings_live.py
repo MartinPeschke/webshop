@@ -1,6 +1,16 @@
 # Django settings for WebShop project.
+import random
 import os
 from django.utils.translation import ugettext as _
+
+here = os.path.abspath(os.path.join(__file__, ".."))
+VERSION_FILE = os.path.join(here, "VERSION_TOKEN")
+
+if os.path.exists(VERSION_FILE):
+    STATIC_VERSION_TOKEN = open(VERSION_FILE).read().strip()
+else:
+    STATIC_VERSION_TOKEN = random.random()
+
 
 DEBUG = False
 TEMPLATE_DEBUG = False

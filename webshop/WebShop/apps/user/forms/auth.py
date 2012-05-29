@@ -59,16 +59,16 @@ class LoginZipCodeForm(BaseForm):
         layout = (
             Fieldset(
                 ugettext_lazy("Mit Kundennummer und Postleitzahl anmelden"),
-                'username',
-                'password'
+                'customer_number',
+                'zipcode'
             ),
         )
-    username = forms.CharField(label = ugettext_lazy('Kundennummer'))
-    password = forms.CharField(widget = forms.PasswordInput, label = ugettext_lazy('PLZ'), \
+    customer_number = forms.CharField(label = ugettext_lazy('Kundennummer'))
+    zipcode = forms.CharField(widget = forms.PasswordInput, label = ugettext_lazy('PLZ'), \
         help_text=ugettext_lazy("Anmeldung mit Kundennummer klappt nur, wenn Sie entsprechende Daten per Post von uns erhalten haben."))
 
-    def clean_username(self):
-        user = auth.authenticate(**self.cleaned_data)
+    def clean_customer_number(self):
+        user = auth.authenticate(customer_number = self.data['customer_number'], zipcode = self.data['zipcode'])
         if user is None:
             raise forms.ValidationError(_('Sorry, please check your customer number or ZIP code.'))
         elif not user.is_active:
