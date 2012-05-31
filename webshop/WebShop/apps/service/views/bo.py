@@ -109,7 +109,7 @@ def quick_save_customer_data(request):
         o = Order.objects.get(pk=order_id)
     except Order.DoesNotExist:
         raise Http404
-    o.status = order_status
+    o.status_id = order_status
     o.save() 
     return HttpResponse(simplejson.dumps({'id':p.id, 'bo_customer_no':p.bo_customer_no}))
 
@@ -155,15 +155,15 @@ def backup_upload(request):
 
 @_guard_bo
 def backup_replay(request):
-	fname = cache.get('bo_update_fname')
-	db = settings.DATABASES['articledb']
-	exec_cmd = 'mysql -u%s -p%s -e "source %s;" %s' % (db['USER'],db['PASSWORD'], fname.replace('\\','/'), db['NAME'])
-	print exec_cmd
-	exit_code = os.system(exec_cmd)
-	if(exit_code):
-		return HttpResponse('[WEBSHOP ERROR] Backup konnte nicht eingespielt werden')
-	else:
-		return HttpResponse('[WEBSHOP] <b>%s</b> Backup wurde eingespielt' % os.path.split(fname)[-1])
+    fname = cache.get('bo_update_fname')
+    db = settings.DATABASES['articledb']
+    exec_cmd = 'mysql -u%s -p%s -e "source %s;" %s' % (db['USER'],db['PASSWORD'], fname.replace('\\','/'), db['NAME'])
+    print exec_cmd
+    exit_code = os.system(exec_cmd)
+    if(exit_code):
+        return HttpResponse('[WEBSHOP ERROR] Backup konnte nicht eingespielt werden')
+    else:
+        return HttpResponse('[WEBSHOP] <b>%s</b> Backup wurde eingespielt' % os.path.split(fname)[-1])
 
 def _createPromotion(af, is_sale = False):
     promos = af.promotion_set.filter(is_sale = is_sale, is_active = True)
