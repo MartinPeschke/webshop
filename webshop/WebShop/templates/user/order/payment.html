@@ -6,7 +6,6 @@
     <form method="post" class="form-horizontal form-validated">
         <div class="reg_notice"><p>
             {% trans "You will only need to fill in your payment method for your first purchase or when you wish to change it." %}</p></div>
-
         {{ form  }}
         <div id="DirectForm" class="paymentforms hidden for-DIRECT_DEBIT">
             {{ bankaccount_form  }}
@@ -14,6 +13,7 @@
         <div id="CreditForm" class="paymentforms hidden for-CREDITCARD">
             {{ creditcard_form  }}
         </div>
+
         <div class="form-actions">
             <button type="submit" class="btn btn-primary">{% trans 'Abschicken' %}</button>
         </div>

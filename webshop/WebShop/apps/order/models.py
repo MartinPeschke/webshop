@@ -30,7 +30,7 @@ class PaymentMethod(models.Model):
         'INVOICE': _("PAYMENT_METHOD_INVOICE")
     }
     def get_html_label(self):
-        return mark_safe('<span class="">{}</span>'.format(self.__unicode__()))
+        return mark_safe(u'<span class="">{}</span>'.format(self.__unicode__()))
     def __unicode__(self):
         return unicode(self.LABEL_MAP.get(self.name, self.name))
 
@@ -49,7 +49,7 @@ class OrderStatus(models.Model):
         'SUBMITTED_TO_BACKEND':("success", _("ORDER_STATUS_SUBMITTED_TO_BACKEND")),
         }
     def get_html_label(self):
-        return mark_safe('<span class="label label-{}">{}</span>'.format(*self.LABEL_MAP[self.name]))
+        return mark_safe(u'<span class="label label-{}">{}</span>'.format(*self.LABEL_MAP[self.name]))
     def __unicode__(self):
         return self.LABEL_MAP.get(self.name, self.name)
 

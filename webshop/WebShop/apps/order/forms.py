@@ -28,6 +28,7 @@ class PaymentMethodForm(BaseForm):
     )
     payment_comment = forms.CharField(widget = Textarea(attrs={"class":"span5"})
         , label = ugettext_lazy("Bestellkommentar")
+        , help_text = ugettext_lazy("Wenn du einen Gutschein bei Daily Deal gekauft hast, gib ihn bitte in den Bestellkommentaren an.")
         , required = False
     )
     def __init__(self, role, *args, **kwargs):
