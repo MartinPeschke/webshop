@@ -114,7 +114,7 @@ class ProfileView(BaseLoggedInView, BaseFormView):
             attr_name = field.attname
             if attr_name in cleaned_data:
                 setattr(profile, attr_name, cleaned_data[attr_name])
-        profile.weekdays = simplejson.dumps(cleaned_data['weekdays'])
+        profile.weekdays = simplejson.dumps(cleaned_data.get('weekdays') or [])
         profile.save()
         messages.add_message(request, messages.SUCCESS, _('&Auml;nderungen gespeichert!'))
         raise HTTPRedirect(request.get_full_path())
