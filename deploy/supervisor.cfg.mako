@@ -19,7 +19,7 @@ supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
 programs=p1
 
 [program:p1]
-command = %(here)s/env/bin/paster serve %(here)s/code/${env}.ini
+command = %(here)s/env/bin/uwsgi --home %(here)s/env/ --socket %(here)s/run/per4.com.sock --chmod-socket --module uwsgi_app_live --pythonpath %(here)s/code
 process_name = %(program_name)s
 autostart = true
 startretries=10

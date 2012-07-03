@@ -91,8 +91,8 @@ class RequestPasswordView(LoginView):
         raise HTTPRedirect(request.get_full_path())
 
 
-class SetPasswordView(BaseFormView):
-    form_cls = RegisterForm
+class SetPasswordView(BaseAuthView):
+    form_cls = ChangePasswordForm
     def pre_validate(self, request, *args, **kwargs):
         user = request.user
         if user.is_authenticated():
@@ -105,13 +105,13 @@ class SetPasswordView(BaseFormView):
             raise HTTPRedirect(self.HOME_URL)
 
     def on_success(self, request, cleaned_data):
-        auth.login(request, user)
+        auth.login(request, self.user)
         # Save password
         request.user.set_password(cleaned_data['password'])
         request.user.save()
-        remove_token(user = user, role = RESETPASSWORDTOKEN)
+        remove_token(user = self.user, role = RESETPASSWORDTOKEN)
         messages.add_message(request, messages.SUCCESS, _('Passwort erfolgreich ge&auml;ndert!'))
-        return render_to_response('user/auth/change_password.html', locals(), context_instance=RequestContext(request))
+        return HTTPRedirect(self.HOME_URL)
 
 class SignupScreen(BaseAuthView):
     form_cls = RegisterForm
