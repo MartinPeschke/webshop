@@ -77,15 +77,3 @@ def shipping(request):
 
 def generic(request, page):
     return render_with_locale(request, page, locals())
-
-def ourads(request):
-    ad_path = os.path.join(settings.MEDIA_ROOT, 'ads')
-    files = [(fname[3:], fname[3:].split('.')[0]) \
-                for fname in os.listdir(ad_path) \
-                if fname[0:3] == 'TN_' and \
-                    os.path.exists(os.path.join(ad_path, fname[3:])) and \
-                    os.path.exists(os.path.join(ad_path,"M_%s"%fname[3:]))]
-    files.reverse()
-    print files
-    
-    return render_with_locale(request, 'ourads', locals())
