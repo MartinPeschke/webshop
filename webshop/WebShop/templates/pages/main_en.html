@@ -21,7 +21,7 @@
         <div class="preview-item">
             <div class="preview-picture">
                 {% if item.link %}<a href="{{ item.link }}" title="{{ item.title }}">{% endif %}
-                    <img src="{{ MEDIA_URL }}/{{  item.src }}" alt="{{ item.title }}"/><p class="caption">{{ item.description }}</p>
+                    <img class="preview-picture-img" src="{{ MEDIA_URL }}/{{  item.src }}" alt="{{ item.title }}"/>{% if item.description.strip %}<p class="caption">{{ item.description }}</p>{% endif %}
                 {% if item.link %}</a>{% endif %}
             </div>
         </div>
