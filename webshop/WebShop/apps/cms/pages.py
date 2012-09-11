@@ -33,7 +33,7 @@ def downloads(request):
     return render_with_locale(request, 'downloads', locals())
 
 def contact(request):
-	return render_to_response('pages/contact.html', locals(), context_instance=RequestContext(request))
+    return render_to_response('pages/contact.html', locals(), context_instance=RequestContext(request))
 
 def studios(request):
     return render_with_locale(request, 'studios', locals())

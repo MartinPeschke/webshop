@@ -15,11 +15,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TemplatesService">
-    <option name="templateFileTypes">
-      <list>
-        <option value="JavaScript" />
-      </list>
-    </option>
+    <option name="templateLanguage" value="Django" />
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
   </component>
 </module>

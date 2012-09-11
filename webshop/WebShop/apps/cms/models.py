@@ -15,6 +15,7 @@ class LinkGallery(models.Model):
 class LinkGalleryItem(models.Model):
     class Meta:
         db_table = 'apps_link_gallery_item'
+        ordering = ('sortOrder', )
     src = models.ImageField(upload_to= 'uploads')
     link = models.CharField(max_length=1024, blank=True, null=True)
     title = models.CharField(max_length=1024)
