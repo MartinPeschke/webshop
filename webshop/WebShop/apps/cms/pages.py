@@ -13,6 +13,10 @@ def render_with_locale(request, template, context):
     except TemplateDoesNotExist:
         return render_to_response('pages/%s_en.html' % template, context, context_instance=rctxt)
 
+def welcome(request):
+    return render_to_response('pages/welcome.html', locals(), context_instance=RequestContext(request))
+
+
 def main(request):
     galleries = LinkGalleryItem.objects.filter(linkgallery__name__in = ['homepage_slideshow', 'homepage_links'])
     slideshow, links = [], []

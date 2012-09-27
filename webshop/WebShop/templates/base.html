@@ -32,7 +32,9 @@
   {% block head %}{% endblock %}
 </head>
 
-<body>
+<body class="{% block bodyClass %}{% endblock %}">
+{% block rootBody %}
+
   <header class="navbar navbar-fixed-top">
     <div id="nav_bar" class="navbar-inner {{ simple_role }}">
       <div class="container">
@@ -85,7 +87,6 @@
       </div>
     </div>
   </header>
-
   <div class="container">
     <div class="row subheader">
       <div class="span2">
@@ -185,7 +186,7 @@
         </div>
     </footer>
   </div>
-    
+{% endblock %}
     
   <form id="setlang" action="/i18n/setlang/" method="post">
     <input id="languageCode" type="hidden" name="language" value="en"/>

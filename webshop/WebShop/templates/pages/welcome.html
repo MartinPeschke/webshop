@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load explore %}
+{% load i18n %}
+{% load url from future %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/welcome.css?{{ STATIC_TOKEN }}" />
+{% endblock %}
+{% block bodyClass %}welcome-page{% endblock %}
+
+{% block rootBody %}
+    <div class="container" id="#welcome-page">
+        <div class="row">
+        <div class="span12">
+            <div class="welcome-subheader">
+                <div class="welcome-mini-logo left"></div>
+                <div class="welcome-mini-logo right"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

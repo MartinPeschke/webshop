@@ -1,0 +1,7 @@
+body.welcome-page {
+    background-color: black;
+}
+
+.welcome-subheader {
+    background: url(/static/img/welcome/)
+}

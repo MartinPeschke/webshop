@@ -51,6 +51,7 @@ urlpatterns = patterns('',
     (r'^(?P<shop_ref>%s)/(?P<line_ref>[\w\d\-_]+)/(?P<af_ref>[\w\d\-_. ]+)/$' % SHOPS_URLS, 'WebShop.apps.explore.views.handler.article'),
 
     # Static
+    (r'^welcome/$', 'WebShop.apps.cms.pages.welcome'),
     (r'^news/$', 'WebShop.apps.cms.pages.news'),
     (r'^downloads/$', 'WebShop.apps.cms.pages.downloads'),
     (r'^contact/$', 'WebShop.apps.cms.pages.contact'),
