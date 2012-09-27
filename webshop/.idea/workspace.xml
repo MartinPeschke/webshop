@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4873c167-493c-4d86-ab45-bcb463f8ef9c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebShop/static/css/welcome.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebShop/templates/pages/welcome.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/testrunner.xml" afterPath="$PROJECT_DIR$/.idea/testrunner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webshop.iml" afterPath="$PROJECT_DIR$/.idea/webshop.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebShop/apps/cms/pages.py" afterPath="$PROJECT_DIR$/WebShop/apps/cms/pages.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebShop/templates/base.html" afterPath="$PROJECT_DIR$/WebShop/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebShop/templates/left_block_announce.html" afterPath="$PROJECT_DIR$/WebShop/templates/left_block_announce.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebShop/static/css/welcome.css" afterPath="$PROJECT_DIR$/WebShop/static/css/welcome.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebShop/templates/pages/welcome.html" afterPath="$PROJECT_DIR$/WebShop/templates/pages/welcome.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebShop/urls.py" afterPath="$PROJECT_DIR$/WebShop/urls.py" />
     </list>
     <ignored path="webshop.iws" />
@@ -32,10 +28,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="left_block_announce.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WebShop/templates/left_block_announce.html">
+      <file leaf-file-name="welcome.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebShop/templates/pages/welcome.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="99" selection-start="348" selection-end="348" vertical-scroll-proportion="0.20623916">
+            <state line="152" column="84" selection-start="9879" selection-end="9879" vertical-scroll-proportion="-27.076923">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebShop/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="62" column="66" selection-start="2253" selection-end="2268" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="backends.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebShop/apps/user/backends.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="0" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="welcome.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebShop/static/css/welcome.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="196" column="0" selection-start="5878" selection-end="5878" vertical-scroll-proportion="0.96473026">
               <folding />
             </state>
           </provider>
@@ -64,12 +89,12 @@
         <option value="$PROJECT_DIR$/WebShop/templates/pages/main_en.html" />
         <option value="$PROJECT_DIR$/WebShop/apps/cms/models.py" />
         <option value="$PROJECT_DIR$/WebShop/apps/cms/pages.py" />
-        <option value="$PROJECT_DIR$/WebShop/urls.py" />
         <option value="$PROJECT_DIR$/WebShop/templates/base.html" />
         <option value="$PROJECT_DIR$/WebShop/static/css/homepage.css" />
+        <option value="$PROJECT_DIR$/WebShop/templates/left_block_announce.html" />
+        <option value="$PROJECT_DIR$/WebShop/urls.py" />
         <option value="$PROJECT_DIR$/WebShop/templates/pages/welcome.html" />
         <option value="$PROJECT_DIR$/WebShop/static/css/welcome.css" />
-        <option value="$PROJECT_DIR$/WebShop/templates/left_block_announce.html" />
       </list>
     </option>
   </component>
@@ -169,7 +194,139 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebShop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebShop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="less" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebShop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="less" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebShop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebShop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="apps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebShop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -234,11 +391,11 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="editor.preferences.smartKeys" />
+    <property name="recentsLimit" value="5" />
     <property name="DefaultHtmlFileTemplate" value="Html" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -319,6 +476,25 @@
       <option name="MULTIPROCESS" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <module name="webshop" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
       <option name="INTERPRETER_OPTIONS" value="--settings=settings_dev" />
       <option name="PARENT_ENVS" value="true" />
@@ -338,25 +514,6 @@
       <option name="runNoReload" value="true" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <module name="webshop" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -515,19 +672,19 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6066734" sideWeight="0.4850587" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.14957266" sideWeight="0.67094016" order="0" side_tool="false" content_ui="combo" x="1375" y="0" width="443" height="1073" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36501518" sideWeight="0.79989326" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6066734" sideWeight="0.511206" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36501518" sideWeight="0.19637139" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6066734" sideWeight="0.48719317" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -594,10 +751,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/WebShop/apps/user/backends.py</url>
-          <line>10</line>
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/WebShop/apps/user/forms/auth.py</url>
           <line>70</line>
         </line-breakpoint>
@@ -609,45 +762,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WebShop/apps/service/views/bo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="38" selection-start="3469" selection-end="3469" vertical-scroll-proportion="0.018660812" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebShop/templates/user/order/payment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="20" selection-start="920" selection-end="920" vertical-scroll-proportion="0.47121534" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebShop/apps/order/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="18" selection-start="1703" selection-end="1703" vertical-scroll-proportion="0.3526971" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings_dev.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="42" selection-start="3374" selection-end="3374" vertical-scroll-proportion="0.73300165" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebShop/static/less/homepage.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="17" selection-start="328" selection-end="328" vertical-scroll-proportion="0.45107794" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebShop/templates/pages/main_en.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="14" selection-start="0" selection-end="1613" vertical-scroll-proportion="-26.153847">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebShop/templates/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="18" selection-start="85" selection-end="94" vertical-scroll-proportion="0.11785095">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebShop/templates/layout_free_center.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="14" selection-start="629" selection-end="629" vertical-scroll-proportion="0.47121534">
@@ -671,23 +785,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebShop/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/WebShop/apps/cms/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="0" selection-start="4578" selection-end="4661" vertical-scroll-proportion="0.09042553">
+        <state line="13" column="0" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebShop/templates/left_block_announce.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="99" selection-start="348" selection-end="348" vertical-scroll-proportion="0.20623916" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebShop/static/less/site.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="58" selection-start="32" selection-end="90" vertical-scroll-proportion="0.017634856">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebShop/apps/cms/models.py">
+    <entry file="file://$PROJECT_DIR$/WebShop/static/less/elements.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
+        <state line="21" column="8" selection-start="538" selection-end="538" vertical-scroll-proportion="0.37033194">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebShop/static/less/bootstrap/mixins.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="298" selection-end="421" vertical-scroll-proportion="0.19663513">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebShop/templates/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="14" selection-start="319" selection-end="319" vertical-scroll-proportion="0.14498934">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebShop/apps/user/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="66" selection-start="763" selection-end="777" vertical-scroll-proportion="0.2821577">
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebShop/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="61" selection-start="6546" selection-end="6569" vertical-scroll-proportion="0.6628571">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebShop/apps/user/backends.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebShop/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="51" selection-start="1713" selection-end="1713" vertical-scroll-proportion="-4.34">
+        <state line="62" column="66" selection-start="2253" selection-end="2268" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#44#0" expanded="true" />
           </folding>
@@ -696,21 +857,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebShop/templates/pages/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="24" selection-start="421" selection-end="438" vertical-scroll-proportion="-9.153846">
+        <state line="152" column="84" selection-start="9879" selection-end="9879" vertical-scroll-proportion="-27.076923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebShop/static/less/responsive.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="80" selection-end="106" vertical-scroll-proportion="0.1587137">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebShop/static/css/welcome.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="1" selection-start="116" selection-end="116" vertical-scroll-proportion="0.16915423">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebShop/templates/left_block_announce.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="99" selection-start="348" selection-end="348" vertical-scroll-proportion="0.20623916">
+        <state line="196" column="0" selection-start="5878" selection-end="5878" vertical-scroll-proportion="0.96473026">
           <folding />
         </state>
       </provider>

@@ -1,21 +1,159 @@
-{% extends "base.html" %}
-{% load explore %}
+<!doctype html>
 {% load i18n %}
+{% load explore %}
 {% load url from future %}
 
-{% block head %}
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/welcome.css?{{ STATIC_TOKEN }}" />
-{% endblock %}
-{% block bodyClass %}welcome-page{% endblock %}
+<html>
+<head>
+    <title>{% block title %}{% block pagetitle %}{% endblock %}{% trans "Willkommen auf Per-4" %} - Piercing - Tattoo - Jewellery – Medical Equipment – Permanent Make Up - Online Shop{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% block rootBody %}
+    <meta name="description" content="{% block meta_description %}Per-4, Ihr Piercing - Tattoo - Jewellery – Medical Equipment – Permanent Make Up - Online Shop{% endblock %}"/>
+    <meta name="keywords" content="{% block meta_keywords %}{% endblock %}Piercing,Tattoo,Grosshandel,Studiobedarf,Medical Equipment,Cutting,Branding,Scarification,Bodyart,Bodypiercing,Tatto,Piercingschmuck,Piercen,Titan,Titanium,Schmuck,Per-4,Bodypiercing,Zungenpiercing,Intimpiercing,Brustpiercing,Pflege,Piercingpflege,Nipplepiercing,Piercingshop,Brustwarzeberlin,Deutschland,Europa" />
+    <link rel="shortcut icon" href="{{ STATIC_URL }}/images/favicon.ico" type="image/x-icon"/>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/welcome.css?{{ STATIC_TOKEN }}" />
+</head>
+
+<body class="welcome-page">
     <div class="container" id="#welcome-page">
         <div class="row">
-        <div class="span12">
             <div class="welcome-subheader">
                 <div class="welcome-mini-logo left"></div>
                 <div class="welcome-mini-logo right"></div>
+                <ul class="subheader nav-list">
+                    <li class="nav-list-item"><a href="http://www.per-4.com/main" class="nav-list-link">PER4<span class="highlight">SHOP</span></a></li>
+                    <li class="nav-list-item"><a href="http://koepenick.per4store.com" class="nav-list-link">PER4<span class="highlight">STORE</span> &bullet; KÖPENICK</a></li>
+                    <li class="nav-list-item"><a href="http://marzahn.per4store.com" class="nav-list-link">PER4<span class="highlight">STORE</span> &bullet; MARZAHN</a></li>
+                    <li class="nav-list-item"><a href="#" class="nav-list-link">PER4<span class="highlight">STORE</span> &bullet; KREUZBERG</a></li>
+                </ul>
             </div>
         </div>
+
+        <div class="row main-panel">
+            <div class="sub-row">
+                <div class="double welcome-panel first login-panel">
+                    <div class="panel-inner">
+                        <div class="advert">
+                            <div class="adText-disamb">Anzeige</div>
+                            <img src="{{ STATIC_URL }}welcome/logo-lucky-monkey.png" alt="Lucky Monkey Needles"/>
+                            <div class="text">
+                                <span class="highlight">&#9733;</span> JETZT NEU
+                                <span class="highlight">&#9733;</span> NEEDLES
+                                <span class="highlight">&#9733;</span> GRIPS <span class="highlight">&#9733;</span> <br/>
+                                <span class="highlight">&#9733;</span> PREMIUM PRODUKTE <span class="highlight">&#9733;</span> <br/>
+                            </div>
+
+                        </div>
+
+                        <div class="login-form-heading">ONLINESHOP</div>
+                        <div class="login-forms">
+                            <div class="form">
+                                <form action="{% url 'login-route' %}" method="post">
+                                    <legend><span class="highlight">LOGIN</span> &bullet; STUDIOS & HÄNDLER </legend>
+                                    <div class="control-group">
+                                        <input type="email" name="email" required placeholder="Email">
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="password" name="password" required placeholder="Passwort">
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn-submit">Enter</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="form">
+                                <form action="{% url 'login-route' %}" method="post">
+                                    <legend><span class="highlight">LOGIN</span> &bullet; PRIVATKUNDEN </legend>
+                                    <div class="control-group">
+                                        <input type="email" name="email" required placeholder="Email">
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="password" name="password" required placeholder="Passwort">
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn-submit">Enter</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="form-footer-link">
+                            <a href="/main" class="btn">ONLINESHOP</a>
+                            <div class="text">
+                                PER4<span class="highlight">STORE</span><br/>
+                                Aktuelle Angebote in unserem Webshop.<br/>
+                                Studios, Händler und Privatkunden.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="welcome-panel single last">
+                    <div class="panel-inner">
+                        <div class="image-superscript"><div class="highlight">WANTED</div>TATTOO ARTIST</div>
+                        <img src="{{ STATIC_URL }}welcome/tattoo-artist-wanted.jpg" alt="tattoo artist wanted"/><div class="image-footer-link">
+                            <div class="text">PER4 sucht TATTOO ARTIST aus aller Welt, zur Verstärkung unseres teams. Bewerbung an <a href="mailto:info@per-4.com">info@per-4.com</a></div>
+                            <a href="#" class="btn">JOBS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-row">
+                <div class="welcome-panel single first">
+                    <div class="panel-inner">
+                        <img src="{{ STATIC_URL }}welcome/studio-kreuzberg.jpg" alt="Per4Store Kreuzberg"/><div class="image-footer-link">
+                        <div class="text">
+                            PER4<span class="highlight">STORE</span> &bullet; KREUZBERG<br/>
+                            Ab 12.10.2012 - NEUERÖFFNUNG!<br/>
+                            Bergmannstraße 90 &bullet; 10961 Berlin
+                        </div>
+                        <a href="#" class="btn">KREUZBERG</a>
+                    </div>
+                    </div>
+                </div>
+                <div class="welcome-panel single">
+                    <div class="panel-inner">
+                        <img src="{{ STATIC_URL }}welcome/studio-koepenick.jpg" alt="Per4Store Köpenick"/><div class="image-footer-link">
+                        <div class="text">
+                            PER4<span class="highlight">STORE</span> &bullet; KÖPENICK<br/>
+                            Bahnhofstraße 33-38 &bullet; 12555 Berlin<br/>
+                            T +49 (30) 654 885 96
+                        </div>
+                        <a href="http://koepenick.per4store.com" class="btn">KÖPENICK</a>
+                    </div>
+                    </div>
+                </div>
+                <div class="welcome-panel single last">
+                    <div class="panel-inner">
+                        <img src="{{ STATIC_URL }}welcome/studio-marzahn.jpg" alt="Per4Store Marzahn"/><div class="image-footer-link">
+                            <div class="text">
+                                PER4<span class="highlight">STORE</span> &bullet; MARZAHN<br/>
+                                Marzahner Promenade 8 &bullet; 12679 Berlin <br/>
+                                T +49 (30) 992 772 29
+                            </div>
+                        <a href="http://marzahn.per4store.com" class="btn">MARZAHN</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row footer">
+            PER4 &bullet; Tattoo & Piercing &bullet; Landsberger Allee 117A &bullet; D-10407 Berlin &bullet; Tel.: +49 (30) 936 638 21 &bullet; Email: info@per-4.com<br/>
+            Copyright &copy;2012 Per-4 &bullet; www.per-4.com &bullet; All rights reserved Per-4<br/>
+            Sitemap: &bullet;
+            <a href="http://www.per-4.com/main" class="nav-list-link">PER4<span class="highlight">SHOP</span></a> &bullet;
+            <a href="http://koepenick.per4store.com" class="nav-list-link">PER4<span class="highlight">STORE</span> &bullet; KÖPENICK</a> &bullet;
+            <a href="http://marzahn.per4store.com" class="nav-list-link">PER4<span class="highlight">STORE</span> &bullet; MARZAHN</a> &bullet;
+            <a href="#" class="nav-list-link">PER4<span class="highlight">STORE</span> &bullet; KREUZBERG</a> &bullet;
+            <a href="{% url "aboutus-route" %}" class="nav-list-link"> ÜBER UNS</a> &bullet;
+            <a href="{% url "contact-route" %}" class="nav-list-link"> KONTAKT</a> &bullet;
+            <a href="{% url "imprint-route" %}" class="nav-list-link"> IMPRESSUM</a>
+
+        </div>
+
     </div>
-{% endblock %}
+</body>
+</html>
