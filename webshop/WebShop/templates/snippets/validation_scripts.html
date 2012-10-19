@@ -1,6 +1,6 @@
-<script type="text/javascript" src="{{ STATIC_URL }}/scripts/libs/jquery.validate.min.js?{{ STATIC_TOKEN }}"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}scripts/libs/jquery.validate.min.js?{{ STATIC_TOKEN }}"></script>
 {% ifnotequal LANGUAGE_CODE "en" %}
-<script src="{{ STATIC_URL }}/scripts/localization/messages_{{ LANGUAGE_CODE }}.js"></script>
+<script src="{{ STATIC_URL }}scripts/localization/messages_{{ LANGUAGE_CODE }}.js"></script>
 {% endifnotequal %}
 <script>
     $(function () {
