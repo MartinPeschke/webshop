@@ -105,6 +105,10 @@ body.welcome-page {
 
 
 .login-forms {width:64%}
+.welcome-name {
+    padding: 35px 25px 70px;
+    box-sizing: border-box;
+}
 .form-footer-link {width:63%;padding:11px 5px 6px;}
 .form-footer-link .btn {margin:0;}
 .form-footer-link .text {width:66%;padding:0;float:left;}
@@ -119,6 +123,12 @@ body.welcome-page {
     padding: 3px 6px;
     border-radius: 4px;
     width:90%;
+}
+.form .btn-enter {
+    white-space: nowrap;
+    width: auto;
+    padding: 0px 10px;
+    margin-top: 27px;
 }
 .form .btn-submit {
     cursor:pointer;

@@ -51,8 +51,9 @@
                         <div class="login-form-heading">ONLINESHOP</div>
                         <div class="login-forms">
                             <div class="form">
+                            {% if not request.user.is_authenticated %}
                                 <form action="{% url 'login-route' %}" method="post">
-                                    <legend><span class="highlight">LOGIN</span> &bullet; STUDIOS & HÄNDLER </legend>
+                                    <legend><span class="highlight">LOGIN</span> </legend>
                                     <div class="control-group">
                                         <input type="email" name="email" required placeholder="Email">
                                     </div>
@@ -63,24 +64,17 @@
                                         <button type="submit" class="btn-submit">Enter</button>
                                     </div>
                                 </form>
+                            {% else %}
+                                <div class="welcome-name">
+                                    Welcome {{ request.user.get_profile.last_name }}
+                                </div>
+                            {% endif %}
                             </div>
                             <div class="form">
-                                <form action="{% url 'login-route' %}" method="post">
-                                    <legend><span class="highlight">LOGIN</span> &bullet; PRIVATKUNDEN </legend>
-                                    <div class="control-group">
-                                        <input type="email" name="email" required placeholder="Email">
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="password" name="password" required placeholder="Passwort">
-                                    </div>
-                                    <div class="form-actions">
-                                        <button type="submit" class="btn-submit">Enter</button>
-                                    </div>
-                                </form>
+                                <a href="/main" class="btn btn-enter">DIREKT ZUM ONLINESHOP</a>
                             </div>
                         </div>
                         <div class="form-footer-link">
-                            <a href="/main" class="btn">ONLINESHOP</a>
                             <div class="text">
                                 PER4<span class="highlight">STORE</span><br/>
                                 Aktuelle Angebote in unserem Webshop.<br/>
