@@ -4,6 +4,7 @@
     <list default="true" id="4873c167-493c-4d86-ab45-bcb463f8ef9c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebShop/static/css/welcome.css" afterPath="$PROJECT_DIR$/WebShop/static/css/welcome.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebShop/templates/500.html" afterPath="$PROJECT_DIR$/WebShop/templates/500.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebShop/templates/pages/welcome.html" afterPath="$PROJECT_DIR$/WebShop/templates/pages/welcome.html" />
     </list>
     <ignored path="webshop.iws" />
@@ -30,51 +31,7 @@
       <file leaf-file-name="welcome.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebShop/templates/pages/welcome.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="38" selection-start="4639" selection-end="4639" vertical-scroll-proportion="-26.24">
-              <folding>
-                <marker date="1351676758932" expanded="true" signature="2569:5360" placeholder="..." />
-                <marker date="1351676758932" expanded="true" signature="2614:3326" placeholder="..." />
-                <marker date="1351676758932" expanded="true" signature="2844:3294" placeholder="..." />
-                <marker date="1351676758932" expanded="true" signature="3450:5337" placeholder="..." />
-                <marker date="1351676758932" expanded="true" signature="3497:4922" placeholder="..." />
-                <marker date="1351676758932" expanded="true" signature="3654:4416" placeholder="..." />
-                <marker date="1351676758932" expanded="true" signature="3809:3955" placeholder="..." />
-                <marker date="1351676758932" expanded="true" signature="4019:4174" placeholder="..." />
-                <marker date="1351676758932" expanded="true" signature="4237:4376" placeholder="..." />
-                <marker date="1351676758932" expanded="true" signature="4514:4713" placeholder="..." />
-                <marker date="1351676758932" expanded="true" signature="4760:4891" placeholder="..." />
-                <marker date="1351676758932" expanded="true" signature="4977:5310" placeholder="..." />
-                <marker date="1351676758932" expanded="true" signature="5024:5279" placeholder="..." />
-                <marker date="1351676758932" expanded="true" signature="6156:6807" placeholder="..." />
-                <marker date="1351676758932" expanded="true" signature="6202:6784" placeholder="..." />
-                <marker date="1351676758932" expanded="true" signature="6345:6757" placeholder="..." />
-                <marker date="1351676758932" expanded="true" signature="6388:6643" placeholder="..." />
-                <marker date="1351676758932" expanded="true" signature="6858:7500" placeholder="..." />
-                <marker date="1351676758932" expanded="true" signature="6904:7477" placeholder="..." />
-                <marker date="1351676758932" expanded="true" signature="7042:7450" placeholder="..." />
-                <marker date="1351676758932" expanded="true" signature="7085:7333" placeholder="..." />
-                <marker date="1351676758932" expanded="true" signature="7784:8050" placeholder="..." />
-                <marker date="1351676758932" expanded="true" signature="8283:9427" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebShop/apps/user/models/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="13" selection-start="1003" selection-end="1012" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#53#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebShop/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="142" column="26" selection-start="7228" selection-end="7228" vertical-scroll-proportion="-6.88">
+            <state line="89" column="104" selection-start="5850" selection-end="5850" vertical-scroll-proportion="-21.12">
               <folding />
             </state>
           </provider>
@@ -83,7 +40,7 @@
       <file leaf-file-name="welcome.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WebShop/static/css/welcome.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="27" selection-start="2536" selection-end="2536" vertical-scroll-proportion="0.15145229">
+            <state line="89" column="14" selection-start="2126" selection-end="2126" vertical-scroll-proportion="0.66520786">
               <folding />
             </state>
           </provider>
@@ -102,7 +59,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/WebShop/apps/cms/models.py" />
         <option value="$PROJECT_DIR$/WebShop/apps/cms/pages.py" />
         <option value="$PROJECT_DIR$/WebShop/static/css/homepage.css" />
         <option value="$PROJECT_DIR$/WebShop/urls.py" />
@@ -116,6 +72,7 @@
         <option value="$PROJECT_DIR$/WebShop/templates/user/order/payment.html" />
         <option value="$PROJECT_DIR$/WebShop/templates/left_block_announce.html" />
         <option value="$PROJECT_DIR$/WebShop/static/less/navigation.less" />
+        <option value="$PROJECT_DIR$/WebShop/templates/500.html" />
         <option value="$PROJECT_DIR$/WebShop/templates/pages/welcome.html" />
         <option value="$PROJECT_DIR$/WebShop/static/css/welcome.css" />
       </list>
@@ -153,16 +110,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -271,50 +218,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="welcome" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebShop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="less" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebShop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -355,33 +258,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebShop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="explore" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -431,16 +308,26 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="editor.preferences.smartKeys" />
+    <property name="recentsLimit" value="5" />
     <property name="DefaultHtmlFileTemplate" value="Html" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -519,6 +406,25 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <module name="webshop" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
       <option name="INTERPRETER_OPTIONS" value="--settings=settings_dev" />
       <option name="PARENT_ENVS" value="true" />
@@ -538,25 +444,6 @@
       <option name="runNoReload" value="true" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <module name="webshop" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -714,6 +601,7 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6066734" sideWeight="0.48078975" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.14957266" sideWeight="0.67094016" order="0" side_tool="false" content_ui="combo" x="1403" y="-1" width="443" height="1070" />
@@ -726,7 +614,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6066734" sideWeight="0.48078975" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -804,46 +691,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WebShop/apps/cms/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="19" selection-start="112" selection-end="112" vertical-scroll-proportion="0.066390045">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebShop/templates/snippets/validation_scripts.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="29" selection-start="183" selection-end="183" vertical-scroll-proportion="0.09439528" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebShop/templates/explore/article.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="33" selection-start="2249" selection-end="2249" vertical-scroll-proportion="0.35693216">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebShop/templates/user/profile/addresses.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="85" selection-start="646" selection-end="646" vertical-scroll-proportion="0.6696165">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebShop/templates/user/order/addresses.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="85" selection-start="570" selection-end="570" vertical-scroll-proportion="0.74336284">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebShop/templates/user/order/payment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="85" selection-start="1105" selection-end="1105" vertical-scroll-proportion="0.64896756">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebShop/templates/user/profile/shopping_cart.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="104" column="85" selection-start="5157" selection-end="5157" vertical-scroll-proportion="2.3923304">
@@ -884,56 +731,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebShop/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/WebShop/apps/user/models/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="26" selection-start="7228" selection-end="7228" vertical-scroll-proportion="-6.88">
+        <state line="30" column="13" selection-start="1003" selection-end="1012" vertical-scroll-proportion="0.016597511">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebShop/apps/user/models/__init__.py">
+    <entry file="file://$PROJECT_DIR$/WebShop/templates/layout_free_center.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="13" selection-start="1003" selection-end="1012" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="629" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebShop/apps/explore/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="104" column="41" selection-start="3903" selection-end="3903" vertical-scroll-proportion="0.2428884">
           <folding>
-            <element signature="e#0#53#0" expanded="true" />
+            <element signature="e#0#34#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebShop/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="13" selection-start="434" selection-end="442" vertical-scroll-proportion="0.10373444">
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebShop/templates/500.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="26" selection-start="7224" selection-end="7224" vertical-scroll-proportion="0.40182647">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebShop/templates/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="319" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebShop/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="57" selection-start="2151" selection-end="2151" vertical-scroll-proportion="0.5889571">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebShop/static/less/site.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="37" selection-start="69" selection-end="69" vertical-scroll-proportion="0.043956045">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebShop/templates/pages/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="38" selection-start="4639" selection-end="4639" vertical-scroll-proportion="-26.24">
-          <folding>
-            <marker date="1351676758932" expanded="true" signature="2569:5360" placeholder="..." />
-            <marker date="1351676758932" expanded="true" signature="2614:3326" placeholder="..." />
-            <marker date="1351676758932" expanded="true" signature="2844:3294" placeholder="..." />
-            <marker date="1351676758932" expanded="true" signature="3450:5337" placeholder="..." />
-            <marker date="1351676758932" expanded="true" signature="3497:4922" placeholder="..." />
-            <marker date="1351676758932" expanded="true" signature="3654:4416" placeholder="..." />
-            <marker date="1351676758932" expanded="true" signature="3809:3955" placeholder="..." />
-            <marker date="1351676758932" expanded="true" signature="4019:4174" placeholder="..." />
-            <marker date="1351676758932" expanded="true" signature="4237:4376" placeholder="..." />
-            <marker date="1351676758932" expanded="true" signature="4514:4713" placeholder="..." />
-            <marker date="1351676758932" expanded="true" signature="4760:4891" placeholder="..." />
-            <marker date="1351676758932" expanded="true" signature="4977:5310" placeholder="..." />
-            <marker date="1351676758932" expanded="true" signature="5024:5279" placeholder="..." />
-            <marker date="1351676758932" expanded="true" signature="6156:6807" placeholder="..." />
-            <marker date="1351676758932" expanded="true" signature="6202:6784" placeholder="..." />
-            <marker date="1351676758932" expanded="true" signature="6345:6757" placeholder="..." />
-            <marker date="1351676758932" expanded="true" signature="6388:6643" placeholder="..." />
-            <marker date="1351676758932" expanded="true" signature="6858:7500" placeholder="..." />
-            <marker date="1351676758932" expanded="true" signature="6904:7477" placeholder="..." />
-            <marker date="1351676758932" expanded="true" signature="7042:7450" placeholder="..." />
-            <marker date="1351676758932" expanded="true" signature="7085:7333" placeholder="..." />
-            <marker date="1351676758932" expanded="true" signature="7784:8050" placeholder="..." />
-            <marker date="1351676758932" expanded="true" signature="8283:9427" placeholder="..." />
-          </folding>
+        <state line="89" column="104" selection-start="5850" selection-end="5850" vertical-scroll-proportion="-21.12">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebShop/static/css/welcome.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="27" selection-start="2536" selection-end="2536" vertical-scroll-proportion="0.15145229">
+        <state line="89" column="14" selection-start="2126" selection-end="2126" vertical-scroll-proportion="0.66520786">
           <folding />
         </state>
       </provider>

@@ -14,7 +14,7 @@ img {max-width:100%;display:block;}
 
 body.welcome-page {
     background-color: black;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'PT Sans Narrow', sans-serif;
     background: url(/static/welcome/bg.jpg) center center no-repeat;
     background-color: black;
     min-height:750px;
@@ -49,6 +49,7 @@ body.welcome-page {
     color: white;
     text-decoration: none;
     line-height:50px;
+    font-size: 1.4em;
 }
 .nav-list-link:hover {color:#ddd;text-shadow: 1px 1px 2px red;text-decoration: underline;}
 
@@ -76,6 +77,7 @@ body.welcome-page {
     float:left;
     width:60%;
     padding:6px;
+    font-size:1.2em;
 }
 
 .btn {
@@ -85,11 +87,12 @@ body.welcome-page {
     height: 30px;
     text-align: center;
     float: right;
-    margin: 12px 10px 0 0 ;
+    margin: 20px 10px 0 0 ;
     border-radius: 7px;
     background: black;
     background: url(/static/welcome/btn.png);
     width: 30%;
+    text-shadow: 1px 1px 1px black;
 }.btn:hover {background-color: rgba(255,255,255,.1);}
 
 .login-panel {
@@ -111,7 +114,7 @@ body.welcome-page {
 }
 .form-footer-link {width:63%;padding:11px 5px 6px;}
 .form-footer-link .btn {margin:0;}
-.form-footer-link .text {width:66%;padding:0;float:left;}
+.form-footer-link .text {width:66%;padding:0;float:left;font-size:1.2em;}
 
 .form {float:left;width:50%;}
 .form form {padding: 5px 10px;}
