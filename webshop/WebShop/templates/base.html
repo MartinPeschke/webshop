@@ -43,7 +43,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="/">{% trans 'Home' %}</a>
+        <a class="brand" href="{%  url 'home-route' %}">{% trans 'Home' %}</a>
         <div class="nav-collapse">
         {% block nav_bar %}
           <ul class="nav">
@@ -90,7 +90,7 @@
   <div class="container">
     <div class="row subheader">
       <div class="span2">
-        <a href="/"><img src="{{ STATIC_URL }}images/logo-l.png" class="logo"/></a>
+        <a href="{% url 'home-route' %}"><img src="{{ STATIC_URL }}images/logo-l.png" class="logo"/></a>
       </div>
       <div class="span8">
         {% if not request.user.is_authenticated %}
