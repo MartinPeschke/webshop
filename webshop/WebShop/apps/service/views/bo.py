@@ -1,3 +1,4 @@
+import socket
 import sys, simplejson, bz2, base64, os
 
 from django.http import *
@@ -34,7 +35,8 @@ def getAllOrders(request):
         orders = orders.filter(status = int(order_status))
     if from_id:
         orders = orders.filter(id__gt = from_id)
-
+    else:
+        orders = orders.filter(id__gt = 4100)
     orders = orders.all()
     for order in orders:
         order.items = order.orderitem_set.all()
@@ -70,7 +72,7 @@ def getAllOrders(request):
         order.shipping = shipping
         order.bankaccount = bankaccount
         order.creditcard = creditcard
-    return HttpResponse(json_encode(orders))
+    return HttpResponse(json_encode(orders), content_type="application/json")
 
 @_guard_bo
 def customer_has_account(request):

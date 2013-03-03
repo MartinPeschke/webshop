@@ -24,7 +24,7 @@ def approve(request, token):
         #user.message_set.create(message=str(_('You have been approved for Wholesale access, enjoy your shopping!')))
         message = _(u'user {} ({} {}), {} approved').format(profile.company_name, profile.first_name, profile.last_name, user.email)
     else:
-        message = _('This Approval Code is invalid, maybe you already approved this user?')
+        message = _(u'This Approval Code is invalid, maybe you already approved this user?')
     return render_to_response('user/approved.html', locals(), context_instance=RequestContext(request))
 
 def deny(request, token):
