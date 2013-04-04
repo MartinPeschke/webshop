@@ -7,7 +7,7 @@
     </list>
     <ignored path="ws.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="cd16966f-0d71-459b-aa61-339f40092f4a" time="1363466584492" ignored="false" />
+    <file path="/Dummy.txt" changelist="cd16966f-0d71-459b-aa61-339f40092f4a" time="1365109761304" ignored="false" />
     <file path="$USER_HOME$/.PyCharm20/system/python_stubs/-758337507/_functools.py" changelist="cd16966f-0d71-459b-aa61-339f40092f4a" time="1362333693531" ignored="false" />
     <file path="$USER_HOME$/.PyCharm20/system/python_stubs/-758337507/itertools.py" changelist="cd16966f-0d71-459b-aa61-339f40092f4a" time="1362333693531" ignored="false" />
     <file path="$USER_HOME$/.PyCharm20/system/python_stubs/-758337507/cPickle.py" changelist="cd16966f-0d71-459b-aa61-339f40092f4a" time="1362333693531" ignored="false" />
@@ -40,26 +40,7 @@
     <favorites_list name="ws" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="settings_dev.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webshop/settings_dev.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings_live.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/webshop/settings_live.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="52" selection-start="1244" selection-end="1244" vertical-scroll-proportion="0.5658031">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -242,11 +223,11 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="com.jetbrains.django.DjangoModulesConfigurable" />
     <property name="recentsLimit" value="5" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.searchVisible" value="true" />
+    <property name="options.lastSelected" value="com.jetbrains.django.DjangoModulesConfigurable" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -282,29 +263,6 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="ws" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
     <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -326,6 +284,29 @@
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ws" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
@@ -518,9 +499,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/email/layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="55" selection-start="396" selection-end="396" vertical-scroll-proportion="0.27435064">
-          <folding />
-        </state>
+        <state line="13" column="55" selection-start="396" selection-end="396" vertical-scroll-proportion="0.27435064" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/pages/agb_en.html">
@@ -535,9 +514,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/pages/lieferung_am_selben_tag_en.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="118" selection-start="926" selection-end="926" vertical-scroll-proportion="0.31655845">
-          <folding />
-        </state>
+        <state line="15" column="118" selection-start="926" selection-end="926" vertical-scroll-proportion="0.31655845" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/pages/impressum_en.html">
@@ -555,11 +532,9 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/pages/welcome.html">
+    <entry file="file://$PROJECT_DIR$/webshop/settings_live.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="89" selection-start="7024" selection-end="7024" vertical-scroll-proportion="0.6505376">
-          <folding />
-        </state>
+        <state line="19" column="10" selection-start="430" selection-end="430" vertical-scroll-proportion="0.10777202" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/settings_dev.py">
@@ -569,9 +544,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webshop/settings_live.py">
+    <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/pages/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="52" selection-start="1244" selection-end="1244" vertical-scroll-proportion="0.5658031">
+        <state line="97" column="94" selection-start="6323" selection-end="6323" vertical-scroll-proportion="0.2731183">
           <folding />
         </state>
       </provider>
