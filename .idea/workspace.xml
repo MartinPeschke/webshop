@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd16966f-0d71-459b-aa61-339f40092f4a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webshop/WebShop/templates/pages/welcome.html" afterPath="$PROJECT_DIR$/webshop/WebShop/templates/pages/welcome.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="cd16966f-0d71-459b-aa61-339f40092f4a" name="Default" comment="" />
     <ignored path="ws.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="cd16966f-0d71-459b-aa61-339f40092f4a" time="1365109761304" ignored="false" />
