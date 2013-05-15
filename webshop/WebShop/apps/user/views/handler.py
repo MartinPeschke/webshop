@@ -22,9 +22,9 @@ def approve(request, token):
         profile.save()
         # TODO: this dont work no more, mabe can make it work later?
         #user.message_set.create(message=str(_('You have been approved for Wholesale access, enjoy your shopping!')))
-        message = _(u'user {} ({} {}), {} approved').format(profile.company_name, profile.first_name, profile.last_name, user.email)
+        message = u'user {} ({} {}), {} approved'.format(profile.company_name, profile.first_name, profile.last_name, user.email)
     else:
-        message = _(u'This Approval Code is invalid, maybe you already approved this user?')
+        message = u'This Approval Code is invalid, maybe you already approved this user?'
     return render_to_response('user/approved.html', locals(), context_instance=RequestContext(request))
 
 def deny(request, token):
@@ -39,7 +39,7 @@ def deny(request, token):
         profile.save()
         # TODO: this dont work no more, mabe can make it work later?
         #user.message_set.create(message=str(_('Sorry, we could not approve your Wholesale Access request, please call us or contact us by email to clarify.')))
-        message = mark_safe(_(u'<font style="color:red">user {} ({} {}), {} DENIED</font>').format(profile.company_name, profile.first_name, profile.last_name, user.email))
+        message = mark_safe(u'<font style="color:red">user {} ({} {}), {} DENIED</font>'.format(profile.company_name, profile.first_name, profile.last_name, user.email))
     else:
-        message = _('This Approval Code is invalid, maybe you already denied this request?')
+        message = 'This Approval Code is invalid, maybe you already denied this request?'
     return render_to_response('user/approved.html', locals(), context_instance=RequestContext(request))
