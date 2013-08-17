@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd16966f-0d71-459b-aa61-339f40092f4a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webshop/WebShop/templates/pages/welcome.html" afterPath="$PROJECT_DIR$/webshop/WebShop/templates/pages/welcome.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webshop/WebShop/static/images/static/PER4STORE-Koepenick.jpg" afterPath="$PROJECT_DIR$/webshop/WebShop/static/images/static/PER4STORE-Koepenick.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webshop/WebShop/static/images/static/PER4STORE-Kreuzberg-01.jpg" afterPath="$PROJECT_DIR$/webshop/WebShop/static/images/static/PER4STORE-Kreuzberg-01.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webshop/WebShop/static/images/static/PER4STORE-Marzahn.jpg" afterPath="$PROJECT_DIR$/webshop/WebShop/static/images/static/PER4STORE-Marzahn.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webshop/WebShop/templates/500.html" afterPath="$PROJECT_DIR$/webshop/WebShop/templates/500.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webshop/WebShop/templates/layout_free_center.html" afterPath="$PROJECT_DIR$/webshop/WebShop/templates/layout_free_center.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webshop/WebShop/templates/left_block_announce.html" afterPath="$PROJECT_DIR$/webshop/WebShop/templates/left_block_announce.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ws.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="cd16966f-0d71-459b-aa61-339f40092f4a" time="1370930664218" ignored="false" />
+    <file path="/Dummy.txt" changelist="cd16966f-0d71-459b-aa61-339f40092f4a" time="1376748526488" ignored="false" />
     <file path="$USER_HOME$/.PyCharm20/system/python_stubs/-758337507/_functools.py" changelist="cd16966f-0d71-459b-aa61-339f40092f4a" time="1370930690804" ignored="false" />
     <file path="$USER_HOME$/.PyCharm20/system/python_stubs/-758337507/itertools.py" changelist="cd16966f-0d71-459b-aa61-339f40092f4a" time="1370930690804" ignored="false" />
     <file path="$USER_HOME$/.PyCharm20/system/python_stubs/-758337507/cPickle.py" changelist="cd16966f-0d71-459b-aa61-339f40092f4a" time="1370930690804" ignored="false" />
@@ -40,17 +45,7 @@
     <favorites_list name="ws" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="welcome.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/pages/welcome.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="78" selection-start="7708" selection-end="7708" vertical-scroll-proportion="0.5064516">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -68,9 +63,7 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/webshop/WebShop/templates/explore/line.html" />
         <option value="$PROJECT_DIR$/webshop/WebShop/apps/user/views/auth.py" />
-        <option value="$PROJECT_DIR$/webshop/WebShop/templates/left_block_announce.html" />
         <option value="$PROJECT_DIR$/webshop/WebShop/urls.py" />
         <option value="$PROJECT_DIR$/webshop/WebShop/apps/cms/pages.py" />
         <option value="$PROJECT_DIR$/webshop/WebShop/apps/contrib/static_sitemap.py" />
@@ -83,6 +76,9 @@
         <option value="$PROJECT_DIR$/webshop/WebShop/templates/pages/lieferung_am_selben_tag_en.html" />
         <option value="$PROJECT_DIR$/webshop/WebShop/templates/pages/news.html" />
         <option value="$PROJECT_DIR$/webshop/WebShop/templates/pages/welcome.html" />
+        <option value="$PROJECT_DIR$/webshop/WebShop/templates/layout_free_center.html" />
+        <option value="$PROJECT_DIR$/webshop/WebShop/templates/left_block_announce.html" />
+        <option value="$PROJECT_DIR$/webshop/WebShop/templates/500.html" />
       </list>
     </option>
   </component>
@@ -118,16 +114,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -228,16 +214,26 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="com.jetbrains.django.DjangoModulesConfigurable" />
     <property name="recentsLimit" value="5" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.searchVisible" value="true" />
+    <property name="options.lastSelected" value="com.jetbrains.django.DjangoModulesConfigurable" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -273,29 +269,6 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="ws" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
     <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -317,6 +290,29 @@
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ws" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
@@ -361,8 +357,8 @@
       <method />
     </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Query Language Console.Default" />
-      <item index="1" class="java.lang.String" itemvalue="Django server.webshop" />
+      <item index="0" class="java.lang.String" itemvalue="Django server.webshop" />
+      <item index="1" class="java.lang.String" itemvalue="Query Language Console.Default" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -394,14 +390,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.25197682" sideWeight="0.6004273" order="0" side_tool="false" content_ui="combo" x="-574" y="-18" width="478" height="1023" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39945897" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.25197682" sideWeight="0.6004273" order="0" side_tool="false" content_ui="combo" x="-574" y="-18" width="478" height="1023" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3985873" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -477,26 +473,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/lib/baseviews.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="0" selection-start="3804" selection-end="3804" vertical-scroll-proportion="0.701427" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/contrib/static_sitemap.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="27" selection-start="342" selection-end="342" vertical-scroll-proportion="0.18660812" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/explore/LineTreeLeft.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="44" selection-start="326" selection-end="334" vertical-scroll-proportion="0.13446328" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/left_menu_inc.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/static/less/navigation.less">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="18" selection-start="136" selection-end="136" vertical-scroll-proportion="0.15" />
@@ -532,16 +508,6 @@
         <state line="14" column="25" selection-start="453" selection-end="453" vertical-scroll-proportion="0.3018242" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webshop/settings_live.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="10" selection-start="430" selection-end="430" vertical-scroll-proportion="0.10777202" />
@@ -554,9 +520,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="14" selection-start="346" selection-end="346" vertical-scroll-proportion="0.12407211">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/500.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="200" column="0" selection-start="10732" selection-end="10732" vertical-scroll-proportion="0.7903226">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/left_block_announce.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="60" selection-start="85" selection-end="85" vertical-scroll-proportion="0.02757158">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/layout_free_center.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="18" selection-start="335" selection-end="335" vertical-scroll-proportion="0.17921527">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="150" column="0" selection-start="7391" selection-end="9611" vertical-scroll-proportion="0.14731182">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/pages/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="78" selection-start="7708" selection-end="7708" vertical-scroll-proportion="0.5064516">
+        <state line="117" column="22" selection-start="7292" selection-end="7292" vertical-scroll-proportion="0.7172043">
           <folding />
         </state>
       </provider>

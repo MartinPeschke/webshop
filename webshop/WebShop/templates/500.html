@@ -160,43 +160,44 @@
 
         </div>
 
-        <footer>
-            <div class="row">
-                <div class="span4">
-                    <h2 class="spaced">{% trans "payment methods" %}</h2>
-                    <img src="/static/images/static/payments.png" class="floatLeft"/>
-                </div>
-                <div class="span4">
-                    <h2 class="spaced">{% trans "our shipping partner" %}</h2>
-                    <img src="/static/images/static/dhl.png" class="floatLeft"/>
-                </div>
-                <div class="span4">
-                    <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css"/>
-                    <style type="text/css">
-                        #mc_embed_signup {background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-                        #mc_embed_signup form {padding: 0}
-                        #mc_embed_signup label {font-family:sans-serif;font-size:13px;font-weight:bold;padding:0 0 1em 0}
-                        #mc_embed_signup input.email {width: 95%}
-                    </style>
-                    <div id="mc_embed_signup">
-                        <form action="http://per-4.us2.list-manage.com/subscribe/post?u=c11ff97501e0fc27b47e3d144&amp;id=444f2e54c2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-                            <label for="mce-EMAIL">{% trans "receive trends, offers and coupons via email" %}</label>
-                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="{% trans "enter email address" %}" required>
-                            <div class="clear"><input type="submit" value="{% trans 'Subscribe' %}" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-                        </form>
-                    </div>
-                </div>
+
+    <footer>
+      <div class="row">
+        <div class="span4">
+            <h2 class="spaced">{% trans "payment methods" %}</h2>
+            <img src="/static/images/static/payments.png" class="floatLeft"/>
+        </div>
+        <div class="span4">
+            <h2 class="spaced">{% trans "our shipping partner" %}</h2>
+            <img src="/static/images/static/ups.png" class="floatLeft"/>
+        </div>
+        <div class="span4">
+            <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css"/>
+            <style type="text/css">
+                #mc_embed_signup {background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+                #mc_embed_signup form {padding: 0}
+                #mc_embed_signup label {font-family:sans-serif;font-size:13px;font-weight:bold;padding:0 0 1em 0}
+                #mc_embed_signup input.email {width: 95%}
+            </style>
+            <div id="mc_embed_signup">
+            <form action="http://per-4.us2.list-manage.com/subscribe/post?u=c11ff97501e0fc27b47e3d144&amp;id=444f2e54c2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                <label for="mce-EMAIL">{% trans "receive trends, offers and coupons via email" %}</label>
+                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="{% trans "enter email address" %}" required>
+                <div class="clear"><input type="submit" value="{% trans 'Subscribe' %}" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+            </form>
             </div>
-            <hr class="row"/>
-            <div class="row">
-                <div class="copyright span12">
-                    <a href="/impressum/" class="floatRight">{% trans "Impressum" %}</a>
-                    <span>Copyright &copy;2011 Per-4. All rights reserved</span>
-                    <div>{% trans "Per-4 • Piercing • Tattoo • Jewellery • Fashion & Media • Studioequipment" %}</div>
-                    <div>{% trans "Über" %} {{ total_article_count }} {% trans 'Produkte im Webshop!' %}</div>
-                </div>
-            </div>
-        </footer>
+          </div>
+        </div>
+        <hr class="row"/>
+        <div class="row">
+          <div class="copyright span12">
+              <a href="/impressum/" class="floatRight">{% trans "Impressum" %}</a>
+              <span>Copyright &copy;2011 Per-4. All rights reserved</span>
+              <div>{% trans "Per-4 • Piercing • Tattoo • Jewellery • Fashion & Media • Studioequipment" %}</div>
+              <div>{% trans "Über" %} {{ total_article_count }} {% trans 'Produkte im Webshop!' %}</div>
+          </div>
+        </div>
+    </footer>
     </div>
 
 
