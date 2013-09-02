@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" hash="4134829389">
-    <data-source source="LOCAL" name="Django articledb" product="MySQL" version="5.1.34-community" jdbc-version="4.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.1.18 ( Revision: tonci.grgin@oracle.com-20110930151701-jfj14ddfq48ifkfq )" uuid="f681949a-17a0-495e-b321-d1b4ffd48a36">
-      <extra-name-characters>#@</extra-name-characters>
-      <identifier-quote-string>`</identifier-quote-string>
+    <data-source source="LOCAL" name="Django articledb" uuid="f681949a-17a0-495e-b321-d1b4ffd48a36">
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1:3306/devel</jdbc-url>
       <user-name>root</user-name>
@@ -17,9 +15,7 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="Django default" product="MySQL" version="5.1.34-community" jdbc-version="4.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.1.18 ( Revision: tonci.grgin@oracle.com-20110930151701-jfj14ddfq48ifkfq )" uuid="d8d7c5ba-72d2-4b4c-b457-d275fc839692">
-      <extra-name-characters>#@</extra-name-characters>
-      <identifier-quote-string>`</identifier-quote-string>
+    <data-source source="LOCAL" name="Django default" uuid="d8d7c5ba-72d2-4b4c-b457-d275fc839692">
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1:3306/devel</jdbc-url>
       <user-name>root</user-name>
@@ -33,9 +29,7 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="Django default" product="MySQL" version="5.1.34-community" jdbc-version="4.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.1.18 ( Revision: tonci.grgin@oracle.com-20110930151701-jfj14ddfq48ifkfq )" uuid="c09bda30-bab9-4994-a7c2-e08184bf6fce">
-      <extra-name-characters>#@</extra-name-characters>
-      <identifier-quote-string>`</identifier-quote-string>
+    <data-source source="LOCAL" name="Django default" uuid="c09bda30-bab9-4994-a7c2-e08184bf6fce">
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1:3306/devel</jdbc-url>
       <user-name>root</user-name>
@@ -49,9 +43,7 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="Django articledb" product="MySQL" version="5.1.34-community" jdbc-version="4.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.1.18 ( Revision: tonci.grgin@oracle.com-20110930151701-jfj14ddfq48ifkfq )" uuid="598e1869-45b4-4520-96ea-c001ca048a30">
-      <extra-name-characters>#@</extra-name-characters>
-      <identifier-quote-string>`</identifier-quote-string>
+    <data-source source="LOCAL" name="Django articledb" uuid="598e1869-45b4-4520-96ea-c001ca048a30">
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1:3306/devel</jdbc-url>
       <user-name>root</user-name>
