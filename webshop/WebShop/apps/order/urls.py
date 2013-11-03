@@ -1,5 +1,5 @@
 from django.conf.urls import *
-from WebShop.apps.order.views import CheckoutView, OrderSuccessView, ConfirmAddressView
+from webshop.apps.order.views import CheckoutView, OrderSuccessView, ConfirmAddressView
 
 
 urlpatterns = patterns('',

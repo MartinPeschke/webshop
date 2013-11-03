@@ -45,7 +45,7 @@ def createEmail(templateName, context=None):
         msg.attach(txtMsg)
         if(htmlMsg == None):
             raise TemplateDoesNotExist, """Neither Text nor HTML Template found! Please make sure 
-                        'WebShop/templates/email/' contains %s.txt or %s.html!"""  % (templateName, templateName)
+                        'webshop/templates/email/' contains %s.txt or %s.html!"""  % (templateName, templateName)
     return msg
 
 class BadHeaderError(ValueError):

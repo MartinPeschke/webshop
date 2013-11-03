@@ -1,5 +1,5 @@
 from django.contrib import admin
-from WebShop.apps.cms.models import LinkGalleryItem, LinkGallery
+from webshop.apps.cms.models import LinkGalleryItem, LinkGallery
 
 __author__ = 'Martin'
 

@@ -1,11 +1,11 @@
-from WebShop.apps.lib.validators import ValidateDigits, CreditCardExpiryField, CreditCardNumberField
+from webshop.apps.lib.validators import ValidateDigits, CreditCardExpiryField, CreditCardNumberField
 
 __author__ = 'Martin'
 from bootstrap.forms import Fieldset
 from django.forms.widgets import RadioSelect, Textarea, TextInput
 from django.utils.translation import ugettext as _, ugettext_lazy
-from WebShop.apps.lib.baseviews import BaseForm
-from WebShop.apps.order.models import PaymentMethod, CreditCardType, BankAccount, CreditCard
+from webshop.apps.lib.baseviews import BaseForm
+from webshop.apps.order.models import PaymentMethod, CreditCardType, BankAccount, CreditCard
 
 from django import forms
 from django.conf import settings

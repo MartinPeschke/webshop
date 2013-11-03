@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from WebShop.apps.contrib.countries.models import Country
+from webshop.apps.contrib.countries.models import Country
 
 __author__ = 'Martin'
 

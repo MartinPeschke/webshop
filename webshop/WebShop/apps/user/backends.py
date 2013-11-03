@@ -1,4 +1,4 @@
-from WebShop.apps.user.models.password_token import PasswordToken
+from webshop.apps.user.models.password_token import PasswordToken
 from django.contrib.auth.models import User
 
 class ModelBackend:

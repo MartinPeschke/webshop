@@ -5,8 +5,8 @@ from django.template import Context
 from django.conf import settings
 from django.utils.translation import ugettext as _
 
-from WebShop.apps.user.models.password_token import PasswordToken, RESETPASSWORDTOKEN
-from WebShop.utils import mail
+from webshop.apps.user.models.password_token import PasswordToken, RESETPASSWORDTOKEN
+from webshop.utils import mail
 
 import logging
 log = logging.getLogger(__name__)

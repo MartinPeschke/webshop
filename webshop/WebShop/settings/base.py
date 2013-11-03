@@ -1,4 +1,4 @@
-# Django settings for WebShop project.
+# Django settings for webshop project.
 import random, os
 
 _ = lambda s:s
@@ -41,7 +41,7 @@ SERVER_EMAIL = 'webshop@per-4.net'
 ORDER_MAIL = 'webshop@per-4.net'
 ERROR_MAIL = 'martin@per-4.com'
 
-CACHE_TOKEN = "WebShop"
+CACHE_TOKEN = "webshop"
 SESSION_COOKIE_DOMAIN=".per-4.com"
 SESSION_EXPIRE_AT_BROWSER_CLOSE=False
 SESSION_COOKIE_AGE=31449600
@@ -149,8 +149,8 @@ TEMPLATE_LOADERS = (
 # Each one should be a callable that takes the request object as its
 # only parameter and returns a dictionary to add to the context.
 TEMPLATE_CONTEXT_PROCESSORS = (
-    'WebShop.apps.contrib.middleware.random_promo_processor',
-    'WebShop.apps.contrib.middleware.cart_shops_processor',
+    'webshop.apps.contrib.middleware.random_promo_processor',
+    'webshop.apps.contrib.middleware.cart_shops_processor',
     'django.contrib.auth.context_processors.auth',
     "django.core.context_processors.debug",
     "django.core.context_processors.i18n",
@@ -162,7 +162,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
-ROOT_URLCONF = 'WebShop.urls'
+ROOT_URLCONF = 'webshop.urls'
 
 MIDDLEWARE_CLASSES = (
    'django.middleware.common.CommonMiddleware',
@@ -179,19 +179,19 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.sitemaps',
-    'WebShop.apps.contrib.countries',
-    'WebShop.apps.order',
-    'WebShop.apps.explore',
-    'WebShop.apps.user',
-    'WebShop.apps.search',
-    'WebShop.apps.service',
-    'WebShop.apps.cms',
+    'webshop.apps.contrib.countries',
+    'webshop.apps.order',
+    'webshop.apps.explore',
+    'webshop.apps.user',
+    'webshop.apps.search',
+    'webshop.apps.service',
+    'webshop.apps.cms',
     'bootstrap',
 )
 
 
 AUTHENTICATION_BACKENDS = (
-    'WebShop.apps.user.backends.ModelBackend',
+    'webshop.apps.user.backends.ModelBackend',
 )
 
 AUTH_PROFILE_MODULE = 'user.Profile'

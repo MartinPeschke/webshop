@@ -4,10 +4,10 @@ from django.template import Context
 from django.core.cache import cache
 from datetime import datetime
 
-import WebShop.utils.mail as mail
-from WebShop.apps.explore.models import Shop, Line, Promotion, ArticleOption
-from WebShop.apps.user.lib import get_role, is_in_signup
-from WebShop.apps.user.user_roles import simple_role, HAS_RIGHTS
+import webshop.utils.mail as mail
+from webshop.apps.explore.models import Shop, Line, Promotion, ArticleOption
+from webshop.apps.user.lib import get_role, is_in_signup
+from webshop.apps.user.user_roles import simple_role, HAS_RIGHTS
 
 SHOPS = Shop.objects.filter(allowed_shops__icontains = settings.SHOP_NAME).order_by('sort').all()
 
@@ -60,5 +60,5 @@ class ErrorEmailingMiddleware:
             'error': exception,
             'request': request})
         if not settings.DEBUG:
-            mail.create_mail("WebShop ERROR", settings.SERVER_EMAIL, settings.ERROR_MAIL, 'error_email', c)
+            mail.create_mail("webshop ERROR", settings.SERVER_EMAIL, settings.ERROR_MAIL, 'error_email', c)
         return None

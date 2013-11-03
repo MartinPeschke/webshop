@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from WebShop.utils.etl import importTabDelimted
+from webshop.utils.etl import importTabDelimted
 
 class Command(BaseCommand):
     

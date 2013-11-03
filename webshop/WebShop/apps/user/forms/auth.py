@@ -8,10 +8,10 @@ from django.conf import settings
 from django.core.urlresolvers import reverse
 
 from django.contrib.auth.models import User
-from WebShop.apps.lib.baseviews import BaseForm, Fieldset
-from WebShop.apps.contrib.countries.models import Country
-from WebShop.apps.user.models.address import Language
-from WebShop.apps.user.user_roles import LEAST_ROLE, AWAITING_APPROVAL_ROLE
+from webshop.apps.lib.baseviews import BaseForm, Fieldset
+from webshop.apps.contrib.countries.models import Country
+from webshop.apps.user.models.address import Language
+from webshop.apps.user.user_roles import LEAST_ROLE, AWAITING_APPROVAL_ROLE
 
 COUNTRIES = map(attrgetter('iso', 'printable_name'), Country.objects.all())
 LANGUAGES = map(attrgetter('code', 'name'), Language.objects.all())

@@ -5,8 +5,8 @@ from django.utils.translation import ugettext as _
 from django.utils.safestring import mark_safe
 
 from django.conf import settings
-from WebShop.apps.user.lib import userRoles
-from WebShop.apps.user.user_roles import simple_role, HAS_RIGHTS, NO_RIGHTS
+from webshop.apps.user.lib import userRoles
+from webshop.apps.user.user_roles import simple_role, HAS_RIGHTS, NO_RIGHTS
 from django.template.loader import render_to_string
 
 register = template.Library()

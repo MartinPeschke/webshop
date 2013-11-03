@@ -1,7 +1,7 @@
 from django.utils.safestring import mark_safe
-from WebShop.apps.user.models import APPROVALWHOLESALETOKEN
+from webshop.apps.user.models import APPROVALWHOLESALETOKEN
 
-from WebShop.apps.user.user_roles import NORM_ROLE, LEAST_ROLE
+from webshop.apps.user.user_roles import NORM_ROLE, LEAST_ROLE
 
 from django.contrib import auth
 from django.shortcuts import render_to_response

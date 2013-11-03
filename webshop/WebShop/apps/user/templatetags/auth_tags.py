@@ -1,6 +1,6 @@
 from django import template
-from WebShop.apps.user.lib import is_in_signup, is_studio_user
-from WebShop.apps.user.user_roles import userRoles
+from webshop.apps.user.lib import is_in_signup, is_studio_user
+from webshop.apps.user.user_roles import userRoles
 
 register = template.Library()
 

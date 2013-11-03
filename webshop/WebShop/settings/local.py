@@ -1,4 +1,4 @@
-# Django settings for WebShop project.
+# Django settings for webshop project.
 from .base import *
 
 DEBUG = True

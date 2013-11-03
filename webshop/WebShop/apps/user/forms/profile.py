@@ -4,7 +4,7 @@ from django import forms
 from django.conf import settings
 from django.forms.widgets import Select
 from django.utils.translation import ugettext as _, ugettext_lazy
-from WebShop.apps.lib.baseviews import BaseForm, Fieldset
+from webshop.apps.lib.baseviews import BaseForm, Fieldset
 from django.forms import widgets
 
 from .auth import WEEKDAYS, COUNTRIES, LANGUAGES

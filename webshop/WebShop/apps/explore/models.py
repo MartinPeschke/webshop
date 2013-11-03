@@ -5,7 +5,7 @@ from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext as _
 from django.conf import settings
 
-from WebShop.apps.user.user_roles import USER_GROUPS, HAS_RIGHTS, NO_RIGHTS
+from webshop.apps.user.user_roles import USER_GROUPS, HAS_RIGHTS, NO_RIGHTS
 import  random
 
 import logging

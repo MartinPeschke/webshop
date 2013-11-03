@@ -5,11 +5,11 @@ from django.http import *
 from django.core.cache import cache
 
 from django.db import  connection
-from WebShop.apps.explore.models import Shop, Line, ArticleFamily, Promotion, Article, ArticleOption, Pricing, ArticleType
-from WebShop.apps.user.models import Address, BankAccount, CreditCard, Profile
-from WebShop.apps.order.models import Order, PaymentMethod
+from webshop.apps.explore.models import Shop, Line, ArticleFamily, Promotion, Article, ArticleOption, Pricing, ArticleType
+from webshop.apps.user.models import Address, BankAccount, CreditCard, Profile
+from webshop.apps.order.models import Order, PaymentMethod
 from django.contrib.auth.models import User
-from WebShop.apps.contrib.decorator import _guard_bo, json_encode
+from webshop.apps.contrib.decorator import _guard_bo, json_encode
 
 import logging
 
@@ -364,7 +364,7 @@ def index(request):
 def ulImageLib(request):
     '''BO push b64encoded bz2 data, to update webshop ImgLib content:
     '''
-    from WebShop.utils.ziputils import unzipToFolder
+    from webshop.utils.ziputils import unzipToFolder
     import tempfile
     if request.POST:
         print 'received request'

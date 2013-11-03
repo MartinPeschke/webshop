@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from WebShop.utils.etl import process
+from webshop.utils.etl import process
 
 class Command(BaseCommand):
     

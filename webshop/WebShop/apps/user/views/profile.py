@@ -1,14 +1,14 @@
 from django.contrib import messages
 from django.core.urlresolvers import reverse
 import simplejson
-from WebShop.apps.contrib.countries.models import Country
-from WebShop.apps.user.forms.profile import AccountRetailDetailsForm, AccountWholesaleDetailsForm
-from WebShop.apps.user.lib import is_studio_user
+from webshop.apps.contrib.countries.models import Country
+from webshop.apps.user.forms.profile import AccountRetailDetailsForm, AccountWholesaleDetailsForm
+from webshop.apps.user.lib import is_studio_user
 from django.utils.translation import ugettext as _, ugettext_lazy
 
-from WebShop.apps.user.models.address import Address, Language, AddressType
-from WebShop.apps.user.forms import AddressesForm
-from WebShop.apps.lib.baseviews import  BaseLoggedInView, BaseFormView, HTTPRedirect
+from webshop.apps.user.models.address import Address, Language, AddressType
+from webshop.apps.user.forms import AddressesForm
+from webshop.apps.lib.baseviews import  BaseLoggedInView, BaseFormView, HTTPRedirect
 
 
 def _get_user_data(user):

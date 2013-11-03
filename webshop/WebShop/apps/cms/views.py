@@ -1,5 +1,5 @@
-from WebShop.apps.cms.models import LinkGalleryItem
-from WebShop.apps.contrib.decorator import json
+from webshop.apps.cms.models import LinkGalleryItem
+from webshop.apps.contrib.decorator import json
 
 __author__ = 'Martin'
 

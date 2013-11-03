@@ -4,10 +4,10 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.template.loader import render_to_string
 
-from WebShop.apps.contrib.cart import Cart
-from WebShop.apps.contrib.decorator import json
-from WebShop.apps.lib.baseviews import BaseLoggedInView
-from WebShop.apps.order.models import Order
+from webshop.apps.contrib.cart import Cart
+from webshop.apps.contrib.decorator import json
+from webshop.apps.lib.baseviews import BaseLoggedInView
+from webshop.apps.order.models import Order
 
 __author__ = 'Martin'
 

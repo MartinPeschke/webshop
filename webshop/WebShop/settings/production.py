@@ -1,4 +1,4 @@
-# Django settings for WebShop project.
+# Django settings for webshop project.
 import random
 import os
 from django.utils.translation import ugettext as _

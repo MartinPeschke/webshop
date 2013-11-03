@@ -6,12 +6,12 @@ from django.template.loader import render_to_string
 from django.http import  HttpResponseRedirect, Http404
 from django.shortcuts import render_to_response
 
-from WebShop.apps.contrib.decorator import json
-from WebShop.apps.explore.models import  Line, ArticleFamily, ArticleOption, ArticleType, Pricing
-from WebShop.apps.user.lib import get_role
-from WebShop.apps.user.models import Language
-from WebShop.apps.user.user_roles import simple_role
-from WebShop.urls import SHOPS
+from webshop.apps.contrib.decorator import json
+from webshop.apps.explore.models import  Line, ArticleFamily, ArticleOption, ArticleType, Pricing
+from webshop.apps.user.lib import get_role
+from webshop.apps.user.models import Language
+from webshop.apps.user.user_roles import simple_role
+from webshop.urls import SHOPS
 
 
 LOCALES  = [l.code for l in Language.objects.all()]

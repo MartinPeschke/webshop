@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
-from WebShop.utils.jsonfield import JSONField
+from webshop.utils.jsonfield import JSONField
 
 __author__ = 'Martin'
 

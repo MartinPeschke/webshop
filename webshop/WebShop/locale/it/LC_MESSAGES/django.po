@@ -3163,8 +3163,8 @@ msgstr "Conferma l'ordine"
 #~ msgid "Prices contain Tax already"
 #~ msgstr "Steuer incl."
 
-#~ msgid "[WebShop] Catalog Request"
-#~ msgstr "[WebShop] Kataloganforderung"
+#~ msgid "[webshop] Catalog Request"
+#~ msgstr "[webshop] Kataloganforderung"
 
 #~ msgid "Password Retrieval from Per-4"
 #~ msgstr "Passwort Erinnerungs Mail von Per-4"

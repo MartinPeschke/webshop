@@ -5,7 +5,7 @@ import pprint
 DEFAULT_SHOP = 'Piercing'
 
 def deep_import(json):
-	from WebShop.apps.service.views.bo import parseJson
+	from webshop.apps.service.views.bo import parseJson
 	return parseJson(json)
 
 '''

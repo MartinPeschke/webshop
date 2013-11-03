@@ -1,8 +1,8 @@
 from decimal import Decimal, ROUND_UP
 
-from WebShop.apps.user.lib import get_role
-from WebShop.apps.user.user_roles import simple_role
-from WebShop.apps.explore.models import ArticleOption, Pricing
+from webshop.apps.user.lib import get_role
+from webshop.apps.user.user_roles import simple_role
+from webshop.apps.explore.models import ArticleOption, Pricing
 from django.conf import settings
 
 class Cart(object):

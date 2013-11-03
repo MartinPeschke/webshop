@@ -8,13 +8,13 @@ from django.template import Context
 from django.contrib import messages
 from django.conf  import settings
 
-from WebShop.apps.lib.baseviews import BaseFormView, BaseLoggedInView, HTTPRedirect
-from WebShop.apps.order.models import OrderItem
+from webshop.apps.lib.baseviews import BaseFormView, BaseLoggedInView, HTTPRedirect
+from webshop.apps.order.models import OrderItem
 from .forms import PaymentMethodForm, CreditCardForm, BankAccountForm
 from .models import CreditCard, BankAccount, Order, PaymentMethod
 
-import WebShop.utils.mail as mail
-from WebShop.apps.user.views.profile import _get_user_data, BaseAccountAddressView
+import webshop.utils.mail as mail
+from webshop.apps.user.views.profile import _get_user_data, BaseAccountAddressView
 
 import simplejson
 

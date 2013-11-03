@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import os
 from django import template
-from WebShop.settings import MEDIA_ROOT, MEDIA_URL
-from WebShop.apps.cms.models import *
+from webshop.settings import MEDIA_ROOT, MEDIA_URL
+from webshop.apps.cms.models import *
 
 register = template.Library()
 

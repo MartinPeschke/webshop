@@ -4,10 +4,10 @@ from django.conf import settings
 from django.http import HttpRequest
 from django.contrib.auth.models import User
 from django.template.context import Context
-from WebShop.apps.user.models import Profile
-from WebShop.apps.user.models.password_token import APPROVALWHOLESALETOKEN, PasswordToken
-from WebShop.apps.user.user_roles import ANONYMOUS_ROLE, userRoles, LEAST_ROLE, NORM_ROLE, REQUIRES_APPROVAL
-from WebShop.utils import mail
+from webshop.apps.user.models import Profile
+from webshop.apps.user.models.password_token import APPROVALWHOLESALETOKEN, PasswordToken
+from webshop.apps.user.user_roles import ANONYMOUS_ROLE, userRoles, LEAST_ROLE, NORM_ROLE, REQUIRES_APPROVAL
+from webshop.utils import mail
 
 
 __author__ = 'Martin'

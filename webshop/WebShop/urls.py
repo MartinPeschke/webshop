@@ -1,10 +1,10 @@
 from django.http import HttpResponseRedirect
-from WebShop.apps.explore.models import Shop, Line, ArticleFamily
+from webshop.apps.explore.models import Shop, Line, ArticleFamily
 from django.conf import settings
 
 from django.conf.urls import *
 from django.contrib.sitemaps import GenericSitemap
-from WebShop.apps.contrib.static_sitemap import StaticSitemap  
+from webshop.apps.contrib.static_sitemap import StaticSitemap
 
 # The next two lines enable the admin and load each admin.py file:
 from django.contrib import admin
@@ -40,44 +40,44 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
 
     # Real Index Page
-    (r'^/?$', 'WebShop.apps.cms.pages.welcome'),
-    url(r'^main/$', 'WebShop.apps.cms.pages.main', name='home-route'),
+    (r'^/?$', 'webshop.apps.cms.pages.welcome'),
+    url(r'^main/$', 'webshop.apps.cms.pages.main', name='home-route'),
     # Browsing
-    (r'^(?P<shop_ref>%s)/$' % SHOPS_URLS, 'WebShop.apps.explore.views.handler.shop'),
-    (r'^pane/(?P<type_id>\d+)/$' , 'WebShop.apps.explore.views.handler.pane'),
+    (r'^(?P<shop_ref>%s)/$' % SHOPS_URLS, 'webshop.apps.explore.views.handler.shop'),
+    (r'^pane/(?P<type_id>\d+)/$' , 'webshop.apps.explore.views.handler.pane'),
 
-    (r'^(?P<shop_ref>%s)/(?P<line_ref>[\w\d\-_]+)/$' % SHOPS_URLS, 'WebShop.apps.explore.views.handler.line'),
-    (r'^(?P<shop_ref>%s)/(?P<line_ref>[\w\d\-_]+)/(?P<af_ref>[\w\d\-_. ]+)/$' % SHOPS_URLS, 'WebShop.apps.explore.views.handler.article'),
+    (r'^(?P<shop_ref>%s)/(?P<line_ref>[\w\d\-_]+)/$' % SHOPS_URLS, 'webshop.apps.explore.views.handler.line'),
+    (r'^(?P<shop_ref>%s)/(?P<line_ref>[\w\d\-_]+)/(?P<af_ref>[\w\d\-_. ]+)/$' % SHOPS_URLS, 'webshop.apps.explore.views.handler.article'),
 
     # Static
-    (r'^news/$', 'WebShop.apps.cms.pages.news'),
-    (r'^downloads/$', 'WebShop.apps.cms.pages.downloads'),
-    url(r'^contact/$', 'WebShop.apps.cms.pages.contact', name="contact-route"),
-    url(r'^aboutus/$', 'WebShop.apps.cms.pages.aboutus', name="aboutus-route"),
-    (r'^agb/$', 'WebShop.apps.cms.pages.agb'),
-    (r'^faq/$', 'WebShop.apps.cms.pages.faq'),
-    (r'^jobs/$', 'WebShop.apps.cms.pages.jobs'),
-    (r'^materials/$', 'WebShop.apps.cms.pages.materials'),
-    url(r'^impressum/$', 'WebShop.apps.cms.pages.impressum', name="imprint-route"),
-    (r'^gallery/(?P<page>\d*)$', 'WebShop.apps.cms.pages.gallery'),
-    (r'^coupons/$', 'WebShop.apps.cms.pages.coupons'),
-    (r'^shipping/$', 'WebShop.apps.cms.pages.shipping'),
-    (r'^studios/$', 'WebShop.apps.cms.pages.studios'),
-    (r'^seminar/$', 'WebShop.apps.cms.pages.seminar'),
-    (r'^convention/$', 'WebShop.apps.cms.pages.convention'),
-    (r'^content/(?P<page>[a-zA-Z0-9_-]*)$', 'WebShop.apps.cms.pages.generic'),
+    (r'^news/$', 'webshop.apps.cms.pages.news'),
+    (r'^downloads/$', 'webshop.apps.cms.pages.downloads'),
+    url(r'^contact/$', 'webshop.apps.cms.pages.contact', name="contact-route"),
+    url(r'^aboutus/$', 'webshop.apps.cms.pages.aboutus', name="aboutus-route"),
+    (r'^agb/$', 'webshop.apps.cms.pages.agb'),
+    (r'^faq/$', 'webshop.apps.cms.pages.faq'),
+    (r'^jobs/$', 'webshop.apps.cms.pages.jobs'),
+    (r'^materials/$', 'webshop.apps.cms.pages.materials'),
+    url(r'^impressum/$', 'webshop.apps.cms.pages.impressum', name="imprint-route"),
+    (r'^gallery/(?P<page>\d*)$', 'webshop.apps.cms.pages.gallery'),
+    (r'^coupons/$', 'webshop.apps.cms.pages.coupons'),
+    (r'^shipping/$', 'webshop.apps.cms.pages.shipping'),
+    (r'^studios/$', 'webshop.apps.cms.pages.studios'),
+    (r'^seminar/$', 'webshop.apps.cms.pages.seminar'),
+    (r'^convention/$', 'webshop.apps.cms.pages.convention'),
+    (r'^content/(?P<page>[a-zA-Z0-9_-]*)$', 'webshop.apps.cms.pages.generic'),
 
     # Search
-    (r'^search/', 'WebShop.apps.search.views.index'),
+    (r'^search/', 'webshop.apps.search.views.index'),
 
     # User
-    (r'^user/', include('WebShop.apps.user.urls')),
+    (r'^user/', include('webshop.apps.user.urls')),
     # Order
-    (r'^order/', include('WebShop.apps.order.urls')),
-    (r'^cms/', include('WebShop.apps.cms.urls')),
+    (r'^order/', include('webshop.apps.order.urls')),
+    (r'^cms/', include('webshop.apps.cms.urls')),
 
     # Web Service
-    (r'^services/', include('WebShop.apps.service.urls')),
+    (r'^services/', include('webshop.apps.service.urls')),
 
     # media
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),

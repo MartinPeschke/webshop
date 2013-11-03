@@ -1,20 +1,20 @@
 from django.core.exceptions import ObjectDoesNotExist
-from WebShop.apps.order.models import PaymentMethod
-from WebShop.utils.jsonfield import JSONField
+from webshop.apps.order.models import PaymentMethod
+from webshop.utils.jsonfield import JSONField
 import simplejson
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from WebShop.apps.contrib.decorator import json_encode
-from WebShop.apps.user.user_roles import USER_GROUPS, userRoles, NORM_ROLE
+from webshop.apps.contrib.decorator import json_encode
+from webshop.apps.user.user_roles import USER_GROUPS, userRoles, NORM_ROLE
 
 
 __author__ = 'Martin'
 
 
-from WebShop.apps.order.models import BankAccount, CreditCard
+from webshop.apps.order.models import BankAccount, CreditCard
 from .password_token import PasswordToken,RESETPASSWORDTOKEN, REGISTERNEWTOKEN, APPROVALWHOLESALETOKEN
 from .address import Address, Language, AddressType
 

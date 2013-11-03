@@ -2,7 +2,7 @@ import os
 from django.conf import settings
 from django.shortcuts import render_to_response
 from django.template import RequestContext, TemplateDoesNotExist
-from WebShop.apps.cms.models import LinkGalleryItem
+from webshop.apps.cms.models import LinkGalleryItem
 
 def render_with_locale(request, template, context):
     rctxt = RequestContext(request)

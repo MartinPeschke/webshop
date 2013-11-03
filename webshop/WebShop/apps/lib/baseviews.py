@@ -8,7 +8,7 @@ from django.utils.translation import ugettext as _, ugettext_lazy
 from bootstrap.forms import BootstrapForm, Fieldset
 import simplejson
 
-from WebShop.apps.user.lib import is_studio_user, is_in_signup
+from webshop.apps.user.lib import is_studio_user, is_in_signup
 
 class HTTPRedirect(Exception):
     def __init__(self, url):

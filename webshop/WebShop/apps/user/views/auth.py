@@ -8,18 +8,18 @@ import datetime
 
 from django.contrib.auth.models import User
 import simplejson
-from WebShop.apps import user
+from webshop.apps import user
 
-from WebShop.apps.lib.baseviews import  HTTPRedirect, BaseFormView, BaseView
-from WebShop.apps.contrib.decorator import json
-from WebShop.apps.user.forms import LoginEmailForm, LoginZipCodeForm \
+from webshop.apps.lib.baseviews import  HTTPRedirect, BaseFormView, BaseView
+from webshop.apps.contrib.decorator import json
+from webshop.apps.user.forms import LoginEmailForm, LoginZipCodeForm \
             , RequestPasswordForm, RegisterForm, ChangePasswordForm, WholesaleAccountForm, RetailAccountForm
 
-from WebShop.apps.user.models.password_token import PasswordToken, RESETPASSWORDTOKEN, REGISTERNEWTOKEN, APPROVALWHOLESALETOKEN
+from webshop.apps.user.models.password_token import PasswordToken, RESETPASSWORDTOKEN, REGISTERNEWTOKEN, APPROVALWHOLESALETOKEN
 
-from WebShop.apps.user.services.token_manager import  sendResetEmail, remove_token, attach_token
-from WebShop.apps.user.lib import is_in_signup, create_user, _send_register_mail, _send_approval_mail
-from WebShop.apps.user.user_roles import HAS_RIGHTS, REQUIRES_APPROVAL
+from webshop.apps.user.services.token_manager import  sendResetEmail, remove_token, attach_token
+from webshop.apps.user.lib import is_in_signup, create_user, _send_register_mail, _send_approval_mail
+from webshop.apps.user.user_roles import HAS_RIGHTS, REQUIRES_APPROVAL
 
 def logout(request):
     auth.logout(request)

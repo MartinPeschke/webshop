@@ -1,5 +1,5 @@
 from django.contrib import admin
-from WebShop.apps.explore.models import Shop, Line, ArticleType, ArticleFamily, Promotion, Article, \
+from webshop.apps.explore.models import Shop, Line, ArticleType, ArticleFamily, Promotion, Article, \
     ArticleOption, Pricing, LanguagePack
 
 class ShopAdmin(admin.ModelAdmin):
