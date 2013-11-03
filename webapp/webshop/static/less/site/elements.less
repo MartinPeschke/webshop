@@ -10,9 +10,9 @@ input.number { text-align:center;}
 .centered {text-align:center;}
 a.link {
   text-decoration:none;
-  color:@linkColor;
-  &:visited, &:active{color:@linkColor;text-decoration:none;}
-  &:hover {color:lighten(@linkColor,15%);text-decoration:none;}
+  color:@link-color;
+  &:visited, &:active{color:@link-color;text-decoration:none;}
+  &:hover {color:lighten(@link-color,15%);text-decoration:none;}
 }
 
 h3.title {
@@ -20,8 +20,8 @@ h3.title {
 }
 
 .title {
-    #gradient > .vertical(@navbarBackgroundHighlight, @navbarBackground);
     @shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1);
+    background-color:@navbar-default-bg;
     .box-shadow(@shadow);
     color: white;
     padding: 1px 10px;
@@ -29,7 +29,6 @@ h3.title {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     + ul.nav-tabs {
-          #gradient > .vertical(@navbarBackground, @navbarBackgroundHighlight);
         color: white;
         margin-top:-15px;
         padding: 0 10px;

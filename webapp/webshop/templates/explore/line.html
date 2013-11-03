@@ -6,7 +6,7 @@
 {% block title %}Per-4 | {{ line.shop.name|locale:LANGUAGE_CODE }} {{ line.name|locale:LANGUAGE_CODE }} {% if art_type %} - {{ art_type|locale:LANGUAGE_CODE }}{% endif %}{% endblock %}
 
 {% block left_block %}
-  {% include "explore/LineTreeLeft.html" %}
+  {% include "explore/left_menu_inc.html" %}
 {% endblock %}
 
 {% block centerbox %}

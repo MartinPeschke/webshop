@@ -98,7 +98,7 @@
             <td class="data quantity">
               {% if pricing %}
                 <div class="cart-quantity-wrapper {% if not cart_qty %}hidden{% endif %}">(<span class="cart_qty">{{ cart_qty }}</span>+)</div>
-                <input type="number" id="quantityfield_{{ ao.id }}" name="{{ ao.id }}" class="span1 number cartQtyInput" value="" maxlength="4"/>
+                <input type="number" id="quantityfield_{{ ao.id }}" name="{{ ao.id }}" class="col-lg-1 number cartQtyInput" value="" maxlength="4"/>
               {% endif %}
             </td>
             <td class="data total"><span class="articleoption_total">0</span>&nbsp;&euro;</td>

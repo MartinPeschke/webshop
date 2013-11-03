@@ -1,0 +1,40 @@
+{% load explore %}
+{% load i18n %}
+
+<ul class="nav nav-explore">
+  {% for currshop in shops %}
+    <li class="{% active currshop.ref shop.ref %}">
+      <a href="/{{ currshop.ref }}/">
+        <span class="glyphicon"></span>
+        {{ currshop.name|locale:LANGUAGE_CODE }}
+      </a>
+    {% ifequal shop.ref currshop.ref %}
+      <ul class="nav">
+        {% for item, count in toplevel %}
+          {% if count and line.ref == item.ref%}
+
+              <li class="active">
+                <a href="/{{ shop_ref }}/{{ item.ref }}/">
+                  <span class="glyphicon"></span>
+                  {{ item.name|locale:LANGUAGE_CODE }}</a>
+                <ul class="nav">
+                  {% for sl_item in secondlevel %}
+                    <li class="{% active sl_item.id art_type_id %}">
+                      <a class="bullet" href="/{{ shop_ref }}/{{ item.ref }}/?t={{ sl_item.id }}">{{ sl_item|locale:LANGUAGE_CODE|truncate:23 }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
+
+            {% else %}
+
+              <li>
+                <a href="/{{ shop_ref }}/{{ item.ref }}/"><span class="glyphicon"></span> {{ item.name|locale:LANGUAGE_CODE }}</a>
+              </li>
+
+          {% endif %}
+        {% endfor %}
+      </ul>
+    {% endifequal %}
+  {% endfor %}
+</ul>

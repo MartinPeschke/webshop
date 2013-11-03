@@ -1,13 +1,14 @@
 from operator import attrgetter
 import os
+
 from django import template
 from django.utils.translation import ugettext as _
 from django.utils.safestring import mark_safe
-
 from django.conf import settings
-from webshop.apps.user.lib import userRoles
-from webshop.apps.user.user_roles import simple_role, HAS_RIGHTS, NO_RIGHTS
 from django.template.loader import render_to_string
+
+from webshop.apps.user.user_roles import simple_role, HAS_RIGHTS, NO_RIGHTS
+
 
 register = template.Library()
 FROM_PRICE_HTML_A = render_to_string('snippets/from_price_a.html',{})
@@ -36,7 +37,10 @@ def get_single_option_list(article_options):
 
 
 
-
+@register.simple_tag
+def active(ref1, ref2):
+    if ref1 == ref2: return 'active'
+    return ''
 
 
 

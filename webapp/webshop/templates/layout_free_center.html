@@ -4,7 +4,7 @@
 
 <!-- Body Section -->
 {% block body %}
-<div id="leftBox" class="span2 leftBox">
+<div class="col-lg-2 leftBox">
     {% block left_block %}
         {% include "left_menu_inc.html" %}
     {% endblock %}
@@ -14,11 +14,11 @@
     {% endblock %}
 </div>
 
-<div id="centerBox" class="span8 centerBox">
+<div id="centerBox" class="col-lg-8 centerBox">
     {% block centerbox %}{% endblock %}
 </div>
 
-<div id="rightBox" class="span2 rightBox">
+<div id="rightBox" class="col-lg-2 rightBox">
     {% include 'user/profile/cart_items.html' %}
     <div class="right_announce_fb" id="fbLikeContainer"></div>
 </div>

@@ -104,7 +104,7 @@ def build_statics(env, version):
 
             for stylesheet in style.list:
                 fname = stylesheet.rsplit(".")[0].split('/')[-1]
-                run("~/node_modules/less/bin/lessc {project}/{subsite}/static/{stylesheet} --yui-compress {project}/{subsite}/static/css/{outname}.min.css".format(project=PROJECTNAME, subsite=loc, stylesheet=stylesheet, outname = fname))
+                run("~/node_modules/less/bin/lessc {project}/{subsite}/static/{stylesheet} --clean-css {project}/{subsite}/static/css/{outname}.min.css".format(project=PROJECTNAME, subsite=loc, stylesheet=stylesheet, outname = fname))
 
 
 

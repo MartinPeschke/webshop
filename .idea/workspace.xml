@@ -2,7 +2,106 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd16966f-0d71-459b-aa61-339f40092f4a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/alerts.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/badges.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/bootstrap.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/breadcrumbs.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/button-groups.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/buttons.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/carousel.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/close.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/code.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/component-animations.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/dropdowns.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/forms.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/glyphicons.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/grid.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/input-groups.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/jumbotron.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/labels.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/templates/explore/left_menu_inc.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/list-group.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/media.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/mixins.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/modals.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/less/site/nav.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/navbar.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/navs.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/normalize.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/pager.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/pagination.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/panels.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/popovers.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/print.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/progress-bars.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/responsive-utilities.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/scaffolding.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/tables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/theme.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/thumbnails.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/tooltip.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/type.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/utilities.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/variables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/static/bootstrap/wells.less" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\apps\explore\templatetags\cms_tags.py" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\accordion.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\alerts.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\badges.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\bootstrap.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\breadcrumbs.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\button-groups.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\buttons.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\carousel.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\close.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\code.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\component-animations.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\dropdowns.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\forms.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\grid.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\hero-unit.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\labels.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\layouts.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\mixins.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\modals.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\navbar.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\navs.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\pager.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\pagination.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\popovers.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\progress-bars.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\reset.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\responsive.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\scaffolding.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\sprites.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\tables.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\thumbnails.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\tooltip.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\type.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\utilities.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\variables.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\bootstrap\wells.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\less\site\responsive.less" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\templates\explore\LineTreeLeft.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/templates/500.html" afterPath="$PROJECT_DIR$/webapp/webshop/templates/500.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/templates/explore/article.html" afterPath="$PROJECT_DIR$/webapp/webshop/templates/explore/article.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/templates/explore/article_ajax.html" afterPath="$PROJECT_DIR$/webapp/webshop/templates/explore/article_ajax.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/templates/base.html" afterPath="$PROJECT_DIR$/webapp/webshop/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/libs/bootstrap.min.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/libs/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/less/site/cms.less" afterPath="$PROJECT_DIR$/webapp/webshop/static/less/site/cms.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/less/site/elements.less" afterPath="$PROJECT_DIR$/webapp/webshop/static/less/site/elements.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/apps/explore/templatetags/explore.py" afterPath="$PROJECT_DIR$/webapp/webshop/apps/explore/templatetags/explore.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deploy/fabfile.py" afterPath="$PROJECT_DIR$/deploy/fabfile.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/less/site/homepage.less" afterPath="$PROJECT_DIR$/webapp/webshop/static/less/site/homepage.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/templates/layout_free_center.html" afterPath="$PROJECT_DIR$/webapp/webshop/templates/layout_free_center.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/templates/left_menu_inc.html" afterPath="$PROJECT_DIR$/webapp/webshop/templates/left_menu_inc.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/templates/explore/line.html" afterPath="$PROJECT_DIR$/webapp/webshop/templates/explore/line.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/less/site/navigation.less" afterPath="$PROJECT_DIR$/webapp/webshop/static/less/site/navigation.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/templates/user/profile/shopping_cart.html" afterPath="$PROJECT_DIR$/webapp/webshop/templates/user/profile/shopping_cart.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/less/site/shopping_cart.less" afterPath="$PROJECT_DIR$/webapp/webshop/static/less/site/shopping_cart.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/less/site.less" afterPath="$PROJECT_DIR$/webapp/webshop/static/less/site.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ws.iml" afterPath="$PROJECT_DIR$/.idea/ws.iml" />
     </list>
     <ignored path="ws.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,10 +124,93 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="fabfile.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/deploy/fabfile.py">
+      <file leaf-file-name="left_menu_inc.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/left_menu_inc.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="150" selection-start="707" selection-end="707" vertical-scroll-proportion="0.15789473" vertical-offset="0" max-vertical-offset="1898">
+            <state line="2" column="11" selection-start="36" selection-end="51" vertical-scroll-proportion="-1.1818181" vertical-offset="0" max-vertical-offset="156">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="left_menu_inc.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/explore/left_menu_inc.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="48" selection-start="273" selection-end="273" vertical-scroll-proportion="-4.7272725" vertical-offset="0" max-vertical-offset="585">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="grid.less" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/webshop/static/bootstrap/grid.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="103" column="29" selection-start="2470" selection-end="2470" vertical-scroll-proportion="-18.085106" vertical-offset="489" max-vertical-offset="1430">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="variables.less" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/webshop/static/bootstrap/variables.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="268" column="0" selection-start="8375" selection-end="8375" vertical-scroll-proportion="-4.744681" vertical-offset="3261" max-vertical-offset="8489">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shopping_cart.less" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/webshop/static/less/site/shopping_cart.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="26" selection-start="323" selection-end="323" vertical-scroll-proportion="-1.9361702" vertical-offset="0" max-vertical-offset="715">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navigation.less" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webapp/webshop/static/less/site/navigation.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="33" selection-start="151" selection-end="151" vertical-scroll-proportion="0.17105263" vertical-offset="0" max-vertical-offset="608">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="elements.less" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/webshop/static/less/site/elements.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="36" selection-start="649" selection-end="649" vertical-scroll-proportion="-6.361702" vertical-offset="0" max-vertical-offset="546">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout_free_center.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/layout_free_center.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="28" selection-start="121" selection-end="129" vertical-scroll-proportion="-3.5454545" vertical-offset="0" max-vertical-offset="416">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="explore.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/webshop/apps/explore/templatetags/explore.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="0" selection-start="1186" selection-end="1186" vertical-scroll-proportion="0.0" vertical-offset="339" max-vertical-offset="2509">
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/env/Lib/site-packages/django-1.5.5-py2.7.egg/django/template/base.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1113" column="0" selection-start="40965" selection-end="40965" vertical-scroll-proportion="0.0" vertical-offset="13989" max-vertical-offset="17004">
               <folding />
             </state>
           </provider>
@@ -52,22 +234,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/webshop/WebShop/templates/left_block_announce.html" />
-        <option value="$PROJECT_DIR$/webshop/WebShop/templates/layout_free_center.html" />
-        <option value="$PROJECT_DIR$/webshop/WebShop/templates/explore/article_tip.html" />
-        <option value="$PROJECT_DIR$/webshop/WebShop/templates/left_menu_inc.html" />
-        <option value="$PROJECT_DIR$/webshop/WebShop/static/less/navigation.less" />
-        <option value="$PROJECT_DIR$/webshop/WebShop/apps/contrib/cart.py" />
-        <option value="$PROJECT_DIR$/webshop/WebShop/settings/production.py" />
-        <option value="$PROJECT_DIR$/webshop/WebShop/settings/local.py" />
-        <option value="$PROJECT_DIR$/webshop/WebShop/settings/base.py" />
-        <option value="$PROJECT_DIR$/webshop/WebShop/apps/service/views/__init__.py" />
-        <option value="$PROJECT_DIR$/webshop/WebShop/static/less/site.less" />
-        <option value="$PROJECT_DIR$/webshop/WebShop/templates/base.html" />
-        <option value="$PROJECT_DIR$/webshop/WebShop/templates/500.html" />
-        <option value="$PROJECT_DIR$/webshop/WebShop/templates/pages/welcome.html" />
-        <option value="$PROJECT_DIR$/webshop/webshop/apps/cms/admin.py" />
-        <option value="$PROJECT_DIR$/deploy/fabfile.py" />
+        <option value="$PROJECT_DIR$/webapp/webshop/static/less/site/nav.less" />
+        <option value="$PROJECT_DIR$/webapp/webshop/templates/explore/LineTreeLeft.html" />
+        <option value="$PROJECT_DIR$/webapp/webshop/templates/explore/article.html" />
+        <option value="$PROJECT_DIR$/webapp/webshop/templates/explore/line.html" />
+        <option value="$PROJECT_DIR$/webapp/webshop/apps/explore/templatetags/cms_tags.py" />
+        <option value="$PROJECT_DIR$/webapp/webshop/apps/explore/templatetags/explore.py" />
+        <option value="$PROJECT_DIR$/webapp/webshop/templates/layout_free_center.html" />
+        <option value="$PROJECT_DIR$/webapp/webshop/templates/left_menu_inc.html" />
+        <option value="$PROJECT_DIR$/webapp/webshop/static/less/bootstrap/variables.less" />
+        <option value="$PROJECT_DIR$/webapp/webshop/static/less/site.less" />
+        <option value="$PROJECT_DIR$/webapp/webshop/templates/explore/left_menu_inc.html" />
+        <option value="$PROJECT_DIR$/webapp/webshop/static/bootstrap/grid.less" />
+        <option value="$PROJECT_DIR$/webapp/webshop/static/less/site/elements.less" />
+        <option value="$PROJECT_DIR$/webapp/webshop/static/bootstrap/variables.less" />
+        <option value="$PROJECT_DIR$/webapp/webshop/static/less/site/shopping_cart.less" />
+        <option value="$PROJECT_DIR$/webapp/webshop/static/less/site/navigation.less" />
       </list>
     </option>
   </component>
@@ -197,7 +379,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="less" />
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apps" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -230,11 +434,12 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="com.jetbrains.django.DjangoModulesConfigurable" />
+    <property name="options.lastSelected" value="com.jetbrains.python.templateLanguages.TemplateLanguageModulesConfigurable" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="Z:/projects/babelweb" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/webapp/webshop/settings/local.py" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
     <property name="dynamic.classpath" value="false" />
@@ -447,10 +652,10 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="webshop.settings.local" />
       </envs>
       <option name="SDK_HOME" value="$PROJECT_DIR$/env/Scripts/python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/webshop" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/webapp" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -471,8 +676,8 @@
       <method />
     </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Query Language Console.Default" />
-      <item index="1" class="java.lang.String" itemvalue="Django server.webshop" />
+      <item index="0" class="java.lang.String" itemvalue="Django server.webshop" />
+      <item index="1" class="java.lang.String" itemvalue="Query Language Console.Default" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -509,6 +714,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32840237" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.25197682" sideWeight="0.6004273" order="0" side_tool="false" content_ui="combo" x="-552" y="-3" width="478" height="1095" />
@@ -521,7 +727,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840237" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -538,20 +743,120 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/env/Lib/site-packages/django-1.5.5-py2.7.egg/django/conf/__init__.py">
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/static/less/site/nav.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="175" column="11" selection-start="7155" selection-end="7355" vertical-scroll-proportion="0.42105263" vertical-offset="1729" max-vertical-offset="2977">
+        <state line="12" column="3" selection-start="276" selection-end="276" vertical-scroll-proportion="-3.319149" vertical-offset="0" max-vertical-offset="260">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deploy/fabfile.py">
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/explore/line.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="150" selection-start="707" selection-end="707" vertical-scroll-proportion="0.15789473" vertical-offset="0" max-vertical-offset="1898">
+        <state line="18" column="8" selection-start="631" selection-end="631" vertical-scroll-proportion="0.36966825" vertical-offset="0" max-vertical-offset="633">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/apps/explore/views/handler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="22" selection-start="232" selection-end="232" vertical-scroll-proportion="0.099236645" vertical-offset="0" max-vertical-offset="2665">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/explore/article.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="22" selection-start="444" selection-end="444" vertical-scroll-proportion="-4.7272725" vertical-offset="0" max-vertical-offset="689">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/left_menu_inc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="11" selection-start="36" selection-end="51" vertical-scroll-proportion="-1.1818181" vertical-offset="0" max-vertical-offset="156">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/env/Lib/site-packages/django-1.5.5-py2.7.egg/django/template/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1113" column="0" selection-start="40965" selection-end="40965" vertical-scroll-proportion="0.0" vertical-offset="13989" max-vertical-offset="17004">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/apps/explore/templatetags/explore.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="0" selection-start="1186" selection-end="1186" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="2509">
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/static/less/site.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="33" selection-start="391" selection-end="391" vertical-scroll-proportion="0.20722635" vertical-offset="0" max-vertical-offset="941">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/static/bootstrap/glyphicons.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="121" column="0" selection-start="6899" selection-end="6899" vertical-scroll-proportion="0.34962806" vertical-offset="1244" max-vertical-offset="3159">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/layout_free_center.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="28" selection-start="121" selection-end="129" vertical-scroll-proportion="-3.5454545" vertical-offset="0" max-vertical-offset="416">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/explore/left_menu_inc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="48" selection-start="273" selection-end="273" vertical-scroll-proportion="-4.7272725" vertical-offset="0" max-vertical-offset="585">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/static/bootstrap/grid.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="29" selection-start="2470" selection-end="2470" vertical-scroll-proportion="-18.085106" vertical-offset="489" max-vertical-offset="1430">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/static/less/site/elements.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="36" selection-start="649" selection-end="649" vertical-scroll-proportion="-6.361702" vertical-offset="0" max-vertical-offset="546">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/static/bootstrap/variables.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="268" column="0" selection-start="8375" selection-end="8375" vertical-scroll-proportion="-4.744681" vertical-offset="3261" max-vertical-offset="8489">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/static/less/site/shopping_cart.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="26" selection-start="323" selection-end="323" vertical-scroll-proportion="-1.9361702" vertical-offset="0" max-vertical-offset="715">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/static/less/site/navigation.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="33" selection-start="151" selection-end="151" vertical-scroll-proportion="0.17105263" vertical-offset="0" max-vertical-offset="608">
           <folding />
         </state>
       </provider>
