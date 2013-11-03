@@ -83,7 +83,7 @@ def build(env, version):
 
   run("mkdir {}".format(code_path))
   with cd(code_path):
-    run("cp -R {}repo.git/webshop/* .".format(environment_path))
+    run("cp -R {}repo.git/webapp/* .".format(environment_path))
 
 def build_statics(env, version):
     code_path = get_code_path(env, version)
