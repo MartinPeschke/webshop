@@ -5,103 +5,144 @@ from fabric.api import local
 from fabric.api import run, local, run, cd, lcd, put
 from fabric.contrib import files
 
-import shutil, os, md5, datetime, fabric
+import shutil, os, md5, fabric
+from datetime import datetime
+from collections import namedtuple
 from mako.template import Template
-from tempfile import NamedTemporaryFile
+SubSite = namedtuple("SubSite", ["location", "scripts", "styles"])
+Style = namedtuple("Style", ["list", "hasBuster"])
+Environment=namedtuple("Environment",["repository","process_groups","branch"])
 
-root = '/server/www/'
-workspace = '{}workspace/'.format(root)
-deploy_space = '{}deployment/'.format(root)
-transport_name = "deploypackage"
+############## CONFIG #########################
 
-statics_source = root
-statics_destination = 'WebShop/per4/media'
+PROJECTNAME="webshop"
+SUBSITES = [
+    SubSite(location = '.', scripts=["libs/bootstrap.min.js", "libs/JSON.js", "libs/underscore.js","libs/Backbone.js","site.js"], styles=Style(['less/website.less', 'less/welcome.less'], True))
+  ]
 
-
-dependencies = ['django', 'mysql-python', 'simplejson', 'supervisor', 'PIL']
-extra_dependencies = ['pip install -e git+git://github.com/earle/django-bootstrap.git#egg=bootstrap']
-
+CLEAN_SESSIONS = False
 
 
+ENVIRONMENTS = {
+    'live':Environment(
+            repository="www-data@aberdeen:/server/git_repositories/webshop_django.git"
+            ,process_groups=['p1','p2']
+            ,branch='master')
+}
 
+dependencies = ['django', 'mysql-python', 'simplejson', 'PIL']
+EXTRA_SETUP = ['./env/bin/pip install -e git+git://github.com/earle/django-bootstrap.git#egg=bootstrap']
+
+
+############## DONT TOUCH THIS ################
+
+root = '/server/www/{}/'.format(PROJECTNAME)
 def get_deploy_path(env):
-  return "{}{}/".format(deploy_space, env)
-def get_full_transport_name(env):
-  return "{}.{}.tar.bz2".format(transport_name, env)
-def get_code_destination(env):
-  return "{}{}/code/".format(deploy_space, env)
-def get_full_statics_destination(env):
-  return "{}".format(get_code_destination(env), statics_destination)
-  
-  
-  
-def clean_local():
-  if(os.path.exists('tmp')):
-    shutil.rmtree("tmp")
+  return "{}{}/".format(root, env)
+def get_code_path(env, version):
+    return '{}code/{}/'.format(get_deploy_path(env), version)
+def getShortToken(version):
+    return md5.new(version).hexdigest()
 
-def clean_remote(env):
-  environment_path = get_deploy_path(env)
-  with cd(environment_path):
-    run("rm -rf env/*")
-    run("virtualenv --no-site-packages env")
-    for package in dependencies:
-      run("env/bin/easy_install {}".format(package))
-    for command in extra_dependencies:
-      run("env/bin/{}".format(command))
+
 
 def create_env(env):
-  environment_path = get_deploy_path(env)
-  with cd(deploy_space):
-    run("rm -rf {}".format(env))
-    run("mkdir -p %s/{run,logs,code,env}" % env)
-  clean_remote(env)
+  env_path = get_deploy_path(env)
+  if files.exists(env_path):
+    with cd(get_deploy_path(env)):
+      run("rm -rf *")
+      run("mkdir -p {run,logs,code,env,repo.git,static}")
+  else:
+    run("mkdir -p {}/{{run,logs,code,env,repo.git,static}}".format(env_path))
 
-
-def package(env):
-  clean_local()
-  os.mkdir("tmp")
-  shutil.make_archive("tmp/deploypackage.{}".format(env), "bztar", "../webshop")
-
-def push_package(env):
-    with cd(workspace):
-      with lcd('tmp'):
-        run("rm -rf *")
-        put(get_full_transport_name(env), get_full_transport_name(env))
-
-def unpack_package(env):
-  with cd(workspace):
-    run("rm -rf {}".format(env))
-    run("mkdir {}".format(env))
-    run("tar xfvj {} -C {}".format(get_full_transport_name(env), env))
-
-def build(env):
-  environment_path = get_deploy_path(env)
-  run("rm -rf {}code/*".format(environment_path))
-  run("cp -R {}{}/* {}code/".format(workspace, env, environment_path))
-  with cd(environment_path):
-    result = run("env/bin/supervisorctl -c supervisor.cfg restart all", pty=True)
-    if "ERROR" in result:
-      run("tail -n50 logs/python.log", pty=True)
-      fabric.utils.abort("supervisord did not start: {}".format(result))
+  with cd(get_deploy_path(env)):
+    run("virtualenv --no-site-packages env")
+    run("env/bin/easy_install supervisor")
   
+  cfg_template = Template(filename='supervisor.cfg.mako')
+
+  with cd(env_path):
+    if files.exists("supervisor.cfg"): 
+      run("rm supervisor.cfg")
+    files.append("supervisor.cfg", cfg_template.render(env = env), escape=False)
+    run("env/bin/supervisord -c supervisor.cfg")
+    with cd("repo.git"):
+      run("git clone {} .".format(ENVIRONMENTS[env].repository))
+      run("git checkout {}".format(ENVIRONMENTS[env].branch))
+    for extra in EXTRA_SETUP:
+      run(extra)
 
 
-def build_statics(env):
+def update(env):
+  with cd("{}repo.git".format(get_deploy_path(env))):
+    run("git pull")
+
+def build(env, version):
   environment_path = get_deploy_path(env)
-  with cd("{}code/WebShop/static".format(environment_path)):
-    if(not files.exists("css")):
-      run("mkdir -p css")
-    run("~/node_modules/less/bin/lessc less/site.less css/site.min.css")
-    run("java -jar ~/resources/compiler.jar --compilation_level WHITESPACE_ONLY --js scripts/libs/bootstrap.min.js scripts/libs/JSON.js scripts/libs/underscore.js scripts/libs/Backbone.js scripts/site.js --js_output_file scripts/build/libs.js")
-  with cd(get_code_destination(env)):
-      run("echo $RANDOM$RANDOM$RANDOM > ./VERSION_TOKEN")
-    
+  code_path = get_code_path(env, version)
+
+  run("mkdir {}".format(code_path))
+  with cd(code_path):
+    run("cp -R {}repo.git/webapp/* .".format(environment_path))
+
+def build_statics(env, version):
+    code_path = get_code_path(env, version)
+  
+    # build player skin
+    with cd(code_path):
+        for subsite in SUBSITES:
+            loc = subsite.location
+            def getPath(path):
+                return "{project}/{subsite}/static/{path}".format(project=PROJECTNAME, subsite=loc, path=path)
+
+            style = subsite.styles
+            if not files.exists(getPath("css")):
+                run("mkdir -p {}".format(getPath("css")))
+
+            if style.hasBuster:
+                files.sed(getPath("less/cachebuster.less"), "CACHEBUSTTOKEN", '"{}"'.format(getShortToken(version)))
+
+            for stylesheet in style.list:
+                fname = stylesheet.rsplit(".")[0].split('/')[-1]
+                run("~/node_modules/less/bin/lessc {project}/{subsite}/static/{stylesheet} --yui-compress {project}/{subsite}/static/css/{outname}.min.css".format(project=PROJECTNAME, subsite=loc, stylesheet=stylesheet, outname = fname))
+
+
+
+        for subsite in SUBSITES:
+            if subsite.scripts:
+                if not files.exists("{project}/{subsite}/static/scripts/build/".format(project=PROJECTNAME, subsite=subsite.location)):
+                    run("mkdir -p {project}/{subsite}/static/scripts/build/".format(project=PROJECTNAME, subsite=subsite.location))
+
+                customs = " ".join(["{project}/{subsite}/static/scripts/{script}".format(project=PROJECTNAME, subsite=subsite.location, script = script) for script in subsite.scripts])
+                run("java -jar ~/resources/compiler.jar --compilation_level SIMPLE_OPTIMIZATIONS \
+                    --js {customs} \
+                    --warning_level QUIET --js_output_file {project}/{subsite}/static/scripts/build/site.js".format(project=PROJECTNAME, subsite=subsite.location, customs = customs))
+        run("echo {} > ./VERSION_TOKEN".format(getShortToken(version)))
+
+
+
+def switch(env, version):
+    environment_path = get_deploy_path(env)
+    code_path = get_code_path(env, version)
+
+    if CLEAN_SESSIONS:
+        result = run("redis-cli flushall")
+
+    with cd(environment_path):
+        run("cp {}{}.ini {}code".format(code_path, env, environment_path))
+        run("env/bin/python {}setup.py develop".format(code_path))
+        with cd("code"):
+            run("rm current;ln -s {} current".format(version))
+        for pg in ENVIRONMENTS[env].process_groups:
+            result = run("env/bin/supervisorctl -c supervisor.cfg restart {}:*".format(pg), pty=True)
+            if "ERROR" in result:
+              run("tail -n50 logs/python*.log", pty=True)
+              fabric.utils.abort("Process group did not start:{}: {}".format(pg, result))
+
+
 def deploy(env):
-  clean_local()
-  package(env)
-  push_package(env)
-  unpack_package(env)
-  build(env)
-  build_statics(env)
-  clean_local()  
-    
+  VERSION_TOKEN = datetime.now().strftime("%Y%m%d-%H%M%S-%f")[:-3]
+  update(env)
+  build(env, VERSION_TOKEN)
+  build_statics(env, VERSION_TOKEN)
+  switch(env, VERSION_TOKEN)

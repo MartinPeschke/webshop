@@ -5,7 +5,7 @@ from django.template import RequestContext
 
 from django.conf import settings 
 
-import Image, shutil
+import Image, shutil, os
 
 ROOT_FOLDER = os.path.join(settings.MEDIA_ROOT, 'ads')
 IMPORT_FOLDER = os.path.join(ROOT_FOLDER, 'import')

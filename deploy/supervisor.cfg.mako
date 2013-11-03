@@ -19,7 +19,19 @@ supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
 programs=p1
 
 [program:p1]
-command = %(here)s/env/bin/uwsgi --home %(here)s/env/ --socket %(here)s/run/per4.com.sock --chmod-socket --module uwsgi_app_live --pythonpath %(here)s/code
+command = %(here)s/env/bin/uwsgi --home %(here)s/env/ --socket %(here)s/run/per4.com.1.sock --chmod-socket --module uwsgi_app_live --pythonpath %(here)s/code
+process_name = %(program_name)s
+autostart = true
+startretries=10
+autorestart=true
+startsecs = 5
+user = www-data
+redirect_stderr = true
+stdout_logfile = %(here)s/logs/python.log
+environment=PYTHONPATH=%(here)s/code
+
+[program:p2]
+command = %(here)s/env/bin/uwsgi --home %(here)s/env/ --socket %(here)s/run/per4.com.2.sock --chmod-socket --module uwsgi_app_live --pythonpath %(here)s/code
 process_name = %(program_name)s
 autostart = true
 startretries=10

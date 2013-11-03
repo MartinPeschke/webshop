@@ -1,19 +1,23 @@
 # Django settings for WebShop project.
-import random
-import os
-from django.utils.translation import ugettext as _
+import random, os
 
-here = os.path.abspath(os.path.join(__file__, ".."))
-VERSION_FILE = os.path.join(here, "VERSION_TOKEN")
+_ = lambda s:s
 
+ROOT_PATH = os.path.normpath(os.path.join(os.path.dirname(__file__), '../../../'))
+PKG_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '..'))
+
+VERSION_FILE = os.path.join(ROOT_PATH, "VERSION_TOKEN")
 if os.path.exists(VERSION_FILE):
     STATIC_VERSION_TOKEN = open(VERSION_FILE).read().strip()
 else:
     STATIC_VERSION_TOKEN = random.random()
 
 
-DEBUG = True
-TEMPLATE_DEBUG = True
+
+
+
+DEBUG = False
+TEMPLATE_DEBUG = False
 
 USE_I18N = True
 
@@ -27,14 +31,20 @@ DEFAULT_SHOP ='piercing'
 # ---------------------- Basic Django - Customized for Per4 --------------------------
 # Email
 DEFAULT_FROM_EMAIL = 'webshop@per-4.com'
+
 EMAIL_HOST = 'post.strato.de'
 EMAIL_HOST_USER = 'webshop@per-4.net'
 EMAIL_HOST_PASSWORD = 'erwin0309'
 EMAIL_PORT = 25
 EMAIL_SUBJECT_PREFIX = '[PER4]'
-SERVER_EMAIL = 'martin@per-4.net'
-ORDER_MAIL = 'martin@per-4.net'
-ERROR_MAIL = 'martin@per-4.net'
+SERVER_EMAIL = 'webshop@per-4.net'
+ORDER_MAIL = 'webshop@per-4.net'
+ERROR_MAIL = 'martin@per-4.com'
+
+CACHE_TOKEN = "WebShop"
+SESSION_COOKIE_DOMAIN=".per-4.com"
+SESSION_EXPIRE_AT_BROWSER_CLOSE=False
+SESSION_COOKIE_AGE=31449600
 
 TAX_RATE = 19.0
 ARTICLE_LINE_PANE_SIZE = 8
@@ -55,10 +65,9 @@ GOOGLE_TRACKING = '''<script type="text/javascript">
                 pageTracker._trackPageview();
             </script>'''
 
-
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '&rl9146h%z6o+ph(8xap24@@ohy@o#5@7st@d69*v**ol(44v@'
-BOP_PUBLIC = 'b259a54d7febad1f979ef801d2ca3b2198f090cb'
+BOP_PUBLIC = 'd579f14e26fa6cf85584107135fbb9d0fd9f8659'
 
 FB_APP_ID="369049056473174"
 FB_APP_SECRET="8d775ba60036d30ee74586ed0771610e"
@@ -66,7 +75,7 @@ FB_APP_SECRET="8d775ba60036d30ee74586ed0771610e"
 # ---------------------- Basic Django --------------------------
 
 # Logger
-LOG_FILE = os.path.normpath(os.path.join(os.path.dirname(__file__), 'shop.log'))
+LOG_FILE = os.path.normpath(os.path.join(ROOT_PATH, 'logs/shop.log'))
 
 # Misc
 CACHE_BACKEND = 'locmem:///'
@@ -78,23 +87,21 @@ CACHES = {
     }
 }
 
-TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'WebShop', 'templates'),)
-LOCALE_PATHS = (
-    'd:/home/Martin/Documents/python/ws/webshop/WebShop/locale',
-    os.path.join(os.path.dirname(__file__), 'WebShop', 'locale'),)
+TEMPLATE_DIRS = (os.path.join(PKG_ROOT, 'templates'),)
+LOCALE_PATHS = (os.path.join(PKG_ROOT, 'locale'),)
 DATABASES = {
     'default': {
          'ENGINE':'django.db.backends.mysql'           # 'postgresql', 'mysql', 'sqlite3' or 'ado_mssql'.
-        ,'NAME':'devel'           # Or path to database file if using sqlite3.
-        ,'USER':'root'             # Not used with sqlite3.
-        ,'PASSWORD':'199xuxr0c'         # Not used with sqlite3.
+        ,'NAME':'per4_database'           # Or path to database file if using sqlite3.
+        ,'USER':'per4'             # Not used with sqlite3.
+        ,'PASSWORD':'asrfg234kl213hsklvn9sv3lj4kf'         # Not used with sqlite3.
         ,'HOST':'localhost'             # Set to empty string for localhost. Not used with sqlite3.
         ,'PORT':'3306'             # Set to empty string for default. Not used with sqlite3.
     },	'articledb': {
          'ENGINE':'django.db.backends.mysql'           # 'postgresql', 'mysql', 'sqlite3' or 'ado_mssql'.
-        ,'NAME':'devel'           # Or path to database file if using sqlite3.
-        ,'USER':'root'             # Not used with sqlite3.
-        ,'PASSWORD':'199xuxr0c'         # Not used with sqlite3.
+        ,'NAME':'per4_database'           # Or path to database file if using sqlite3.
+        ,'USER':'per4'             # Not used with sqlite3.
+        ,'PASSWORD':'asrfg234kl213hsklvn9sv3lj4kf'         # Not used with sqlite3.
         ,'HOST':'localhost'             # Set to empty string for localhost. Not used with sqlite3.
         ,'PORT':'3306'             # Set to empty string for default. Not used with sqlite3.
     }
@@ -109,13 +116,14 @@ SITE_ID = 1
 
 # URL that handles the media served from MEDIA_ROOT.
 # Example: "http://media.lawrence.com"
-MEDIA_URL = '/media'
+MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
-STATIC_ROOT=os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 'static'))
+STATIC_ROOT=os.path.join(PKG_ROOT, 'static')
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 'media'))
-DATA_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 'data'))
+MEDIA_ROOT = os.path.join(ROOT_PATH, 'files')
+DATA_ROOT = os.path.join(PKG_ROOT, 'data')
+
 
 # Language code for this installation. All choices can be found here:
 # http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes
@@ -123,6 +131,14 @@ DATA_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 
 # from django.utils.translation import gettext_lazy as _
 LANGUAGE_CODE = 'en'
 MANAGERS = ADMINS
+
+
+
+# URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
+# trailing slash.
+# Examples: "http://foo.com/media/", "/media/".
+ADMIN_MEDIA_PREFIX = '/admin_media/'
+
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -153,7 +169,7 @@ MIDDLEWARE_CLASSES = (
    'django.contrib.sessions.middleware.SessionMiddleware',
    'django.middleware.locale.LocaleMiddleware',
    'django.contrib.auth.middleware.AuthenticationMiddleware',
-   'django.contrib.messages.middleware.MessageMiddleware'
+   'django.contrib.messages.middleware.MessageMiddleware',
 )
 
 INSTALLED_APPS = (
@@ -161,7 +177,6 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.messages',
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'WebShop.apps.contrib.countries',

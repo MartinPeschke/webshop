@@ -23,7 +23,7 @@
   <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
   {% if debug %}
     <link rel="stylesheet/less" href="{{ STATIC_URL }}less/site.less?{{ STATIC_TOKEN }}">
-    <script src="{{ STATIC_URL }}scripts/libs/less-1.3.0.min.js" type="text/javascript"></script>
+    <script src="{{ STATIC_URL }}scripts/libs/less-1.5.0.min.js" type="text/javascript"></script>
   {% else %}
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/site.min.css?{{ STATIC_TOKEN }}" />
   {% endif %}
@@ -193,9 +193,7 @@
     <input id="next" type="hidden" name="next" value="{{ request.path }}"/>
   </form>
 {% block jst %}{% endblock %}
-
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   {% if debug %}
       <script src="{{ STATIC_URL }}scripts/libs/bootstrap.min.js"></script>
       <script src="{{ STATIC_URL }}scripts/libs/JSON.js"></script>

@@ -1,5 +1,4 @@
 from decimal import Decimal, ROUND_UP
-from operator import attrgetter
 
 from WebShop.apps.user.lib import get_role
 from WebShop.apps.user.user_roles import simple_role
@@ -17,7 +16,7 @@ class Cart(object):
 
     def initUser(self, user):
         self.simple_user_role = simple_role[get_role(user)]
-        if(user.is_authenticated() and user.get_profile().taxFreed):
+        if user.is_authenticated() and user.get_profile().taxFreed:
             self.taxRate = 0
         self.total = 0
         items = [(ao.id, ao.quantity) for ao in self.items]
