@@ -130,6 +130,7 @@ DATA_ROOT = os.path.join(PKG_ROOT, 'data')
 # http://blogs.law.harvard.edu/tech/stories/storyReader$15
 # from django.utils.translation import gettext_lazy as _
 LANGUAGE_CODE = 'en'
+AVAILABLE_LANGUAGES = ['en', 'de', 'es']
 MANAGERS = ADMINS
 
 
@@ -150,7 +151,7 @@ TEMPLATE_LOADERS = (
 # only parameter and returns a dictionary to add to the context.
 TEMPLATE_CONTEXT_PROCESSORS = (
     'webshop.apps.contrib.middleware.random_promo_processor',
-    'webshop.apps.contrib.middleware.cart_shops_processor',
+    'webshop.apps.contrib.middleware.template_globals',
     'django.contrib.auth.context_processors.auth',
     "django.core.context_processors.debug",
     "django.core.context_processors.i18n",
@@ -186,7 +187,7 @@ INSTALLED_APPS = (
     'webshop.apps.search',
     'webshop.apps.service',
     'webshop.apps.cms',
-    'bootstrap',
+    'bootstrapform',
 )
 
 

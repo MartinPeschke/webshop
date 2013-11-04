@@ -2,6 +2,12 @@
 
 <ul class="nav nav-explore">
   {% for shop in shops %}
-  <li><a href="/{{ shop.ref }}/">{{ shop.name|locale:LANGUAGE_CODE }}</a></li>
+  <li>
+    <a href="/{{ shop.ref }}/">
+      <span class="glyphicon"></span>
+      {{ shop.name|locale:LANGUAGE_CODE }}
+    </a>
+  </li>
   {% endfor %}
 </ul>
+{% include "search/search_inline.html" %}

@@ -1,42 +1,15 @@
 __author__ = 'Martin'
-from operator import itemgetter, attrgetter
 from django import forms
 from django.conf import settings
 from django.forms.widgets import Select
-from django.utils.translation import ugettext as _, ugettext_lazy
-from webshop.apps.lib.baseviews import BaseForm, Fieldset
+from django.utils.translation import ugettext_lazy
 from django.forms import widgets
 
+from webshop.apps.lib.baseviews import BaseForm
 from .auth import WEEKDAYS, COUNTRIES, LANGUAGES
 
+
 class AddressesForm(BaseForm):
-    class Meta:
-        layout = (
-            Fieldset(
-                ugettext_lazy("Rechnungsadresse"),
-                'billing_name',
-                'billing_street',
-                'billing_city',
-                'billing_zip',
-                'billing_country',
-                'billing_language',
-                'billing_tel',
-                'billing_mobile',
-                'billing_fax',
-                'same_address'
-            ), Fieldset (
-                ugettext_lazy("Lieferadresse"),
-                'shipping_name',
-                'shipping_street',
-                'shipping_city',
-                'shipping_zip',
-                'shipping_country',
-                'shipping_language',
-                'shipping_tel',
-                'shipping_mobile',
-                'shipping_fax'
-            )
-        )
 
     billing_name = forms.CharField(label = ugettext_lazy('Empf&auml;nger*'), required=True, widget = widgets.TextInput(attrs={"class":"billing-detail", "_form_key":"name"}))
     billing_street = forms.CharField(label = ugettext_lazy('Strasse*'), required=True, widget = widgets.TextInput(attrs={"class":"billing-detail", "_form_key":"street"}))
@@ -66,15 +39,7 @@ class AccountRetailDetailsForm(BaseForm):
     title = forms.ChoiceField(choices=settings.TITLE_CHOICES, label = ugettext_lazy('Anrede'))
     first_name = forms.CharField(max_length = 32, label = ugettext_lazy('Vorname*'))
     last_name = forms.CharField(max_length = 32, label = ugettext_lazy('Nachname*'))
-    class Meta:
-        layout = (
-            Fieldset(
-                ugettext_lazy('Registrierung'),
-                'title',
-                'first_name',
-                'last_name'
-            ),
-            )
+
 
 class AccountWholesaleDetailsForm(AccountRetailDetailsForm):
     webpage = forms.CharField(required=False, label = ugettext_lazy('Webseite'))
@@ -85,19 +50,3 @@ class AccountWholesaleDetailsForm(AccountRetailDetailsForm):
     weekdays = forms.MultipleChoiceField(widget = forms.CheckboxSelectMultiple
         ,choices=WEEKDAYS
         ,label = ugettext_lazy(u'Wochentage'))
-    class Meta:
-        layout = (
-            Fieldset(
-                ugettext_lazy('Registrierung'),
-                'company_name',
-                'title',
-                'first_name',
-                'last_name',
-                'webpage',
-
-                'bo_customer_no',
-                'opening_hours',
-                'weekdays',
-                'vat_id',
-            ),
-            )

@@ -4,6 +4,8 @@ from .base import *
 DEBUG = True
 TEMPLATE_DEBUG = True
 
+USE_X_FORWARDED_HOST='local.per-4.com'
+
 GOOGLE_TRACKING = ''
 SECRET_KEY= '123'
 
