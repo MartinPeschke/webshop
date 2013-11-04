@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd16966f-0d71-459b-aa61-339f40092f4a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webshop/settings/dev.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/uwsgi_app.py" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\uwsgi_app_live.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deploy/fabfile.py" afterPath="$PROJECT_DIR$/deploy/fabfile.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ws.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,7 +26,44 @@
     <favorites_list name="ws" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="fabfile.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/deploy/fabfile.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="92" column="0" selection-start="2958" selection-end="2958" vertical-scroll-proportion="0.0" vertical-offset="993" max-vertical-offset="1963">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="supervisor.cfg.mako" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/deploy/supervisor.cfg.mako">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="79" selection-start="909" selection-end="909" vertical-scroll-proportion="-19.5" vertical-offset="0" max-vertical-offset="637">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dev.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/webshop/settings/dev.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="94" selection-start="595" selection-end="596" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="403">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uwsgi_app.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webapp/uwsgi_app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="0" selection-start="0" selection-end="89" vertical-scroll-proportion="0.053608246" vertical-offset="0" max-vertical-offset="970">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -44,7 +81,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/webapp/webshop/templates/explore/article.html" />
         <option value="$PROJECT_DIR$/webapp/webshop/templates/explore/line.html" />
         <option value="$PROJECT_DIR$/webapp/webshop/apps/explore/templatetags/cms_tags.py" />
         <option value="$PROJECT_DIR$/webapp/webshop/apps/explore/templatetags/explore.py" />
@@ -58,16 +94,17 @@
         <option value="$PROJECT_DIR$/webapp/webshop/static/bootstrap/variables.less" />
         <option value="$PROJECT_DIR$/webapp/webshop/static/less/site/shopping_cart.less" />
         <option value="$PROJECT_DIR$/webapp/webshop/static/less/site/navigation.less" />
-        <option value="$PROJECT_DIR$/deploy/fabfile.py" />
         <option value="$PROJECT_DIR$/webapp/webshop/settings/dev.py" />
+        <option value="$PROJECT_DIR$/deploy/fabfile.py" />
+        <option value="$PROJECT_DIR$/webapp/uwsgi_app_live.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1092" />
+    <option name="x" value="1" />
+    <option name="y" value="1" />
+    <option name="width" value="1918" />
+    <option name="height" value="1078" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -442,8 +479,8 @@
       <method />
     </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Query Language Console.Default" />
-      <item index="1" class="java.lang.String" itemvalue="Django server.webshop" />
+      <item index="0" class="java.lang.String" itemvalue="Django server.webshop" />
+      <item index="1" class="java.lang.String" itemvalue="Query Language Console.Default" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -474,15 +511,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1092" extended-state="0" />
-    <editor active="false" />
+    <frame x="1" y="1" width="1918" height="1078" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.25197682" sideWeight="0.6004273" order="0" side_tool="false" content_ui="combo" x="-552" y="-3" width="478" height="1095" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.25197682" sideWeight="0.6004273" order="0" side_tool="false" content_ui="combo" x="-552" y="0" width="478" height="1095" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3984221" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -513,25 +550,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webapp/webshop/static/bootstrap/glyphicons.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="0" selection-start="6899" selection-end="6899" vertical-scroll-proportion="0.34962806" vertical-offset="1244" max-vertical-offset="3159" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/webshop/static/less/site/navigation.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="33" selection-start="151" selection-end="155" vertical-scroll-proportion="0.10810811" vertical-offset="0" max-vertical-offset="962">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/webshop/static/less/site/shopping_cart.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="26" selection-start="323" selection-end="323" vertical-scroll-proportion="0.0945946" vertical-offset="0" max-vertical-offset="962">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/webshop/static/bootstrap/variables.less">
       <provider selected="true" editor-type-id="text-editor">
         <state line="268" column="0" selection-start="8375" selection-end="8375" vertical-scroll-proportion="0.23180874" vertical-offset="3261" max-vertical-offset="8489">
@@ -588,20 +606,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deploy/fabfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1324" selection-end="1324" vertical-scroll-proportion="0.3800813" vertical-offset="29" max-vertical-offset="1976">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/webshop/settings/dev.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="1" selection-start="1250" selection-end="1250" vertical-scroll-proportion="0.33028457" vertical-offset="0" max-vertical-offset="984">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/webshop/settings/production.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="19" selection-start="134" selection-end="134" vertical-scroll-proportion="0.039634146" vertical-offset="0" max-vertical-offset="984">
@@ -619,6 +623,41 @@
     <entry file="file://$PROJECT_DIR$/webapp/webshop/settings/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="103" column="36" selection-start="3403" selection-end="3403" vertical-scroll-proportion="0.2906504" vertical-offset="1053" max-vertical-offset="2665">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deploy/deploy.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="86" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="984">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deploy/fabfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="0" selection-start="2958" selection-end="2958" vertical-scroll-proportion="0.0" vertical-offset="993" max-vertical-offset="1963">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deploy/supervisor.cfg.mako">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="79" selection-start="909" selection-end="909" vertical-scroll-proportion="-19.5" vertical-offset="0" max-vertical-offset="637">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/settings/dev.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="94" selection-start="595" selection-end="596" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="403">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/uwsgi_app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="0" selection-end="89" vertical-scroll-proportion="0.053608246" vertical-offset="0" max-vertical-offset="970">
           <folding />
         </state>
       </provider>

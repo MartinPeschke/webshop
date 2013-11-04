@@ -34,7 +34,7 @@ ENVIRONMENTS = {
             ,branch='master')
 }
 
-dependencies = ['django', 'mysql-python', 'simplejson', 'PIL']
+dependencies = ['django', 'mysql-python', 'simplejson', 'PIL', 'uwsgi']
 EXTRA_SETUP = ['./env/bin/pip install -e git+git://github.com/earle/django-bootstrap.git#egg=bootstrap']
 
 
@@ -135,7 +135,6 @@ def switch(env, version):
         result = run("redis-cli flushall")
 
     with cd(environment_path):
-        run("cp {}{}.ini {}code".format(code_path, env, environment_path))
         run("env/bin/python {}setup.py develop".format(code_path))
         with cd("code"):
             run("rm current;ln -s {} current".format(version))
