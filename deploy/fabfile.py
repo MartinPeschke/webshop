@@ -129,13 +129,7 @@ def build_statics(env, version):
 
 def switch(env, version):
     environment_path = get_deploy_path(env)
-    code_path = get_code_path(env, version)
-
-    if CLEAN_SESSIONS:
-        result = run("redis-cli flushall")
-
     with cd(environment_path):
-        run("env/bin/python {}setup.py develop".format(code_path))
         with cd("code"):
             run("rm current;ln -s {} current".format(version))
         for pg in ENVIRONMENTS[env].process_groups:
