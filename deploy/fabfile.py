@@ -27,7 +27,7 @@ ENVIRONMENTS = {
     'dev':Environment(
             repository="www-data@aberdeen:/server/git_repositories/webshop_django.git"
             ,process_groups=['p1','p2']
-            ,branch='master')
+            ,branch='master')default
     , 'live':Environment(
             repository="www-data@aberdeen:/server/git_repositories/webshop_django.git"
             ,process_groups=['p1','p2']
