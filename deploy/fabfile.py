@@ -24,7 +24,11 @@ CLEAN_SESSIONS = False
 
 
 ENVIRONMENTS = {
-    'live':Environment(
+    'dev':Environment(
+            repository="www-data@aberdeen:/server/git_repositories/webshop_django.git"
+            ,process_groups=['p1','p2']
+            ,branch='master')
+    , 'live':Environment(
             repository="www-data@aberdeen:/server/git_repositories/webshop_django.git"
             ,process_groups=['p1','p2']
             ,branch='master')
@@ -69,6 +73,8 @@ def create_env(env):
     with cd("repo.git"):
       run("git clone {} .".format(ENVIRONMENTS[env].repository))
       run("git checkout {}".format(ENVIRONMENTS[env].branch))
+    for dep in dependencies:
+      run("'./env/bin/easy_install {}".format(dep))
     for extra in EXTRA_SETUP:
       run(extra)
 
