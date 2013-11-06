@@ -1,4 +1,5 @@
-﻿from django.http import HttpResponseRedirect
+﻿from django.core import serializers
+from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib import auth, messages
 from django.shortcuts import render_to_response
 from django.template import RequestContext
@@ -31,7 +32,6 @@ def logout(request):
         return HttpResponseRedirect(referer)
 
 
-@json
 def check_mail(request):
     email = request.GET.get('email')
     if not email:
@@ -43,7 +43,7 @@ def check_mail(request):
         result = True
     except User.MultipleObjectsReturned:
         result = _("Emailadresse bereits vergeben")
-    return result
+    return HttpResponse(simplejson.dumps(result), mimetype='application/json')
 
 
 

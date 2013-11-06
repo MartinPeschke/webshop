@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: TurboGearShop VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-05-23 14:27+0200\n"
-"PO-Revision-Date: 2013-03-16 21:45+0100\n"
+"PO-Revision-Date: 2013-11-06 20:48+0100\n"
 "Last-Translator: \n"
 "Language-Team: turbogearshop <turbogearshop@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en_CN\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: .\apps\contrib\countries\models.py:22
 msgid "ISO alpha-2"
@@ -353,7 +353,7 @@ msgstr "I am"
 
 #: .\apps\user\forms\auth.py:148
 msgid "Diese Emailadresse ist bereits vergeben."
-msgstr "This email address us already registered"
+msgstr "This email address is already registered"
 
 #: .\apps\user\forms\auth.py:153
 msgid "Bitte Ã¼berprÃ¼fen Sie Ihr Passwort."

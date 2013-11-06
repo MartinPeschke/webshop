@@ -1,5 +1,6 @@
 from operator import attrgetter
 import os
+from bootstrapform.templatetags.bootstrap import render
 
 from django import template
 from django.utils.translation import ugettext as _
@@ -12,6 +13,12 @@ from webshop.apps.user.user_roles import simple_role, HAS_RIGHTS, NO_RIGHTS
 
 register = template.Library()
 FROM_PRICE_HTML_A = render_to_string('snippets/from_price_a.html',{})
+
+
+@register.filter
+def bootstrap_prop(element):
+    markup_classes = {'label': '', 'value': 'controls', 'single_value': 'controls'}
+    return render(element, markup_classes)
 
 
 

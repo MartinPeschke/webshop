@@ -178,15 +178,8 @@
   </form>
 {% block jst %}{% endblock %}
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  {% if debug %}
-      <script src="{{ STATIC_URL }}scripts/libs/bootstrap.min.js"></script>
-      <script src="{{ STATIC_URL }}scripts/libs/JSON.js"></script>
-      <script src="{{ STATIC_URL }}scripts/libs/underscore.js"></script>
-      <script src="{{ STATIC_URL }}scripts/libs/Backbone.js"></script>
-      <script src="{{ STATIC_URL }}scripts/site.js?{{ STATIC_TOKEN }}"></script>
-  {% else %}
-      <script src="{{ STATIC_URL }}scripts/build/libs.js?{{ STATIC_TOKEN }}"></script>
-  {% endif %}
+  <script src="{{ STATIC_URL }}scripts/libs.min.js?{{ STATIC_TOKEN }}"></script>
+  <script src="{{ STATIC_URL }}scripts/site.js?{{ STATIC_TOKEN }}"></script>
 
 
   <script>

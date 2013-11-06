@@ -1,5 +1,4 @@
 {% extends "layout_free_center.html" %}
-{% load bootstrap %}
 {% load i18n %}
 {% load explore %}
 {% load url from future %}
@@ -29,7 +28,7 @@
     <div class="tab-content">
       <div class="tab-pane active">
         <form method="post" class="form-validated mar-top-2">
-          {{ form|bootstrap }}
+          {{ form|bootstrap_prop }}
           <div class="form-actions">
             <button type="submit" class="btn btn-primary">{{ form.submit_label }}</button>
           </div>

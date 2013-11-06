@@ -17,7 +17,7 @@ Environment=namedtuple("Environment",["repository","process_groups","branch"])
 
 PROJECTNAME="webshop"
 SUBSITES = [
-    SubSite(location = '.', scripts=["libs/bootstrap.min.js", "libs/JSON.js", "libs/underscore.js","libs/Backbone.js","site.js"], styles=Style(['less/site.less', 'less/welcome.less'], True))
+    SubSite(location = '.', scripts=["libs.js","site.js"], styles=Style(['less/site.less', 'less/welcome.less'], True))
   ]
 
 CLEAN_SESSIONS = False

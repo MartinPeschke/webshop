@@ -2,7 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd16966f-0d71-459b-aa61-339f40092f4a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/less/site/header.less" afterPath="$PROJECT_DIR$/webapp/webshop/static/less/site/header.less" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\scripts\localization\messages_cn.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\scripts\localization\messages_ge.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\scripts\localization\messages_ptbr.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\scripts\localization\messages_ptpt.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\scripts\localization\messages_se.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\scripts\localization\messages_tw.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\scripts\localization\messages_ua.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/locale/en/LC_MESSAGES/django.mo" afterPath="$PROJECT_DIR$/webapp/webshop/locale/en/LC_MESSAGES/django.mo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/apps/user/forms/auth.py" afterPath="$PROJECT_DIR$/webapp/webshop/apps/user/forms/auth.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/apps/user/views/auth.py" afterPath="$PROJECT_DIR$/webapp/webshop/apps/user/views/auth.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/apps/user/backends.py" afterPath="$PROJECT_DIR$/webapp/webshop/apps/user/backends.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/templates/base.html" afterPath="$PROJECT_DIR$/webapp/webshop/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/templates/user/auth/base.html" afterPath="$PROJECT_DIR$/webapp/webshop/templates/user/auth/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/bo_update.log" afterPath="$PROJECT_DIR$/webapp/bo_update.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/locale/en/LC_MESSAGES/django.po" afterPath="$PROJECT_DIR$/webapp/webshop/locale/en/LC_MESSAGES/django.po" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/apps/explore/templatetags/explore.py" afterPath="$PROJECT_DIR$/webapp/webshop/apps/explore/templatetags/explore.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deploy/fabfile.py" afterPath="$PROJECT_DIR$/deploy/fabfile.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/less/site/forms.less" afterPath="$PROJECT_DIR$/webapp/webshop/static/less/site/forms.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/libs/jquery.validate.min.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/libs/jquery.validate.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_ar.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_ar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_bg.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_bg.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_ca.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_ca.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_cs.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_cs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_da.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_da.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_de.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_de.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_el.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_el.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_es.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_es.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_eu.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_eu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_fa.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_fa.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_fi.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_fi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_fr.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_fr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_he.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_he.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_hu.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_hu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_it.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_it.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_ja.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_ja.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_kk.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_kk.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_lt.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_lt.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_lv.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_lv.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_nl.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_nl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_no.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_no.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_pl.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_pl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_ro.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_ro.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_ru.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_ru.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_si.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_si.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_sk.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_sk.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_sl.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_sl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_sr.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_sr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_th.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_th.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_tr.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_tr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_vi.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_vi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/methods_de.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/methods_de.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/methods_nl.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/methods_nl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/methods_pt.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/methods_pt.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/templates/snippets/validation_scripts.html" afterPath="$PROJECT_DIR$/webapp/webshop/templates/snippets/validation_scripts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ws.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,19 +80,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="layout_free_center.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/layout_free_center.html">
+      <file leaf-file-name="auth.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/webshop/apps/user/views/auth.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="6" selection-start="428" selection-end="428" vertical-scroll-proportion="-10.636364" vertical-offset="0" max-vertical-offset="416">
-              <folding />
+            <state line="43" column="40" selection-start="1667" selection-end="1667" vertical-scroll-proportion="0.0" vertical-offset="273" max-vertical-offset="2509">
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.less" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/webapp/webshop/static/less/site/header.less">
+      <file leaf-file-name="finish_signup.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/user/auth/finish_signup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="41" selection-start="117" selection-end="117" vertical-scroll-proportion="0.04276316" vertical-offset="0" max-vertical-offset="608">
+            <state line="22" column="32" selection-start="708" selection-end="708" vertical-scroll-proportion="-13.0" vertical-offset="0" max-vertical-offset="377">
               <folding />
             </state>
           </provider>
@@ -46,16 +103,65 @@
       <file leaf-file-name="variables.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapp/webshop/static/bootstrap/variables.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="0" selection-start="1238" selection-end="1253" vertical-scroll-proportion="-7.4042554" vertical-offset="250" max-vertical-offset="8489">
+            <state line="396" column="1" selection-start="12628" selection-end="12628" vertical-scroll-proportion="-4.638298" vertical-offset="4930" max-vertical-offset="8489">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/base.html">
+      <file leaf-file-name="auth.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/webshop/apps/user/forms/auth.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="15" selection-start="3514" selection-end="3514" vertical-scroll-proportion="-1.7727273" vertical-offset="780" max-vertical-offset="2704">
+            <state line="105" column="91" selection-start="4331" selection-end="4331" vertical-scroll-proportion="0.0" vertical-offset="1171" max-vertical-offset="2132">
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="site.less" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/webshop/static/less/site.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="19" selection-start="457" selection-end="462" vertical-scroll-proportion="-5.808511" vertical-offset="0" max-vertical-offset="468">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.less" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/webshop/static/less/site/forms.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="0" selection-start="174" selection-end="174" vertical-scroll-proportion="-2.212766" vertical-offset="0" max-vertical-offset="208">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="explore.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/webshop/apps/explore/templatetags/explore.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="19" selection-start="685" selection-end="685" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2600">
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/user/auth/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="34" selection-start="1565" selection-end="1565" vertical-scroll-proportion="-24.227272" vertical-offset="0" max-vertical-offset="624">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="validation_scripts.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/snippets/validation_scripts.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="35" selection-start="1004" selection-end="1004" vertical-scroll-proportion="0.36966825" vertical-offset="0" max-vertical-offset="633">
               <folding />
             </state>
           </provider>
@@ -79,22 +185,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/webapp/webshop/templates/explore/left_menu_inc.html" />
-        <option value="$PROJECT_DIR$/webapp/webshop/templates/explore/line.html" />
-        <option value="$PROJECT_DIR$/webapp/webshop/templates/search/search_inline.html" />
-        <option value="$PROJECT_DIR$/webapp/webshop/static/less/site/navigation.less" />
-        <option value="$PROJECT_DIR$/webapp/webshop/templates/left_block_announce.html" />
-        <option value="$PROJECT_DIR$/webapp/webshop/settings/base.py" />
-        <option value="$PROJECT_DIR$/webapp/webshop/apps/lib/baseviews.py" />
-        <option value="$PROJECT_DIR$/webapp/webshop/apps/order/forms.py" />
         <option value="$PROJECT_DIR$/webapp/webshop/apps/user/forms/profile.py" />
         <option value="$PROJECT_DIR$/webapp/webshop/static/less/site/elements.less" />
-        <option value="$PROJECT_DIR$/webapp/webshop/apps/user/forms/auth.py" />
         <option value="$PROJECT_DIR$/webapp/webshop/static/less/site/layout.less" />
         <option value="$PROJECT_DIR$/webapp/webshop/static/less/site.less" />
-        <option value="$PROJECT_DIR$/webapp/webshop/templates/user/auth/base.html" />
         <option value="$PROJECT_DIR$/webapp/webshop/settings/local.py" />
         <option value="$PROJECT_DIR$/webapp/webshop/static/less/site/header.less" />
+        <option value="$PROJECT_DIR$/webapp/webshop/apps/user/backends.py" />
+        <option value="$PROJECT_DIR$/webapp/webshop/apps/explore/templatetags/explore.py" />
+        <option value="$PROJECT_DIR$/webapp/webshop/templates/user/auth/base.html" />
+        <option value="$PROJECT_DIR$/deploy/fabfile.py" />
+        <option value="$PROJECT_DIR$/webapp/webshop/templates/base.html" />
+        <option value="$PROJECT_DIR$/webapp/webshop/apps/user/views/auth.py" />
+        <option value="$PROJECT_DIR$/webapp/webshop/apps/user/forms/auth.py" />
+        <option value="$PROJECT_DIR$/webapp/webshop/static/less/site/forms.less" />
+        <option value="$PROJECT_DIR$/webapp/webshop/static/bootstrap/mixins.less" />
+        <option value="$PROJECT_DIR$/webapp/webshop/templates/snippets/validation_scripts.html" />
       </list>
     </option>
   </component>
@@ -198,7 +304,85 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="less" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="less" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apps" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -234,15 +418,15 @@
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/webapp/webshop/static/less/site" />
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/webapp/webshop/static/less/site" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -352,27 +536,7 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="ws" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
@@ -398,7 +562,27 @@
       <option name="customRunCommand" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ws" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
@@ -546,128 +730,131 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/webapp/webshop/apps/contrib/decorator.py</url>
+          <line>92</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="22" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webapp/webshop/apps/user/urls.py">
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="25" selection-start="413" selection-end="413" vertical-scroll-proportion="0.13356164" vertical-offset="0" max-vertical-offset="584">
+        <state line="168" column="16" selection-start="8554" selection-end="8554" vertical-scroll-proportion="-5.4545455" vertical-offset="2064" max-vertical-offset="2613">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/env/Lib/site-packages/django-1.5.5-py2.7.egg/django/conf/urls/i18n.py">
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/apps/lib/baseviews.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="48" selection-start="572" selection-end="572" vertical-scroll-proportion="0.40068492" vertical-offset="0" max-vertical-offset="584">
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/webshop/settings/local.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="135" selection-end="135" vertical-scroll-proportion="0.15582192" vertical-offset="0" max-vertical-offset="584">
+        <state line="24" column="0" selection-start="733" selection-end="733" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1469">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/env/Lib/site-packages/django-1.5.5-py2.7.egg/django/http/request.py">
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/apps/explore/templatetags/explore.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="40" selection-start="1643" selection-end="1663" vertical-scroll-proportion="0.3321918" vertical-offset="404" max-vertical-offset="6474">
+        <state line="24" column="19" selection-start="685" selection-end="685" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2600">
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/user/auth/finish_signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="32" selection-start="708" selection-end="708" vertical-scroll-proportion="-13.0" vertical-offset="0" max-vertical-offset="377">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/env/Lib/site-packages/django-1.5.5-py2.7.egg/django/views/i18n.py">
+    <entry file="file://$PROJECT_DIR$/env/Lib/site-packages/django-1.5.5-py2.7.egg/django/http/response.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="50" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.35445204" vertical-offset="131" max-vertical-offset="3770">
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state line="256" column="8" selection-start="9489" selection-end="9489" vertical-scroll-proportion="0.3321918" vertical-offset="3069" max-vertical-offset="5824">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/webshop/urls.py">
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/apps/contrib/decorator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="53" selection-start="2834" selection-end="2834" vertical-scroll-proportion="0.7773973" vertical-offset="521" max-vertical-offset="1261">
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
+        <state line="33" column="0" selection-start="1162" selection-end="1162" vertical-scroll-proportion="0.5787671" vertical-offset="0" max-vertical-offset="1365">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/env/Lib/site-packages/django-1.5.5-py2.7.egg/django/core/handlers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="134" column="77" selection-start="6053" selection-end="6053" vertical-scroll-proportion="0.7773973" vertical-offset="1106" max-vertical-offset="3484">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/webshop/apps/user/views/auth.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="24" selection-start="2013" selection-end="2013" vertical-scroll-proportion="-0.46746576" vertical-offset="754" max-vertical-offset="2236">
-          <folding />
+        <state line="43" column="40" selection-start="1667" selection-end="1667" vertical-scroll-proportion="0.0" vertical-offset="273" max-vertical-offset="2509">
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/webshop/apps/user/forms/auth.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="4" selection-start="5912" selection-end="5912" vertical-scroll-proportion="0.67636985" vertical-offset="1477" max-vertical-offset="2132">
+        <state line="105" column="91" selection-start="4331" selection-end="4331" vertical-scroll-proportion="0.0" vertical-offset="1171" max-vertical-offset="2132">
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/webshop/apps/user/forms/profile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="57" selection-start="2143" selection-end="2156" vertical-scroll-proportion="0.5787671" vertical-offset="0" max-vertical-offset="754">
-          <folding>
-            <element signature="e#22#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/user/auth/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="51" selection-start="935" selection-end="935" vertical-scroll-proportion="0.48576513" vertical-offset="0" max-vertical-offset="637">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/webshop/static/less/site/layout.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="29" selection-start="78" selection-end="78" vertical-scroll-proportion="0.024208566" vertical-offset="0" max-vertical-offset="537">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/webshop/static/less/site.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="20" selection-start="438" selection-end="438" vertical-scroll-proportion="0.48417133" vertical-offset="0" max-vertical-offset="537">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="15" selection-start="3514" selection-end="3514" vertical-scroll-proportion="-1.7727273" vertical-offset="780" max-vertical-offset="2704">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/layout_free_center.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="6" selection-start="428" selection-end="428" vertical-scroll-proportion="-10.636364" vertical-offset="0" max-vertical-offset="416">
+        <state line="21" column="19" selection-start="457" selection-end="462" vertical-scroll-proportion="-5.808511" vertical-offset="0" max-vertical-offset="468">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/webshop/static/bootstrap/variables.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="1238" selection-end="1253" vertical-scroll-proportion="-7.4042554" vertical-offset="250" max-vertical-offset="8489">
+        <state line="396" column="1" selection-start="12628" selection-end="12628" vertical-scroll-proportion="-4.638298" vertical-offset="4930" max-vertical-offset="8489">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/webshop/static/less/site/header.less">
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/static/bootstrap/mixins.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="41" selection-start="117" selection-end="117" vertical-scroll-proportion="0.04276316" vertical-offset="0" max-vertical-offset="608">
+        <state line="788" column="2" selection-start="23824" selection-end="23824" vertical-scroll-proportion="0.38546604" vertical-offset="10000" max-vertical-offset="11232">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/static/bootstrap/forms.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="252" column="5" selection-start="5994" selection-end="5994" vertical-scroll-proportion="0.3649289" vertical-offset="3045" max-vertical-offset="4810">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/static/less/site/forms.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="174" selection-end="174" vertical-scroll-proportion="-2.212766" vertical-offset="0" max-vertical-offset="208">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/user/auth/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="34" selection-start="1565" selection-end="1565" vertical-scroll-proportion="-24.227272" vertical-offset="0" max-vertical-offset="624">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/snippets/validation_scripts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="35" selection-start="1004" selection-end="1004" vertical-scroll-proportion="0.36966825" vertical-offset="0" max-vertical-offset="633">
           <folding />
         </state>
       </provider>

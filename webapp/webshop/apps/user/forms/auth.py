@@ -107,12 +107,12 @@ class RegisterForm(BaseForm):
     password2 = forms.CharField(widget=forms.PasswordInput, label=ugettext_lazy('Passwort wiederholen'))
 
     def addRules(self, rules):
-        rules['email']['remote'] = reverse('check-email-route')
-        rules['email']['email'] = True
+        rules['email'] = {'remote':reverse('check-email-route'), 'email' : True, "required": True}
+        rules['password2'] = {'equalTo':"id_password", "required": True}
         return rules
 
     def clean_email(self):
-        if (User.objects.filter(email=self.data['email']).count()):
+        if User.objects.filter(email=self.data['email']).count():
             raise ValidationError(mark_safe(_('Diese Emailadresse ist bereits vergeben.')))
         else:
             return self.data['email']
