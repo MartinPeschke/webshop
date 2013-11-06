@@ -108,7 +108,7 @@ class RegisterForm(BaseForm):
 
     def addRules(self, rules):
         rules['email'] = {'remote':reverse('check-email-route'), 'email' : True, "required": True}
-        rules['password2'] = {'equalTo':"id_password", "required": True}
+        rules['password2'] = {'equalTo':"#id_password", "required": True}
         return rules
 
     def clean_email(self):

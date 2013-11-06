@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: TurboGearShop VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-05-23 14:27+0200\n"
-"PO-Revision-Date: 2013-11-06 20:48+0100\n"
+"PO-Revision-Date: 2013-11-06 21:13+0100\n"
 "Last-Translator: \n"
 "Language-Team: turbogearshop <turbogearshop@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -479,7 +479,7 @@ msgstr "We sent you an email with a link to reset your password!"
 
 #: .\apps\user\views\auth.py:41 .\apps\user\views\auth.py:45
 msgid "Emailadresse bereits vergeben"
-msgstr "Email address alredy registered"
+msgstr "Email address already registered"
 
 #: .\apps\user\views\auth.py:87
 #, python-format

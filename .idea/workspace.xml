@@ -2,62 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd16966f-0d71-459b-aa61-339f40092f4a" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\scripts\localization\messages_cn.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\scripts\localization\messages_ge.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\scripts\localization\messages_ptbr.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\scripts\localization\messages_ptpt.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\scripts\localization\messages_se.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\scripts\localization\messages_tw.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\home\Martin\Documents\python\ws\webapp\webshop\static\scripts\localization\messages_ua.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/locale/en/LC_MESSAGES/django.mo" afterPath="$PROJECT_DIR$/webapp/webshop/locale/en/LC_MESSAGES/django.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/apps/user/forms/auth.py" afterPath="$PROJECT_DIR$/webapp/webshop/apps/user/forms/auth.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/apps/user/views/auth.py" afterPath="$PROJECT_DIR$/webapp/webshop/apps/user/views/auth.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/apps/user/backends.py" afterPath="$PROJECT_DIR$/webapp/webshop/apps/user/backends.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/templates/base.html" afterPath="$PROJECT_DIR$/webapp/webshop/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/templates/user/auth/base.html" afterPath="$PROJECT_DIR$/webapp/webshop/templates/user/auth/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/bo_update.log" afterPath="$PROJECT_DIR$/webapp/bo_update.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/locale/en/LC_MESSAGES/django.po" afterPath="$PROJECT_DIR$/webapp/webshop/locale/en/LC_MESSAGES/django.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/apps/explore/templatetags/explore.py" afterPath="$PROJECT_DIR$/webapp/webshop/apps/explore/templatetags/explore.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deploy/fabfile.py" afterPath="$PROJECT_DIR$/deploy/fabfile.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/less/site/forms.less" afterPath="$PROJECT_DIR$/webapp/webshop/static/less/site/forms.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/libs/jquery.validate.min.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/libs/jquery.validate.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_ar.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_ar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_bg.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_bg.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_ca.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_ca.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_cs.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_cs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_da.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_da.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_de.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_de.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_el.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_el.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_es.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_es.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_eu.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_eu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_fa.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_fa.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_fi.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_fi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_fr.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_fr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_he.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_he.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_hu.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_hu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_it.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_it.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_ja.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_ja.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_kk.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_kk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_lt.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_lt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_lv.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_lv.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_nl.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_nl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_no.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_no.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_pl.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_pl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_ro.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_ro.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_ru.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_ru.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_si.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_si.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_sk.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_sk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_sl.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_sl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_sr.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_sr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_th.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_th.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_tr.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_tr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_vi.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/messages_vi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/methods_de.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/methods_de.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/methods_nl.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/methods_nl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/methods_pt.js" afterPath="$PROJECT_DIR$/webapp/webshop/static/scripts/localization/methods_pt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webshop/templates/snippets/validation_scripts.html" afterPath="$PROJECT_DIR$/webapp/webshop/templates/snippets/validation_scripts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ws.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -109,10 +56,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="auth.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="auth.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webapp/webshop/apps/user/forms/auth.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="91" selection-start="4331" selection-end="4331" vertical-scroll-proportion="0.0" vertical-offset="1171" max-vertical-offset="2132">
+            <state line="110" column="42" selection-start="4610" selection-end="4610" vertical-scroll-proportion="0.5770548" vertical-offset="1093" max-vertical-offset="2132">
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -158,10 +105,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="validation_scripts.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="validation_scripts.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/snippets/validation_scripts.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="35" selection-start="1004" selection-end="1004" vertical-scroll-proportion="0.36966825" vertical-offset="0" max-vertical-offset="633">
+            <state line="21" column="54" selection-start="1218" selection-end="1218" vertical-scroll-proportion="-12.409091" vertical-offset="0" max-vertical-offset="442">
               <folding />
             </state>
           </provider>
@@ -197,10 +144,10 @@
         <option value="$PROJECT_DIR$/deploy/fabfile.py" />
         <option value="$PROJECT_DIR$/webapp/webshop/templates/base.html" />
         <option value="$PROJECT_DIR$/webapp/webshop/apps/user/views/auth.py" />
-        <option value="$PROJECT_DIR$/webapp/webshop/apps/user/forms/auth.py" />
         <option value="$PROJECT_DIR$/webapp/webshop/static/less/site/forms.less" />
         <option value="$PROJECT_DIR$/webapp/webshop/static/bootstrap/mixins.less" />
         <option value="$PROJECT_DIR$/webapp/webshop/templates/snippets/validation_scripts.html" />
+        <option value="$PROJECT_DIR$/webapp/webshop/apps/user/forms/auth.py" />
       </list>
     </option>
   </component>
@@ -696,16 +643,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32840237" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840237" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.25197682" sideWeight="0.6004273" order="0" side_tool="false" content_ui="combo" x="-552" y="0" width="478" height="1095" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3984221" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3984221" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840237" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -801,15 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/webshop/apps/user/forms/auth.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="91" selection-start="4331" selection-end="4331" vertical-scroll-proportion="0.0" vertical-offset="1171" max-vertical-offset="2132">
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/webshop/static/less/site.less">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="19" selection-start="457" selection-end="462" vertical-scroll-proportion="-5.808511" vertical-offset="0" max-vertical-offset="468">
@@ -838,6 +776,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/snippets/validation_scripts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="54" selection-start="1218" selection-end="1218" vertical-scroll-proportion="-12.409091" vertical-offset="0" max-vertical-offset="442">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/webshop/static/less/site/forms.less">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="174" selection-end="174" vertical-scroll-proportion="-2.212766" vertical-offset="0" max-vertical-offset="208">
@@ -852,10 +797,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/webshop/templates/snippets/validation_scripts.html">
+    <entry file="file://$PROJECT_DIR$/webapp/webshop/apps/user/forms/auth.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="35" selection-start="1004" selection-end="1004" vertical-scroll-proportion="0.36966825" vertical-offset="0" max-vertical-offset="633">
-          <folding />
+        <state line="110" column="42" selection-start="4610" selection-end="4610" vertical-scroll-proportion="0.5770548" vertical-offset="1093" max-vertical-offset="2132">
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
