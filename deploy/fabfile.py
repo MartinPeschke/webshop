@@ -74,7 +74,7 @@ def create_env(env):
       run("git clone {} .".format(ENVIRONMENTS[env].repository))
       run("git checkout {}".format(ENVIRONMENTS[env].branch))
     for dep in dependencies:
-      run("'./env/bin/easy_install {}".format(dep))
+      run("./env/bin/easy_install {}".format(dep))
     for extra in EXTRA_SETUP:
       run(extra)
 
