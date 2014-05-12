@@ -29,7 +29,7 @@
     <table id="tbArticles" class="article-data-table table-bordered table-striped table-condensed" width="100%">
     <thead>
       <tr>
-        <th width="25px"></th>
+        <th width="0"></th>
         <th width= "5%">{% trans 'REFERENCE' %}</th>
         <th>{% trans 'SIZE' %}</th>
         <th width= "5%">{% trans 'COLOR' %}</th>
@@ -55,13 +55,7 @@
           {% endif %}
 
           <tr class="articleoption_row option-{{ ao.ref }} {% if cart_qty %}in_cart{% endif %}" article="{{ article.ref }}" id="{{ ao.id }}" optionRow="true">
-            <td class="available"  width="25px">
-            {% if ao.available %}
-              <img src="{{ STATIC_URL }}images/btn_avail_green.png" alt="{% trans 'Available' %}"/>
-            {% else %}
-              <img src="{{ STATIC_URL }}images/btn_avail_red.png" alt="{% trans 'Not Available' %}"/>
-            {% endif %}
-            </td>
+            <td class="available"  width="0"></td>
             <td class="data">{{ article.ref }}</td>
             <td class="data bold">{{ article.compiledSize }}</td>
             <td class="data">
