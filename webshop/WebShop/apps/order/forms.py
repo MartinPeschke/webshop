@@ -1,14 +1,13 @@
-from WebShop.apps.lib.validators import ValidateDigits, CreditCardExpiryField, CreditCardNumberField
+from WebShop.apps.lib.validators import CreditCardExpiryField
 
 __author__ = 'Martin'
 from bootstrap.forms import Fieldset
 from django.forms.widgets import RadioSelect, Textarea, TextInput
-from django.utils.translation import ugettext as _, ugettext_lazy
+from django.utils.translation import ugettext_lazy
 from WebShop.apps.lib.baseviews import BaseForm
 from WebShop.apps.order.models import PaymentMethod, CreditCardType, BankAccount, CreditCard
 
 from django import forms
-from django.conf import settings
 
 
 class PaymentMethodForm(BaseForm):
@@ -62,15 +61,17 @@ class CreditCardForm(BaseForm, ):
     cctype = forms.ModelChoiceField(queryset=CreditCardType.objects.all(), label=ugettext_lazy("Typ"), empty_label=None)
     valid_until = CreditCardExpiryField(label=ugettext_lazy("G&uuml;ltig bis*"), widget = TextInput(attrs={"class":"required"}), help_text=ugettext_lazy("Beispiel: 10/2015"))
     security_number = forms.CharField(label=ugettext_lazy("Sicherheitscode*"), widget = TextInput(attrs={"class":"required"}), max_length=3)
+
     def __init__(self, user = None, *args, **kwargs):
         if user is not None:
-            try:
-                cc = CreditCard.objects.get(user=user)
-            except CreditCard.DoesNotExist:
-                initial = {}
-            else:
-                initial = {'owner' : cc.owner, 'ccNumber':cc.ccNumber, 'cctype':cc.cctype, 'valid_until':cc.valid_until, 'security_number':cc.security_number}
-            kwargs['initial'] = initial
+            card = CreditCard.objects.filter(user=user).order_by('-id').first()
+            if card:
+                initial = {'owner': card.owner,
+                           'ccNumber': card.ccNumber,
+                           'cctype': card.cctype,
+                           'valid_until': card.valid_until,
+                           'security_number': card.security_number}
+                kwargs['initial'] = initial
         kwargs['prefix'] = 'creditcard'
         super(CreditCardForm, self).__init__(*args, **kwargs)
 

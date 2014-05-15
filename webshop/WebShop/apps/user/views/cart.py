@@ -29,18 +29,18 @@ class OrderHistoryView(BaseLoggedInView):
 
 @json
 def add_to_cart(request):
-	if request.method == 'GET':
-		return HttpResponseNotAllowed(['GET'])
+    if request.method == 'GET':
+        return HttpResponseNotAllowed(['GET'])
 
-	items = request.POST.items()
+    items = request.POST.items()
 
-	if 'cart' not in request.session:
-		cart = Cart(request.user)
-	else:
-		cart = request.session['cart']
-	was_added = cart.addToCart(items)
-	request.session['cart'] = cart
-	return {'cart_html':render_to_string('user/profile/cart_items.html', locals(), context_instance=RequestContext(request))}
+    if 'cart' not in request.session:
+        cart = Cart(request.user)
+    else:
+        cart = request.session['cart']
+    was_added = cart.addToCart(items)
+    request.session['cart'] = cart
+    return {'cart_html':render_to_string('user/profile/cart_items.html', locals(), context_instance=RequestContext(request))}
 
 
 
