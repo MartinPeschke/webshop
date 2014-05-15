@@ -141,16 +141,12 @@ class CheckoutView(BaseLoggedInView, BaseFormView):
                          , 'billing_address' : billing
                          , 'shipping_address' : shipping})
 
-            try:
-                card = CreditCard.objects.get(user=request.user)
-                c['credit_card'] = card
-            except CreditCard.DoesNotExist:
-                pass
-            try:
-                ba = BankAccount.objects.get(user=request.user)
-                c['bank_account'] = ba
-            except BankAccount.DoesNotExist:
-                pass
+            cards = CreditCard.objects.filter(user=request.user).order_by('-id')
+            if len(cards):
+                c['credit_card'] = cards[0]
+            ba = BankAccount.objects.filter(user=request.user).order_by('-id')
+            if len(ba):
+                c['bank_account'] = ba[0]
             try:
                 mail.create_mail("%s Order" % settings.EMAIL_SUBJECT_PREFIX, settings.SERVER_EMAIL, settings.ORDER_MAIL, 'orderToBackoffice', c)
                 mail.create_mail(_("Vielen Dank fuer Deine Bestellung bei Per-4"), settings.SERVER_EMAIL, user.email, 'order_confirmation', c)

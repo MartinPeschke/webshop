@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd16966f-0d71-459b-aa61-339f40092f4a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webshop/WebShop/apps/order/forms.py" afterPath="$PROJECT_DIR$/webshop/WebShop/apps/order/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webshop/WebShop/apps/order/views.py" afterPath="$PROJECT_DIR$/webshop/WebShop/apps/order/views.py" />
     </list>
     <ignored path="ws.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,11 +72,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="forms.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="forms.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/order/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="31" selection-start="2766" selection-end="2766" vertical-scroll-proportion="0.4894795" vertical-offset="0" max-vertical-offset="1806">
+            <state line="68" column="0" selection-start="2635" selection-end="2735" vertical-scroll-proportion="-17.68" vertical-offset="0" max-vertical-offset="1599">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/order/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="135" column="24" selection-start="6167" selection-end="6167" vertical-scroll-proportion="0.7552602" vertical-offset="391" max-vertical-offset="2197">
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -128,6 +138,7 @@
         <option value="$PROJECT_DIR$/webshop/WebShop/templates/explore/article_ajax.html" />
         <option value="$PROJECT_DIR$/webshop/WebShop/apps/user/views/cart.py" />
         <option value="$PROJECT_DIR$/webshop/WebShop/apps/order/forms.py" />
+        <option value="$PROJECT_DIR$/webshop/WebShop/apps/order/views.py" />
       </list>
     </option>
   </component>
@@ -918,8 +929,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/order/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="31" selection-start="2766" selection-end="2766" vertical-scroll-proportion="0.4894795" vertical-offset="0" max-vertical-offset="1806">
+        <state line="68" column="0" selection-start="2635" selection-end="2735" vertical-scroll-proportion="-17.68" vertical-offset="0" max-vertical-offset="1599">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/order/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="135" column="24" selection-start="6167" selection-end="6167" vertical-scroll-proportion="0.7552602" vertical-offset="391" max-vertical-offset="2197">
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
