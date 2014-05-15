@@ -64,8 +64,9 @@ class CreditCardForm(BaseForm, ):
 
     def __init__(self, user = None, *args, **kwargs):
         if user is not None:
-            card = CreditCard.objects.filter(user=user).order_by('-id').first()
-            if card:
+            cards = CreditCard.objects.filter(user=user).order_by('-id')
+            if len(cards):
+                card = cards[0]
                 initial = {'owner': card.owner,
                            'ccNumber': card.ccNumber,
                            'cctype': card.cctype,
