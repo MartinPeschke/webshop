@@ -53,9 +53,9 @@ def getAllOrders(request):
         except Address.DoesNotExist:
             shipping = None
 
-        cards = CreditCard.objects.filter(user=request.user).order_by('-id')
+        cards = CreditCard.objects.filter(user=order.user).order_by('-id')
         creditcard = cards[0] if len(cards) else None
-        ba = BankAccount.objects.filter(user=request.user).order_by('-id')
+        ba = BankAccount.objects.filter(user=order.user).order_by('-id')
         bankaccount = ba[0] if len(ba) else None
 
         order.user_email = order.user.email
