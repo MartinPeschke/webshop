@@ -53,15 +53,11 @@ def getAllOrders(request):
         except Address.DoesNotExist:
             shipping = None
 
-        try:
-            bankaccount = BankAccount.objects.get(user=order.user)
-        except BankAccount.DoesNotExist:
-            bankaccount = None
-        try:
-            creditcard = CreditCard.objects.get(user=order.user)
-        except CreditCard.DoesNotExist:
-            creditcard = None
-        
+        cards = CreditCard.objects.filter(user=request.user).order_by('-id')
+        creditcard = cards[0] if len(cards) else None
+        ba = BankAccount.objects.filter(user=request.user).order_by('-id')
+        bankaccount = ba[0] if len(ba) else None
+
         order.user_email = order.user.email
         try:
             profile.verbose_payment_method = unicode(order.payment_method)
