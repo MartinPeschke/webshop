@@ -30,7 +30,7 @@ DEFAULT_FROM_EMAIL = 'webshop@per-4.com'
 
 EMAIL_HOST = 'post.strato.de'
 EMAIL_HOST_USER = 'webshop@per-4.net'
-EMAIL_HOST_PASSWORD = 'Erwin0309'
+EMAIL_HOST_PASSWORD = 'VANV6f}Jq0!{'
 EMAIL_PORT = 25
 EMAIL_SUBJECT_PREFIX = '[PER4]'
 SERVER_EMAIL = 'webshop@per-4.net'
