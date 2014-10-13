@@ -40,8 +40,8 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
 
     # Real Index Page
-    (r'^/?$', 'WebShop.apps.cms.pages.welcome'),
-    url(r'^main/$', 'WebShop.apps.cms.pages.main', name='home-route'),
+    url(r'^/?$', 'WebShop.apps.cms.pages.main', name='home-route'),
+    (r'^main/$', 'WebShop.apps.cms.pages.welcome_redirect'),
     # Browsing
     (r'^(?P<shop_ref>%s)/$' % SHOPS_URLS, 'WebShop.apps.explore.views.handler.shop'),
     (r'^pane/(?P<type_id>\d+)/$' , 'WebShop.apps.explore.views.handler.pane'),

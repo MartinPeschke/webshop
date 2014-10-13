@@ -1,6 +1,6 @@
 import os
 from django.conf import settings
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext, TemplateDoesNotExist
 from WebShop.apps.cms.models import LinkGalleryItem
 
@@ -13,8 +13,10 @@ def render_with_locale(request, template, context):
     except TemplateDoesNotExist:
         return render_to_response('pages/%s_en.html' % template, context, context_instance=rctxt)
 
-def welcome(request):
-    return render_to_response('pages/welcome.html', locals(), context_instance=RequestContext(request))
+# def welcome(request):
+#     return render_to_response('pages/welcome.html', locals(), context_instance=RequestContext(request))   
+def welcome_redirect(request):
+    return redirect('home-route')
 
 
 def main(request):

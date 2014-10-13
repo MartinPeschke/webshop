@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd16966f-0d71-459b-aa61-339f40092f4a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webshop/WebShop/apps/service/views/bo.py" afterPath="$PROJECT_DIR$/webshop/WebShop/apps/service/views/bo.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webshop/WebShop/apps/cms/pages.py" afterPath="$PROJECT_DIR$/webshop/WebShop/apps/cms/pages.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webshop/WebShop/urls.py" afterPath="$PROJECT_DIR$/webshop/WebShop/urls.py" />
     </list>
     <ignored path="ws.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,84 +27,30 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="handler.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/views/handler.py">
+        <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/explore/views/handler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1443" max-vertical-offset="2496">
+              <caret line="124" column="71" selection-start-line="124" selection-start-column="71" selection-end-line="124" selection-end-column="71" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cart.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/views/cart.py">
+      <file leaf-file-name="pages.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/cms/pages.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="33" selection-start="1084" selection-end="1084" vertical-scroll-proportion="0.0" vertical-offset="338" max-vertical-offset="910">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auth.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/views/auth.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="741" max-vertical-offset="2509">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bo.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/service/views/bo.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="72" selection-start="2055" selection-end="2104" vertical-scroll-proportion="0.3479499" vertical-offset="130" max-vertical-offset="4979">
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-                <marker date="1400152782090" expanded="true" signature="870:900" placeholder="SELECT max(i..apps_order..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/models/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="62" selection-start="2195" selection-end="2195" vertical-scroll-proportion="0.0" vertical-offset="832" max-vertical-offset="1599">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/order/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="0" selection-start="2735" selection-end="2735" vertical-scroll-proportion="0.0" vertical-offset="394" max-vertical-offset="1599">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/order/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="149" column="0" selection-start="6459" selection-end="6756" vertical-scroll-proportion="0.0" vertical-offset="992" max-vertical-offset="2197">
+            <state vertical-scroll-proportion="0.286" vertical-offset="13" max-vertical-offset="1131">
+              <caret line="16" column="108" selection-start-line="16" selection-start-column="108" selection-end-line="16" selection-end-column="108" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/service/urls.py">
+        <entry file="file://$PROJECT_DIR$/webshop/WebShop/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="7" selection-start="75" selection-end="75" vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="247">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profile.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/views/profile.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="0" selection-start="2727" selection-end="2727" vertical-scroll-proportion="0.0" vertical-offset="793" max-vertical-offset="1638">
+            <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1183">
+              <caret line="42" column="54" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -128,7 +74,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/webshop/WebShop/apps/cms/pages.py" />
         <option value="$PROJECT_DIR$/webshop/WebShop/apps/contrib/static_sitemap.py" />
         <option value="$PROJECT_DIR$/webshop/WebShop/templates/explore/LineTreeLeft.html" />
         <option value="$PROJECT_DIR$/webshop/WebShop/templates/pages/shipping_en.html" />
@@ -149,14 +94,16 @@
         <option value="$PROJECT_DIR$/webshop/WebShop/apps/order/forms.py" />
         <option value="$PROJECT_DIR$/webshop/WebShop/apps/order/views.py" />
         <option value="$PROJECT_DIR$/webshop/WebShop/apps/service/views/bo.py" />
+        <option value="$PROJECT_DIR$/webshop/WebShop/urls.py" />
+        <option value="$PROJECT_DIR$/webshop/WebShop/apps/cms/pages.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1216" />
-    <option name="height" value="1936" />
+    <option name="y" value="22" />
+    <option name="width" value="1616" />
+    <option name="height" value="886" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -172,7 +119,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -184,16 +131,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -344,34 +281,18 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="order" />
+              <option name="myItemId" value="explore" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ws" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ws" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebShop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="explore" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -487,27 +408,7 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="ws" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
     <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
@@ -533,11 +434,30 @@
       <option name="customRunCommand" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ws" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
-      <browser start="false" url="" with-js-debugger="false" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -647,15 +567,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1216" height="1936" extended-state="6" />
+    <frame x="-8" y="22" width="1616" height="886" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32736573" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.25197682" sideWeight="0.6004273" order="0" side_tool="false" content_ui="combo" x="-482" y="34" width="478" height="1095" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25160462" sideWeight="0.6004273" order="0" side_tool="false" content_ui="combo" x="736" y="447" width="127" height="36" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3984221" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -665,7 +586,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32805678" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -673,6 +593,9 @@
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
       <collection />
     </option>
   </component>
@@ -689,333 +612,396 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/views/handler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/views/cart.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="33" selection-start="1084" selection-end="1084" vertical-scroll-proportion="0.0" vertical-offset="338" max-vertical-offset="910">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/views/auth.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="741" max-vertical-offset="2509">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/service/views/bo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="12" selection-start="2031" selection-end="2031" vertical-scroll-proportion="0.0" vertical-offset="780" max-vertical-offset="5031">
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <marker date="1400152782090" expanded="true" signature="870:900" placeholder="SELECT max(i..apps_order..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/models/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="62" selection-start="2195" selection-end="2195" vertical-scroll-proportion="0.0" vertical-offset="832" max-vertical-offset="1599">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/order/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="0" selection-start="2635" selection-end="2735" vertical-scroll-proportion="0.0" vertical-offset="884" max-vertical-offset="1599">
+        <state vertical-scroll-proportion="0.0" vertical-offset="884" max-vertical-offset="1599">
+          <caret line="68" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/order/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="135" column="24" selection-start="6167" selection-end="6167" vertical-scroll-proportion="0.0" vertical-offset="625" max-vertical-offset="2197">
+        <state vertical-scroll-proportion="0.0" vertical-offset="625" max-vertical-offset="2197">
+          <caret line="135" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/views/profile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="0" selection-start="2727" selection-end="2727" vertical-scroll-proportion="0.0" vertical-offset="793" max-vertical-offset="1638">
+        <state vertical-scroll-proportion="0.0" vertical-offset="793" max-vertical-offset="1638">
+          <caret line="61" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/views/handler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/views/cart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="33" selection-start="1084" selection-end="1084" vertical-scroll-proportion="0.0" vertical-offset="338" max-vertical-offset="910">
+        <state vertical-scroll-proportion="0.0" vertical-offset="338" max-vertical-offset="910">
+          <caret line="26" column="33" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/views/auth.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="741" max-vertical-offset="2509">
+        <state vertical-scroll-proportion="0.0" vertical-offset="741" max-vertical-offset="2509">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/service/views/bo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="12" selection-start="2031" selection-end="2031" vertical-scroll-proportion="0.0" vertical-offset="780" max-vertical-offset="5031">
+        <state vertical-scroll-proportion="0.0" vertical-offset="780" max-vertical-offset="5031">
+          <caret line="60" column="12" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <marker date="1400152782090" expanded="true" signature="870:900" placeholder="SELECT max(i..apps_order..." />
+            <element signature="e#0#13#0" expanded="false" />
+            <marker date="1400152782090" expanded="true" signature="-1:-1" placeholder="SELECT max(i..apps_order..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/models/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="62" selection-start="2195" selection-end="2195" vertical-scroll-proportion="0.0" vertical-offset="832" max-vertical-offset="1599">
+        <state vertical-scroll-proportion="0.0" vertical-offset="832" max-vertical-offset="1599">
+          <caret line="64" column="62" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/order/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="0" selection-start="2736" selection-end="2736" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1586">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1586">
+          <caret line="68" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/views/profile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="0" selection-start="2727" selection-end="2727" vertical-scroll-proportion="0.0" vertical-offset="793" max-vertical-offset="1638">
+        <state vertical-scroll-proportion="0.0" vertical-offset="793" max-vertical-offset="1638">
+          <caret line="61" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/explore/article_ajax.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="28" selection-start="2988" selection-end="3006" vertical-scroll-proportion="0.0" vertical-offset="1027" max-vertical-offset="1547">
-          <folding>
-            <element signature="n#style#0;n#div#1;n#td#6;n#tr#1;n#tbody#0;n#table#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="1027" max-vertical-offset="1547">
+          <caret line="79" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/left_block_announce.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="130" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="130">
+          <caret line="1" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/layout_free_center.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="343" selection-end="343" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="416" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="416">
+          <caret line="15" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/left_menu_inc.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="5" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0" vertical-offset="104" max-vertical-offset="182" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="104" max-vertical-offset="182">
+          <caret line="8" column="5" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/static/less/navigation.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="845" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="845">
+          <caret line="15" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/static/less/bootstrap/mixins.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="192" column="1" selection-start="4442" selection-end="4442" vertical-scroll-proportion="0.0" vertical-offset="2496" max-vertical-offset="8489" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2496" max-vertical-offset="8489">
+          <caret line="192" column="1" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/explore/article_tip.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="594" selection-end="594" vertical-scroll-proportion="0.0" vertical-offset="169" max-vertical-offset="247" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="169" max-vertical-offset="247">
+          <caret line="13" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/pages/news.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="62" selection-start="4717" selection-end="4717" vertical-scroll-proportion="0.4301948" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.4301948" vertical-offset="0" max-vertical-offset="0">
+          <caret line="99" column="62" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/pages/lieferung_am_selben_tag_en.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="118" selection-start="926" selection-end="926" vertical-scroll-proportion="0.31655845" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.31655845" vertical-offset="0" max-vertical-offset="0">
+          <caret line="15" column="118" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/pages/impressum_en.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="25" selection-start="453" selection-end="453" vertical-scroll-proportion="0.3018242" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.3018242" vertical-offset="0" max-vertical-offset="0">
+          <caret line="14" column="25" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/settings_live.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="10" selection-start="430" selection-end="430" vertical-scroll-proportion="0.10777202" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.10777202" vertical-offset="0" max-vertical-offset="0">
+          <caret line="19" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/settings_dev.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="14" selection-start="346" selection-end="346" vertical-scroll-proportion="0.12407211" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.12407211" vertical-offset="0" max-vertical-offset="0">
+          <caret line="9" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/404.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/500.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="200" column="0" selection-start="10732" selection-end="10732" vertical-scroll-proportion="0.7903226" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.7903226" vertical-offset="0" max-vertical-offset="0">
+          <caret line="200" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="150" column="0" selection-start="7391" selection-end="9611" vertical-scroll-proportion="0.14731182" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.14731182" vertical-offset="0" max-vertical-offset="0">
+          <caret line="150" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/pages/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="22" selection-start="7292" selection-end="7292" vertical-scroll-proportion="0.7172043" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.7172043" vertical-offset="0" max-vertical-offset="0">
+          <caret line="117" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/left_block_announce.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0072869956" vertical-offset="0" max-vertical-offset="1784" />
+        <state vertical-scroll-proportion="0.0072869956" vertical-offset="0" max-vertical-offset="1784">
+          <caret line="1" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/static/less/navigation.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="651" selection-end="651" vertical-scroll-proportion="0.24775785" vertical-offset="0" max-vertical-offset="1784" />
+        <state vertical-scroll-proportion="0.24775785" vertical-offset="0" max-vertical-offset="1784">
+          <caret line="34" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/left_menu_inc.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="5" selection-start="337" selection-end="337" vertical-scroll-proportion="0.058295965" vertical-offset="0" max-vertical-offset="1784" />
+        <state vertical-scroll-proportion="0.058295965" vertical-offset="0" max-vertical-offset="1784">
+          <caret line="8" column="5" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/layout_free_center.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="343" selection-end="343" vertical-scroll-proportion="0.109304935" vertical-offset="0" max-vertical-offset="1784" />
+        <state vertical-scroll-proportion="0.109304935" vertical-offset="0" max-vertical-offset="1784">
+          <caret line="15" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/static/less/bootstrap/mixins.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="192" column="1" selection-start="4442" selection-end="4442" vertical-scroll-proportion="0.0" vertical-offset="2496" max-vertical-offset="8489" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2496" max-vertical-offset="8489">
+          <caret line="192" column="1" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/explore/article_tip.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="594" selection-end="594" vertical-scroll-proportion="0.09542631" vertical-offset="0" max-vertical-offset="1771" />
+        <state vertical-scroll-proportion="0.09542631" vertical-offset="0" max-vertical-offset="1771">
+          <caret line="13" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/explore/article_ajax.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="52" selection-start="2325" selection-end="2325" vertical-scroll-proportion="0.42993274" vertical-offset="0" max-vertical-offset="1784">
-          <folding>
-            <element signature="n#style#0;n#div#1;n#td#6;n#tr#1;n#tbody#0;n#table#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.42993274" vertical-offset="0" max-vertical-offset="1784">
+          <caret line="59" column="52" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/views/handler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="663">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/views/cart.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="33" selection-start="1084" selection-end="1084" vertical-scroll-proportion="0.0" vertical-offset="338" max-vertical-offset="910">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/views/profile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="0" selection-start="2727" selection-end="2727" vertical-scroll-proportion="0.0" vertical-offset="793" max-vertical-offset="1638">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/views/auth.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="741" max-vertical-offset="2509">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="663">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/env_old/Lib/site-packages/django-1.6-py2.7.egg/django/db/models/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="12" selection-start="4236" selection-end="4236" vertical-scroll-proportion="0.3327801" vertical-offset="587" max-vertical-offset="13286">
+        <state vertical-scroll-proportion="0.3327801" vertical-offset="587" max-vertical-offset="13286">
+          <caret line="102" column="12" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/env_old/Lib/site-packages/django-1.6-py2.7.egg/django/db/models/query.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="607" column="49" selection-start="23078" selection-end="23078" vertical-scroll-proportion="0.42987552" vertical-offset="7165" max-vertical-offset="22373">
+        <state vertical-scroll-proportion="0.42987552" vertical-offset="7165" max-vertical-offset="22373">
+          <caret line="607" column="49" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/env_old/Lib/site-packages/django-1.6-py2.7.egg/django/db/models/manager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="162" column="39" selection-start="6068" selection-end="6068" vertical-scroll-proportion="0.34356847" vertical-offset="1614" max-vertical-offset="3679">
+        <state vertical-scroll-proportion="0.34356847" vertical-offset="1614" max-vertical-offset="3679">
+          <caret line="162" column="39" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/service/urls.py">
+    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/explore/routers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="7" selection-start="75" selection-end="75" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="247">
+        <state vertical-scroll-proportion="0.2579365" vertical-offset="0" max-vertical-offset="756">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/order/views.py">
+    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="0" selection-start="6459" selection-end="6756" vertical-scroll-proportion="0.0" vertical-offset="992" max-vertical-offset="2197">
+        <state vertical-scroll-proportion="0.18413597" vertical-offset="0" max-vertical-offset="706">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#30#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/service/views/bo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58465606" vertical-offset="130" max-vertical-offset="4979">
+          <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#13#0" expanded="false" />
+            <marker date="1400152782090" expanded="true" signature="-1:-1" placeholder="SELECT max(i..apps_order..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/views/auth.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.9973082" vertical-offset="741" max-vertical-offset="2509">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/order/forms.py">
+    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/views/cart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="0" selection-start="2735" selection-end="2735" vertical-scroll-proportion="0.0" vertical-offset="394" max-vertical-offset="1599">
+        <state vertical-scroll-proportion="0.24338624" vertical-offset="154" max-vertical-offset="910">
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/models/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="62" selection-start="2195" selection-end="2195" vertical-scroll-proportion="0.0" vertical-offset="832" max-vertical-offset="1599">
+        <state vertical-scroll-proportion="0.0" vertical-offset="832" max-vertical-offset="1599">
+          <caret line="64" column="62" selection-start-line="64" selection-start-column="62" selection-end-line="64" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/service/views/bo.py">
+    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/order/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="72" selection-start="2055" selection-end="2104" vertical-scroll-proportion="0.3479499" vertical-offset="130" max-vertical-offset="4979">
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <marker date="1400152782090" expanded="true" signature="870:900" placeholder="SELECT max(i..apps_order..." />
-          </folding>
+        <state vertical-scroll-proportion="0.6481481" vertical-offset="394" max-vertical-offset="1599">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/order/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.25" vertical-offset="758" max-vertical-offset="1963">
+          <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/service/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.051587302" vertical-offset="0" max-vertical-offset="756">
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/user/views/profile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.054232806" vertical-offset="622" max-vertical-offset="1508">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/explore/views/handler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1443" max-vertical-offset="2496">
+          <caret line="124" column="71" selection-start-line="124" selection-start-column="71" selection-end-line="124" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webshop/WebShop/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1183">
+          <caret line="42" column="54" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webshop/WebShop/apps/cms/pages.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.286" vertical-offset="13" max-vertical-offset="1131">
+          <caret line="16" column="108" selection-start-line="16" selection-start-column="108" selection-end-line="16" selection-end-column="108" />
+          <folding />
         </state>
       </provider>
     </entry>
