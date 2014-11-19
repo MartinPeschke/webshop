@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cd16966f-0d71-459b-aa61-339f40092f4a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webshop/WebShop/templates/left_block_announce.html" afterPath="$PROJECT_DIR$/webshop/WebShop/templates/left_block_announce.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webshop/WebShop/apps/cms/pages.py" afterPath="$PROJECT_DIR$/webshop/WebShop/apps/cms/pages.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ws.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,8 +48,8 @@
       <file leaf-file-name="left_block_announce.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/left_block_announce.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.08507854" vertical-offset="0" max-vertical-offset="764">
-              <caret line="5" column="80" selection-start-line="5" selection-start-column="80" selection-end-line="5" selection-end-column="80" />
+            <state vertical-scroll-proportion="0.17015707" vertical-offset="0" max-vertical-offset="764">
+              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -884,8 +882,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/left_block_announce.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08507854" vertical-offset="0" max-vertical-offset="764">
-          <caret line="5" column="80" selection-start-line="5" selection-start-column="80" selection-end-line="5" selection-end-column="80" />
+        <state vertical-scroll-proportion="0.17015707" vertical-offset="0" max-vertical-offset="764">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
           <folding />
         </state>
       </provider>
