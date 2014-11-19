@@ -14,7 +14,7 @@ def render_with_locale(request, template, context):
         return render_to_response('pages/%s_en.html' % template, context, context_instance=rctxt)
 
 # def welcome(request):
-#     return render_to_response('pages/welcome.html', locals(), context_instance=RequestContext(request))   
+#     return render_to_response('pages/welcome.html', locals(), context_instance=RequestContext(request))
 def welcome_redirect(request):
     return redirect('home-route')
 
