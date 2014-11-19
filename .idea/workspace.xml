@@ -48,8 +48,8 @@
       <file leaf-file-name="left_block_announce.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/left_block_announce.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.17015707" vertical-offset="0" max-vertical-offset="764">
-              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.13612565" vertical-offset="0" max-vertical-offset="764">
+              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -882,8 +882,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webshop/WebShop/templates/left_block_announce.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17015707" vertical-offset="0" max-vertical-offset="764">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.13612565" vertical-offset="0" max-vertical-offset="764">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
           <folding />
         </state>
       </provider>
