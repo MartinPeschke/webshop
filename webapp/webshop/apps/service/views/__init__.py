@@ -1,11 +1,13 @@
+import shutil
+import os
+
 from django.contrib.auth.decorators import user_passes_test
-from django.http import *
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+from django.conf import settings
 
-from django.conf import settings 
+from PIL import Image
 
-import Image, shutil, os
 
 ROOT_FOLDER = os.path.join(settings.MEDIA_ROOT, 'ads')
 IMPORT_FOLDER = os.path.join(ROOT_FOLDER, 'import')
@@ -20,7 +22,7 @@ def move_images(filelist):
 def create_thumbs(filelist):
     for fname in filelist:
         im = Image.open(os.path.join(IMPORT_FOLDER, fname))
-        if(im.mode == "P"): im = im.convert("RGB")
+        if im.mode == "P": im = im.convert("RGB")
 
         im.thumbnail((100, 100))
         im.save(os.path.join(THUMBS_FOLDER, fname), 'JPEG')
@@ -33,7 +35,7 @@ def importads(request):
     images_name_collisions = images_to_import & set(os.listdir(IMAGE_FOLDER)) & set(os.listdir(THUMBS_FOLDER))
     images_no_collisions  = set(images_to_import) - images_name_collisions
     
-    if(request.GET.get('import',None) == '1'):
+    if request.GET.get('import',None) == '1':
         create_thumbs(images_to_import)
         move_images(images_to_import)
 
