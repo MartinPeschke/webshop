@@ -1,7 +1,7 @@
-
-/env
-/webshop/WebShop/per4/media/files
-/webshop/WebWorkbench.mswwsettings
+venv
+env
+webshop/WebShop/per4/media/files
+webshop/WebWorkbench.mswwsettings
 data
 .idea
 tmp
@@ -10,6 +10,6 @@ tmp
 
 node_modules
 bower_components
-/deploy/node_modules
-/resources/Homepage
+deploy/node_modules
+resources/Homepage
 schematest

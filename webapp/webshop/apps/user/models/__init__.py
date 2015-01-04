@@ -1,7 +1,7 @@
 from django.core.exceptions import ObjectDoesNotExist
 from webshop.apps.order.models import PaymentMethod
 from webshop.utils.jsonfield import JSONField
-import simplejson
+import json
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.db import models
@@ -71,7 +71,7 @@ class Profile(models.Model):
                             'creditcard':creditcard})
 
     def _deserialize(self, data):
-        data = simplejson.loads(data)
+        data = json.loads(data)
 
         webuser = data['webuser']
         self.user.email = webuser['email']

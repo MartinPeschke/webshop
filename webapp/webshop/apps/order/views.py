@@ -1,3 +1,4 @@
+import json
 from django.core.urlresolvers import reverse
 from operator import itemgetter
 from decimal import Decimal, ROUND_UP
@@ -15,8 +16,6 @@ from .models import CreditCard, BankAccount, Order, PaymentMethod
 
 import webshop.utils.mail as mail
 from webshop.apps.user.views.profile import _get_user_data, BaseAccountAddressView
-
-import simplejson
 
 def _get_current_cid(request):
     cids = sorted(request.session.get('cid_list') or [], key = itemgetter('timestamp'), reverse = True)
@@ -65,7 +64,7 @@ class CheckoutView(BaseLoggedInView, BaseFormView):
         return {'form' : self.get_form_instance(request, *args, **kwargs),
                 'bankaccount_form': BankAccountForm(user = request.user),
                 'creditcard_form': CreditCardForm(user = request.user),
-                'available_methods': mark_safe(simplejson.dumps({p.id: p.name for p in PaymentMethod.objects.filter_by_role(role)}))
+                'available_methods': mark_safe(json.dumps({p.id: p.name for p in PaymentMethod.objects.filter_by_role(role)}))
         }
     def post(self, request, *args, **kwargs):
         role = request.user.get_profile().role
@@ -74,7 +73,7 @@ class CheckoutView(BaseLoggedInView, BaseFormView):
             return {'form' : _form,
                     'bankaccount_form': BankAccountForm(user = request.user),
                     'creditcard_form': CreditCardForm(user = request.user),
-                    'available_methods': mark_safe(simplejson.dumps({p.id: p.name for p in PaymentMethod.objects.filter_by_role(role)}))
+                    'available_methods': mark_safe(json.dumps({p.id: p.name for p in PaymentMethod.objects.filter_by_role(role)}))
             }
         else:
             method = self.form.cleaned_data['payment_method'].name
@@ -92,7 +91,7 @@ class CheckoutView(BaseLoggedInView, BaseFormView):
                     return {'form' : _form,
                             'bankaccount_form': BankAccountForm(None, request.POST),
                             'creditcard_form': CreditCardForm(None, request.POST),
-                            'available_methods': mark_safe(simplejson.dumps({p.id: p.name for p in PaymentMethod.objects.filter_by_role(role)}))
+                            'available_methods': mark_safe(json.dumps({p.id: p.name for p in PaymentMethod.objects.filter_by_role(role)}))
                     }
             else:
                 result = self.on_success(request, _form.cleaned_data)

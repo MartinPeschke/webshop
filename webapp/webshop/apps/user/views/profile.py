@@ -1,11 +1,11 @@
+import json
+
 from django.contrib import messages
-from django.core.urlresolvers import reverse
-import simplejson
+from django.utils.translation import ugettext as _
+
 from webshop.apps.contrib.countries.models import Country
 from webshop.apps.user.forms.profile import AccountRetailDetailsForm, AccountWholesaleDetailsForm
 from webshop.apps.user.lib import is_studio_user
-from django.utils.translation import ugettext as _, ugettext_lazy
-
 from webshop.apps.user.models.address import Address, Language, AddressType
 from webshop.apps.user.forms import AddressesForm
 from webshop.apps.lib.baseviews import  BaseLoggedInView, BaseFormView, HTTPRedirect
@@ -68,8 +68,8 @@ class BaseAccountAddressView(BaseLoggedInView, BaseFormView):
 
         for t, fields in params.items():
             if t in ['shipping', 'billing']:
+                type = AddressType.objects.get(name = t)
                 try:
-                    type = AddressType.objects.get(name = t)
                     address = Address.objects.get(user=request.user, type = type)
                 except Address.DoesNotExist:
                     address = Address(user=request.user, type = type)
@@ -114,7 +114,7 @@ class ProfileView(BaseLoggedInView, BaseFormView):
             attr_name = field.attname
             if attr_name in cleaned_data:
                 setattr(profile, attr_name, cleaned_data[attr_name])
-        profile.weekdays = simplejson.dumps(cleaned_data.get('weekdays') or [])
+        profile.weekdays = json.dumps(cleaned_data.get('weekdays') or [])
         profile.save()
         messages.add_message(request, messages.SUCCESS, _('&Auml;nderungen gespeichert!'))
         raise HTTPRedirect(request.get_full_path())

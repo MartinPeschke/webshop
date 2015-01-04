@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.serializers.json import DjangoJSONEncoder
-from django.utils import simplejson as json
+import json
 
 class JSONField(models.TextField):
     """JSONField is a generic textfield that serializes/unserializes JSON objects"""
@@ -40,7 +40,7 @@ class JSONField(models.TextField):
     def formfield(self, **kwargs):
 
         if "form_class" not in kwargs:
-            kwargs["form_class"] = JSONFormField
+            kwargs["form_class"] = JSONField
 
         field = super(JSONField, self).formfield(**kwargs)
 

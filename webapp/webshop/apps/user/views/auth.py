@@ -8,7 +8,7 @@ from django.utils.translation import ugettext as _, ugettext_lazy
 import datetime
 
 from django.contrib.auth.models import User
-import simplejson
+import json
 from webshop.apps import user
 
 from webshop.apps.lib.baseviews import  HTTPRedirect, BaseFormView, BaseView
@@ -43,7 +43,7 @@ def check_mail(request):
         result = True
     except User.MultipleObjectsReturned:
         result = _("Emailadresse bereits vergeben")
-    return HttpResponse(simplejson.dumps(result), mimetype='application/json')
+    return HttpResponse(json.dumps(result), mimetype='application/json')
 
 
 

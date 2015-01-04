@@ -6,7 +6,7 @@ from django.template.response import TemplateResponse
 from django.core.urlresolvers import reverse_lazy
 from django.contrib import messages
 from django.utils.translation import ugettext as _
-import simplejson
+import json
 
 from webshop.apps.user.lib import is_studio_user, is_in_signup
 
@@ -22,7 +22,7 @@ class BaseForm(Form):
 
     def getRules(self):
         rules = {f.name: {"required": True} for f in self if f.field.required == True}
-        return mark_safe(simplejson.dumps(self.addRules(rules)))
+        return mark_safe(json.dumps(self.addRules(rules)))
 
 
 class BaseView(TemplateResponseMixin, View):

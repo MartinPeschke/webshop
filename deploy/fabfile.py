@@ -34,7 +34,7 @@ ENVIRONMENTS = {
             ,branch='master')
 }
 
-dependencies = ['django', 'mysql-python', 'simplejson', 'PIL', 'uwsgi']
+dependencies = ['django', 'mysql-python', 'PIL', 'uwsgi']
 EXTRA_SETUP = ['./env/bin/pip install -e git+git://github.com/earle/django-bootstrap.git#egg=bootstrap']
 
 

@@ -1,5 +1,5 @@
 import socket
-import sys, simplejson, bz2, base64, os
+import sys, json, bz2, base64, os
 
 from django.http import *
 from django.core.cache import cache
@@ -113,7 +113,7 @@ def quick_save_customer_data(request):
         raise Http404
     o.status_id = order_status
     o.save() 
-    return HttpResponse(simplejson.dumps({'id':p.id, 'bo_customer_no':p.bo_customer_no}))
+    return HttpResponse(json.dumps({'id':p.id, 'bo_customer_no':p.bo_customer_no}))
 
 @_guard_bo
 def save_customer_data(request):
@@ -351,10 +351,10 @@ def echo(request):
 
 
 def inWebShop(request):
-    import simplejson
+    import json
     article_families = [af.ref for af in ArticleFamily.objects.filter(shop_new=True)]
     lines = [(line.ref,line.sort) for line in Line.objects.all()]
-    return HttpResponse(simplejson.dumps(dict(lines = lines, families = article_families)))
+    return HttpResponse(json.dumps(dict(lines = lines, families = article_families)))
 
 def index(request):
     title = "BackOffice agent::"

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-import simplejson, re
-import pprint
+import json
+import re
 
 DEFAULT_SHOP = 'Piercing'
 
 def deep_import(json):
-	from webshop.apps.service.views.bo import parseJson
-	return parseJson(json)
+    from webshop.apps.service.views.bo import parseJson
+    return parseJson(json)
 
 '''
     Main Entry
@@ -14,11 +14,11 @@ def deep_import(json):
 def process(jsonfile):
     fd = open(jsonfile)
     print 'Loading JSON file...'
-    json_data = simplejson.load(fd)
+    json_data = json.load(fd)
     print 'Data Loaded.'
     deep_import(json_data)
 
-    
+
 def importTabDelimted(shop_ref, tabdelimitedfilename):
     def updateDict(hash, row, key):
         hash.update(dict([(a.replace(key,''),b) for a,b in row.iteritems() if key in a]))
@@ -36,18 +36,18 @@ def importTabDelimted(shop_ref, tabdelimitedfilename):
                 pricing[k.split('.')[1]] = v
                 pricingDict[match.group(1)] = pricing
         return pricingDict.values()
-    
-    
+
+
     def updateShopDict(shop, row):
         line_ref = row.get('Line.line_ref', None)
         if(line_ref):
             line = shop['lines'].get(line_ref, {'art_types':{}})
             line = updateDict(line, row, 'Line.')
-    
+
             line['name'] = line_ref
             line['inWebshop'] = True
             line['line_ref'] = line_ref.replace(' ', '_').replace('&', '-').replace('/', '_')
-    
+
             at_ref = row.get('ArticleType.en', None)
             if(at_ref):
                 at = line['art_types'].get(at_ref, {'families':{}})
@@ -62,7 +62,7 @@ def importTabDelimted(shop_ref, tabdelimitedfilename):
                         a = af['articles'].get(a_ref, {'options':{}, 'pricings':{}})
                         a = updateDict(a, row, 'Article.')
                         ao_ref = row.get('ArticleOption.ao_ref', None)
-                        if(ao_ref):  
+                        if(ao_ref):
                             ao = a['options'].get(ao_ref, {})
                             ao = updateDict(ao, row, 'ArticleOption.')
                             a['options'][ao_ref] = ao
@@ -79,27 +79,27 @@ def importTabDelimted(shop_ref, tabdelimitedfilename):
         ('ArticleFamily','ArticleFamily.af_ref'),
         ('ArticleReference','Article.a_ref'),
         ('OptionReference','ArticleOption.ao_ref'),
-    
-    #        ('ProviderID','ArticleOption.AOSourcing.1.provider_id'),
-    #        ('MatchCode','ArticleOption.AOSourcing.1.matchCode'),
-    #        ('ProviderPrice','ArticleOption.AOSourcing.1.sourcePrice'),
-    #        ('MinSourceQty','ArticleOption.AOSourcing.1.minSourceQty'),
-    #        ('Provider2ID','ArticleOption.AOSourcing.2.provider_id'),
-    #        ('MatchCode2','ArticleOption.AOSourcing.2.matchCode'),
-    #        ('ProviderPrice2','ArticleOption.AOSourcing.2.sourcePrice'),
-    #        ('MinSourceQty2','ArticleOption.AOSourcing.2.minSourceQty'),
-    #        ('Composition','ArticleOption.composition'),
+
+        #        ('ProviderID','ArticleOption.AOSourcing.1.provider_id'),
+        #        ('MatchCode','ArticleOption.AOSourcing.1.matchCode'),
+        #        ('ProviderPrice','ArticleOption.AOSourcing.1.sourcePrice'),
+        #        ('MinSourceQty','ArticleOption.AOSourcing.1.minSourceQty'),
+        #        ('Provider2ID','ArticleOption.AOSourcing.2.provider_id'),
+        #        ('MatchCode2','ArticleOption.AOSourcing.2.matchCode'),
+        #        ('ProviderPrice2','ArticleOption.AOSourcing.2.sourcePrice'),
+        #        ('MinSourceQty2','ArticleOption.AOSourcing.2.minSourceQty'),
+        #        ('Composition','ArticleOption.composition'),
         ('LowStockQty','ArticleOption.lowStockQty'),
-    
-    #        ('StockQty','ArticleOption.AOStockBatch.1.stockQty'),
-    #        ('StockQtyComment','ArticleOption.AOStockBatch.1.comment'),
-    #        ('StockQtyBasement','ArticleOption.AOStockBatch.2.stockQty'),
-    #        ('StockQtyBasementComment','ArticleOption.AOStockBatch.2.comment'),
-    #        ('Tags1','Article.tags'),
-    #        ('Tags2','Article.tags'),
-    #        ('Tags3','Article.tags'),
-    #        ('Tags4','Article.tags'),
-    #        ('Tags5','Article.tags'),
+
+        #        ('StockQty','ArticleOption.AOStockBatch.1.stockQty'),
+        #        ('StockQtyComment','ArticleOption.AOStockBatch.1.comment'),
+        #        ('StockQtyBasement','ArticleOption.AOStockBatch.2.stockQty'),
+        #        ('StockQtyBasementComment','ArticleOption.AOStockBatch.2.comment'),
+        #        ('Tags1','Article.tags'),
+        #        ('Tags2','Article.tags'),
+        #        ('Tags3','Article.tags'),
+        #        ('Tags4','Article.tags'),
+        #        ('Tags5','Article.tags'),
         ('HighStockQty','ArticleOption.highStockQty'),
         ('SubImageCode','ArticleOption.subImgCode'),
         ('RetailUnitPrice','Pricing.0[E].price'),
@@ -109,22 +109,22 @@ def importTabDelimted(shop_ref, tabdelimitedfilename):
         ('Discount 2 Price','Pricing.3[K].price'),
         ('Discount 2 Quantity','Pricing.3[K].discountQty'),
         ('PartnerPrice','Pricing.4[P].price'),
-    
+
         ('Weight','Article.weight'),
-    
+
         ('Thickness','Article.thickness'),
         ('LengthDiameter','Article.diameter_len'),
         ('Ballsize1','Article.ball_size1'),
         ('Ballsize2','Article.ball_size2'),
-    
+
         ('Size1','Article.diameter_len'),
         ('Size2','Article.ball_size1'),
         ('Size3','Article.ball_size2'),
         ('Pcs','Article.thickness'),
-    
-    
+
+
         ('BestBefore','Article.bestBefore'),
-    
+
         ('logopath','ArticleFamily.logopath'),
         ('Type','ArticleType.en'),
         ('Type(de)','ArticleType.de'),
@@ -139,34 +139,34 @@ def importTabDelimted(shop_ref, tabdelimitedfilename):
         ('Description(es)','Description.es'),
         ('Description(pl)','Description.pl'),
         ('Description(ch)','Description.ch'),
-    
+
         ('BodyParts','ArticleFamily.body_part'),
         ('News','ArticleFamily.inWebshopNew'),
         ('Sale','ArticleFamily.inWebshopSale'),
         ('InWebshop','ArticleFamily.inWebshop'),
         ('SizeIn','ArticleFamily.measureUnit')])
-    
+
     f = open(tabdelimitedfilename,'r')
     header = [TABXLSMAPPING.get(word, '?%s'%word) for word in f.readline().strip('\n').split('\t')]
     shop = {'shop_ref': shop_ref, 'inWebshop':True, 'name':shop_ref.title(), 'lines' : {}}
     for line in f:
-#        print line
+        #        print line
         row = dict(
-                   [(a,b) for a,b in zip(
-                             header, 
-                             [(l and (l[0] == '"' and l[-1]== '"' and l[1:-1]) or l).strip('\n').replace('""','"')\
-                              for l in line.split('\t')])])
+            [(a,b) for a,b in zip(
+                header,
+                [(l and (l[0] == '"' and l[-1]== '"' and l[1:-1]) or l).strip('\n').replace('""','"') \
+                 for l in line.split('\t')])])
 
-#        pprint.pprint(row)
-        shop = updateShopDict(shop, row)    
-    
+        #        pprint.pprint(row)
+        shop = updateShopDict(shop, row)
+
     shop['lines'] = shop['lines'].values()
     for line in shop['lines']:
         for at in line['art_types'].values():
             for af in at['families'].values():
                 for a in af['articles'].values():
                     a['options'] = a['options'].values()
-                af['articles'] = af['articles'].values()        
+                af['articles'] = af['articles'].values()
             at['families'] = at['families'].values()
         line['art_types'] = line['art_types'].values()
 

@@ -2,7 +2,6 @@ from django.db.models.fields.files import ImageFieldFile
 from django.http import HttpResponse, HttpResponseNotAllowed, HttpResponseForbidden
 import types, hashlib
 from django.db import models
-from django.utils import simplejson
 from django.core.serializers.json import DateTimeAwareJSONEncoder
 from decimal import *
 from django.conf import settings
@@ -90,7 +89,7 @@ def json_encode(data):
     
     ret = _any(data)
     
-    return simplejson.dumps(ret, cls=DateTimeAwareJSONEncoder)
+    return json.dumps(ret, cls=DateTimeAwareJSONEncoder)
 
 
 
