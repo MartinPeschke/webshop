@@ -4,39 +4,19 @@
     <data-source source="LOCAL" name="Django articledb" uuid="f681949a-17a0-495e-b321-d1b4ffd48a36">
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://127.0.0.1:3306/devel</jdbc-url>
-      <user-name>root</user-name>
-      <user-password>df9bdf93df93dfd2dfdfdfd2dfd8df9adfc9</user-password>
-      <libraries>
-        <library>
-          <url>file://$USER_HOME$/.PyCharm20/config/jdbc-drivers/mysql-connector-license.txt</url>
-        </library>
-        <library>
-          <url>file://$USER_HOME$/.PyCharm20/config/jdbc-drivers/mysql-connector-java-5.1.18-bin.jar</url>
-        </library>
-      </libraries>
+      <jdbc-url>jdbc:mysql://127.0.0.1:3306/per4_database</jdbc-url>
+      <libraries />
     </data-source>
     <data-source source="LOCAL" name="Django default" uuid="d8d7c5ba-72d2-4b4c-b457-d275fc839692">
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://127.0.0.1:3306/devel</jdbc-url>
-      <user-name>root</user-name>
-      <user-password>df9bdf93df93dfd2dfdfdfd2dfd8df9adfc9</user-password>
-      <libraries>
-        <library>
-          <url>file://$USER_HOME$/.PyCharm20/config/jdbc-drivers/mysql-connector-license.txt</url>
-        </library>
-        <library>
-          <url>file://$USER_HOME$/.PyCharm20/config/jdbc-drivers/mysql-connector-java-5.1.18-bin.jar</url>
-        </library>
-      </libraries>
+      <jdbc-url>jdbc:mysql://127.0.0.1:3306/per4_database</jdbc-url>
+      <libraries />
     </data-source>
     <data-source source="LOCAL" name="Django default" uuid="c09bda30-bab9-4994-a7c2-e08184bf6fce">
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1:3306/devel</jdbc-url>
-      <user-name>root</user-name>
-      <user-password>df9bdf93df93dfd2dfdfdfd2dfd8df9adfc9</user-password>
       <libraries>
         <library>
           <url>file://$USER_HOME$/.PyCharm20/config/jdbc-drivers/mysql-connector-license.txt</url>
@@ -50,8 +30,6 @@
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1:3306/devel</jdbc-url>
-      <user-name>root</user-name>
-      <user-password>df9bdf93df93dfd2dfdfdfd2dfd8df9adfc9</user-password>
       <libraries>
         <library>
           <url>file://$USER_HOME$/.PyCharm20/config/jdbc-drivers/mysql-connector-license.txt</url>
@@ -63,4 +41,3 @@
     </data-source>
   </component>
 </project>
-

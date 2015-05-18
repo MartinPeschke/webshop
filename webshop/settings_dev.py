@@ -1,7 +1,8 @@
 # Django settings for WebShop project.
 import random
 import os
-from django.utils.translation import ugettext as _
+
+_ = lambda s: s
 
 here = os.path.abspath(os.path.join(__file__, ".."))
 VERSION_FILE = os.path.join(here, "VERSION_TOKEN")
@@ -23,6 +24,9 @@ ADMINS = (
 
 SHOP_NAME = 'per-4.com'
 DEFAULT_SHOP ='piercing'
+# Make this unique, and don't share it with anybody.
+SECRET_KEY = '&rl9146h%z6o+ph(8xap24@@ohy@o#5@7st@d69*v**ol(44v@'
+BOP_PUBLIC = 'b259a54d7febad1f979ef801d2ca3b2198f090cb'
 
 # ---------------------- Basic Django - Customized for Per4 --------------------------
 # Email
@@ -56,9 +60,6 @@ GOOGLE_TRACKING = '''<script type="text/javascript">
             </script>'''
 
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = '&rl9146h%z6o+ph(8xap24@@ohy@o#5@7st@d69*v**ol(44v@'
-BOP_PUBLIC = 'b259a54d7febad1f979ef801d2ca3b2198f090cb'
 
 FB_APP_ID="369049056473174"
 FB_APP_SECRET="8d775ba60036d30ee74586ed0771610e"
@@ -85,14 +86,14 @@ LOCALE_PATHS = (
 DATABASES = {
     'default': {
          'ENGINE':'django.db.backends.mysql'           # 'postgresql', 'mysql', 'sqlite3' or 'ado_mssql'.
-        ,'NAME':'devel'           # Or path to database file if using sqlite3.
+        ,'NAME':'per4_database'           # Or path to database file if using sqlite3.
         ,'USER':'root'             # Not used with sqlite3.
         ,'PASSWORD':'199xuxr0c'         # Not used with sqlite3.
         ,'HOST':'localhost'             # Set to empty string for localhost. Not used with sqlite3.
         ,'PORT':'3306'             # Set to empty string for default. Not used with sqlite3.
     },	'articledb': {
          'ENGINE':'django.db.backends.mysql'           # 'postgresql', 'mysql', 'sqlite3' or 'ado_mssql'.
-        ,'NAME':'devel'           # Or path to database file if using sqlite3.
+        ,'NAME':'per4_database'           # Or path to database file if using sqlite3.
         ,'USER':'root'             # Not used with sqlite3.
         ,'PASSWORD':'199xuxr0c'         # Not used with sqlite3.
         ,'HOST':'localhost'             # Set to empty string for localhost. Not used with sqlite3.
@@ -109,7 +110,7 @@ SITE_ID = 1
 
 # URL that handles the media served from MEDIA_ROOT.
 # Example: "http://media.lawrence.com"
-MEDIA_URL = '/media'
+MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
 STATIC_ROOT=os.path.normpath(os.path.join(os.path.dirname(__file__), 'WebShop', 'static'))
 # Absolute path to the directory that holds media.

@@ -9,7 +9,7 @@ __author__ = 'Martin'
 
 class PaymentMethodManager(models.Manager):
     def filter_by_role(self, role):
-        return PaymentMethod.objects.filter(least_role__lte = role)
+        return PaymentMethod.objects.filter(least_role__lte = role).filter(enabled=True)
 
 
 class PaymentMethod(models.Model):
@@ -19,6 +19,7 @@ class PaymentMethod(models.Model):
 
     name = models.CharField(unique=True, max_length=64)
     least_role = models.CharField(max_length=1)
+    enabled = models.BooleanField(default=True)
 
     LABEL_MAP = {
         'CASH' : _("PAYMENT_METHOD_CASH"),
